@@ -20,6 +20,16 @@
 
 
 #pragma mark -
+#pragma mark Fetch
+-(void)reloadFetchedResultsController {
+	NSError *error = nil;
+	[NSFetchedResultsController deleteCacheWithName:@"UserSearch"];
+    if (![self.fetchedResultsController performFetch:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+}
+#pragma mark -
 #pragma mark View lifecycle
 
 - (void)viewDidLoad {
@@ -42,9 +52,9 @@
 	
 	if (count == 0) {
 		NSArray* titles = [NSArray arrayWithObjects:
-						   @"坊ちゃん", @"にごりえ・たけくらへ", @"唐草物語", @"風の歌を聴け", @"本格小説", nil];
+						   @"坊ちゃん", @"にごりえ・たけくらへ", @"唐草物語", @"風の歌を聴け", @"本格小説", @"博士の愛した数式", @"夜のピクニック", @"サマータイム", @"しゃばけ", @"エマ", nil];
 		NSArray* authors = [NSArray arrayWithObjects:
-						   @"夏目漱石", @"樋口一葉", @"澁澤龍彦", @"村上春樹", @"水村美苗", nil];
+						   @"夏目漱石", @"樋口一葉", @"澁澤龍彦", @"村上春樹", @"水村美苗", @"小川洋子", @"恩田陸", @"佐藤多佳子", @"畠中恵", @"ジェイン・オースティン/中野康司訳", nil];
 		NSManagedObject* mo;
 		
 		for (int i=0; i < [titles count]; i++) {
@@ -62,8 +72,10 @@
 		}
 	}
 	
-	[NSFetchedResultsController deleteCacheWithName:@"UserSearch"];
-
+	self.tableView.contentOffset =
+		CGPointMake(0.0, self.searchDisplayController.searchBar.bounds.size.height);
+	
+	[self reloadFetchedResultsController];
 }
 
 
@@ -251,18 +263,7 @@
     [fetchRequest release];
     [sortDescriptor release];
     [sortDescriptors release];
-    
-    NSError *error = nil;
-    if (![fetchedResultsController_ performFetch:&error]) {
-        /*
-         Replace this implementation with code to handle the error appropriately.
-         
-         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
-         */
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
-    
+     
     return fetchedResultsController_;
 }    
 
@@ -366,16 +367,9 @@
     if (query && query.length) {
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"Title contains[cd] %@", query];
         [self.fetchedResultsController.fetchRequest setPredicate:predicate];
-		[NSFetchedResultsController deleteCacheWithName:@"UserSearch"];
     }
 	
-    NSError *error = nil;
-    if (![self.fetchedResultsController performFetch:&error]) {
-        // Handle error
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        exit(-1);  // Fail
-    }  
-	
+	[self reloadFetchedResultsController];
 }
 
 
@@ -394,6 +388,15 @@
      [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:searchOption]];
 
     return YES;
+}
+
+
+#pragma mark -
+#pragma mark UISearchBar Delegate
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+	[self.fetchedResultsController.fetchRequest setPredicate:nil];
+	[self reloadFetchedResultsController];
 }
 
 
