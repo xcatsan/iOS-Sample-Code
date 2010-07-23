@@ -23,6 +23,7 @@
 @property (nonatomic, retain) IBOutlet UIButton *button;
 
 - (IBAction)openDialog:(id)sender;
+- (IBAction)openLabel:(id)sender;
 
 @end
 

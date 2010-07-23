@@ -17,6 +17,8 @@
 	
 	UILabel* label_;
 	UIButton* button_;
+
+	BOOL enabled_;
 }
 
 @property (nonatomic, copy) NSString* labelText;
@@ -27,5 +29,7 @@
 @property (nonatomic, retain) IBOutlet UIButton* button;
 
 -(IBAction)touchedButton:(id)sender;
+
+- (void)setEnabled:(BOOL)enabled;
 
 @end

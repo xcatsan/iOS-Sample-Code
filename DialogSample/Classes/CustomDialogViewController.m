@@ -8,6 +8,7 @@
 
 #import "CustomDialogViewController.h"
 
+#define ANIMATION_DURATION 0.2
 
 @implementation CustomDialogViewController
 @synthesize buttonTitle = buttonTitle_;
@@ -51,6 +52,29 @@
 -(IBAction)touchedButton:(id)sender
 {
 	[self.delegate touchedButton:sender];
+}
+
+
+#pragma mark -
+#pragma mark Change behavior
+- (void)setEnabled:(BOOL)enabled
+{
+	if (enabled_ == enabled) {
+		return;
+	}
+	
+	enabled_ = enabled;
+	self.button.enabled = enabled;
+	
+	CGRect frame = self.label.frame;
+	
+	if (enabled) {
+		frame.origin.y -= frame.size.height;
+	} else {
+		frame.origin.y += frame.size.height;
+	}
+	[UIView animateWithDuration:ANIMATION_DURATION
+					 animations:^{self.label.frame = frame;}];
 }
 
 @end

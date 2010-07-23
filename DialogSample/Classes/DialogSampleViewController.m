@@ -80,6 +80,7 @@
 {
 	
 	if (opened) {
+		[self.dialogViewController setEnabled:NO];
 		[self dismissDialogViewController:self.dialogViewController
 								 animated:YES];
 	} else {
@@ -101,5 +102,11 @@
 										   otherButtonTitles:@"OK", nil] autorelease];
 	[alert show];
 }
+
+- (IBAction)openLabel:(id)sender
+{
+	[self.dialogViewController setEnabled:YES];
+}
+
 
 @end
