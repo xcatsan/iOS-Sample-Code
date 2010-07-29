@@ -1,12 +1,10 @@
 //
 //  RootViewController.m
-//  NSFetchedResultControllerDelegateSample
-//
+//  LargestManagedObject
 //
 
 
 #import "RootViewController.h"
-#import "SubViewController.h"
 
 @interface RootViewController ()
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
@@ -16,12 +14,10 @@
 @implementation RootViewController
 
 @synthesize fetchedResultsController;
+
 @synthesize managedObjectContext;
-//@synthesize tableView = tableView_;
 
 - (void)viewDidLoad {
-
-    NSLog(@"RootViewController: viewDidload");
 
     [super viewDidLoad];
     // Set up the edit and add buttons.
@@ -30,6 +26,12 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject)];
     self.navigationItem.rightBarButtonItem = addButton;
     [addButton release];
+    
+    UIBarButtonItem* btn = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+                                                                          target:self
+                                                                          action:@selector(touch:)] autorelease];
+    [self setToolbarItems:[NSArray arrayWithObject:btn] animated:YES];
+    [self.navigationController setToolbarHidden:NO animated:YES];
 }
 
 
@@ -116,13 +118,6 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    SubViewController* controller = [[SubViewController alloc] init];
-    controller.object = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    controller.context = self.managedObjectContext;
-    [self.navigationController pushViewController:controller
-                                         animated:YES];
-    [controller release];
     // Navigation logic may go here -- for example, create and push another view controller.
     /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
@@ -137,16 +132,12 @@
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-    NSLog(@"RootViewController: didReceiveMemoryWarning");
-
+    
     // Relinquish ownership any cached data, images, etc that aren't in use.
 }
 
 - (void)viewDidUnload {
-    [super viewDidUnload];
-//    self.tableView = nil;
-    NSLog(@"RootViewController: viewDidUnload");
-   // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
+    // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
     // For example: self.myOutlet = nil;
 }
 
@@ -244,7 +235,6 @@
 
 
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
-    NSLog(@"controllerWillChangeContent: %@", controller);
     [self.tableView beginUpdates];
 }
 
@@ -252,8 +242,6 @@
 - (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
            atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
     
-    NSLog(@"didChangeSection: %@", controller);
-
     switch(type) {
         case NSFetchedResultsChangeInsert:
             [self.tableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex] withRowAnimation:UITableViewRowAnimationFade];
@@ -269,13 +257,9 @@
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
        atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
       newIndexPath:(NSIndexPath *)newIndexPath {
-
-    NSLog(@"controller:%@\ndidChangeObject:%@\natIndexPath:%@\nforChangeType:%d\nnewIndexPath:%@\n",
-          controller, anObject, indexPath, type, newIndexPath);
-
+    
     UITableView *tableView = self.tableView;
-    NSLog(@"%@", self.tableView);
-
+    
     switch(type) {
             
         case NSFetchedResultsChangeInsert:
@@ -299,7 +283,6 @@
 
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
-    NSLog(@"controllerDidChangeContent: %@", controller);
     [self.tableView endUpdates];
 }
 
@@ -312,6 +295,37 @@
     [self.tableView reloadData];
 }
  */
+
+
+
+- (NSManagedObject*)lastTimeStampObject
+{
+    NSManagedObjectContext* moc = self.managedObjectContext;
+    NSFetchRequest* request = [[[NSFetchRequest alloc] init] autorelease];
+
+    NSEntityDescription* entity = [NSEntityDescription entityForName:@"Event"
+                                              inManagedObjectContext:moc];
+    [request setEntity:entity]; 
+
+    NSSortDescriptor* sort = [NSSortDescriptor sortDescriptorWithKey:@"timeStamp"
+                                                           ascending:NO];
+    [request setSortDescriptors:[NSArray arrayWithObject:sort]];
+    [request setFetchLimit:1];
+
+    NSError* error = nil;
+    NSArray* results = [moc executeFetchRequest:request error:&error];
+    
+    if ([results count] > 0) {
+        return [results objectAtIndex:0];
+    } else {
+        return nil;
+    }
+}
+
+- (void)touch:(id)sender
+{
+    [self lastTimeStampObject];
+}
 
 @end
 
