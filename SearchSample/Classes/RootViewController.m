@@ -7,10 +7,10 @@
 //
 
 #import "RootViewController.h"
-
+#import "CustomCell.h"
 
 @interface RootViewController ()
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+- (void)configureCell:(CustomCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
 
@@ -52,9 +52,9 @@
 	
 	if (count == 0) {
 		NSArray* titles = [NSArray arrayWithObjects:
-						   @"坊ちゃん", @"にごりえ・たけくらへ", @"唐草物語", @"風の歌を聴け", @"本格小説", @"博士の愛した数式", @"夜のピクニック", @"サマータイム", @"しゃばけ", @"エマ", nil];
+						   @"坊ちゃん", @"にごりえ・たけくらへ", @"唐草物語", @"風の歌を聴け", @"本格小説", @"博士の愛した数式", @"夜のピクニック", @"サマータイム", @"しゃばけ", @"エマ", @"はじめてのiPhone3プログラミング", @"発送する会社！", nil];
 		NSArray* authors = [NSArray arrayWithObjects:
-						   @"夏目漱石", @"樋口一葉", @"澁澤龍彦", @"村上春樹", @"水村美苗", @"小川洋子", @"恩田陸", @"佐藤多佳子", @"畠中恵", @"ジェイン・オースティン/中野康司訳", nil];
+						   @"夏目漱石", @"樋口一葉", @"澁澤龍彦", @"村上春樹", @"水村美苗", @"小川洋子", @"恩田陸", @"佐藤多佳子", @"畠中恵", @"ジェイン・オースティン/中野康司訳", @"デイブ・マーク", @"トム・ケリー＆ジョナサン・リットマン", nil];
 		NSManagedObject* mo;
 		
 		for (int i=0; i < [titles count]; i++) {
@@ -76,6 +76,8 @@
 		CGPointMake(0.0, self.searchDisplayController.searchBar.bounds.size.height);
 	
 	[self reloadFetchedResultsController];
+	
+	self.navigationItem.leftBarButtonItem = self.editButtonItem;
 }
 
 
@@ -110,7 +112,7 @@
  */
 
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
+- (void)configureCell:(CustomCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     
     NSManagedObject *managedObject = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = [[managedObject valueForKey:@"Title"] description];
@@ -159,9 +161,9 @@
     
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    CustomCell *cell = (CustomCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[CustomCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
     }
     
     // Configure the cell.
@@ -309,7 +311,7 @@
             break;
             
         case NSFetchedResultsChangeUpdate:
-            [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            [self configureCell:(CustomCell*)[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
             break;
             
         case NSFetchedResultsChangeMove:
