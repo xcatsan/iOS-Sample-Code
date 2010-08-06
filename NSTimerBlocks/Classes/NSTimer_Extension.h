@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^TIMER_BLOCK__)(NSTimer*, id);
+typedef void (^TIMER_BLOCK__)(NSTimer*);
 
 @interface NSTimer (Extension)
 
-+ (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)seconds block:(TIMER_BLOCK__)block userInfo:(id)userInfo repeats:(BOOL)repeats;
+//+ (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)seconds block:(TIMER_BLOCK__)block userInfo:(id)userInfo repeats:(BOOL)repeats;
+
++ (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)seconds block:(TIMER_BLOCK__)block repeats:(BOOL)repeats;
+
 @end

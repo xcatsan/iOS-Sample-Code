@@ -35,7 +35,36 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	NSArray* array = [NSArray arrayWithObjects:@"DOG", @"CAT", @"MONKEY", nil];
 
+	timer1 = [NSTimer scheduledTimerWithTimeInterval:1.0
+			   block:^(NSTimer* timer) {
+				   self.counterLabel1.text =
+					[NSString stringWithFormat:@"%d", counter1++];
+				   NSLog(@"%@", array);
+			   }
+			 repeats:YES];
+
+	timer2 = [NSTimer scheduledTimerWithTimeInterval:2.0
+			   block:^(NSTimer* timer) {
+				   self.counterLabel2.text =
+					[NSString stringWithFormat:@"%d", counter2];
+				   counter2 += 10;
+				   NSLog(@"%@", array);
+			   }
+			 repeats:YES];
+
+	timer3 = [NSTimer scheduledTimerWithTimeInterval:3.0
+			   block:^(NSTimer* timer) {
+				   self.counterLabel3.text =
+					[NSString stringWithFormat:@"%d", counter3];
+				   counter3 += 100;
+				   NSLog(@"%@", array);
+			   }
+			 repeats:YES];
+
+	/* old version
 	timer1 = [NSTimer scheduledTimerWithTimeInterval:1.0
 		  block:^(NSTimer* timer, id userInfo) {
 			  self.counterLabel1.text =
@@ -61,7 +90,7 @@
 		  }
 	   userInfo:nil
 		repeats:YES];
-
+	 */
 }
 
 

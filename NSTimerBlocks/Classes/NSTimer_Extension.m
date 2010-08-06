@@ -8,11 +8,11 @@
 
 #import "NSTimer_Extension.h"
 
-#define KEY_BLOCK		@"block"
-#define KEY_USERINFO	@"userInfo"
-
 @implementation NSTimer (Extension)
 
+/*
+ #define KEY_BLOCK		@"block"
+ #define KEY_USERINFO	@"userInfo"
 + (void)executeBlock__:(NSTimer*)timer
 {
 	if (![timer isValid]) {
@@ -44,5 +44,29 @@
 													repeats:repeats];
 	return timer;
 }
+*/
+
++ (void)executeBlock__:(NSTimer*)timer
+{
+	if (![timer isValid]) {
+		return;
+		// do nothing
+	}
+	
+	TIMER_BLOCK__ block = [timer userInfo];
+	block(timer);
+}
+
++ (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)seconds block:(TIMER_BLOCK__)block repeats:(BOOL)repeats
+{
+	NSTimer* timer = [NSTimer scheduledTimerWithTimeInterval:seconds
+			  target:self
+			selector:@selector(executeBlock__:)
+			userInfo:[[block copy] autorelease]
+			 repeats:repeats];
+	return timer;
+	
+}
+
 
 @end
