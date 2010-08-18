@@ -8,15 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CirculationScrollViewController : UIViewController {
+@interface CirculationScrollViewController : UIViewController <UIScrollViewDelegate> {
 
-	UIScrollView* scrollView;
-	NSArray* viewList;
+	UIScrollView* scrollView_;
+	NSArray* viewList_;
 	
-	NSArray* imageList;
+	NSArray* imageList_;
+
+	NSInteger leftImageIndex_;	// index of imageList
+
+	NSInteger leftIndex_;	// index of viewList
+	NSInteger rightIndex_;	// index of viewList
 }
 @property (nonatomic, retain) IBOutlet UIScrollView* scrollView;
 @property (nonatomic, retain) NSArray* viewList;
 @property (nonatomic, retain) NSArray* imageList;
+
 @end
 
