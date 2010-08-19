@@ -21,11 +21,14 @@
 	NSInteger rightViewIndex_;	// index of viewList
 	
 	BOOL circulated_;
+	
+	NSTimer* timer_;
+	BOOL autoScrollStopped_;
 }
 @property (nonatomic, retain) IBOutlet UIScrollView* scrollView;
 @property (nonatomic, retain) NSArray* viewList;
 @property (nonatomic, retain) NSArray* imageList;
 @property (nonatomic, readonly, getter=isCirculated) BOOL circulated;
-
+@property (nonatomic, retain) NSTimer* timer;
 @end
 
