@@ -10,11 +10,12 @@
 
 #define IMAGE_WIDTH			80
 #define IMAGE_HEIGHT		80
-#define DISPLAY_IMAGE_NUM	4
-#define MAX_IMAGE_NUM		(DISPLAY_IMAGE_NUM+2)
+#define DISPLAY_VIEW_NUM	4
+#define MAX_VIEW_NUM		(DISPLAY_VIEW_NUM+2)
 #define MAX_SCROLLABLE_IMAGES		10000
 #define SCROLL_INTERVAL		0.05
 #define	AUTO_SCROLL_DELAY	2
+#define IMAGE_MARGIN		3
 
 @implementation CirculationScrollViewController
 
@@ -61,6 +62,22 @@
 }
 
 
+#pragma mark -
+#pragma mark event handler
+- (void)touchedButton:(id)sender forEvent:(UIEvent *)event
+{
+	UITouch* touch = [event.allTouches anyObject];
+	if (touch.phase == UITouchPhaseBegan) {
+		[self stopAutoScroll];
+
+	} else if (touch.phase == UITouchPhaseEnded) {
+		// TODO: call delegate
+		NSInteger viewIndex = [sender tag];
+		NSInteger imageIndex = (leftImageIndex_ + (MAX_VIEW_NUM + viewIndex - leftViewIndex_) % MAX_VIEW_NUM - 1)% [imageList_ count];
+		NSLog(@"imageIndex=%d", imageIndex);
+	}
+}
+
 
 #pragma mark -
 #pragma mark Initialization & deallocation
@@ -83,9 +100,17 @@
 	
 	CGRect imageViewFrame = CGRectMake(-IMAGE_WIDTH, 0, IMAGE_WIDTH, IMAGE_HEIGHT);
 
-	for (int i=0; i < MAX_IMAGE_NUM; i++) {
-		UIImageView* view = [[[UIImageView alloc]
+	for (int i=0; i < MAX_VIEW_NUM; i++) {
+		UIButton* view = [[[UIButton alloc]
 							  initWithFrame:imageViewFrame] autorelease];
+		[view setBackgroundImage:[UIImage imageNamed:@"background"]
+						forState:UIControlStateNormal]; 
+		view.imageEdgeInsets = UIEdgeInsetsMake(IMAGE_MARGIN, IMAGE_MARGIN, IMAGE_MARGIN, IMAGE_MARGIN);
+		view.tag = i;
+		[view addTarget:self
+				 action:@selector(touchedButton:forEvent:)
+	   forControlEvents:UIControlEventAllEvents];
+
 		[array addObject:view];
 		
 		imageViewFrame.origin.x += IMAGE_WIDTH;
@@ -173,7 +198,7 @@
 		contentOffset.x = ((MAX_SCROLLABLE_IMAGES-numberOfImages)/2) * IMAGE_WIDTH;
 		CGRect viewFrame = CGRectMake(
 				contentOffset.x - IMAGE_WIDTH, 0, IMAGE_WIDTH, IMAGE_HEIGHT);
-		for (UIImageView* view in self.viewList) {
+		for (UIButton* view in self.viewList) {
 			view.frame = viewFrame;
 			viewFrame.origin.x += IMAGE_WIDTH;
 		}
@@ -181,8 +206,9 @@
 		leftImageIndex_ = contentOffset.x / IMAGE_HEIGHT;
 		self.scrollView.contentOffset = contentOffset;
 
-		UIImageView* leftView = [self.viewList objectAtIndex:leftViewIndex_];
-		leftView.image = [self imageAtIndex:DISPLAY_IMAGE_NUM];
+		UIButton* leftView = [self.viewList objectAtIndex:leftViewIndex_];
+		[leftView setImage:[self imageAtIndex:DISPLAY_VIEW_NUM]
+				  forState:UIControlStateNormal];
 
 	} else {
 		contentSize.width = IMAGE_WIDTH * numberOfImages;
@@ -199,7 +225,7 @@ typedef enum {
 
 - (NSInteger)addViewIndex:(NSInteger)index incremental:(NSInteger)incremental
 {
-	return (index + incremental + MAX_IMAGE_NUM) % MAX_IMAGE_NUM;
+	return (index + incremental + MAX_VIEW_NUM) % MAX_VIEW_NUM;
 }
 
 - (void)scrollWithDirection:(ScrollDirection)scrollDirection
@@ -217,9 +243,9 @@ typedef enum {
 	}
 	
 	// change position
-	UIImageView* view = [self.viewList objectAtIndex:viewIndex];
+	UIButton* view = [self.viewList objectAtIndex:viewIndex];
 	CGRect frame = view.frame;
-	frame.origin.x += IMAGE_WIDTH * MAX_IMAGE_NUM * incremental;
+	frame.origin.x += IMAGE_WIDTH * MAX_VIEW_NUM * incremental;
 	view.frame = frame;
 	
 	// change image
@@ -228,9 +254,10 @@ typedef enum {
 	if (scrollDirection == kScrollDirectionLeft) {
 		imageIndex = leftImageIndex_ -1;
 	} else if (scrollDirection == kScrollDirectionRight) {
-		imageIndex = leftImageIndex_ + DISPLAY_IMAGE_NUM;
+		imageIndex = leftImageIndex_ + DISPLAY_VIEW_NUM;
 	}	
-	view.image = [self imageAtIndex:imageIndex];
+	[view setImage:[self imageAtIndex:imageIndex]
+		  forState:UIControlStateNormal];
 	
 	
 	// adjust indicies
@@ -252,28 +279,31 @@ typedef enum {
 	// initialize indices
 	leftImageIndex_ = 0;
 	leftViewIndex_ = 0;
-	rightViewIndex_ = MAX_IMAGE_NUM-1;
+	rightViewIndex_ = MAX_VIEW_NUM-1;
 	
 	// [1]setup blank
-	for (int i=0; i < MAX_IMAGE_NUM; i++) {
-		UIImageView* view = [self.viewList objectAtIndex:i];
-		view.image = [self blankImage];
+	for (int i=0; i < MAX_VIEW_NUM; i++) {
+		UIButton* view = [self.viewList objectAtIndex:i];
+		[view setImage:[self blankImage]
+			  forState:UIControlStateNormal];
 	}
 
 	// [2]display area
 	NSInteger index = 1;	// skip 0
 	for (UIImage* image in imageList_) {
-		UIImageView* view = [self.viewList objectAtIndex:index];
-		view.image = image;
+		UIButton* view = [self.viewList objectAtIndex:index];
+		[view setImage:image
+			  forState:UIControlStateNormal];
 		index++;
-		if (index > DISPLAY_IMAGE_NUM) {
+		if (index > DISPLAY_VIEW_NUM) {
 			break;
 		}
 	}
 	
 	// [3]outside
-	UIImageView* rightView = [self.viewList objectAtIndex:MAX_IMAGE_NUM-1];
-	rightView.image = [self imageAtIndex:DISPLAY_IMAGE_NUM];
+	UIButton* rightView = [self.viewList objectAtIndex:MAX_VIEW_NUM-1];
+	[rightView setImage:[self imageAtIndex:DISPLAY_VIEW_NUM]
+			   forState:UIControlStateNormal];
 
 
 	// [4]setup scrollView

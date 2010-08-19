@@ -25,6 +25,7 @@
 		4C0A5DB1121A78EF00B14980 /* simg7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C0A5DAD121A78EF00B14980 /* simg7.jpg */; };
 		4C0A5DB2121A78EF00B14980 /* simg8.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C0A5DAE121A78EF00B14980 /* simg8.jpg */; };
 		4C0A5DB3121A78EF00B14980 /* simg9.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C0A5DAF121A78EF00B14980 /* simg9.jpg */; };
+		4C482055121D830900458A1B /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C482054121D830900458A1B /* background.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		4C0A5DAD121A78EF00B14980 /* simg7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = simg7.jpg; sourceTree = "<group>"; };
 		4C0A5DAE121A78EF00B14980 /* simg8.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = simg8.jpg; sourceTree = "<group>"; };
 		4C0A5DAF121A78EF00B14980 /* simg9.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = simg9.jpg; sourceTree = "<group>"; };
+		4C482054121D830900458A1B /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* CirculationScroll-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CirculationScroll-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,6 +112,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4C482054121D830900458A1B /* background.png */,
 				4C0A5D67121A77EE00B14980 /* blank.jpg */,
 				4C0A5D41121A770900B14980 /* simg1.jpg */,
 				4C0A5D42121A770900B14980 /* simg2.jpg */,
@@ -191,6 +194,7 @@
 				4C0A5DB1121A78EF00B14980 /* simg7.jpg in Resources */,
 				4C0A5DB2121A78EF00B14980 /* simg8.jpg in Resources */,
 				4C0A5DB3121A78EF00B14980 /* simg9.jpg in Resources */,
+				4C482055121D830900458A1B /* background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
