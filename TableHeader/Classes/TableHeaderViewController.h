@@ -15,6 +15,9 @@
 	UITableView* tableView_;
 	
 	BOOL headerOpened_;
+
+	CGFloat spaceCellHeight_;
+	UIView* zeroSizeView_;
 }
 
 @property (nonatomic, retain) IBOutlet UIView* headerView;

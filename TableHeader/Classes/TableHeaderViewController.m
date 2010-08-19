@@ -22,6 +22,7 @@
 				  @"IIIII", @"JJJJJ", @"KKKKK", @"LLLLL",
 				  nil];
 		headerOpened_ = NO;
+		zeroSizeView_ = [[UIView alloc] initWithFrame:CGRectZero];
 	}
 	return self;
 }
@@ -51,6 +52,7 @@
 	frame.size.height = 50.0;
 	self.headerView.frame = frame;
 	self.tableView.tableHeaderView = self.headerView;
+	
 }
 
 
@@ -79,31 +81,97 @@
 
 - (void)dealloc {
 	[array_ release];
+	[zeroSizeView_ release];
     [super dealloc];
 }
 
 #pragma mark -
 #pragma mark UITableViewDelegate
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	if (indexPath.section == 0) {
+		return spaceCellHeight_;
+	} else {
+		return tableView.rowHeight;
+	}
+}
 
 #pragma mark -
 #pragma mark UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return [array_ count];
+	if (section == 0) {
+		return 1;
+	} else {
+		return [array_ count];
+	}
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+	return 2;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+	if (section == 0) {
+		return zeroSizeView_;
+	} else {
+		return nil;
+	}
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+	if (section == 0) {
+		return zeroSizeView_;
+	} else {
+		return nil;
+	}
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+	if (section == 0) {
+		return 0.1;
+	} else {
+		return tableView.sectionHeaderHeight;
+	}
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+	if (section == 0) {
+		return 0.1;
+	} else {
+		return tableView.sectionFooterHeight;
+	}
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"CELL"];
-	
-	if (cell == nil) {
-		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
-									   reuseIdentifier:@"CELL"] autorelease];
+	if (indexPath.section == 0) {
+		UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"CELL1"];
+		
+		if (cell == nil) {
+			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
+										   reuseIdentifier:@"CELL1"] autorelease];
+			UIView* view = [[[UIView alloc] initWithFrame:CGRectZero] autorelease];
+			cell.backgroundView = view;
+		}
+		return cell;
+
+	} else {
+		UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"CELL2"];
+		
+		if (cell == nil) {
+			cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
+										   reuseIdentifier:@"CELL2"] autorelease];
+		}
+		
+		cell.textLabel.text = [array_ objectAtIndex:indexPath.row];
+		return cell;
 	}
-	
-	cell.textLabel.text = [array_ objectAtIndex:indexPath.row];
-	return cell;
 }
 
 
@@ -112,16 +180,24 @@
 - (IBAction)changeHeader:(id)sender
 {
 	CGRect frame = self.headerView.frame;
+
 	if (headerOpened_) {
 		frame.size.height = 50.0;
+		spaceCellHeight_ = 0.0;
 	} else {
 		frame.size.height = 100.0;
+		spaceCellHeight_ = 50.0;
 	}
-	[UIView animateWithDuration:0.5
-					 animations:^{self.tableView.tableHeaderView.frame = frame;}
+	NSIndexPath* path = [NSIndexPath indexPathForRow:0 inSection:0];
+	[self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:path]
+						  withRowAnimation:YES];
+	[UIView animateWithDuration:0.25
+					 animations:^{
+						 self.tableView.tableHeaderView.frame = frame;
+					 }
 					 completion:^(BOOL finished){
-						 self.tableView.tableHeaderView = nil;
-						 self.tableView.tableHeaderView = self.headerView;
+//						 self.tableView.tableHeaderView = nil;
+//						 self.tableView.tableHeaderView = self.headerView;
 					 }];
 
 	headerOpened_ = !headerOpened_;
