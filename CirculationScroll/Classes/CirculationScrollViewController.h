@@ -17,8 +17,8 @@
 
 	NSInteger leftImageIndex_;	// index of imageList
 
-	NSInteger leftIndex_;	// index of viewList
-	NSInteger rightIndex_;	// index of viewList
+	NSInteger leftViewIndex_;	// index of viewList
+	NSInteger rightViewIndex_;	// index of viewList
 }
 @property (nonatomic, retain) IBOutlet UIScrollView* scrollView;
 @property (nonatomic, retain) NSArray* viewList;

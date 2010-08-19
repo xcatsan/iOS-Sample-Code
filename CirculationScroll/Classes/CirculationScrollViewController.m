@@ -19,22 +19,6 @@
 @synthesize viewList = viewList_;
 @synthesize imageList = imageList_;
 
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
-	if (self = [super initWithCoder:aDecoder]) {
-		
-
-	}
-	return self;
-}
-
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
-}
-*/
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -56,15 +40,6 @@
 
 }
 
-
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
-
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
@@ -83,6 +58,11 @@
     [super dealloc];
 }
 
+- (UIImage*)blankImage
+{
+	return [UIImage imageNamed:@"blank.jpg"];
+}
+
 - (void)setImageList:(NSArray*)list
 {
 	// store list
@@ -92,8 +72,8 @@
 	
 	// initialize indices
 	leftImageIndex_ = 0;
-	leftIndex_ = 0;
-	rightIndex_ = MAX_IMAGE_NUM-1;
+	leftViewIndex_ = 0;
+	rightViewIndex_ = MAX_IMAGE_NUM-1;
 	
 	NSInteger count = [list count];
 
@@ -102,15 +82,10 @@
 	contentSize.width = IMAGE_WIDTH * count;
 	self.scrollView.contentSize = contentSize;
 
-//	CGRect visibleRect = self.scrollView.bounds;
-//	visibleRect.origin = CGPointMake(IMAGE_WIDTH, 0);
-//	[self.scrollView scrollRectToVisible:visibleRect animated:NO];
-	
 	// [1]setup blank
-	UIImage* blank = [UIImage imageNamed:@"blank.jpg"];
 	for (int i=0; i < MAX_IMAGE_NUM; i++) {
 		UIImageView* view = [self.viewList objectAtIndex:i];
-		view.image = blank;
+		view.image = [self blankImage];
 	}
 
 	// [2]display area
@@ -152,49 +127,49 @@ typedef enum {
 	kScrollDirectionRight
 } ScrollDirection;
 
-- (NSInteger)addViewIndex:(NSInteger)index delta:(NSInteger)delta
+- (NSInteger)addViewIndex:(NSInteger)index incremental:(NSInteger)incremental
 {
-	return (index + delta + MAX_IMAGE_NUM) % MAX_IMAGE_NUM;
+	return (index + incremental + MAX_IMAGE_NUM) % MAX_IMAGE_NUM;
 }
 
 - (void)scrollWithDirection:(ScrollDirection)scrollDirection
 {
-	NSInteger delta = 0;
-	if (scrollDirection == kScrollDirectionLeft) {
-		delta = -1;
-	} else if (scrollDirection == kScrollDirectionRight) {
-		delta = 1;
-	}
-
+	NSInteger incremental = 0;
 	NSInteger viewIndex = 0;
-	if (scrollDirection == kScrollDirectionLeft) {
-		viewIndex = rightIndex_;
-	} else if (scrollDirection == kScrollDirectionRight) {
-		viewIndex = leftIndex_;
-	}
+	NSInteger imageIndex = 0;
 
-	leftImageIndex_ = leftImageIndex_ + delta;
+	if (scrollDirection == kScrollDirectionLeft) {
+		incremental = -1;
+		viewIndex = rightViewIndex_;
+	} else if (scrollDirection == kScrollDirectionRight) {
+		incremental = 1;
+		viewIndex = leftViewIndex_;
+	}
 
 	// change position
 	UIImageView* view = [self.viewList objectAtIndex:viewIndex];
 	CGRect frame = view.frame;
-	frame.origin.x += IMAGE_WIDTH * MAX_IMAGE_NUM * delta;
+	frame.origin.x += IMAGE_WIDTH * MAX_IMAGE_NUM * incremental;
 	view.frame = frame;
 	
 	// change image
 	NSInteger numberOfImages = [self.imageList count];
+	leftImageIndex_ = leftImageIndex_ + incremental;
 
-	NSInteger imageIndex = leftImageIndex_ + DISPLAY_IMAGE_NUM;
-	if (imageIndex < numberOfImages) {
+	if (scrollDirection == kScrollDirectionLeft) {
+		imageIndex = leftImageIndex_ -1;
+	} else if (scrollDirection == kScrollDirectionRight) {
+		imageIndex = leftImageIndex_ + DISPLAY_IMAGE_NUM;
+	}
+	if (0 <= imageIndex && imageIndex < numberOfImages) {
 		view.image = [self.imageList objectAtIndex:imageIndex];
 	} else {
-		view.image = [UIImage imageNamed:@"blank.jpg"];
+		view.image = [self blankImage];
 	}
 
 	// adjust indicies
-	leftIndex_ = [self addViewIndex:leftIndex_ delta:delta];
-	rightIndex_ = [self addViewIndex:rightIndex_ delta:delta];
-	
+	leftViewIndex_ = [self addViewIndex:leftViewIndex_ incremental:incremental];
+	rightViewIndex_ = [self addViewIndex:rightViewIndex_ incremental:incremental];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
@@ -203,15 +178,11 @@ typedef enum {
 	CGFloat delta = position - (CGFloat)leftImageIndex_;
 	
 	if (fabs(delta) >= 1.0f) {
-
 		if (delta > 0) {
-			[self scrollWithDirection:kScrollDirectionRight];			
-			
+			[self scrollWithDirection:kScrollDirectionRight];
 		} else {
-			[self scrollWithDirection:kScrollDirectionLeft];
-			
-		}
-		
+			[self scrollWithDirection:kScrollDirectionLeft];			
+		}		
 	}
 }
 
