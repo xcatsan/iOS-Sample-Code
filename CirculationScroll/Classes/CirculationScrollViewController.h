@@ -19,10 +19,13 @@
 
 	NSInteger leftViewIndex_;	// index of viewList
 	NSInteger rightViewIndex_;	// index of viewList
+	
+	BOOL circulated_;
 }
 @property (nonatomic, retain) IBOutlet UIScrollView* scrollView;
 @property (nonatomic, retain) NSArray* viewList;
 @property (nonatomic, retain) NSArray* imageList;
+@property (nonatomic, readonly, getter=isCirculated) BOOL circulated;
 
 @end
 
