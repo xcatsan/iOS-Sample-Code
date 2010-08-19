@@ -217,8 +217,9 @@ typedef enum {
 {
 	CGFloat position = scrollView.contentOffset.x / IMAGE_WIDTH;
 	CGFloat delta = position - (CGFloat)leftImageIndex_;
-	
-	if (fabs(delta) >= 1.0f) {
+	NSInteger count = (NSInteger)fabs(delta);
+
+	for (int i=0; i < count; i++) {
 		if (delta > 0) {
 			[self scrollWithDirection:kScrollDirectionRight];
 		} else {
