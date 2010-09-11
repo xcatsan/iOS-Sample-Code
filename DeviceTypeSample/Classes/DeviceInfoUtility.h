@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DeviceUtility : NSObject {
+@interface DeviceInfoUtility : NSObject {
 
 }
 + (NSString *) hwMachine;

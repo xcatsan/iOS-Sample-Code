@@ -1,18 +1,18 @@
 //
-//  DeviceUtility.m
+//  DeviceInfoUtility.m
 //  DeviceTypeSample
 //
 //  Created by Hiroshi Hashiguchi on 10/09/12.
 //  Copyright 2010 Hiroshi Hashiguchi. All rights reserved.
 //
 
-#import "DeviceUtility.h"
+#import "DeviceInfoUtility.h"
 #include <sys/types.h>
 #include <sys/sysctl.h>
 
 #define UNKOWN_KEY	@"unkown"
 
-@implementation DeviceUtility
+@implementation DeviceInfoUtility
 
 
 /*
