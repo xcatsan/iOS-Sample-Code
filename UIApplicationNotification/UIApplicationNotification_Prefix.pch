@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'UIApplicationNotification' target in the 'UIApplicationNotification' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+#endif
