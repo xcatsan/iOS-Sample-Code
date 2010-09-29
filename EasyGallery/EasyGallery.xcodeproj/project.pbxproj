@@ -24,6 +24,7 @@
 		4C3763D212519BCD00DD8524 /* image07.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C3763C912519BCD00DD8524 /* image07.jpg */; };
 		4C3763D312519BCD00DD8524 /* image08.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C3763CA12519BCD00DD8524 /* image08.jpg */; };
 		4C3763D412519BCD00DD8524 /* link.webloc in Resources */ = {isa = PBXBuildFile; fileRef = 4C3763CB12519BCD00DD8524 /* link.webloc */; };
+		4C3764541252BB5900DD8524 /* CustomImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3764531252BB5900DD8524 /* CustomImageView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,8 @@
 		4C3763C912519BCD00DD8524 /* image07.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image07.jpg; sourceTree = "<group>"; };
 		4C3763CA12519BCD00DD8524 /* image08.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image08.jpg; sourceTree = "<group>"; };
 		4C3763CB12519BCD00DD8524 /* link.webloc */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = link.webloc; sourceTree = "<group>"; };
+		4C3764521252BB5900DD8524 /* CustomImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomImageView.h; sourceTree = "<group>"; };
+		4C3764531252BB5900DD8524 /* CustomImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomImageView.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* EasyGallery-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "EasyGallery-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +75,8 @@
 				1D3623250D0F684500981E51 /* EasyGalleryAppDelegate.m */,
 				28D7ACF60DDB3853001CB0EB /* EasyGalleryViewController.h */,
 				28D7ACF70DDB3853001CB0EB /* EasyGalleryViewController.m */,
+				4C3764521252BB5900DD8524 /* CustomImageView.h */,
+				4C3764531252BB5900DD8524 /* CustomImageView.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* EasyGalleryAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* EasyGalleryViewController.m in Sources */,
+				4C3764541252BB5900DD8524 /* CustomImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

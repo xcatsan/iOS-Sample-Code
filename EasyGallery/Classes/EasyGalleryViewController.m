@@ -7,6 +7,7 @@
 //
 
 #import "EasyGalleryViewController.h"
+#import "CustomImageView.h"
 
 @implementation EasyGalleryViewController
 
@@ -25,7 +26,7 @@
 #pragma mark Controle scroll views
 - (void)setImageAtIndex:(NSInteger)index toScrollView:(UIScrollView*)scrollView
 {
-	UIImageView* imageView = [scrollView.subviews objectAtIndex:0];
+	CustomImageView* imageView = [scrollView.subviews objectAtIndex:0];
 	if (index < 0 || [self.imageFiles count] <= index) {
 		imageView.image = nil;
 		scrollView.delegate = nil;
@@ -36,8 +37,9 @@
 	imageView.image = image;
 	imageView.contentMode = (image.size.width > image.size.height) ?
 	UIViewContentModeScaleAspectFit : UIViewContentModeScaleAspectFill;
-//	scrollView.delegate = imageView;
+	scrollView.delegate = imageView;
 }
+
 
 - (void)scrollToIndex:(NSInteger)index animated:(BOOL)animated
 {
@@ -77,8 +79,9 @@
 	for (int i=0; i < 3; i++) {
 
 		// image view
-		UIImageView* imageView =
-			[[UIImageView alloc] initWithFrame:imageViewFrame];
+		CustomImageView* imageView =
+			[[CustomImageView alloc] initWithFrame:imageViewFrame];
+		/*
 		imageView.autoresizingMask =
 			UIViewAutoresizingFlexibleLeftMargin  |
 			UIViewAutoresizingFlexibleWidth       |
@@ -86,6 +89,7 @@
 			UIViewAutoresizingFlexibleTopMargin   |
 			UIViewAutoresizingFlexibleHeight      |
 			UIViewAutoresizingFlexibleBottomMargin;
+		 */
 //		imageView.delegate = self;
 		
 		// scroll view
