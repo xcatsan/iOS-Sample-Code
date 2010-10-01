@@ -26,13 +26,12 @@
     [window addSubview:viewController.view];
     [window makeKeyAndVisible];
 
-	/*
 	// 1 image case
 	viewController.imageList = [NSArray arrayWithObjects:
 								[UIImage imageNamed:@"simg1.jpg"],nil];
-	 */
 
-	viewController.imageList = [NSArray arrayWithObjects:
+	/*
+viewController.imageList = [NSArray arrayWithObjects:
 								[UIImage imageNamed:@"simg1.jpg"],
 								[UIImage imageNamed:@"simg2.jpg"],
 								[UIImage imageNamed:@"simg3.jpg"],
@@ -43,7 +42,7 @@
 								[UIImage imageNamed:@"simg8.jpg"],
 								[UIImage imageNamed:@"simg9.jpg"],
 								nil];
-	
+*/	
     return YES;
 }
 

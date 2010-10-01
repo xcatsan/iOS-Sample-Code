@@ -119,18 +119,20 @@
 	}
 	self.viewList = array;
 
-	[self stopAutoScroll];
+	
+	if (circulated_) {
+		[self stopAutoScroll];
 
-	if ([self.timer isValid]) {
-		[self.timer invalidate];
+		if ([self.timer isValid]) {
+			[self.timer invalidate];
+		}
+		self.timer = [NSTimer scheduledTimerWithTimeInterval:SCROLL_INTERVAL
+													  target:self
+													selector:@selector(timerDidFire:)
+													userInfo:nil
+													 repeats:YES];
+		[self restartAutoScrollAfterDelay];
 	}
-	self.timer = [NSTimer scheduledTimerWithTimeInterval:SCROLL_INTERVAL
-												  target:self
-												selector:@selector(timerDidFire:)
-												userInfo:nil
-												 repeats:YES];
-	[self restartAutoScrollAfterDelay];
-
 }
 
 - (void)didReceiveMemoryWarning {

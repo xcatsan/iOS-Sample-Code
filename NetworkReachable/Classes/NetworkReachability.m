@@ -32,7 +32,7 @@
 
 - (void) dealloc
 {
-	CFRetain(reachability_);
+	CFRelease(reachability_);
 	[super dealloc];
 }
 
@@ -52,7 +52,8 @@
 				NSString *name =
 				[NSString stringWithUTF8String:cursor->ifa_name];
 				
-				if ([name isEqualToString:@"en1"]) { // found the WiFi adapter
+				if ([name isEqualToString:@"en0"] ||
+					[name isEqualToString:@"en1"]) { // found the WiFi adapter
 					return [NSString stringWithUTF8String:
 							inet_ntoa(((struct sockaddr_in *)cursor->ifa_addr)->sin_addr)];
 				}

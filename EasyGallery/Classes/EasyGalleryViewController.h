@@ -11,25 +11,23 @@
 @interface EasyGalleryViewController : UIViewController {
 
 	NSMutableArray* imageFiles_;
+	NSInteger currentImageIndex_;
 
 	UIScrollView* scrollView_;
+	NSInteger contentOffsetIndex_;
 
-	UIScrollView* previousScrollView_;
-	UIScrollView* currentScrollView_;
-	UIScrollView* nextScrollView_;
+	NSMutableArray* imageScrollViews_;
 	
-	NSInteger currentIndex_;
 }
 
 @property (nonatomic, retain) IBOutlet 	NSMutableArray* imageFiles;
+@property (nonatomic, assign) NSInteger currentImageIndex;
 
 @property (nonatomic, retain) IBOutlet UIScrollView* scrollView;
+@property (nonatomic, assign) NSInteger contentOffsetIndex;
 
-@property (nonatomic, retain) UIScrollView* previousScrollView;
-@property (nonatomic, retain) UIScrollView* currentScrollView;
-@property (nonatomic, retain) UIScrollView* nextScrollView;
+@property (nonatomic, retain) NSMutableArray* imageScrollViews;
 
-@property (nonatomic, assign) NSInteger currentIndex;
 
 @end
 

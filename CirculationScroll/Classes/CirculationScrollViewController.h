@@ -12,7 +12,7 @@
 
 	UIScrollView* scrollView_;
 	NSArray* viewList_;
-	
+
 	NSArray* imageList_;
 
 	NSInteger leftImageIndex_;	// index of imageList
