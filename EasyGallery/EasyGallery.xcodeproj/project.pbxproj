@@ -15,6 +15,7 @@
 		2899E5220DE3E06400AC0155 /* EasyGalleryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* EasyGalleryViewController.xib */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* EasyGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* EasyGalleryViewController.m */; };
+		4C08CD071259455F00D59F03 /* ImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C08CD061259455F00D59F03 /* ImageScrollView.m */; };
 		4C3763CC12519BCD00DD8524 /* image01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C3763C312519BCC00DD8524 /* image01.jpg */; };
 		4C3763CD12519BCD00DD8524 /* image02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C3763C412519BCD00DD8524 /* image02.jpg */; };
 		4C3763CE12519BCD00DD8524 /* image03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C3763C512519BCD00DD8524 /* image03.jpg */; };
@@ -40,6 +41,8 @@
 		28D7ACF70DDB3853001CB0EB /* EasyGalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyGalleryViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* EasyGallery_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyGallery_Prefix.pch; sourceTree = "<group>"; };
+		4C08CD051259455F00D59F03 /* ImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScrollView.h; sourceTree = "<group>"; };
+		4C08CD061259455F00D59F03 /* ImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageScrollView.m; sourceTree = "<group>"; };
 		4C3763C312519BCC00DD8524 /* image01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image01.jpg; sourceTree = "<group>"; };
 		4C3763C412519BCD00DD8524 /* image02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image02.jpg; sourceTree = "<group>"; };
 		4C3763C512519BCD00DD8524 /* image03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image03.jpg; sourceTree = "<group>"; };
@@ -77,6 +80,8 @@
 				28D7ACF70DDB3853001CB0EB /* EasyGalleryViewController.m */,
 				4C3764521252BB5900DD8524 /* CustomImageView.h */,
 				4C3764531252BB5900DD8524 /* CustomImageView.m */,
+				4C08CD051259455F00D59F03 /* ImageScrollView.h */,
+				4C08CD061259455F00D59F03 /* ImageScrollView.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 				1D3623260D0F684500981E51 /* EasyGalleryAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* EasyGalleryViewController.m in Sources */,
 				4C3764541252BB5900DD8524 /* CustomImageView.m in Sources */,
+				4C08CD071259455F00D59F03 /* ImageScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

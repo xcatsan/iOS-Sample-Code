@@ -7,7 +7,7 @@
 //
 
 #import "EasyGalleryViewController.h"
-#import "CustomImageView.h"
+#import "ImageScrollView.h"
 
 enum {
 	kIndexOfPreviousScrollView = 0,
@@ -30,7 +30,7 @@ enum {
 #pragma mark Controle scroll views
 - (void)setImageAtIndex:(NSInteger)index toScrollView:(UIScrollView*)scrollView
 {
-	CustomImageView* imageView = [scrollView.subviews objectAtIndex:0];
+	UIImageView* imageView = [scrollView.subviews objectAtIndex:0];
 	if (index < 0 || [self.imageFiles count] <= index) {
 		imageView.image = nil;
 		scrollView.delegate = nil;
@@ -41,7 +41,6 @@ enum {
 	imageView.image = image;
 	imageView.contentMode = (image.size.width > image.size.height) ?
 	UIViewContentModeScaleAspectFit : UIViewContentModeScaleAspectFill;
-	scrollView.delegate = imageView;
 }
 
 
@@ -50,7 +49,7 @@ enum {
 	CGSize newSize = self.view.bounds.size;
 	
 	CGFloat x = (self.contentOffsetIndex-1) * newSize.width;
-	for (UIScrollView* scrollView in self.imageScrollViews) {
+	for (ImageScrollView* scrollView in self.imageScrollViews) {
 		scrollView.frame = CGRectMake(x, 0, newSize.width, newSize.height);
 		scrollView.contentSize = newSize;
 		x += newSize.width;
@@ -81,8 +80,8 @@ enum {
 	for (int i=0; i < kMaxOfScrollView; i++) {
 
 		// image view
-		CustomImageView* imageView =
-			[[CustomImageView alloc] initWithFrame:imageViewFrame];
+		UIImageView* imageView =
+			[[UIImageView alloc] initWithFrame:imageViewFrame];
 		imageView.autoresizingMask =
 			UIViewAutoresizingFlexibleLeftMargin  |
 			UIViewAutoresizingFlexibleWidth       |
@@ -92,8 +91,8 @@ enum {
 			UIViewAutoresizingFlexibleBottomMargin;
 		
 		// scroll view
-		UIScrollView* imageScrollView =
-			[[UIScrollView alloc] initWithFrame:imageScrollViewFrame];
+		ImageScrollView* imageScrollView =
+			[[ImageScrollView alloc] initWithFrame:imageScrollViewFrame];
 		imageScrollView.minimumZoomScale = 1.0;
 		imageScrollView.maximumZoomScale = 5.0;
 		imageScrollView.showsHorizontalScrollIndicator = NO;
@@ -164,11 +163,11 @@ enum {
 
 -(void)setupPreviousImage
 {
-	UIScrollView* previousScrollView =
+	ImageScrollView* previousScrollView =
 		[self.imageScrollViews objectAtIndex:kIndexOfPreviousScrollView];
-	UIScrollView* currentScrollView =
+	ImageScrollView* currentScrollView =
 		[self.imageScrollViews objectAtIndex:kIndexOfCurrentScrollView];
-	UIScrollView* nextScrollView =
+	ImageScrollView* nextScrollView =
 		[self.imageScrollViews objectAtIndex:kIndexOfNextScrollView];
 	
 	[self.imageScrollViews removeAllObjects];
@@ -184,11 +183,11 @@ enum {
 
 -(void)setupNextImage
 {
-	UIScrollView* previousScrollView =
+	ImageScrollView* previousScrollView =
 		[self.imageScrollViews objectAtIndex:kIndexOfPreviousScrollView];
-	UIScrollView* currentScrollView =
+	ImageScrollView* currentScrollView =
 		[self.imageScrollViews objectAtIndex:kIndexOfCurrentScrollView];
-	UIScrollView* nextScrollView =
+	ImageScrollView* nextScrollView =
 		[self.imageScrollViews objectAtIndex:kIndexOfNextScrollView];
 	
 	[self.imageScrollViews removeAllObjects];
@@ -211,7 +210,7 @@ enum {
 	CGFloat delta = position - (CGFloat)self.currentImageIndex;
 	
 	if (fabs(delta) >= 1.0f) {
-		UIScrollView* currentScrollView =
+		ImageScrollView* currentScrollView =
 			[self.imageScrollViews objectAtIndex:kIndexOfCurrentScrollView];
 		currentScrollView.zoomScale = 1.0;
 		currentScrollView.contentOffset = CGPointZero;
