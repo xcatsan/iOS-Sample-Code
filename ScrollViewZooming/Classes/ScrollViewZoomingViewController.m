@@ -13,7 +13,7 @@
 @synthesize imageView;
 @synthesize contentOffsetLabel;
 @synthesize scrollView;
-
+@synthesize contentSizeLabel;
 
 -(UIView*)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
@@ -42,6 +42,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	self.contentOffsetLabel.text = NSStringFromCGPoint(self.scrollView.contentOffset);
+	self.contentSizeLabel.text = NSStringFromCGSize(self.scrollView.contentSize);
+
 }
 
 
@@ -80,6 +82,7 @@
 	[self.scrollView zoomToRect:zoomRect animated:YES];
 	
 	self.contentOffsetLabel.text = NSStringFromCGPoint(self.scrollView.contentOffset);
+	self.contentSizeLabel.text = NSStringFromCGSize(self.scrollView.contentSize);
 }
 
 - (IBAction)x1:(id)sender
@@ -87,6 +90,7 @@
 	[self.scrollView setZoomScale:1.0 animated:YES];
 	self.scrollView.contentOffset = CGPointMake(100, 100);
 	self.contentOffsetLabel.text = NSStringFromCGPoint(self.scrollView.contentOffset);
+	self.contentSizeLabel.text = NSStringFromCGSize(self.scrollView.contentSize);
 }
 
 - (IBAction)x2:(id)sender

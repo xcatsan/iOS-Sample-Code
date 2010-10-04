@@ -13,10 +13,12 @@
 	UIImageView* imageView;
 	UIScrollView* scrollView;
 	UILabel* contentOffsetLabel;
+	UILabel* contentSizeLabel;
 }
 @property (nonatomic, retain) IBOutlet	UIImageView* imageView;
 @property (nonatomic, retain) IBOutlet 	UIScrollView* scrollView;
 @property (nonatomic, retain) IBOutlet 	UILabel* contentOffsetLabel;
+@property (nonatomic, retain) IBOutlet 	UILabel* contentSizeLabel;
 - (IBAction)x1:(id)sender;
 - (IBAction)x2:(id)sender;
 - (IBAction)x3:(id)sender;
