@@ -26,6 +26,8 @@
 		4C3763D312519BCD00DD8524 /* image08.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C3763CA12519BCD00DD8524 /* image08.jpg */; };
 		4C3763D412519BCD00DD8524 /* link.webloc in Resources */ = {isa = PBXBuildFile; fileRef = 4C3763CB12519BCD00DD8524 /* link.webloc */; };
 		4C3764541252BB5900DD8524 /* CustomImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3764531252BB5900DD8524 /* CustomImageView.m */; };
+		4CAA0681125AE7D8005A2FEF /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CAA0680125AE7D8005A2FEF /* MainWindow-iPad.xib */; };
+		4CAA0689125AF6BB005A2FEF /* EasyGalleryViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CAA0688125AF6BB005A2FEF /* EasyGalleryViewController-iPad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,8 @@
 		4C3763CB12519BCD00DD8524 /* link.webloc */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = link.webloc; sourceTree = "<group>"; };
 		4C3764521252BB5900DD8524 /* CustomImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomImageView.h; sourceTree = "<group>"; };
 		4C3764531252BB5900DD8524 /* CustomImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomImageView.m; sourceTree = "<group>"; };
+		4CAA0680125AE7D8005A2FEF /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "MainWindow-iPad.xib"; sourceTree = "<group>"; };
+		4CAA0688125AF6BB005A2FEF /* EasyGalleryViewController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "EasyGalleryViewController-iPad.xib"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* EasyGallery-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "EasyGallery-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,8 +104,10 @@
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
+				4CAA0676125AE622005A2FEF /* Resources-iPad */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				4CAA0688125AF6BB005A2FEF /* EasyGalleryViewController-iPad.xib */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -142,6 +148,14 @@
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4CAA0676125AE622005A2FEF /* Resources-iPad */ = {
+			isa = PBXGroup;
+			children = (
+				4CAA0680125AE7D8005A2FEF /* MainWindow-iPad.xib */,
+			);
+			name = "Resources-iPad";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +218,8 @@
 				4C3763D212519BCD00DD8524 /* image07.jpg in Resources */,
 				4C3763D312519BCD00DD8524 /* image08.jpg in Resources */,
 				4C3763D412519BCD00DD8524 /* link.webloc in Resources */,
+				4CAA0681125AE7D8005A2FEF /* MainWindow-iPad.xib in Resources */,
+				4CAA0689125AF6BB005A2FEF /* EasyGalleryViewController-iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,14 +245,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = EasyGallery_Prefix.pch;
 				INFOPLIST_FILE = "EasyGallery-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				PRODUCT_NAME = EasyGallery;
+				SDKROOT = iphoneos3.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -244,11 +263,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = EasyGallery_Prefix.pch;
 				INFOPLIST_FILE = "EasyGallery-Info.plist";
 				PRODUCT_NAME = EasyGallery;
+				SDKROOT = iphoneos4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

@@ -75,8 +75,8 @@ enum {
 		scrollView.frame = CGRectMake(x, 0, newSize.width, newSize.height);
 		CGSize contentSize;
 		if (scrollView == currentScrollView) {
-			contentSize.width  = newSize.width  * zoomScale;
-			contentSize.height = newSize.height * zoomScale;
+			contentSize.width  = newSize.width  * scrollView.zoomScale;
+			contentSize.height = newSize.height * scrollView.zoomScale;
 		} else {
 			contentSize = newSize;
 		}
