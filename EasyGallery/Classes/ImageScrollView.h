@@ -13,4 +13,7 @@
 
 }
 
++ (CGRect)zoomRectForScrollView:(UIScrollView *)scrollView
+					  withScale:(float)scale withCenter:(CGPoint)center;
+
 @end

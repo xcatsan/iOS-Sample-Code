@@ -47,17 +47,79 @@ enum {
 - (void)layoutScrollViews
 {
 	CGSize newSize = self.view.bounds.size;
+	CGSize oldSize = previousScrollSize_;
+	previousScrollSize_ = newSize;
+
+	// save previous contentSize
+	//--
+	ImageScrollView* currentScrollView =
+		[self.imageScrollViews objectAtIndex:kIndexOfCurrentScrollView];
+	CGSize oldContentSize = currentScrollView.contentSize;
+	CGPoint oldContentOffset = currentScrollView.contentOffset;
+
+	CGFloat zoomScale = currentScrollView.zoomScale;
+
+	// calculate ratio (center / size)
+	CGPoint oldCenter;
+	oldCenter.x = oldContentOffset.x + oldSize.width/2.0;
+	oldCenter.y = oldContentOffset.y + oldSize.height/2.0;
+
+	CGFloat ratioW = oldCenter.x / oldContentSize.width;
+	CGFloat ratioH = oldCenter.y / oldContentSize.height;
+
 	
+	// set new origin and size to imageScrollViews
+	//--
 	CGFloat x = (self.contentOffsetIndex-1) * newSize.width;
 	for (ImageScrollView* scrollView in self.imageScrollViews) {
 		scrollView.frame = CGRectMake(x, 0, newSize.width, newSize.height);
-		scrollView.contentSize = newSize;
+		CGSize contentSize;
+		if (scrollView == currentScrollView) {
+			contentSize.width  = newSize.width  * zoomScale;
+			contentSize.height = newSize.height * zoomScale;
+		} else {
+			contentSize = newSize;
+		}
+		scrollView.contentSize = contentSize;
 		x += newSize.width;
 	}
 	
+		
+	// adjust current scroll view for zooming
+	//--
+	if (zoomScale > 1.0) {
+		CGSize newContentSize = currentScrollView.contentSize;
+
+		CGPoint newCenter;
+		newCenter.x = ratioW * newContentSize.width;
+		newCenter.y = ratioH * newContentSize.height;
+
+		CGPoint newContentOffset;
+		newContentOffset.x = newCenter.x - newSize.width /2.0;
+		newContentOffset.y = newCenter.y - newSize.height/2.0;
+		currentScrollView.contentOffset = newContentOffset;
+
+		/* for debug
+		NSLog(@"oldContentSize: %@", NSStringFromCGSize(oldContentSize));
+		NSLog(@"oldOffset: %@", NSStringFromCGPoint(oldOffset));
+		NSLog(@"oldSize  : %@", NSStringFromCGSize(oldSize));
+		NSLog(@"ratio    : %f, %f", ratioW, ratioH);
+		NSLog(@"oldCenter: %@", NSStringFromCGPoint(oldCenter));
+		NSLog(@"newSize  : %@", NSStringFromCGSize(newSize));
+		NSLog(@"newCenter: %@", NSStringFromCGPoint(newCenter));
+		NSLog(@"newOffset: %@", NSStringFromCGPoint(newOffset));
+		NSLog(@"-----");
+		*/
+	}
+	
+	// adjust content size and offset of base scrollView
+	//--
 	self.scrollView.contentSize = CGSizeMake(
-											 [self.imageFiles count]*newSize.width, newSize.height);
-	self.scrollView.contentOffset = CGPointMake(self.contentOffsetIndex*newSize.width, 0);
+		[self.imageFiles count]*newSize.width, newSize.height);
+
+	self.scrollView.contentOffset = CGPointMake(
+		self.contentOffsetIndex*newSize.width, 0);
+
 }
 
 
@@ -136,8 +198,6 @@ enum {
 {
 	[self layoutScrollViews];
 }
-
-
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.

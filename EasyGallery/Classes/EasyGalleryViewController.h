@@ -17,7 +17,8 @@
 	NSInteger contentOffsetIndex_;
 
 	NSMutableArray* imageScrollViews_;
-	
+
+	CGSize previousScrollSize_;
 }
 
 @property (nonatomic, retain) IBOutlet 	NSMutableArray* imageFiles;

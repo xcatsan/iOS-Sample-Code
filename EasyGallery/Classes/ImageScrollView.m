@@ -27,7 +27,7 @@
 }
 
 
-- (CGRect)zoomRectForScrollView:(UIScrollView *)scrollView
++ (CGRect)zoomRectForScrollView:(UIScrollView *)scrollView
 					  withScale:(float)scale withCenter:(CGPoint)center {
 	
     CGRect zoomRect;
@@ -47,12 +47,14 @@
 		if (self.zoomScale > 1.0) {
 			zoomRect = self.bounds;
 		} else {
-			zoomRect = [self zoomRectForScrollView:self
-										 withScale:2.0
-										withCenter:[touch locationInView:nil]];
+			zoomRect = [ImageScrollView zoomRectForScrollView:self
+													withScale:2.0
+												   withCenter:[touch locationInView:self]];
 		}
 		[self zoomToRect:zoomRect animated:YES];
 	}
+	
+//		NSLog(@"offset: %@", NSStringFromCGPoint(self.contentOffset));
 }
 
 @end

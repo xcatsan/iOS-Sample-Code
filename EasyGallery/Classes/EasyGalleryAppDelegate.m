@@ -25,7 +25,7 @@
 	NSMutableArray* array = [NSMutableArray array];
 	for (int i=0; i < 8; i++) {
 		[array addObject:[NSString stringWithFormat:@"%@/image%02d.jpg", path, i+1]];
-		NSLog(@"%@", [NSString stringWithFormat:@"%@/image%02d.jpg", path, i+1]);
+//		NSLog(@"%@", [NSString stringWithFormat:@"%@/image%02d.jpg", path, i+1]);
 	}
 	viewController.imageFiles = array;
 
