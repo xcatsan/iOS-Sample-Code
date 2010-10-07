@@ -9,6 +9,8 @@
 #import "EasyGalleryViewController.h"
 #import "ImageScrollView.h"
 
+#define DEFAULT_SPACE_WIDTH	40
+
 enum {
 	kIndexOfPreviousScrollView = 0,
 	kIndexOfCurrentScrollView,
@@ -49,6 +51,8 @@ enum {
 	CGSize newSize = self.view.bounds.size;
 	CGSize oldSize = previousScrollSize_;
 	previousScrollSize_ = newSize;
+	CGSize newSizeWithSpace = newSize;
+	newSizeWithSpace.width += spaceWidth_;
 
 	// save previous contentSize
 	//--
@@ -70,8 +74,11 @@ enum {
 	
 	// set new origin and size to imageScrollViews
 	//--
-	CGFloat x = (self.contentOffsetIndex-1) * newSize.width;
+	CGFloat x = (self.contentOffsetIndex-1) * newSizeWithSpace.width;
 	for (ImageScrollView* scrollView in self.imageScrollViews) {
+		
+		x += spaceWidth_/2.0;	// left space
+
 		scrollView.frame = CGRectMake(x, 0, newSize.width, newSize.height);
 		CGSize contentSize;
 		if (scrollView == currentScrollView) {
@@ -82,6 +89,7 @@ enum {
 		}
 		scrollView.contentSize = contentSize;
 		x += newSize.width;
+		x += spaceWidth_/2.0;	// right space
 	}
 	
 		
@@ -115,10 +123,10 @@ enum {
 	// adjust content size and offset of base scrollView
 	//--
 	self.scrollView.contentSize = CGSizeMake(
-		[self.imageFiles count]*newSize.width, newSize.height);
+		[self.imageFiles count]*newSizeWithSpace.width, newSize.height);
 
 	self.scrollView.contentOffset = CGPointMake(
-		self.contentOffsetIndex*newSize.width, 0);
+		self.contentOffsetIndex*newSizeWithSpace.width, 0);
 
 }
 
@@ -128,6 +136,8 @@ enum {
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	spaceWidth_ = DEFAULT_SPACE_WIDTH;
 	
 	// setup internal scroll views
 	CGRect imageScrollViewFrame = CGRectZero;
@@ -142,6 +152,7 @@ enum {
 	for (int i=0; i < kMaxOfScrollView; i++) {
 
 		// image view
+		//--------------
 		UIImageView* imageView =
 			[[UIImageView alloc] initWithFrame:imageViewFrame];
 		imageView.autoresizingMask =
@@ -153,6 +164,10 @@ enum {
 			UIViewAutoresizingFlexibleBottomMargin;
 		
 		// scroll view
+		//--------------
+		// left space
+		imageScrollViewFrame.origin.x += spaceWidth_/2.0;
+		
 		ImageScrollView* imageScrollView =
 			[[ImageScrollView alloc] initWithFrame:imageScrollViewFrame];
 		imageScrollView.minimumZoomScale = 1.0;
@@ -177,15 +192,25 @@ enum {
 
 		// next image
 		imageScrollViewFrame.origin.x += imageScrollViewFrame.size.width;
+
+		// right space
+		imageScrollViewFrame.origin.x += spaceWidth_/2.0;
 	}
 	
 	// setup base scroll view
+	//-------------------------
 	self.scrollView.pagingEnabled = YES;
 	self.scrollView.showsHorizontalScrollIndicator = NO;
 	self.scrollView.showsVerticalScrollIndicator = NO;
 	self.scrollView.scrollsToTop = NO;
-
+	CGRect scrollViewFrame = self.scrollView.frame;
+	scrollViewFrame.origin.x -= spaceWidth_/2.0;
+	scrollViewFrame.size.width += spaceWidth_;
+	self.scrollView.frame = scrollViewFrame;
+	
+	
 	// final init
+	//-------------------------
 	[self layoutScrollViews];
 }
 
@@ -236,7 +261,7 @@ enum {
 	[self.imageScrollViews addObject:currentScrollView];
 
 	CGRect frame = previousScrollView.frame;
-	frame.origin.x -= frame.size.width;
+	frame.origin.x -= frame.size.width + spaceWidth_;
 	nextScrollView.frame = frame;
 	[self setImageAtIndex:self.currentImageIndex-1 toScrollView:nextScrollView];
 }
@@ -256,7 +281,7 @@ enum {
 	[self.imageScrollViews addObject:previousScrollView];
 	
 	CGRect frame = nextScrollView.frame;
-	frame.origin.x += frame.size.width;
+	frame.origin.x += frame.size.width + spaceWidth_;
 	previousScrollView.frame = frame;
 	[self setImageAtIndex:self.currentImageIndex+1 toScrollView:previousScrollView];
 }

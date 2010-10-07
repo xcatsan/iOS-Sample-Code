@@ -19,6 +19,8 @@
 	NSMutableArray* imageScrollViews_;
 
 	CGSize previousScrollSize_;
+	
+	CGFloat spaceWidth_;
 }
 
 @property (nonatomic, retain) IBOutlet 	NSMutableArray* imageFiles;
