@@ -23,17 +23,19 @@
 }
 */
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-#define SPACE_WIDTH 40
+#define SPACE_WIDTH 20
 #define NUMBER_OF_VIEWS 5
 - (void)viewDidLoad {
     [super viewDidLoad];
 
 	CGRect scrollViewFrame = self.scrollView.frame;
+	CGSize scrollViewSize = scrollViewFrame.size;
 	scrollViewFrame.origin.x -= SPACE_WIDTH/2;
 	scrollViewFrame.size.width += SPACE_WIDTH;
 	self.scrollView.frame = scrollViewFrame;
-	self.scrollView.contentSize = CGSizeMake((320+SPACE_WIDTH)*NUMBER_OF_VIEWS, 460);
+	self.scrollView.contentSize = CGSizeMake((scrollViewSize.width+SPACE_WIDTH)*NUMBER_OF_VIEWS, scrollViewSize.height);
 	self.scrollView.pagingEnabled = YES;
+	self.scrollView.clipsToBounds = NO;
 
 	CGFloat x = 0;
 
@@ -43,7 +45,7 @@
 		x += SPACE_WIDTH/2.0;
 
 		// content
-		CGRect rect = CGRectMake(x, 0, 320, 460);
+		CGRect rect = CGRectMake(x, 0, scrollViewSize.width, scrollViewSize.height);
 		CustomView* view = [[[CustomView alloc] initWithFrame:rect] autorelease];
 		[self.scrollView addSubview:view];
 		x += rect.size.width;
@@ -78,16 +80,5 @@
 - (void)dealloc {
     [super dealloc];
 }
-
-#pragma mark -
-#pragma mark UIScrollViewDelegate
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-{
-/*	CGPoint contentOffset = scrollView.contentOffset;
-	contentOffset.x += (self.contentOffsetIndex+1)*SPACE_BETWEEN_IMAGES*scrollView.zoomScale;
-	[UIView beginAnimations:nil context:nil];
-	scrollView.contentOffset = contentOffset;
-	[UIView commitAnimations];
-*/}
 
 @end
