@@ -15,7 +15,7 @@
 		2899E5220DE3E06400AC0155 /* EasyGalleryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* EasyGalleryViewController.xib */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* EasyGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* EasyGalleryViewController.m */; };
-		4C08CD071259455F00D59F03 /* ImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C08CD061259455F00D59F03 /* ImageScrollView.m */; };
+		4C08CD071259455F00D59F03 /* XCGalleryInerScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C08CD061259455F00D59F03 /* XCGalleryInerScrollView.m */; };
 		4C3763CC12519BCD00DD8524 /* image01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C3763C312519BCC00DD8524 /* image01.jpg */; };
 		4C3763CD12519BCD00DD8524 /* image02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C3763C412519BCD00DD8524 /* image02.jpg */; };
 		4C3763CE12519BCD00DD8524 /* image03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C3763C512519BCD00DD8524 /* image03.jpg */; };
@@ -25,6 +25,7 @@
 		4C3763D212519BCD00DD8524 /* image07.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C3763C912519BCD00DD8524 /* image07.jpg */; };
 		4C3763D312519BCD00DD8524 /* image08.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C3763CA12519BCD00DD8524 /* image08.jpg */; };
 		4C3763D412519BCD00DD8524 /* link.webloc in Resources */ = {isa = PBXBuildFile; fileRef = 4C3763CB12519BCD00DD8524 /* link.webloc */; };
+		4C37F9B3125D90BE002834A9 /* XCGalleryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C37F9B2125D90BE002834A9 /* XCGalleryView.m */; };
 		4CAA0681125AE7D8005A2FEF /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CAA0680125AE7D8005A2FEF /* MainWindow-iPad.xib */; };
 		4CAA0689125AF6BB005A2FEF /* EasyGalleryViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CAA0688125AF6BB005A2FEF /* EasyGalleryViewController-iPad.xib */; };
 /* End PBXBuildFile section */
@@ -42,8 +43,8 @@
 		28D7ACF70DDB3853001CB0EB /* EasyGalleryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyGalleryViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* EasyGallery_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyGallery_Prefix.pch; sourceTree = "<group>"; };
-		4C08CD051259455F00D59F03 /* ImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageScrollView.h; sourceTree = "<group>"; };
-		4C08CD061259455F00D59F03 /* ImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageScrollView.m; sourceTree = "<group>"; };
+		4C08CD051259455F00D59F03 /* XCGalleryInerScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCGalleryInerScrollView.h; sourceTree = "<group>"; };
+		4C08CD061259455F00D59F03 /* XCGalleryInerScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCGalleryInerScrollView.m; sourceTree = "<group>"; };
 		4C3763C312519BCC00DD8524 /* image01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image01.jpg; sourceTree = "<group>"; };
 		4C3763C412519BCD00DD8524 /* image02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image02.jpg; sourceTree = "<group>"; };
 		4C3763C512519BCD00DD8524 /* image03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image03.jpg; sourceTree = "<group>"; };
@@ -53,6 +54,8 @@
 		4C3763C912519BCD00DD8524 /* image07.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image07.jpg; sourceTree = "<group>"; };
 		4C3763CA12519BCD00DD8524 /* image08.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image08.jpg; sourceTree = "<group>"; };
 		4C3763CB12519BCD00DD8524 /* link.webloc */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = link.webloc; sourceTree = "<group>"; };
+		4C37F9B1125D90BE002834A9 /* XCGalleryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCGalleryView.h; sourceTree = "<group>"; };
+		4C37F9B2125D90BE002834A9 /* XCGalleryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCGalleryView.m; sourceTree = "<group>"; };
 		4CAA0680125AE7D8005A2FEF /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		4CAA0688125AF6BB005A2FEF /* EasyGalleryViewController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "EasyGalleryViewController-iPad.xib"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* EasyGallery-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "EasyGallery-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
@@ -75,12 +78,11 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				4C37FB1E125DAEA5002834A9 /* XCGallery */,
 				1D3623240D0F684500981E51 /* EasyGalleryAppDelegate.h */,
 				1D3623250D0F684500981E51 /* EasyGalleryAppDelegate.m */,
 				28D7ACF60DDB3853001CB0EB /* EasyGalleryViewController.h */,
 				28D7ACF70DDB3853001CB0EB /* EasyGalleryViewController.m */,
-				4C08CD051259455F00D59F03 /* ImageScrollView.h */,
-				4C08CD061259455F00D59F03 /* ImageScrollView.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -143,6 +145,17 @@
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4C37FB1E125DAEA5002834A9 /* XCGallery */ = {
+			isa = PBXGroup;
+			children = (
+				4C37F9B1125D90BE002834A9 /* XCGalleryView.h */,
+				4C37F9B2125D90BE002834A9 /* XCGalleryView.m */,
+				4C08CD051259455F00D59F03 /* XCGalleryInerScrollView.h */,
+				4C08CD061259455F00D59F03 /* XCGalleryInerScrollView.m */,
+			);
+			name = XCGallery;
 			sourceTree = "<group>";
 		};
 		4CAA0676125AE622005A2FEF /* Resources-iPad */ = {
@@ -228,7 +241,8 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* EasyGalleryAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* EasyGalleryViewController.m in Sources */,
-				4C08CD071259455F00D59F03 /* ImageScrollView.m in Sources */,
+				4C08CD071259455F00D59F03 /* XCGalleryInerScrollView.m in Sources */,
+				4C37F9B3125D90BE002834A9 /* XCGalleryView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

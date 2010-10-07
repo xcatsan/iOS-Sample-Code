@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface ImageScrollView : UIScrollView <UIScrollViewDelegate> {
+@interface XCGalleryInerScrollView : UIScrollView <UIScrollViewDelegate> {
 
 }
 

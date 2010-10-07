@@ -6,10 +6,10 @@
 //  Copyright 2010 . All rights reserved.
 //
 
-#import "ImageScrollView.h"
+#import "XCGalleryInerScrollView.h"
 
 
-@implementation ImageScrollView
+@implementation XCGalleryInerScrollView
 
 -(UIView*)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
@@ -47,7 +47,7 @@
 		if (self.zoomScale > 1.0) {
 			zoomRect = self.bounds;
 		} else {
-			zoomRect = [ImageScrollView zoomRectForScrollView:self
+			zoomRect = [XCGalleryInerScrollView zoomRectForScrollView:self
 													withScale:2.0
 												   withCenter:[touch locationInView:self]];
 		}

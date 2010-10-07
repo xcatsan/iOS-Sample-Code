@@ -7,29 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XCGalleryView.h"
 
-@interface EasyGalleryViewController : UIViewController {
+@interface EasyGalleryViewController : UIViewController <XCGalleryViewDelegate> {
 
 	NSMutableArray* imageFiles_;
-	NSInteger currentImageIndex_;
-
-	UIScrollView* scrollView_;
-	NSInteger contentOffsetIndex_;
-
-	NSMutableArray* imageScrollViews_;
-
-	CGSize previousScrollSize_;
-	
-	CGFloat spaceWidth_;
 }
 
-@property (nonatomic, retain) IBOutlet 	NSMutableArray* imageFiles;
-@property (nonatomic, assign) NSInteger currentImageIndex;
-
-@property (nonatomic, retain) IBOutlet UIScrollView* scrollView;
-@property (nonatomic, assign) NSInteger contentOffsetIndex;
-
-@property (nonatomic, retain) NSMutableArray* imageScrollViews;
+@property (nonatomic, retain) NSMutableArray* imageFiles;
 
 
 @end
