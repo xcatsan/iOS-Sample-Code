@@ -7,7 +7,7 @@
 //
 
 #import "XCGalleryView.h"
-#import "XCGalleryInerScrollView.h"
+#import "XCGalleryInnerScrollView.h"
 
 #define DEFAULT_SPACE_WIDTH	40
 
@@ -34,7 +34,7 @@ enum {
 	UIImageView* imageView = [scrollView.subviews objectAtIndex:0];
 	if (index < 0 || [self.delegate numberViewsInGallery:self] <= index) {
 		imageView.image = nil;
-		scrollView.delegate = nil;
+//		scrollView.delegate = nil;
 		return;
 	}
 	
@@ -59,7 +59,7 @@ enum {
 	
 	// save previous contentSize
 	//--
-	XCGalleryInerScrollView* currentScrollView =
+	XCGalleryInnerScrollView* currentScrollView =
 	[self.imageScrollViews objectAtIndex:kIndexOfCurrentScrollView];
 	CGSize oldContentSize = currentScrollView.contentSize;
 	CGPoint oldContentOffset = currentScrollView.contentOffset;
@@ -78,7 +78,7 @@ enum {
 	// set new origin and size to imageScrollViews
 	//--
 	CGFloat x = (self.contentOffsetIndex-1) * newSizeWithSpace.width;
-	for (XCGalleryInerScrollView* scrollView in self.imageScrollViews) {
+	for (XCGalleryInnerScrollView* scrollView in self.imageScrollViews) {
 		
 		x += spaceWidth_/2.0;	// left space
 		
@@ -139,10 +139,22 @@ enum {
 - (void)setupSubViews
 {
 	spaceWidth_ = DEFAULT_SPACE_WIDTH;
-
+	
+	// setup self view
+	//-------------------------
+	self.autoresizingMask =
+		UIViewAutoresizingFlexibleLeftMargin  |
+		UIViewAutoresizingFlexibleWidth       |
+		UIViewAutoresizingFlexibleRightMargin |
+		UIViewAutoresizingFlexibleTopMargin   |
+		UIViewAutoresizingFlexibleHeight      |
+		UIViewAutoresizingFlexibleBottomMargin;
+	self.clipsToBounds = YES;
+	
+	
 	// setup base scroll view
 	//-------------------------
-	self.scrollView = [[[UIScrollView alloc] initWithFrame:self.frame] autorelease];
+	self.scrollView = [[[UIScrollView alloc] initWithFrame:self.bounds] autorelease];
 	self.scrollView.delegate = self;
 	self.scrollView.pagingEnabled = YES;
 	self.scrollView.showsHorizontalScrollIndicator = NO;
@@ -161,21 +173,20 @@ enum {
 
 	// setup internal scroll views
 	//------------------------------
-	CGRect imageScrollViewFrame = CGRectZero;
-	imageScrollViewFrame.size = self.scrollView.bounds.size;
-	imageScrollViewFrame.origin.x = (self.contentOffsetIndex-1) * imageScrollViewFrame.size.width;
-	
+	CGRect innerScrollViewFrame = CGRectZero;
+	innerScrollViewFrame.size = self.scrollView.bounds.size;
+	innerScrollViewFrame.origin.x = (self.contentOffsetIndex-1) * innerScrollViewFrame.size.width;
 	self.imageScrollViews = [NSMutableArray array];
 	
 	CGRect imageViewFrame = CGRectZero;
 	imageViewFrame.size = self.scrollView.bounds.size;
 	
 	for (int i=0; i < kMaxOfScrollView; i++) {
-		
+
 		// image view
 		//--------------
 		UIImageView* imageView =
-		[[UIImageView alloc] initWithFrame:imageViewFrame];
+			[[UIImageView alloc] initWithFrame:imageViewFrame];
 		imageView.autoresizingMask =
 			UIViewAutoresizingFlexibleLeftMargin  |
 			UIViewAutoresizingFlexibleWidth       |
@@ -186,36 +197,25 @@ enum {
 		
 		// scroll view
 		//--------------
-		// left space
-		imageScrollViewFrame.origin.x += spaceWidth_/2.0;
+		innerScrollViewFrame.origin.x += spaceWidth_/2.0;	// left space
 		
-		XCGalleryInerScrollView* imageScrollView =
-		[[XCGalleryInerScrollView alloc] initWithFrame:imageScrollViewFrame];
-		imageScrollView.minimumZoomScale = 1.0;
-		imageScrollView.maximumZoomScale = 5.0;
-		imageScrollView.showsHorizontalScrollIndicator = NO;
-		imageScrollView.showsVerticalScrollIndicator = NO;
-		imageScrollView.backgroundColor = [UIColor blackColor];
-		
-		// bind views
-		[imageScrollView addSubview:imageView];
-		[self.scrollView addSubview:imageScrollView];
-		
-		// store scrollViews
-		[self.imageScrollViews addObject:imageScrollView];
+		XCGalleryInnerScrollView* innerScrollView =
+			[[XCGalleryInnerScrollView alloc] initWithFrame:innerScrollViewFrame];
+		innerScrollView.backgroundColor = self.backgroundColor;
+
+		// bind & store views
+		[innerScrollView addSubview:imageView];
+		[self.scrollView addSubview:innerScrollView];
+		[self.imageScrollViews addObject:innerScrollView];
 		
 		// release all
 		[imageView release];
-		[imageScrollView release];
-		
-		// setup initial image
-		[self setImageAtIndex:i-1 toScrollView:imageScrollView];
-		
-		// next image
-		imageScrollViewFrame.origin.x += imageScrollViewFrame.size.width;
-		
-		// right space
-		imageScrollViewFrame.origin.x += spaceWidth_/2.0;
+		[innerScrollView release];
+
+		// adust origin.x
+		innerScrollViewFrame.origin.x += innerScrollViewFrame.size.width;
+		innerScrollViewFrame.origin.x += spaceWidth_/2.0;	// right space
+
 	}
 	
 }	
@@ -261,6 +261,7 @@ enum {
 
 - (id)initWithFrame:(CGRect)frame {
     if ((self = [super initWithFrame:frame])) {
+		self.backgroundColor = [UIColor blackColor];	// default
 		[self setupSubViews];
     }
     return self;
@@ -286,18 +287,18 @@ enum {
 
 -(void)setupPreviousImage
 {
-	XCGalleryInerScrollView* previousScrollView =
+	XCGalleryInnerScrollView* previousScrollView =
 		[self.imageScrollViews objectAtIndex:kIndexOfPreviousScrollView];
-	XCGalleryInerScrollView* currentScrollView =
+	XCGalleryInnerScrollView* currentScrollView =
 		[self.imageScrollViews objectAtIndex:kIndexOfCurrentScrollView];
-	XCGalleryInerScrollView* nextScrollView =
+	XCGalleryInnerScrollView* nextScrollView =
 		[self.imageScrollViews objectAtIndex:kIndexOfNextScrollView];
 	
 	[self.imageScrollViews removeAllObjects];
 	[self.imageScrollViews addObject:nextScrollView];
 	[self.imageScrollViews addObject:previousScrollView];
 	[self.imageScrollViews addObject:currentScrollView];
-	
+
 	CGRect frame = previousScrollView.frame;
 	frame.origin.x -= frame.size.width + spaceWidth_;
 	nextScrollView.frame = frame;
@@ -306,18 +307,18 @@ enum {
 
 -(void)setupNextImage
 {
-	XCGalleryInerScrollView* previousScrollView =
+	XCGalleryInnerScrollView* previousScrollView =
 		[self.imageScrollViews objectAtIndex:kIndexOfPreviousScrollView];
-	XCGalleryInerScrollView* currentScrollView =
+	XCGalleryInnerScrollView* currentScrollView =
 		[self.imageScrollViews objectAtIndex:kIndexOfCurrentScrollView];
-	XCGalleryInerScrollView* nextScrollView =
+	XCGalleryInnerScrollView* nextScrollView =
 		[self.imageScrollViews objectAtIndex:kIndexOfNextScrollView];
 	
 	[self.imageScrollViews removeAllObjects];
 	[self.imageScrollViews addObject:currentScrollView];
 	[self.imageScrollViews addObject:nextScrollView];
 	[self.imageScrollViews addObject:previousScrollView];
-	
+
 	CGRect frame = nextScrollView.frame;
 	frame.origin.x += frame.size.width + spaceWidth_;
 	previousScrollView.frame = frame;
@@ -333,7 +334,7 @@ enum {
 	CGFloat delta = position - (CGFloat)self.currentImageIndex;
 	
 	if (fabs(delta) >= 1.0f) {
-		XCGalleryInerScrollView* currentScrollView =
+		XCGalleryInnerScrollView* currentScrollView =
 		[self.imageScrollViews objectAtIndex:kIndexOfCurrentScrollView];
 		currentScrollView.zoomScale = 1.0;
 		currentScrollView.contentOffset = CGPointZero;

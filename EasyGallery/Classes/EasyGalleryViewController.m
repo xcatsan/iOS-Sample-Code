@@ -7,7 +7,7 @@
 //
 
 #import "EasyGalleryViewController.h"
-#import "XCImageScrollView.h"
+#import "XCGalleryInnerScrollView.h"
 
 #define DEFAULT_SPACE_WIDTH	40
 

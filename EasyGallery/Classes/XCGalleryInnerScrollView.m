@@ -6,10 +6,10 @@
 //  Copyright 2010 . All rights reserved.
 //
 
-#import "XCGalleryInerScrollView.h"
+#import "XCGalleryInnerScrollView.h"
 
 
-@implementation XCGalleryInerScrollView
+@implementation XCGalleryInnerScrollView
 
 -(UIView*)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
@@ -22,6 +22,12 @@
 	if (self = [super initWithFrame:frame]) {
 //		[self setUserInteractionEnabled:YES];
 		self.delegate = self;
+		self.minimumZoomScale = 1.0;
+		self.maximumZoomScale = 5.0;
+		self.showsHorizontalScrollIndicator = NO;
+		self.showsVerticalScrollIndicator = NO;
+		self.backgroundColor = [UIColor blackColor];
+		
 	}
 	return self;
 }
@@ -47,7 +53,7 @@
 		if (self.zoomScale > 1.0) {
 			zoomRect = self.bounds;
 		} else {
-			zoomRect = [XCGalleryInerScrollView zoomRectForScrollView:self
+			zoomRect = [XCGalleryInnerScrollView zoomRectForScrollView:self
 													withScale:2.0
 												   withCenter:[touch locationInView:self]];
 		}
