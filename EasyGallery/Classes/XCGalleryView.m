@@ -14,12 +14,9 @@
 #define DEFAULT_MARGIN_HEIGHT	10
 #define DEFAULT_MARGIN_WIDTH_RATE	0.2
 
-enum {
-	kIndexOfPreviousScrollView = 0,
-	kIndexOfCurrentScrollView,
-	kIndexOfNextScrollView,
-	kMaxOfScrollView
-};
+#define kMaxOfScrollView			5
+#define kLengthFromCetner			((kMaxOfScrollView-1)/2)
+#define kIndexOfCurrentScrollView	(kLengthFromCetner+1)
 
 @implementation XCGalleryView
 
@@ -60,7 +57,7 @@ enum {
 	}
 	
 	for (int index=0; index < kMaxOfScrollView; index++) {
-		[self setImageAtIndex:self.currentImageIndex+index-1
+		[self setImageAtIndex:self.currentImageIndex+index-kLengthFromCetner
 				 toScrollView:[self.imageScrollViews objectAtIndex:index]];
 	}
 }
@@ -129,7 +126,7 @@ enum {
 	//------------------------------
 	CGRect innerScrollViewFrame = CGRectZero;
 	innerScrollViewFrame.size = baseFrame.size;
-	innerScrollViewFrame.origin.x = -1 * innerScrollViewFrame.size.width;
+	innerScrollViewFrame.origin.x = -kLengthFromCetner * innerScrollViewFrame.size.width;
 	if (self.showcaseModeEnabled) {
 		innerScrollViewFrame.origin.x -= spacing_.width;
 	}
@@ -230,7 +227,7 @@ enum {
 	
 	// set new origin and size to imageScrollViews
 	//--
-	CGFloat x = (self.contentOffsetIndex-1) * newSizeWithSpace.width;
+	CGFloat x = (self.contentOffsetIndex-kLengthFromCetner) * newSizeWithSpace.width;
 	for (XCGalleryInnerScrollView* scrollView in self.imageScrollViews) {
 
 		x += spacing_.width/2.0;	// left space
@@ -319,12 +316,6 @@ enum {
     return self;
 }
 
-/*
- - (void)awakeFromNib
- {
- [self setupSubViews];
- }
- */
 
 - (void)dealloc {
 	self.scrollView = nil;
@@ -339,42 +330,34 @@ enum {
 
 -(void)setupPreviousImage
 {
-	XCGalleryInnerScrollView* previousScrollView =
-		[self.imageScrollViews objectAtIndex:kIndexOfPreviousScrollView];
-	XCGalleryInnerScrollView* currentScrollView =
-		[self.imageScrollViews objectAtIndex:kIndexOfCurrentScrollView];
-	XCGalleryInnerScrollView* nextScrollView =
-		[self.imageScrollViews objectAtIndex:kIndexOfNextScrollView];
-	
-	[self.imageScrollViews removeAllObjects];
-	[self.imageScrollViews addObject:nextScrollView];
-	[self.imageScrollViews addObject:previousScrollView];
-	[self.imageScrollViews addObject:currentScrollView];
+	XCGalleryInnerScrollView* rightView =
+		[self.imageScrollViews objectAtIndex:kMaxOfScrollView-1];
+	XCGalleryInnerScrollView* leftView = [self.imageScrollViews objectAtIndex:0];
 
-	CGRect frame = previousScrollView.frame;
+	CGRect frame = leftView.frame;
 	frame.origin.x -= frame.size.width + spacing_.width;
-	nextScrollView.frame = frame;
-	[self setImageAtIndex:self.currentImageIndex-1 toScrollView:nextScrollView];
+	rightView.frame = frame;
+
+	[self.imageScrollViews removeObjectAtIndex:kMaxOfScrollView-1];
+	[self.imageScrollViews insertObject:rightView atIndex:0];
+	[self setImageAtIndex:self.currentImageIndex-kLengthFromCetner toScrollView:rightView];
+	
 }
 
 -(void)setupNextImage
 {
-	XCGalleryInnerScrollView* previousScrollView =
-		[self.imageScrollViews objectAtIndex:kIndexOfPreviousScrollView];
-	XCGalleryInnerScrollView* currentScrollView =
-		[self.imageScrollViews objectAtIndex:kIndexOfCurrentScrollView];
-	XCGalleryInnerScrollView* nextScrollView =
-		[self.imageScrollViews objectAtIndex:kIndexOfNextScrollView];
+	XCGalleryInnerScrollView* rightView =
+		[self.imageScrollViews objectAtIndex:kMaxOfScrollView-1];
+	XCGalleryInnerScrollView* leftView = [self.imageScrollViews objectAtIndex:0];
 	
-	[self.imageScrollViews removeAllObjects];
-	[self.imageScrollViews addObject:currentScrollView];
-	[self.imageScrollViews addObject:nextScrollView];
-	[self.imageScrollViews addObject:previousScrollView];
-
-	CGRect frame = nextScrollView.frame;
+	CGRect frame = rightView.frame;
 	frame.origin.x += frame.size.width + spacing_.width;
-	previousScrollView.frame = frame;
-	[self setImageAtIndex:self.currentImageIndex+1 toScrollView:previousScrollView];
+	leftView.frame = frame;
+	
+	[self.imageScrollViews removeObjectAtIndex:0];
+	[self.imageScrollViews addObject:leftView];
+	[self setImageAtIndex:self.currentImageIndex+kLengthFromCetner toScrollView:leftView];
+	
 }
 
 
@@ -409,6 +392,5 @@ enum {
 	}
 	
 }
-
 
 @end
