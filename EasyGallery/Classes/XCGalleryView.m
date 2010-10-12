@@ -11,8 +11,8 @@
 
 #define DEFAULT_SPACING_WIDTH	40
 #define DEFAULT_SPACING_HEIGHT	0
-#define DEFAULT_MARGIN_WIDTH	40
 #define DEFAULT_MARGIN_HEIGHT	10
+#define DEFAULT_MARGIN_WIDTH_RATE	0.2
 
 enum {
 	kIndexOfPreviousScrollView = 0,
@@ -82,13 +82,12 @@ enum {
 
 - (void)setupSubViews
 {	
-	NSLog(@"self: %@", NSStringFromCGRect(self.frame));
-	
 	// initialize vars
 	self.viewSpacing = CGSizeMake(
 								  DEFAULT_SPACING_WIDTH, DEFAULT_SPACING_HEIGHT);
 	self.showcaseMargin = CGSizeMake(
-									 DEFAULT_MARGIN_WIDTH, DEFAULT_MARGIN_HEIGHT);
+									 (int)(self.bounds.size.width * DEFAULT_MARGIN_WIDTH_RATE),
+									 DEFAULT_MARGIN_HEIGHT);
 	[self setupSpacingAndMarginAndClips];
 	
 	// setup self view
@@ -110,7 +109,6 @@ enum {
 	baseFrame = CGRectInset(baseFrame, margin_.width, margin_.height);
 	
 	self.scrollView = [[[UIScrollView alloc] initWithFrame:baseFrame] autorelease];
-	NSLog(@"scrollView1: %@", NSStringFromCGRect(self.scrollView.frame));
 	
 	self.scrollView.delegate = self;
 	self.scrollView.pagingEnabled = YES;
@@ -124,12 +122,6 @@ enum {
 	self.scrollView.autoresizingMask =
 		UIViewAutoresizingFlexibleWidth |
 		UIViewAutoresizingFlexibleHeight;
-	
-	NSLog(@"scrollView2: %@", NSStringFromCGRect(self.scrollView.frame));
-
-	// DEBUG:
-	//self.backgroundColor = [UIColor blueColor];
-	//self.scrollView.backgroundColor = [UIColor redColor];
 	
 	[self addSubview:self.scrollView];
 	
@@ -146,11 +138,8 @@ enum {
 	
 	CGRect imageViewFrame = CGRectZero;
 	imageViewFrame.size = innerScrollViewFrame.size;
-	// DEBUG
-	NSLog(@"imageViewFrame: %@", NSStringFromCGRect(imageViewFrame));
 	
 	for (int i=0; i < kMaxOfScrollView; i++) {
-		NSLog(@"innerScrollViewFrame: %@", NSStringFromCGRect(innerScrollViewFrame));
 		
 		// image view
 		//--------------
@@ -164,7 +153,7 @@ enum {
 			UIViewAutoresizingFlexibleHeight      |
 			UIViewAutoresizingFlexibleBottomMargin;
 
-		//		imageView.contentMode = UIViewContentModeScaleAspectFit;
+		imageView.contentMode = UIViewContentModeScaleAspectFit;
 
 		// scroll view
 		//--------------
@@ -219,11 +208,7 @@ enum {
 
 	previousScrollSize_ = newSize;
 	CGSize newSizeWithSpace = newSize;
-	if (self.showcaseModeEnabled) {
-		newSizeWithSpace.width += spacing_.width;
-	} else {
-		newSizeWithSpace.width += spacing_.width;
-	}
+	newSizeWithSpace.width += spacing_.width;
 	
 	// save previous contentSize
 	//--
@@ -251,7 +236,6 @@ enum {
 		x += spacing_.width/2.0;	// left space
 		
 		scrollView.frame = CGRectMake(x, 0, newSize.width, newSize.height);
-		NSLog(@"scrollView[layouting]: %@", NSStringFromCGRect(scrollView.frame));
 		CGSize contentSize;
 		if (scrollView == currentScrollView) {
 			contentSize.width  = newSize.width  * scrollView.zoomScale;
@@ -279,7 +263,7 @@ enum {
 		newContentOffset.y = newCenter.y - newSize.height/2.0;
 		currentScrollView.contentOffset = newContentOffset;
 
-		/*
+		/* DEBUG
 		NSLog(@"oldContentSize  : %@", NSStringFromCGSize(oldContentSize));
 		NSLog(@"oldContentOffset: %@", NSStringFromCGPoint(oldContentOffset));
 		NSLog(@"ratio           : %f, %f", ratioW, ratioH);
@@ -289,9 +273,6 @@ enum {
 		NSLog(@"-----");
 		 */
 	}
-	NSLog(@"oldSize         : %@", NSStringFromCGSize(oldSize));
-	NSLog(@"newSize         : %@", NSStringFromCGSize(newSize));
-	NSLog(@"scrollView.frame: %@", NSStringFromCGRect(self.scrollView.frame));
 	
 	// adjust content size and offset of base scrollView
 	//--
@@ -300,8 +281,14 @@ enum {
 		newSize.height);
 	self.scrollView.contentOffset = CGPointMake(
 		self.contentOffsetIndex*newSizeWithSpace.width, 0);
-	NSLog(@"newSizeWithSpace:%@", NSStringFromCGSize(newSizeWithSpace));
-	NSLog(@"scrollView.contentOffset: %@", NSStringFromCGPoint(self.scrollView.contentOffset));
+
+	/* DEBUG
+	 NSLog(@"oldSize         : %@", NSStringFromCGSize(oldSize));
+	 NSLog(@"newSize         : %@", NSStringFromCGSize(newSize));
+	 NSLog(@"scrollView.frame: %@", NSStringFromCGRect(self.scrollView.frame));
+	 NSLog(@"newSizeWithSpace:%@", NSStringFromCGSize(newSizeWithSpace));
+	 NSLog(@"scrollView.contentOffset: %@", NSStringFromCGPoint(self.scrollView.contentOffset))	 */
+;
 }
 
 
