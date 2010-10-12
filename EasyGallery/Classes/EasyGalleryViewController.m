@@ -9,8 +9,6 @@
 #import "EasyGalleryViewController.h"
 #import "XCGalleryInnerScrollView.h"
 
-#define DEFAULT_SPACE_WIDTH	40
-
 enum {
 	kIndexOfPreviousScrollView = 0,
 	kIndexOfCurrentScrollView,
@@ -21,7 +19,7 @@ enum {
 @implementation EasyGalleryViewController
 
 @synthesize imageFiles = imageFiles_;
-
+@synthesize galleryView = galleryView_;
 
 #pragma mark -
 #pragma mark UIViewController
@@ -29,6 +27,7 @@ enum {
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
+	self.galleryView.showcaseModeEnabled = YES;
 }
 
 

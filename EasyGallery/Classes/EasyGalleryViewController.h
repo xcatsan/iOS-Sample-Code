@@ -12,10 +12,12 @@
 @interface EasyGalleryViewController : UIViewController <XCGalleryViewDelegate> {
 
 	NSMutableArray* imageFiles_;
+	
+	XCGalleryView* galleryView;
 }
 
 @property (nonatomic, retain) NSMutableArray* imageFiles;
-
+@property (nonatomic, retain) IBOutlet XCGalleryView* galleryView;
 
 @end
 

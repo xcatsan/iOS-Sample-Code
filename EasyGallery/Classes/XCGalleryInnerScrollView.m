@@ -27,6 +27,7 @@
 		self.showsHorizontalScrollIndicator = NO;
 		self.showsVerticalScrollIndicator = NO;
 		self.backgroundColor = [UIColor blackColor];
+		self.clipsToBounds = YES;
 		
 	}
 	return self;

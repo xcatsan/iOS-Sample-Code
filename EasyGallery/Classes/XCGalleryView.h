@@ -28,9 +28,18 @@
 	
 	CGSize previousScrollSize_;
 	
-	CGFloat spaceWidth_;
 	
 	id <XCGalleryViewDelegate> delegate_;
+	
+
+	BOOL showcaseModeEnabled_;
+	CGSize showcaseMargin_;
+	CGSize viewSpacing_;
+
+	CGSize spacing_;
+	CGSize margin_;
+	
+	BOOL didSetup_;
 }
 
 @property (nonatomic, assign) NSInteger currentImageIndex;
@@ -42,5 +51,7 @@
 
 @property (nonatomic, assign) IBOutlet id <XCGalleryViewDelegate> delegate;
 
-@property (nonatomic, assign) CGFloat spaceWidth;
+@property (nonatomic, assign) BOOL showcaseModeEnabled;
+@property (nonatomic, assign) CGSize showcaseMargin;
+@property (nonatomic, assign) CGSize viewSpacing;
 @end

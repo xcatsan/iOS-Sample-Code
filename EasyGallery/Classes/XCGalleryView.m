@@ -9,7 +9,10 @@
 #import "XCGalleryView.h"
 #import "XCGalleryInnerScrollView.h"
 
-#define DEFAULT_SPACE_WIDTH	40
+#define DEFAULT_SPACING_WIDTH	40
+#define DEFAULT_SPACING_HEIGHT	0
+#define DEFAULT_MARGIN_WIDTH	40
+#define DEFAULT_MARGIN_HEIGHT	10
 
 enum {
 	kIndexOfPreviousScrollView = 0,
@@ -25,7 +28,9 @@ enum {
 @synthesize contentOffsetIndex = contentOffsetIndex_;
 @synthesize imageScrollViews = imageScrollViews_;
 @synthesize delegate = delegate_;
-@synthesize spaceWidth = spaceWidth_;
+@synthesize showcaseModeEnabled = showcaseModeEnabled_;
+@synthesize showcaseMargin = showcaseMargin_;
+@synthesize viewSpacing = viewSpacing_;
 
 #pragma mark -
 #pragma mark Controle scroll views
@@ -34,33 +39,196 @@ enum {
 	UIImageView* imageView = [scrollView.subviews objectAtIndex:0];
 	if (index < 0 || [self.delegate numberViewsInGallery:self] <= index) {
 		imageView.image = nil;
-//		scrollView.delegate = nil;
 		return;
 	}
 	
 	UIImage* image = [self.delegate galleryImage:self filenameAtIndex:index];
 	imageView.image = image;
-	imageView.contentMode = (image.size.width > image.size.height) ?
-	UIViewContentModeScaleAspectFit : UIViewContentModeScaleAspectFill;
 }
+
+
+- (void)reloadData
+{
+	NSInteger numberOfViews = [self.delegate numberViewsInGallery:self];
+	if (self.currentImageIndex >= numberOfViews) {
+		if (numberOfViews == 0) {
+			self.currentImageIndex = 0;
+		} else {
+			self.currentImageIndex = numberOfViews-1;
+		}
+		self.contentOffsetIndex = self.currentImageIndex;
+	}
+	
+	for (int index=0; index < kMaxOfScrollView; index++) {
+		[self setImageAtIndex:self.currentImageIndex+index-1
+				 toScrollView:[self.imageScrollViews objectAtIndex:index]];
+	}
+}
+
+
+- (void)setupSpacingAndMarginAndClips
+{
+	if (self.showcaseModeEnabled) {
+		spacing_ = self.viewSpacing;
+		spacing_.width = spacing_.width / 2.0;
+		margin_ = self.showcaseMargin;
+		self.scrollView.clipsToBounds = NO;
+	} else {
+		spacing_ = self.viewSpacing;
+		margin_ = CGSizeZero;
+		self.scrollView.clipsToBounds = YES;
+	}
+}
+
+- (void)setupSubViews
+{	
+	NSLog(@"self: %@", NSStringFromCGRect(self.frame));
+	
+	// initialize vars
+	self.viewSpacing = CGSizeMake(
+								  DEFAULT_SPACING_WIDTH, DEFAULT_SPACING_HEIGHT);
+	self.showcaseMargin = CGSizeMake(
+									 DEFAULT_MARGIN_WIDTH, DEFAULT_MARGIN_HEIGHT);
+	[self setupSpacingAndMarginAndClips];
+	
+	// setup self view
+	//-------------------------
+	self.autoresizingMask =
+		UIViewAutoresizingFlexibleLeftMargin  |
+		UIViewAutoresizingFlexibleWidth       |
+		UIViewAutoresizingFlexibleRightMargin |
+		UIViewAutoresizingFlexibleTopMargin   |
+		UIViewAutoresizingFlexibleHeight      |
+		UIViewAutoresizingFlexibleBottomMargin;
+	self.clipsToBounds = YES;
+	self.backgroundColor = [UIColor blackColor];	// default
+	
+	
+	// setup base scroll view
+	//-------------------------
+	CGRect baseFrame = self.bounds;
+	baseFrame = CGRectInset(baseFrame, margin_.width, margin_.height);
+	
+	self.scrollView = [[[UIScrollView alloc] initWithFrame:baseFrame] autorelease];
+	NSLog(@"scrollView1: %@", NSStringFromCGRect(self.scrollView.frame));
+	
+	self.scrollView.delegate = self;
+	self.scrollView.pagingEnabled = YES;
+	self.scrollView.showsHorizontalScrollIndicator = NO;
+	self.scrollView.showsVerticalScrollIndicator = NO;
+	self.scrollView.scrollsToTop = NO;
+	CGRect scrollViewFrame = self.scrollView.frame;
+	scrollViewFrame.origin.x -= spacing_.width/2.0;
+	scrollViewFrame.size.width += spacing_.width;
+	self.scrollView.frame =scrollViewFrame;
+	self.scrollView.autoresizingMask =
+		UIViewAutoresizingFlexibleWidth |
+		UIViewAutoresizingFlexibleHeight;
+	
+	NSLog(@"scrollView2: %@", NSStringFromCGRect(self.scrollView.frame));
+
+	// DEBUG:
+	//self.backgroundColor = [UIColor blueColor];
+	//self.scrollView.backgroundColor = [UIColor redColor];
+	
+	[self addSubview:self.scrollView];
+	
+	// setup internal scroll views
+	//------------------------------
+	CGRect innerScrollViewFrame = CGRectZero;
+	innerScrollViewFrame.size = baseFrame.size;
+	innerScrollViewFrame.origin.x = -1 * innerScrollViewFrame.size.width;
+	if (self.showcaseModeEnabled) {
+		innerScrollViewFrame.origin.x -= spacing_.width;
+	}
+
+	self.imageScrollViews = [NSMutableArray array];
+	
+	CGRect imageViewFrame = CGRectZero;
+	imageViewFrame.size = innerScrollViewFrame.size;
+	// DEBUG
+	NSLog(@"imageViewFrame: %@", NSStringFromCGRect(imageViewFrame));
+	
+	for (int i=0; i < kMaxOfScrollView; i++) {
+		NSLog(@"innerScrollViewFrame: %@", NSStringFromCGRect(innerScrollViewFrame));
+		
+		// image view
+		//--------------
+		UIImageView* imageView =
+			[[UIImageView alloc] initWithFrame:imageViewFrame];
+		imageView.autoresizingMask =
+			UIViewAutoresizingFlexibleLeftMargin  |
+			UIViewAutoresizingFlexibleWidth       |
+			UIViewAutoresizingFlexibleRightMargin |
+			UIViewAutoresizingFlexibleTopMargin   |
+			UIViewAutoresizingFlexibleHeight      |
+			UIViewAutoresizingFlexibleBottomMargin;
+
+		//		imageView.contentMode = UIViewContentModeScaleAspectFit;
+
+		// scroll view
+		//--------------
+		innerScrollViewFrame.origin.x += spacing_.width/2.0;	// left space
+		
+		XCGalleryInnerScrollView* innerScrollView =
+			[[XCGalleryInnerScrollView alloc] initWithFrame:innerScrollViewFrame];
+		innerScrollView.clipsToBounds = YES;
+
+		innerScrollView.backgroundColor = self.backgroundColor;
+		
+		// bind & store views
+		[innerScrollView addSubview:imageView];
+		[self.scrollView addSubview:innerScrollView];
+		[self.imageScrollViews addObject:innerScrollView];
+		
+		// release all
+		[imageView release];
+		[innerScrollView release];
+		
+		// adust origin.x
+		innerScrollViewFrame.origin.x += innerScrollViewFrame.size.width;
+		innerScrollViewFrame.origin.x += spacing_.width/2.0;	// right space
+		
+	}
+	
+}	
 
 - (void)layoutSubviews
 {
-	CGSize newSize = self.bounds.size;
+	if (!didSetup_) {
+		// initialization for only first time
+		[self setupSubViews];
+		[self reloadData];
+		didSetup_ = YES;
+	}
+
+	CGSize newSize;
+	if (self.showcaseModeEnabled) {
+		newSize = self.scrollView.bounds.size;
+		newSize.width -= spacing_.width;
+	} else {
+		newSize = self.bounds.size;
+	}
 	CGSize oldSize = previousScrollSize_;
 
 	if (CGSizeEqualToSize(newSize, oldSize)) {
 		return;
 	}
 
+	[self setupSpacingAndMarginAndClips];
+
 	previousScrollSize_ = newSize;
 	CGSize newSizeWithSpace = newSize;
-	newSizeWithSpace.width += spaceWidth_;
+	if (self.showcaseModeEnabled) {
+		newSizeWithSpace.width += spacing_.width;
+	} else {
+		newSizeWithSpace.width += spacing_.width;
+	}
 	
 	// save previous contentSize
 	//--
 	XCGalleryInnerScrollView* currentScrollView =
-	[self.imageScrollViews objectAtIndex:kIndexOfCurrentScrollView];
+		[self.imageScrollViews objectAtIndex:kIndexOfCurrentScrollView];
 	CGSize oldContentSize = currentScrollView.contentSize;
 	CGPoint oldContentOffset = currentScrollView.contentOffset;
 	
@@ -79,10 +247,11 @@ enum {
 	//--
 	CGFloat x = (self.contentOffsetIndex-1) * newSizeWithSpace.width;
 	for (XCGalleryInnerScrollView* scrollView in self.imageScrollViews) {
-		
-		x += spaceWidth_/2.0;	// left space
+
+		x += spacing_.width/2.0;	// left space
 		
 		scrollView.frame = CGRectMake(x, 0, newSize.width, newSize.height);
+		NSLog(@"scrollView[layouting]: %@", NSStringFromCGRect(scrollView.frame));
 		CGSize contentSize;
 		if (scrollView == currentScrollView) {
 			contentSize.width  = newSize.width  * scrollView.zoomScale;
@@ -92,7 +261,7 @@ enum {
 		}
 		scrollView.contentSize = contentSize;
 		x += newSize.width;
-		x += spaceWidth_/2.0;	// right space
+		x += spacing_.width/2.0;	// right space
 	}
 	
 	
@@ -120,11 +289,9 @@ enum {
 		NSLog(@"-----");
 		 */
 	}
-	/*
 	NSLog(@"oldSize         : %@", NSStringFromCGSize(oldSize));
 	NSLog(@"newSize         : %@", NSStringFromCGSize(newSize));
 	NSLog(@"scrollView.frame: %@", NSStringFromCGRect(self.scrollView.frame));
-	 */
 	
 	// adjust content size and offset of base scrollView
 	//--
@@ -133,109 +300,8 @@ enum {
 		newSize.height);
 	self.scrollView.contentOffset = CGPointMake(
 		self.contentOffsetIndex*newSizeWithSpace.width, 0);
-}
-
-
-- (void)setupSubViews
-{
-	spaceWidth_ = DEFAULT_SPACE_WIDTH;
-	
-	// setup self view
-	//-------------------------
-	self.autoresizingMask =
-		UIViewAutoresizingFlexibleLeftMargin  |
-		UIViewAutoresizingFlexibleWidth       |
-		UIViewAutoresizingFlexibleRightMargin |
-		UIViewAutoresizingFlexibleTopMargin   |
-		UIViewAutoresizingFlexibleHeight      |
-		UIViewAutoresizingFlexibleBottomMargin;
-	self.clipsToBounds = YES;
-	
-	
-	// setup base scroll view
-	//-------------------------
-	self.scrollView = [[[UIScrollView alloc] initWithFrame:self.bounds] autorelease];
-	self.scrollView.delegate = self;
-	self.scrollView.pagingEnabled = YES;
-	self.scrollView.showsHorizontalScrollIndicator = NO;
-	self.scrollView.showsVerticalScrollIndicator = NO;
-	self.scrollView.scrollsToTop = NO;
-	CGRect scrollViewFrame = self.scrollView.frame;
-	scrollViewFrame.origin.x -= spaceWidth_/2.0;
-	scrollViewFrame.size.width += spaceWidth_;
-	self.scrollView.frame = scrollViewFrame;
-	//	self.scrollView.clipsToBounds = NO;
-	self.scrollView.autoresizingMask =
-		UIViewAutoresizingFlexibleWidth |
-		UIViewAutoresizingFlexibleHeight;
-	
-	[self addSubview:self.scrollView];
-
-	// setup internal scroll views
-	//------------------------------
-	CGRect innerScrollViewFrame = CGRectZero;
-	innerScrollViewFrame.size = self.scrollView.bounds.size;
-	innerScrollViewFrame.origin.x = (self.contentOffsetIndex-1) * innerScrollViewFrame.size.width;
-	self.imageScrollViews = [NSMutableArray array];
-	
-	CGRect imageViewFrame = CGRectZero;
-	imageViewFrame.size = self.scrollView.bounds.size;
-	
-	for (int i=0; i < kMaxOfScrollView; i++) {
-
-		// image view
-		//--------------
-		UIImageView* imageView =
-			[[UIImageView alloc] initWithFrame:imageViewFrame];
-		imageView.autoresizingMask =
-			UIViewAutoresizingFlexibleLeftMargin  |
-			UIViewAutoresizingFlexibleWidth       |
-			UIViewAutoresizingFlexibleRightMargin |
-			UIViewAutoresizingFlexibleTopMargin   |
-			UIViewAutoresizingFlexibleHeight      |
-			UIViewAutoresizingFlexibleBottomMargin;
-		
-		// scroll view
-		//--------------
-		innerScrollViewFrame.origin.x += spaceWidth_/2.0;	// left space
-		
-		XCGalleryInnerScrollView* innerScrollView =
-			[[XCGalleryInnerScrollView alloc] initWithFrame:innerScrollViewFrame];
-		innerScrollView.backgroundColor = self.backgroundColor;
-
-		// bind & store views
-		[innerScrollView addSubview:imageView];
-		[self.scrollView addSubview:innerScrollView];
-		[self.imageScrollViews addObject:innerScrollView];
-		
-		// release all
-		[imageView release];
-		[innerScrollView release];
-
-		// adust origin.x
-		innerScrollViewFrame.origin.x += innerScrollViewFrame.size.width;
-		innerScrollViewFrame.origin.x += spaceWidth_/2.0;	// right space
-
-	}
-	
-}	
-
-- (void)reloadData
-{
-	NSInteger numberOfViews = [self.delegate numberViewsInGallery:self];
-	if (self.currentImageIndex >= numberOfViews) {
-		if (numberOfViews == 0) {
-			self.currentImageIndex = 0;
-		} else {
-			self.currentImageIndex = numberOfViews-1;
-		}
-		self.contentOffsetIndex = self.currentImageIndex;
-	}
-	
-	for (int index=0; index < kMaxOfScrollView; index++) {
-		[self setImageAtIndex:self.currentImageIndex+index-1
-				 toScrollView:[self.imageScrollViews objectAtIndex:index]];
-	}
+	NSLog(@"newSizeWithSpace:%@", NSStringFromCGSize(newSizeWithSpace));
+	NSLog(@"scrollView.contentOffset: %@", NSStringFromCGPoint(self.scrollView.contentOffset));
 }
 
 
@@ -254,15 +320,14 @@ enum {
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     if ((self = [super initWithCoder:aDecoder])) {
-		[self setupSubViews];
+		//
     }
     return self;
 }
 
 - (id)initWithFrame:(CGRect)frame {
     if ((self = [super initWithFrame:frame])) {
-		self.backgroundColor = [UIColor blackColor];	// default
-		[self setupSubViews];
+		//
     }
     return self;
 }
@@ -300,7 +365,7 @@ enum {
 	[self.imageScrollViews addObject:currentScrollView];
 
 	CGRect frame = previousScrollView.frame;
-	frame.origin.x -= frame.size.width + spaceWidth_;
+	frame.origin.x -= frame.size.width + spacing_.width;
 	nextScrollView.frame = frame;
 	[self setImageAtIndex:self.currentImageIndex-1 toScrollView:nextScrollView];
 }
@@ -320,7 +385,7 @@ enum {
 	[self.imageScrollViews addObject:previousScrollView];
 
 	CGRect frame = nextScrollView.frame;
-	frame.origin.x += frame.size.width + spaceWidth_;
+	frame.origin.x += frame.size.width + spacing_.width;
 	previousScrollView.frame = frame;
 	[self setImageAtIndex:self.currentImageIndex+1 toScrollView:previousScrollView];
 }
