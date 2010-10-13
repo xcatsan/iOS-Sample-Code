@@ -11,7 +11,7 @@
 
 #define DEFAULT_SPACING_WIDTH	40
 #define DEFAULT_SPACING_HEIGHT	0
-#define DEFAULT_MARGIN_HEIGHT	10
+#define DEFAULT_MARGIN_HEIGHT	20
 #define DEFAULT_MARGIN_WIDTH_RATE	0.2
 
 #define kMaxOfScrollView			5
@@ -23,11 +23,13 @@
 @synthesize currentImageIndex = currentImageIndex_;
 @synthesize scrollView = scrollView_;
 @synthesize contentOffsetIndex = contentOffsetIndex_;
-@synthesize imageScrollViews = imageScrollViews_;
+@synthesize innerScrollViews = innerScrollViews_;
 @synthesize delegate = delegate_;
 @synthesize showcaseModeEnabled = showcaseModeEnabled_;
 @synthesize showcaseMargin = showcaseMargin_;
 @synthesize viewSpacing = viewSpacing_;
+@synthesize pageControlEnabled = pageControlEnabled_;
+@synthesize pageControl = pageControl_;
 
 #pragma mark -
 #pragma mark Controle scroll views
@@ -58,8 +60,11 @@
 	
 	for (int index=0; index < kMaxOfScrollView; index++) {
 		[self setImageAtIndex:self.currentImageIndex+index-kLengthFromCetner
-				 toScrollView:[self.imageScrollViews objectAtIndex:index]];
+				 toScrollView:[self.innerScrollViews objectAtIndex:index]];
 	}
+	
+	self.pageControl.numberOfPages = numberOfViews;
+	self.pageControl.currentPage = self.currentImageIndex;
 }
 
 
@@ -131,7 +136,7 @@
 		innerScrollViewFrame.origin.x -= spacing_.width;
 	}
 
-	self.imageScrollViews = [NSMutableArray array];
+	self.innerScrollViews = [NSMutableArray array];
 	
 	CGRect imageViewFrame = CGRectZero;
 	imageViewFrame.size = innerScrollViewFrame.size;
@@ -165,7 +170,7 @@
 		// bind & store views
 		[innerScrollView addSubview:imageView];
 		[self.scrollView addSubview:innerScrollView];
-		[self.imageScrollViews addObject:innerScrollView];
+		[self.innerScrollViews addObject:innerScrollView];
 		
 		// release all
 		[imageView release];
@@ -177,6 +182,21 @@
 		
 	}
 	
+	// setup page control
+	CGRect pageControlFrame = CGRectMake(0, self.bounds.size.height-DEFAULT_MARGIN_HEIGHT, self.bounds.size.width, DEFAULT_MARGIN_HEIGHT);
+	self.pageControl = [[[UIPageControl alloc] initWithFrame:pageControlFrame] autorelease];
+	self.pageControl.autoresizingMask =
+		UIViewAutoresizingFlexibleLeftMargin  |
+		UIViewAutoresizingFlexibleWidth       |
+		UIViewAutoresizingFlexibleRightMargin |
+		UIViewAutoresizingFlexibleTopMargin   |
+		UIViewAutoresizingFlexibleHeight      |
+		UIViewAutoresizingFlexibleBottomMargin;
+	self.pageControl.hidesForSinglePage = NO;
+	[self.pageControl addTarget:self
+						 action:@selector(pageControlDidChange:)
+			   forControlEvents:UIControlEventValueChanged];
+	[self addSubview:self.pageControl];
 }	
 
 - (void)layoutSubviews
@@ -210,7 +230,7 @@
 	// save previous contentSize
 	//--
 	XCGalleryInnerScrollView* currentScrollView =
-		[self.imageScrollViews objectAtIndex:kIndexOfCurrentScrollView];
+		[self.innerScrollViews objectAtIndex:kIndexOfCurrentScrollView];
 	CGSize oldContentSize = currentScrollView.contentSize;
 	CGPoint oldContentOffset = currentScrollView.contentOffset;
 	
@@ -225,10 +245,10 @@
 	CGFloat ratioH = oldCenter.y / oldContentSize.height;
 	
 	
-	// set new origin and size to imageScrollViews
+	// set new origin and size to innerScrollViews
 	//--
 	CGFloat x = (self.contentOffsetIndex-kLengthFromCetner) * newSizeWithSpace.width;
-	for (XCGalleryInnerScrollView* scrollView in self.imageScrollViews) {
+	for (XCGalleryInnerScrollView* scrollView in self.innerScrollViews) {
 
 		x += spacing_.width/2.0;	// left space
 		
@@ -297,6 +317,11 @@
 	[self reloadData];
 }
 
+- (void)setPageControlEnabled:(BOOL)enabled
+{
+	pageControlEnabled_ = enabled;
+	self.pageControl.hidden = !enabled;
+}
 
 #pragma mark -
 #pragma mark Initialization and deallocation
@@ -319,7 +344,8 @@
 
 - (void)dealloc {
 	self.scrollView = nil;
-	self.imageScrollViews = nil;
+	self.innerScrollViews = nil;
+	self.pageControl = nil;
 
     [super dealloc];
 }
@@ -331,33 +357,33 @@
 -(void)setupPreviousImage
 {
 	XCGalleryInnerScrollView* rightView =
-		[self.imageScrollViews objectAtIndex:kMaxOfScrollView-1];
-	XCGalleryInnerScrollView* leftView = [self.imageScrollViews objectAtIndex:0];
+		[self.innerScrollViews objectAtIndex:kMaxOfScrollView-1];
+	XCGalleryInnerScrollView* leftView = [self.innerScrollViews objectAtIndex:0];
 
 	CGRect frame = leftView.frame;
 	frame.origin.x -= frame.size.width + spacing_.width;
 	rightView.frame = frame;
 
-	[self.imageScrollViews removeObjectAtIndex:kMaxOfScrollView-1];
-	[self.imageScrollViews insertObject:rightView atIndex:0];
+	[self.innerScrollViews removeObjectAtIndex:kMaxOfScrollView-1];
+	[self.innerScrollViews insertObject:rightView atIndex:0];
 	[self setImageAtIndex:self.currentImageIndex-kLengthFromCetner toScrollView:rightView];
-	
+
 }
 
 -(void)setupNextImage
 {
 	XCGalleryInnerScrollView* rightView =
-		[self.imageScrollViews objectAtIndex:kMaxOfScrollView-1];
-	XCGalleryInnerScrollView* leftView = [self.imageScrollViews objectAtIndex:0];
+		[self.innerScrollViews objectAtIndex:kMaxOfScrollView-1];
+	XCGalleryInnerScrollView* leftView = [self.innerScrollViews objectAtIndex:0];
 	
 	CGRect frame = rightView.frame;
 	frame.origin.x += frame.size.width + spacing_.width;
 	leftView.frame = frame;
 	
-	[self.imageScrollViews removeObjectAtIndex:0];
-	[self.imageScrollViews addObject:leftView];
+	[self.innerScrollViews removeObjectAtIndex:0];
+	[self.innerScrollViews addObject:leftView];
 	[self setImageAtIndex:self.currentImageIndex+kLengthFromCetner toScrollView:leftView];
-	
+
 }
 
 
@@ -370,7 +396,7 @@
 	
 	if (fabs(delta) >= 1.0f) {
 		XCGalleryInnerScrollView* currentScrollView =
-		[self.imageScrollViews objectAtIndex:kIndexOfCurrentScrollView];
+			[self.innerScrollViews objectAtIndex:kIndexOfCurrentScrollView];
 		currentScrollView.zoomScale = 1.0;
 		currentScrollView.contentOffset = CGPointZero;
 		
@@ -380,17 +406,61 @@
 			// the current page moved to right
 			self.currentImageIndex = self.currentImageIndex+1;
 			self.contentOffsetIndex = self.contentOffsetIndex+1;
+			self.pageControl.currentPage = self.currentImageIndex;
 			[self setupNextImage];
 			
 		} else {
 			// the current page moved to left
 			self.currentImageIndex = self.currentImageIndex-1;
 			self.contentOffsetIndex = self.contentOffsetIndex-1;
+			self.pageControl.currentPage = self.currentImageIndex;
 			[self setupPreviousImage];
 		}
 		
 	}
 	
+}
+
+
+#pragma mark -
+#pragma mark Event
+-(void)pageControlDidChange:(id)sender
+{
+	BOOL previous;
+	if (self.pageControl.currentPage < self.currentImageIndex) {
+		previous = YES;
+	} else {
+		previous = NO;
+	}
+
+	self.currentImageIndex = self.pageControl.currentPage;
+	self.contentOffsetIndex = self.pageControl.currentPage;
+
+	XCGalleryInnerScrollView* currentScrollView = 
+	[self.innerScrollViews objectAtIndex:kIndexOfCurrentScrollView];
+	currentScrollView.zoomScale = 1.0;
+	currentScrollView.contentOffset = CGPointZero;
+	
+	
+	CGSize size;
+	if (self.showcaseModeEnabled) {
+		size = self.scrollView.bounds.size;
+		size.width -= spacing_.width;
+	} else {
+		size = self.bounds.size;
+	}
+	size.width += spacing_.width;
+
+	[UIView beginAnimations:nil context:nil];
+	self.scrollView.contentOffset = CGPointMake(
+			self.contentOffsetIndex*size.width, 0);
+	[UIView commitAnimations];
+	
+	if (previous) {
+		[self setupPreviousImage];
+	} else {
+		[self setupNextImage];
+	}
 }
 
 @end

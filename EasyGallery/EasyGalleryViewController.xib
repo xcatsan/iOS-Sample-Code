@@ -45,7 +45,7 @@
 					<object class="IBUIView" id="114593731">
 						<reference key="NSNextResponder" ref="774585933"/>
 						<int key="NSvFlags">274</int>
-						<string key="NSFrameSize">{320, 460}</string>
+						<string key="NSFrame">{{0, 70}, {320, 184}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -148,9 +148,9 @@
 					<string>XCGalleryView</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<object class="NSAffineTransform">
-						<bytes key="NSTransformStruct">P4AAAL+AAABBoAAAw6oAAA</bytes>
+						<bytes key="NSTransformStruct">P4AAAL+AAAAAAAAAwzYAAA</bytes>
 					</object>
-					<string>{{239, 276}, {320, 480}}</string>
+					<string>{{192, 276}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				</object>
 			</object>

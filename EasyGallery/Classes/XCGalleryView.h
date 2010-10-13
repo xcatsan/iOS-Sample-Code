@@ -24,7 +24,7 @@
 	UIScrollView* scrollView_;
 	NSInteger contentOffsetIndex_;
 	
-	NSMutableArray* imageScrollViews_;
+	NSMutableArray* innerScrollViews_;
 	
 	CGSize previousScrollSize_;
 	
@@ -40,6 +40,9 @@
 	CGSize margin_;
 	
 	BOOL didSetup_;
+	
+	BOOL pageControlEnabled_;
+	UIPageControl* pageControl_;
 }
 
 @property (nonatomic, assign) NSInteger currentImageIndex;
@@ -47,11 +50,15 @@
 @property (nonatomic, retain) UIScrollView* scrollView;
 @property (nonatomic, assign) NSInteger contentOffsetIndex;
 
-@property (nonatomic, retain) NSMutableArray* imageScrollViews;
+@property (nonatomic, retain) NSMutableArray* innerScrollViews;
 
 @property (nonatomic, assign) IBOutlet id <XCGalleryViewDelegate> delegate;
 
 @property (nonatomic, assign) BOOL showcaseModeEnabled;
 @property (nonatomic, assign) CGSize showcaseMargin;
 @property (nonatomic, assign) CGSize viewSpacing;
+
+@property (nonatomic, assign) BOOL pageControlEnabled;
+@property (nonatomic, retain) UIPageControl* pageControl;
+
 @end
