@@ -11,8 +11,10 @@
 
 @implementation TransitionSample2ViewController
 
+@synthesize baseView;
 @synthesize imageView1, imageView2, slider,duration;
 @synthesize images;
+@synthesize mainType, subType;
 
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
@@ -76,14 +78,24 @@
 
 -(IBAction)doTransition:(id)sender;
 {
+	
+	
 	// setup next image
 	imageIndex = (imageIndex+1)%8;
 	imageView2.image = [images objectAtIndex:imageIndex];
 	
+	// transition
 	CATransition* transition = [CATransition animation];
 	transition.duration = self.slider.value;
 	transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-	transition.type = kCATransitionFade;
+	
+	NSString *maintypes[4] = {kCATransitionMoveIn, kCATransitionPush, kCATransitionReveal, kCATransitionFade};
+	NSString *subtypes[4] = {kCATransitionFromLeft, kCATransitionFromRight, kCATransitionFromTop, kCATransitionFromBottom};
+
+	transition.type = maintypes[mainType.selectedSegmentIndex];
+	if (mainType.selectedSegmentIndex < 3) {
+		transition.subtype = subtypes[subType.selectedSegmentIndex];
+	}
 	
 	[self.view.layer addAnimation:transition forKey:nil];
 	
