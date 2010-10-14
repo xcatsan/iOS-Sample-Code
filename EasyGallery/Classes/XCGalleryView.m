@@ -5,6 +5,7 @@
 //  Created by Hiroshi Hashiguchi on 10/10/07.
 //  Copyright 2010 . All rights reserved.
 //
+#import <QuartzCore/QuartzCore.h>
 
 #import "XCGalleryView.h"
 #import "XCGalleryInnerScrollView.h"
@@ -13,10 +14,33 @@
 #define DEFAULT_SPACING_HEIGHT	0
 #define DEFAULT_MARGIN_HEIGHT	20
 #define DEFAULT_MARGIN_WIDTH_RATE	0.2
+#define DEFAULT_SLIDESHOW_DURATION 3.0/2
+#define DEFAULT_TRANSITION_DURATION	0.75
 
 #define kMaxOfScrollView			5
 #define kLengthFromCetner			((kMaxOfScrollView-1)/2)
-#define kIndexOfCurrentScrollView	(kLengthFromCetner+1)
+#define kIndexOfCurrentScrollView	((kMaxOfScrollView-1)/2)
+
+
+// private properties
+@interface XCGalleryView()
+
+@property (nonatomic, assign) NSInteger currentImageIndex;
+
+@property (nonatomic, retain) UIScrollView* scrollView;
+@property (nonatomic, assign) NSInteger contentOffsetIndex;
+
+@property (nonatomic, retain) NSMutableArray* innerScrollViews;
+
+@property (nonatomic, assign) CGSize showcaseMargin;
+@property (nonatomic, assign) CGSize viewSpacing;
+@property (nonatomic, retain) UIPageControl* pageControl;
+@property (nonatomic, retain) NSTimer* timer;
+
+@property (nonatomic, retain) XCGalleryInnerScrollView* transitionInnerScrollView;
+@end
+
+
 
 @implementation XCGalleryView
 
@@ -30,25 +54,36 @@
 @synthesize viewSpacing = viewSpacing_;
 @synthesize pageControlEnabled = pageControlEnabled_;
 @synthesize pageControl = pageControl_;
+@synthesize isRunningSlideShow = isRunningSlideShow_;
+@synthesize slideShowDuration = slideShowDuration_;
+@synthesize timer = timer_;
+@synthesize transitionInnerScrollView = transitionInnerScrollView_;
 
 #pragma mark -
 #pragma mark Controle scroll views
-- (void)setImageAtIndex:(NSInteger)index toScrollView:(UIScrollView*)scrollView
+- (void)resetZoomScrollView:(XCGalleryInnerScrollView*)innerScrollView
 {
-	UIImageView* imageView = [scrollView.subviews objectAtIndex:0];
-	if (index < 0 || [self.delegate numberViewsInGallery:self] <= index) {
-		imageView.image = nil;
+	innerScrollView.zoomScale = 1.0;
+	innerScrollView.contentOffset = CGPointZero;
+}
+
+- (void)setImageAtIndex:(NSInteger)index toScrollView:(XCGalleryInnerScrollView*)innerScrollView
+{
+	if (index < 0 || [self.delegate numberImagesInGallery:self] <= index) {
+		innerScrollView.imageView.image = nil;
 		return;
 	}
 	
-	UIImage* image = [self.delegate galleryImage:self filenameAtIndex:index];
-	imageView.image = image;
+	innerScrollView.imageView.image =
+		[self.delegate galleryImage:self filenameAtIndex:index];
+	
+	[self resetZoomScrollView:innerScrollView];
 }
 
 
 - (void)reloadData
 {
-	NSInteger numberOfViews = [self.delegate numberViewsInGallery:self];
+	NSInteger numberOfViews = [self.delegate numberImagesInGallery:self];
 	if (self.currentImageIndex >= numberOfViews) {
 		if (numberOfViews == 0) {
 			self.currentImageIndex = 0;
@@ -137,25 +172,11 @@
 	}
 
 	self.innerScrollViews = [NSMutableArray array];
-	
-	CGRect imageViewFrame = CGRectZero;
-	imageViewFrame.size = innerScrollViewFrame.size;
-	
+		
 	for (int i=0; i < kMaxOfScrollView; i++) {
 		
 		// image view
 		//--------------
-		UIImageView* imageView =
-			[[UIImageView alloc] initWithFrame:imageViewFrame];
-		imageView.autoresizingMask =
-			UIViewAutoresizingFlexibleLeftMargin  |
-			UIViewAutoresizingFlexibleWidth       |
-			UIViewAutoresizingFlexibleRightMargin |
-			UIViewAutoresizingFlexibleTopMargin   |
-			UIViewAutoresizingFlexibleHeight      |
-			UIViewAutoresizingFlexibleBottomMargin;
-
-		imageView.contentMode = UIViewContentModeScaleAspectFit;
 
 		// scroll view
 		//--------------
@@ -168,12 +189,10 @@
 		innerScrollView.backgroundColor = self.backgroundColor;
 		
 		// bind & store views
-		[innerScrollView addSubview:imageView];
 		[self.scrollView addSubview:innerScrollView];
 		[self.innerScrollViews addObject:innerScrollView];
 		
 		// release all
-		[imageView release];
 		[innerScrollView release];
 		
 		// adust origin.x
@@ -182,6 +201,13 @@
 		
 	}
 	
+	// setup temporary view for slideshow transition
+	self.transitionInnerScrollView =
+		[[[XCGalleryInnerScrollView alloc]
+		  initWithFrame:innerScrollViewFrame] autorelease];
+	self.transitionInnerScrollView.hidden = YES;
+	[self.scrollView addSubview:self.transitionInnerScrollView];
+
 	// setup page control
 	CGRect pageControlFrame = CGRectMake(0, self.bounds.size.height-DEFAULT_MARGIN_HEIGHT, self.bounds.size.width, DEFAULT_MARGIN_HEIGHT);
 	self.pageControl = [[[UIPageControl alloc] initWithFrame:pageControlFrame] autorelease];
@@ -196,6 +222,7 @@
 	[self.pageControl addTarget:self
 						 action:@selector(pageControlDidChange:)
 			   forControlEvents:UIControlEventValueChanged];
+	self.pageControl.hidden = !pageControlEnabled_;
 	[self addSubview:self.pageControl];
 }	
 
@@ -294,7 +321,7 @@
 	// adjust content size and offset of base scrollView
 	//--
 	self.scrollView.contentSize = CGSizeMake(
-		[self.delegate numberViewsInGallery:self]*newSizeWithSpace.width,
+		[self.delegate numberImagesInGallery:self]*newSizeWithSpace.width,
 		newSize.height);
 	self.scrollView.contentOffset = CGPointMake(
 		self.contentOffsetIndex*newSizeWithSpace.width, 0);
@@ -325,18 +352,26 @@
 
 #pragma mark -
 #pragma mark Initialization and deallocation
+- (void)setup
+{
+	pageControlEnabled_ = NO;
+	showcaseModeEnabled_ = NO;
+	
+	isRunningSlideShow_ = NO;
+	slideShowDuration_ = DEFAULT_SLIDESHOW_DURATION;
+}
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     if ((self = [super initWithCoder:aDecoder])) {
-		//
+		[self setup];
     }
     return self;
 }
 
 - (id)initWithFrame:(CGRect)frame {
     if ((self = [super initWithFrame:frame])) {
-		//
+		[self setup];
     }
     return self;
 }
@@ -346,7 +381,9 @@
 	self.scrollView = nil;
 	self.innerScrollViews = nil;
 	self.pageControl = nil;
-
+	self.timer = nil;
+	self.transitionInnerScrollView = nil;
+	
     [super dealloc];
 }
 
@@ -397,8 +434,7 @@
 	if (fabs(delta) >= 1.0f) {
 		XCGalleryInnerScrollView* currentScrollView =
 			[self.innerScrollViews objectAtIndex:kIndexOfCurrentScrollView];
-		currentScrollView.zoomScale = 1.0;
-		currentScrollView.contentOffset = CGPointZero;
+		[self resetZoomScrollView:currentScrollView];
 		
 		//		NSLog(@"%f (%d=>%d)", delta, self.currentImageIndex, index);
 		
@@ -438,9 +474,7 @@
 
 	XCGalleryInnerScrollView* currentScrollView = 
 	[self.innerScrollViews objectAtIndex:kIndexOfCurrentScrollView];
-	currentScrollView.zoomScale = 1.0;
-	currentScrollView.contentOffset = CGPointZero;
-	
+	[self resetZoomScrollView:currentScrollView];	
 	
 	CGSize size;
 	if (self.showcaseModeEnabled) {
@@ -462,5 +496,88 @@
 		[self setupNextImage];
 	}
 }
+
+#pragma mark -
+#pragma mark Event
+/*
+- (void)touchesBegin:(NSSet *)touches withEvent:(UIEvent *)event
+{
+	NSLog(@"begin");
+}
+ */
+
+
+#pragma mark -
+#pragma mark Slide Show 
+- (void)stopSlideShow
+{
+	if (self.timer && [self.timer isValid]) {
+		[self.timer invalidate];
+	}
+
+	self.isRunningSlideShow = NO;
+	
+	[self.delegate galleryDidStopSlideShow:self];
+}
+
+- (void)nextSlideShow:(NSTimer*)timer
+{
+	NSLog(@"nextSlideShow:");
+	
+	NSInteger numberOfViews = [self.delegate numberImagesInGallery:self];
+
+	if (numberOfViews <= (self.currentImageIndex+1)) {
+		[self stopSlideShow];
+		return;
+		// abort
+	}
+	XCGalleryInnerScrollView* currentInnerScrollView =
+		[self.innerScrollViews objectAtIndex:kIndexOfCurrentScrollView];
+	
+	self.currentImageIndex = self.currentImageIndex + 1;
+	[self setImageAtIndex:self.currentImageIndex
+			 toScrollView:self.transitionInnerScrollView];
+	self.transitionInnerScrollView.frame = currentInnerScrollView.frame;
+	// ??? currentOffset ?
+	
+	CATransition* transition = [CATransition animation];
+	transition.duration = DEFAULT_TRANSITION_DURATION;
+	transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+	transition.type = kCATransitionFade;
+	transition.delegate = self;
+	
+	[self.scrollView.layer addAnimation:transition forKey:nil];
+
+	currentInnerScrollView.hidden = YES;
+	self.transitionInnerScrollView.hidden = NO;
+	
+	[self.innerScrollViews replaceObjectAtIndex:kIndexOfCurrentScrollView
+									 withObject:self.transitionInnerScrollView];
+	self.transitionInnerScrollView = currentInnerScrollView;
+
+}
+
+- (void)startSlideShow
+{
+	if (self.isRunningSlideShow) {
+		return;
+	}
+	
+	self.timer = [NSTimer scheduledTimerWithTimeInterval:self.slideShowDuration
+												  target:self
+												selector:@selector(nextSlideShow:)
+												userInfo:nil
+												 repeats:YES];
+	self.isRunningSlideShow = YES;
+}
+
+
+#pragma mark -
+#pragma mark Delegate methods for CAAnimation
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
+{
+	NSLog(@"animationDidStop:finished:");
+}
+
 
 @end

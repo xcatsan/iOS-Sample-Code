@@ -28,6 +28,7 @@
 		4C37F9B3125D90BE002834A9 /* XCGalleryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C37F9B2125D90BE002834A9 /* XCGalleryView.m */; };
 		4CAA0681125AE7D8005A2FEF /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CAA0680125AE7D8005A2FEF /* MainWindow-iPad.xib */; };
 		4CAA0689125AF6BB005A2FEF /* EasyGalleryViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CAA0688125AF6BB005A2FEF /* EasyGalleryViewController-iPad.xib */; };
+		4CDF4A471266D7A000D68EC5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CDF4A461266D7A000D68EC5 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		4C37F9B2125D90BE002834A9 /* XCGalleryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCGalleryView.m; sourceTree = "<group>"; };
 		4CAA0680125AE7D8005A2FEF /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		4CAA0688125AF6BB005A2FEF /* EasyGalleryViewController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "EasyGalleryViewController-iPad.xib"; sourceTree = "<group>"; };
+		4CDF4A461266D7A000D68EC5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* EasyGallery-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "EasyGallery-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +71,7 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
+				4CDF4A471266D7A000D68EC5 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +145,7 @@
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
+				4CDF4A461266D7A000D68EC5 /* QuartzCore.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

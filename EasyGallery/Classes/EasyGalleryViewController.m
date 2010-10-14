@@ -27,7 +27,9 @@ enum {
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	self.galleryView.showcaseModeEnabled = YES;
+	self.galleryView.showcaseModeEnabled = NO;
+	self.galleryView.pageControlEnabled = NO;
+	
 }
 
 
@@ -50,7 +52,7 @@ enum {
 
 #pragma mark -
 #pragma mark XCGalleryViewDelegate
--(NSInteger)numberViewsInGallery:(XCGalleryView*)galleryView
+-(NSInteger)numberImagesInGallery:(XCGalleryView*)galleryView
 {
 	return [self.imageFiles count];
 }
@@ -58,6 +60,19 @@ enum {
 -(UIImage*)galleryImage:(XCGalleryView*)galleryView filenameAtIndex:(NSUInteger)index
 {
 	return [UIImage imageWithContentsOfFile:[self.imageFiles objectAtIndex:index]];
+}
+
+-(void)galleryDidStopSlideShow:(XCGalleryView*)galleryView
+{
+	NSLog(@"didStopSlideShow:");
+}
+
+
+#pragma mark -
+#pragma mark Event
+- (IBAction)playSlideShow:(id)sender
+{
+	[self.galleryView startSlideShow];
 }
 
 @end

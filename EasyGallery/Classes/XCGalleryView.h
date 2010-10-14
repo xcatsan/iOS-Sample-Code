@@ -11,12 +11,13 @@
 @class XCGalleryView;
 @protocol XCGalleryViewDelegate
 
--(NSInteger)numberViewsInGallery:(XCGalleryView*)galleryView;
+-(NSInteger)numberImagesInGallery:(XCGalleryView*)galleryView;
 -(UIImage*)galleryImage:(XCGalleryView*)galleryView filenameAtIndex:(NSUInteger)index;
+-(void)galleryDidStopSlideShow:(XCGalleryView*)galleryView;
 
 @end
 
-
+@class XCGalleryInnerScrollView;
 @interface XCGalleryView : UIView <UIScrollViewDelegate> {
 
 	NSInteger currentImageIndex_;
@@ -43,22 +44,22 @@
 	
 	BOOL pageControlEnabled_;
 	UIPageControl* pageControl_;
+	
+	// slide show status
+	BOOL isRunningSlideShow_;
+	NSTimeInterval slideShowDuration_;
+	NSTimer* timer_;
+	XCGalleryInnerScrollView* transitionInnerScrollView_;
 }
 
-@property (nonatomic, assign) NSInteger currentImageIndex;
-
-@property (nonatomic, retain) UIScrollView* scrollView;
-@property (nonatomic, assign) NSInteger contentOffsetIndex;
-
-@property (nonatomic, retain) NSMutableArray* innerScrollViews;
-
+// public properties
 @property (nonatomic, assign) IBOutlet id <XCGalleryViewDelegate> delegate;
-
 @property (nonatomic, assign) BOOL showcaseModeEnabled;
-@property (nonatomic, assign) CGSize showcaseMargin;
-@property (nonatomic, assign) CGSize viewSpacing;
-
 @property (nonatomic, assign) BOOL pageControlEnabled;
-@property (nonatomic, retain) UIPageControl* pageControl;
+@property (nonatomic, assign) BOOL isRunningSlideShow;
+@property (nonatomic, assign) NSTimeInterval slideShowDuration;
+
+// public methods
+- (void)startSlideShow;
 
 @end

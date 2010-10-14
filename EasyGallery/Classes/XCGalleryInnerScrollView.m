@@ -11,6 +11,8 @@
 
 @implementation XCGalleryInnerScrollView
 
+@synthesize imageView = imageView_;
+
 -(UIView*)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
 	return [self.subviews objectAtIndex:0];
@@ -20,6 +22,8 @@
 -(id)initWithFrame:(CGRect)frame
 {
 	if (self = [super initWithFrame:frame]) {
+		
+		// setup scrollview
 //		[self setUserInteractionEnabled:YES];
 		self.delegate = self;
 		self.minimumZoomScale = 1.0;
@@ -29,6 +33,18 @@
 		self.backgroundColor = [UIColor blackColor];
 		self.clipsToBounds = YES;
 		
+		// setup imageview
+		self.imageView =
+			[[[UIImageView alloc] initWithFrame:self.bounds] autorelease];
+		self.imageView.autoresizingMask =
+			UIViewAutoresizingFlexibleLeftMargin  |
+			UIViewAutoresizingFlexibleWidth       |
+			UIViewAutoresizingFlexibleRightMargin |
+			UIViewAutoresizingFlexibleTopMargin   |
+			UIViewAutoresizingFlexibleHeight      |
+			UIViewAutoresizingFlexibleBottomMargin;		
+		self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+		[self addSubview:self.imageView];		
 	}
 	return self;
 }
@@ -63,5 +79,12 @@
 	
 //		NSLog(@"offset: %@", NSStringFromCGPoint(self.contentOffset));
 }
+
+- (void) dealloc
+{
+	self.imageView = nil;
+	[super dealloc];
+}
+
 
 @end

@@ -11,7 +11,10 @@
 
 @interface XCGalleryInnerScrollView : UIScrollView <UIScrollViewDelegate> {
 
+	UIImageView* imageView_;
 }
+
+@property (nonatomic, retain) UIImageView* imageView;
 
 + (CGRect)zoomRectForScrollView:(UIScrollView *)scrollView
 					  withScale:(float)scale withCenter:(CGPoint)center;
