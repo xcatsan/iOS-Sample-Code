@@ -25,6 +25,24 @@ static char buff[BUFF_SIZE];
 
 //#define USE_POOL
 //#define USE_DRAIN
+#define USE_CACHE
+
+
+- (u_int)currentRegidentSize
+{
+	struct task_basic_info t_info;
+	mach_msg_type_number_t t_info_count = TASK_BASIC_INFO_COUNT;
+	
+	if (task_info(current_task(), TASK_BASIC_INFO,
+				  (task_info_t)&t_info, &t_info_count)!= KERN_SUCCESS) {
+		NSLog(@"%s(): Error in task_info(): %s",
+			  __FUNCTION__, strerror(errno));
+	}
+	
+	u_int rss = t_info.resident_size;		
+	
+	return rss;
+}
 
 - (void)test
 {
@@ -35,34 +53,60 @@ static char buff[BUFF_SIZE];
 		NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
 #endif
 		[NSData dataWithBytes:buff length:BUFF_SIZE];
-		struct task_basic_info t_info;
-		mach_msg_type_number_t t_info_count = TASK_BASIC_INFO_COUNT;
-		
-		if (task_info(current_task(), TASK_BASIC_INFO,
-					  (task_info_t)&t_info, &t_info_count)!= KERN_SUCCESS) {
-			NSLog(@"%s(): Error in task_info(): %s",
-				  __FUNCTION__, strerror(errno));
-		}
-		
-		u_int rss = t_info.resident_size;		
+		u_int rss = [self currentRegidentSize];
 		NSLog(@"RSS: %0.1f MB", rss/1024.0/1024.0);
 		
 #ifdef USE_POOL
 #ifdef USE_DRAIN
 		[pool drain];
-		NSLog(@"drain");
 #else
 		[pool release];
-		NSLog(@"release");
 #endif
 #endif
 	}
 	NSLog(@"end");
+//	NSLog(@"%@", [NSAutoreleasePool showPools]);
+}
+
+- (void)test2
+{	
+	u_int prev_rss = [self currentRegidentSize];
+	for (int i=1; i <= 16; i++) {
+		
+		NSString* filename = [NSString stringWithFormat:@"image%02d.jpg", i];
+
+
+#ifdef USE_POOL
+		NSAutoreleasePool* pool = [[NSAutoreleasePool alloc] init];
+#endif
+		
+#ifdef USE_CACHE
+		[UIImage imageNamed:filename];
+#else
+		NSString* filepath = [NSString stringWithFormat:@"%@/%@",
+					[[NSBundle mainBundle] resourcePath], filename];
+		UIImage* image = [UIImage imageWithContentsOfFile:filepath];
+		
+#endif
+		
+#ifdef USE_POOL
+#ifdef USE_DRAIN
+		[pool drain];
+#else
+		[pool release];
+#endif
+#endif
+		u_int rss = [self currentRegidentSize];
+		NSLog(@"%@ | RSS: %0.1f KB => %0.1f KB [%+0.1fKB]", filename, prev_rss/1024.0,rss/1024.0, (int)(rss-prev_rss)/1024.0);
+		prev_rss = rss;
+	}
+	NSLog(@"end");
+	//	NSLog(@"%@", [NSAutoreleasePool showPools]);
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
-	[self test];
+	[self test2];
 
     // Add the view controller's view to the window and display.
     [window addSubview:viewController.view];
