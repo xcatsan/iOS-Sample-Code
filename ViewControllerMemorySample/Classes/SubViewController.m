@@ -8,6 +8,7 @@
 
 #import "RootViewController.h"
 #import "SubViewController.h"
+#import "SubSubViewController.h"
 
 
 @implementation SubViewController
@@ -43,11 +44,19 @@
 }
 */
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+	NSLog(@"[Sub ] viewWillDisappear|retainCount=%d", [self.imageView retainCount]-1);
+}
+- (void)viewDidDisappear:(BOOL)animated
+{
+	NSLog(@"[Sub ] viewDidDisappear|retainCount=%d", [self.imageView retainCount]-1);
+}
+
 - (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
+	NSLog(@"[Sub ] didReceiveMemoryWarning|retainCount=%d", [self.imageView retainCount]-1);
     [super didReceiveMemoryWarning];
     
-	NSLog(@"[Sub ] didReceiveMemoryWarning|retainCount=%d", [self.imageView retainCount]-1);
 
     // Release any cached data, images, etc that aren't in use.
 }
@@ -64,6 +73,14 @@
 	
 	self.imageView = nil;
     [super dealloc];
+}
+
+- (IBAction)next:(id)sender
+{
+	SubSubViewController* vc = [[SubSubViewController alloc] initWithNibName:@"SubSubViewController" bundle:nil];
+	vc.parentImageView = self.imageView;
+	[self.navigationController pushViewController:vc animated:YES];
+	[vc release];
 }
 
 @end

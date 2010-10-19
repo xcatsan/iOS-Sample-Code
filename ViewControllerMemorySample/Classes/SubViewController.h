@@ -19,4 +19,6 @@
 @property (nonatomic, retain) IBOutlet UIImageView* imageView;
 @property (nonatomic, retain) RootViewController* rootViewController;
 
+-(IBAction)next:(id)sender;
+
 @end

@@ -19,6 +19,8 @@
 		4C857A04126D5420009766CA /* SubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C857A02126D5420009766CA /* SubViewController.xib */; };
 		4C857A29126D56D8009766CA /* image01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C857A28126D56D8009766CA /* image01.jpg */; };
 		4C857A46126D62AB009766CA /* image03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C857A45126D62AB009766CA /* image03.jpg */; };
+		4C857AF1126D7194009766CA /* SubSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C857AEF126D7194009766CA /* SubSubViewController.m */; };
+		4C857AF2126D7194009766CA /* SubSubViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C857AF0126D7194009766CA /* SubSubViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,9 @@
 		4C857A02126D5420009766CA /* SubViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubViewController.xib; sourceTree = "<group>"; };
 		4C857A28126D56D8009766CA /* image01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image01.jpg; sourceTree = "<group>"; };
 		4C857A45126D62AB009766CA /* image03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image03.jpg; sourceTree = "<group>"; };
+		4C857AEE126D7194009766CA /* SubSubViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubSubViewController.h; sourceTree = "<group>"; };
+		4C857AEF126D7194009766CA /* SubSubViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubSubViewController.m; sourceTree = "<group>"; };
+		4C857AF0126D7194009766CA /* SubSubViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubSubViewController.xib; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ViewControllerMemorySample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ViewControllerMemorySample-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +71,9 @@
 				4C857A00126D5420009766CA /* SubViewController.h */,
 				4C857A01126D5420009766CA /* SubViewController.m */,
 				4C857A02126D5420009766CA /* SubViewController.xib */,
+				4C857AEE126D7194009766CA /* SubSubViewController.h */,
+				4C857AEF126D7194009766CA /* SubSubViewController.m */,
+				4C857AF0126D7194009766CA /* SubSubViewController.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -176,6 +184,7 @@
 				4C857A04126D5420009766CA /* SubViewController.xib in Resources */,
 				4C857A29126D56D8009766CA /* image01.jpg in Resources */,
 				4C857A46126D62AB009766CA /* image03.jpg in Resources */,
+				4C857AF2126D7194009766CA /* SubSubViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +199,7 @@
 				1D3623260D0F684500981E51 /* ViewControllerMemorySampleAppDelegate.m in Sources */,
 				28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */,
 				4C857A03126D5420009766CA /* SubViewController.m in Sources */,
+				4C857AF1126D7194009766CA /* SubSubViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
