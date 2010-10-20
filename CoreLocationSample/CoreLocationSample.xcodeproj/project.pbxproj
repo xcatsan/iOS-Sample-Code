@@ -15,6 +15,8 @@
 		2899E5220DE3E06400AC0155 /* CoreLocationSampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* CoreLocationSampleViewController.xib */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* CoreLocationSampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* CoreLocationSampleViewController.m */; };
+		4C219F07126F993B00C1AA6E /* SimpleAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C219F06126F993B00C1AA6E /* SimpleAnnotation.m */; };
+		4C219F3A126F9B2E00C1AA6E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C219F39126F9B2E00C1AA6E /* MapKit.framework */; };
 		4C857BA2126E3B2E009766CA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C857BA1126E3B2E009766CA /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +33,9 @@
 		28D7ACF70DDB3853001CB0EB /* CoreLocationSampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreLocationSampleViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* CoreLocationSample_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreLocationSample_Prefix.pch; sourceTree = "<group>"; };
+		4C219F05126F993B00C1AA6E /* SimpleAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleAnnotation.h; sourceTree = "<group>"; };
+		4C219F06126F993B00C1AA6E /* SimpleAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleAnnotation.m; sourceTree = "<group>"; };
+		4C219F39126F9B2E00C1AA6E /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4C857BA1126E3B2E009766CA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* CoreLocationSample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CoreLocationSample-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -44,6 +49,7 @@
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
 				4C857BA2126E3B2E009766CA /* CoreLocation.framework in Frameworks */,
+				4C219F3A126F9B2E00C1AA6E /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +63,8 @@
 				1D3623250D0F684500981E51 /* CoreLocationSampleAppDelegate.m */,
 				28D7ACF60DDB3853001CB0EB /* CoreLocationSampleViewController.h */,
 				28D7ACF70DDB3853001CB0EB /* CoreLocationSampleViewController.m */,
+				4C219F05126F993B00C1AA6E /* SimpleAnnotation.h */,
+				4C219F06126F993B00C1AA6E /* SimpleAnnotation.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -107,6 +115,7 @@
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
 				4C857BA1126E3B2E009766CA /* CoreLocation.framework */,
+				4C219F39126F9B2E00C1AA6E /* MapKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -175,6 +184,7 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* CoreLocationSampleAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* CoreLocationSampleViewController.m in Sources */,
+				4C219F07126F993B00C1AA6E /* SimpleAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

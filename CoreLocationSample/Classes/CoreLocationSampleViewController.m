@@ -7,10 +7,12 @@
 //
 
 #import "CoreLocationSampleViewController.h"
+#import "SimpleAnnotation.h"
 
 @implementation CoreLocationSampleViewController
 
 @synthesize locationManager = locationManager_;
+@synthesize mapView = mapView_;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -52,12 +54,15 @@
 
 - (void)viewDidUnload {
 	self.locationManager = nil;
+	self.mapView = nil;
 	
 }
 
 
 - (void)dealloc {
 	self.locationManager = nil;
+	self.mapView = nil;
+
     [super dealloc];
 }
 
@@ -78,12 +83,20 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
 
-	[self logLocation:newLocation];
+//	[self logLocation:newLocation];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
 	NSLog(@"Error: %@", error);
 }
 
+#pragma mark -
+#pragma mark Event
+- (IBAction)reload:(id)sender
+{
+	SimpleAnnotation* annotation = [[[SimpleAnnotation alloc] init] autorelease];
+	annotation.location = self.locationManager.location;	
+	[self.mapView addAnnotation:annotation];
+}
 
 @end
