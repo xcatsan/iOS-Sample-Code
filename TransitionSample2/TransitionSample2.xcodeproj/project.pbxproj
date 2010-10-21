@@ -227,6 +227,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = TransitionSample2_Prefix.pch;
 				INFOPLIST_FILE = "TransitionSample2-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = TransitionSample2;
 			};
 			name = Debug;

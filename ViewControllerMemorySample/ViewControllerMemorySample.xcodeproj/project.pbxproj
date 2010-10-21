@@ -216,6 +216,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ViewControllerMemorySample_Prefix.pch;
 				INFOPLIST_FILE = "ViewControllerMemorySample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = ViewControllerMemorySample;
 			};
 			name = Debug;

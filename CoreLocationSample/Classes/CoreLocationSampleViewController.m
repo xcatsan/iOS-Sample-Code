@@ -81,9 +81,30 @@
 	NSLog(@"timestamp         : %@", location.timestamp);
 }
 
+- (void)setPinToCoordinate:(CLLocation*)location
+{
+	SimpleAnnotation* annotation = [[[SimpleAnnotation alloc] init] autorelease];
+	annotation.location = self.locationManager.location;	
+	[self.mapView addAnnotation:annotation];
+
+	MKCoordinateSpan span = MKCoordinateSpanMake(0.5, 0.5);
+	CLLocationCoordinate2D centerCoordinate = location.coordinate;
+	MKCoordinateRegion coordinateRegion =
+		MKCoordinateRegionMake(centerCoordinate, span);
+	[self.mapView setRegion:coordinateRegion animated:YES];	
+}
+
+
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
 
 //	[self logLocation:newLocation];
+
+	static BOOL first = YES;
+	
+	if (first) {
+		first = NO;
+		[self setPinToCoordinate:self.locationManager.location];
+	}
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
@@ -94,9 +115,8 @@
 #pragma mark Event
 - (IBAction)reload:(id)sender
 {
-	SimpleAnnotation* annotation = [[[SimpleAnnotation alloc] init] autorelease];
-	annotation.location = self.locationManager.location;	
-	[self.mapView addAnnotation:annotation];
+
+	[self setPinToCoordinate:self.locationManager.location];
 }
 
 @end

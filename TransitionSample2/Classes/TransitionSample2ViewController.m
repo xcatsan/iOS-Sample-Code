@@ -97,7 +97,7 @@
 		transition.subtype = subtypes[subType.selectedSegmentIndex];
 	}
 	
-	[self.view.layer addAnimation:transition forKey:nil];
+	[self.baseView.layer addAnimation:transition forKey:nil];
 	
 	imageView1.hidden = YES;
 	imageView2.hidden = NO;
