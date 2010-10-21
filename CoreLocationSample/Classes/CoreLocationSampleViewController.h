@@ -9,16 +9,21 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 
-@interface CoreLocationSampleViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate> {
+@interface CoreLocationSampleViewController : UIViewController <CLLocationManagerDelegate, MKMapViewDelegate, MKReverseGeocoderDelegate> {
 
 	CLLocationManager* locationManager_;
 	
 	MKMapView* mapView_;
 	
+	UILabel* label_;
+	
+	NSMutableDictionary* annotationDictionary_;
 }
 
 @property (nonatomic, retain) CLLocationManager* locationManager;
 @property (nonatomic, retain) IBOutlet 	MKMapView* mapView;
+@property (nonatomic, retain) IBOutlet UILabel* label;
+@property (nonatomic, retain) NSMutableDictionary* annotationDictionary;
 
 - (IBAction)reload:(id)sender;
 

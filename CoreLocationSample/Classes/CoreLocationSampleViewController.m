@@ -13,6 +13,8 @@
 
 @synthesize locationManager = locationManager_;
 @synthesize mapView = mapView_;
+@synthesize label = label_;
+@synthesize annotationDictionary = annotationDictionary_;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -23,6 +25,8 @@
 		self.locationManager.delegate = self;
 		[self.locationManager startUpdatingLocation];
 		NSLog(@"Start updating location.");
+		
+		self.annotationDictionary = [NSMutableDictionary dictionary];
 		
 	} else {
 		NSLog(@"The location services is disabled.");
@@ -55,6 +59,7 @@
 - (void)viewDidUnload {
 	self.locationManager = nil;
 	self.mapView = nil;
+	self.annotationDictionary = nil;
 	
 }
 
@@ -62,9 +67,31 @@
 - (void)dealloc {
 	self.locationManager = nil;
 	self.mapView = nil;
+	self.annotationDictionary = nil;
 
     [super dealloc];
 }
+
+#pragma mark -
+#pragma mark 
+- (void)setAnnotation:(SimpleAnnotation*)annotation forCoordinate:(CLLocationCoordinate2D)coordinate
+{
+	NSValue* coordinateValue = [NSValue value:&coordinate
+								 withObjCType:@encode(CLLocationCoordinate2D)];
+	[self.annotationDictionary setObject:annotation
+								  forKey:coordinateValue];
+}
+
+- (SimpleAnnotation*)annotationForCoordinate:(CLLocationCoordinate2D)coordinate
+{
+	NSValue* coordinateValue = [NSValue value:&coordinate
+								 withObjCType:@encode(CLLocationCoordinate2D)];
+	SimpleAnnotation* annotation = [self.annotationDictionary objectForKey:coordinateValue];
+	[self.annotationDictionary removeObjectForKey:coordinateValue];
+	
+	return annotation;
+}
+
 
 #pragma mark -
 #pragma mark CLLocationManagerDelegate
@@ -83,15 +110,33 @@
 
 - (void)setPinToCoordinate:(CLLocation*)location
 {
+	// add annotation
 	SimpleAnnotation* annotation = [[[SimpleAnnotation alloc] init] autorelease];
-	annotation.location = self.locationManager.location;	
+	annotation.location = location;
 	[self.mapView addAnnotation:annotation];
 
-	MKCoordinateSpan span = MKCoordinateSpanMake(0.5, 0.5);
+	[self setAnnotation:annotation
+		   forCoordinate:location.coordinate];
+
+	// setup default span
+	MKCoordinateSpan span;
+	if (self.mapView.region.span.latitudeDelta > 100) {
+		span = MKCoordinateSpanMake(0.005, 0.005);
+	} else {
+		span = self.mapView.region.span;
+	}
+		
+
+
+	// set the map view to location
 	CLLocationCoordinate2D centerCoordinate = location.coordinate;
 	MKCoordinateRegion coordinateRegion =
 		MKCoordinateRegionMake(centerCoordinate, span);
 	[self.mapView setRegion:coordinateRegion animated:YES];	
+	
+	MKReverseGeocoder* reverseGeocoder = [[MKReverseGeocoder alloc] initWithCoordinate:location.coordinate];
+	reverseGeocoder.delegate = self;
+	[reverseGeocoder start];
 }
 
 
@@ -118,5 +163,26 @@
 
 	[self setPinToCoordinate:self.locationManager.location];
 }
+
+
+#pragma mark -
+#pragma mark MKReverseGeocoderDelegate
+- (void)reverseGeocoder:(MKReverseGeocoder*)geocoder didFindPlacemark:(MKPlacemark*)placemark {
+	self.label.text = placemark.title;
+
+	SimpleAnnotation* annotation =
+		[self annotationForCoordinate:geocoder.coordinate];
+	annotation.title = placemark.title;
+
+}  
+
+- (void) reverseGeocoder:(MKReverseGeocoder *)geocoder didFailWithError:(NSError*) error {  
+
+	self.label.text = [error description];
+
+	SimpleAnnotation* annotation =
+	[self annotationForCoordinate:geocoder.coordinate];
+	annotation.title = [error description];
+}  
 
 @end

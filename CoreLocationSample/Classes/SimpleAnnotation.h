@@ -12,7 +12,9 @@
 @interface SimpleAnnotation : NSObject <MKAnnotation>{
 
 	CLLocation* location_;
+	NSString* title_;
 }
 @property (nonatomic, copy) CLLocation* location;
+@property (nonatomic, retain) NSString* title;
 
 @end

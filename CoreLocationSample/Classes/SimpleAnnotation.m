@@ -12,17 +12,13 @@
 
 @implementation SimpleAnnotation
 @synthesize location = location_;
+@synthesize title = title_;
 
 #pragma mark -
 #pragma mark MKAnnotation
 - (CLLocationCoordinate2D)coordinate
 {
     return self.location.coordinate;
-}
-
-- (NSString*)title
-{
-    return @"Hello!";
 }
 
 @end
