@@ -11,19 +11,18 @@
 @class XCGalleryInnerScrollView;
 @protocol XCGalleryInnerScrollViewDelegate
 
-- (void)innerScrollView:(XCGalleryInnerScrollView*)innerScrollView
-		   touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
+- (void)didTouched:(XCGalleryInnerScrollView*)innerScrollView;
 
 @end
 
 @interface XCGalleryInnerScrollView : UIScrollView <UIScrollViewDelegate> {
 
 	UIImageView* imageView_;
-	id <XCGalleryInnerScrollViewDelegate> eventDelegate_;
+	NSObject <XCGalleryInnerScrollViewDelegate> *eventDelegate_;
 }
 
 @property (nonatomic, retain) UIImageView* imageView;
-@property (nonatomic, assign) id <XCGalleryInnerScrollViewDelegate> eventDelegate;
+@property (nonatomic, assign) NSObject <XCGalleryInnerScrollViewDelegate> *eventDelegate;
 
 + (CGRect)zoomRectForScrollView:(UIScrollView *)scrollView
 					  withScale:(float)scale withCenter:(CGPoint)center;

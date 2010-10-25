@@ -451,40 +451,6 @@
 
 
 #pragma mark -
-#pragma mark UIScrollViewDelegate
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-	CGFloat position = scrollView.contentOffset.x / scrollView.bounds.size.width;
-	CGFloat delta = position - (CGFloat)self.currentImageIndex;
-	
-	if (fabs(delta) >= 1.0f) {
-		XCGalleryInnerScrollView* currentScrollView =
-			[self.innerScrollViews objectAtIndex:kIndexOfCurrentScrollView];
-		[self resetZoomScrollView:currentScrollView];
-		
-		//		NSLog(@"%f (%d=>%d)", delta, self.currentImageIndex, index);
-		
-		if (delta > 0) {
-			// the current page moved to right
-			self.currentImageIndex = self.currentImageIndex+1;
-			self.contentOffsetIndex = self.contentOffsetIndex+1;
-			self.pageControl.currentPage = self.currentImageIndex;
-			[self setupNextImage];
-			
-		} else {
-			// the current page moved to left
-			self.currentImageIndex = self.currentImageIndex-1;
-			self.contentOffsetIndex = self.contentOffsetIndex-1;
-			self.pageControl.currentPage = self.currentImageIndex;
-			[self setupPreviousImage];
-		}
-		
-	}
-	
-}
-
-
-#pragma mark -
 #pragma mark Event
 -(void)pageControlDidChange:(id)sender
 {
@@ -613,19 +579,52 @@
 
 #pragma mark -
 #pragma mark Event
-/*
- - (void)touchesBegin:(NSSet *)touches withEvent:(UIEvent *)event
- {
- NSLog(@"begin");
- }
- */
 
-- (void)innerScrollView:(XCGalleryInnerScrollView*)innerScrollView
-		   touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)didTouched:(XCGalleryInnerScrollView*)innerScrollView
 {
 	[self stopSlideShow];
 }
 
+
+
+#pragma mark -
+#pragma mark UIScrollViewDelegate
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+	NSLog(@"dragging");
+	[self stopSlideShow];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+	CGFloat position = scrollView.contentOffset.x / scrollView.bounds.size.width;
+	CGFloat delta = position - (CGFloat)self.currentImageIndex;
+	
+	if (fabs(delta) >= 1.0f) {
+		XCGalleryInnerScrollView* currentScrollView =
+		[self.innerScrollViews objectAtIndex:kIndexOfCurrentScrollView];
+		[self resetZoomScrollView:currentScrollView];
+		
+		//		NSLog(@"%f (%d=>%d)", delta, self.currentImageIndex, index);
+		
+		if (delta > 0) {
+			// the current page moved to right
+			self.currentImageIndex = self.currentImageIndex+1;
+			self.contentOffsetIndex = self.contentOffsetIndex+1;
+			self.pageControl.currentPage = self.currentImageIndex;
+			[self setupNextImage];
+			
+		} else {
+			// the current page moved to left
+			self.currentImageIndex = self.currentImageIndex-1;
+			self.contentOffsetIndex = self.contentOffsetIndex-1;
+			self.pageControl.currentPage = self.currentImageIndex;
+			[self setupPreviousImage];
+		}
+		
+	}
+	
+}
 
 
 

@@ -14,12 +14,6 @@
 @synthesize imageView = imageView_;
 @synthesize eventDelegate = eventDelegate_;
 
--(UIView*)viewForZoomingInScrollView:(UIScrollView *)scrollView
-{
-	return [self.subviews objectAtIndex:0];
-}
-
-
 -(id)initWithFrame:(CGRect)frame
 {
 	if (self = [super initWithFrame:frame]) {
@@ -65,9 +59,7 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	[self.eventDelegate innerScrollView:self
-						   touchesBegan:touches
-							  withEvent:event];
+	[self.eventDelegate didTouched:self];
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
@@ -85,13 +77,26 @@
 		[self zoomToRect:zoomRect animated:YES];
 	}
 	
-//		NSLog(@"offset: %@", NSStringFromCGPoint(self.contentOffset));
 }
 
 - (void) dealloc
 {
 	self.imageView = nil;
 	[super dealloc];
+}
+
+
+#pragma mark -
+#pragma mark UIScrollViewDelegate
+-(UIView*)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+	return [self.subviews objectAtIndex:0];
+}
+
+
+- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(UIView *)view
+{
+	[self.eventDelegate didTouched:self];
 }
 
 
