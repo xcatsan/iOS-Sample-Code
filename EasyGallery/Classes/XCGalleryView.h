@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XCGalleryInnerScrollView.h"
 
 @class XCGalleryView;
 @protocol XCGalleryViewDelegate
@@ -18,7 +19,7 @@
 @end
 
 @class XCGalleryInnerScrollView;
-@interface XCGalleryView : UIView <UIScrollViewDelegate> {
+@interface XCGalleryView : UIView <UIScrollViewDelegate, XCGalleryInnerScrollViewDelegate> {
 
 	NSInteger currentImageIndex_;
 	

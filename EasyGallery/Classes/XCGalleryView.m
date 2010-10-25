@@ -8,14 +8,16 @@
 #import <QuartzCore/QuartzCore.h>
 
 #import "XCGalleryView.h"
-#import "XCGalleryInnerScrollView.h"
 
 #define DEFAULT_SPACING_WIDTH	40
 #define DEFAULT_SPACING_HEIGHT	0
 #define DEFAULT_MARGIN_HEIGHT	20
 #define DEFAULT_MARGIN_WIDTH_RATE	0.2
+// DEBUG
 #define DEFAULT_SLIDESHOW_DURATION 3.0/2
 #define DEFAULT_TRANSITION_DURATION	0.75
+//#define DEFAULT_SLIDESHOW_DURATION 3
+//#define DEFAULT_TRANSITION_DURATION	0.75
 
 #define kMaxOfScrollView			5
 #define kLengthFromCetner			((kMaxOfScrollView-1)/2)
@@ -119,6 +121,8 @@
 
 - (void)setupSubViews
 {	
+	NSLog(@"setupSubviews");
+
 	// initialize vars
 	self.viewSpacing = CGSizeMake(
 								  DEFAULT_SPACING_WIDTH, DEFAULT_SPACING_HEIGHT);
@@ -185,8 +189,8 @@
 		XCGalleryInnerScrollView* innerScrollView =
 			[[XCGalleryInnerScrollView alloc] initWithFrame:innerScrollViewFrame];
 		innerScrollView.clipsToBounds = YES;
-
 		innerScrollView.backgroundColor = self.backgroundColor;
+		innerScrollView.eventDelegate = self;
 		
 		// bind & store views
 		[self.scrollView addSubview:innerScrollView];
@@ -228,6 +232,7 @@
 
 - (void)layoutSubviews
 {
+	NSLog(@"layoutSubviews");
 	if (!didSetup_) {
 		// initialization for only first time
 		[self setupSubViews];
@@ -349,6 +354,27 @@
 	pageControlEnabled_ = enabled;
 	self.pageControl.hidden = !enabled;
 }
+
+
+#pragma mark -
+#pragma mark change mode
+
+- (void)setShowcaseModeEnabled:(BOOL)enabled animated:(BOOL)animated
+{
+	showcaseModeEnabled_ = enabled;
+	
+//	NSLog(@"%d", self.showcaseModeEnabled);
+
+//	[self layoutSubviews];
+	
+}
+
+
+- (void)setShowcaseModeEnabled:(BOOL)enabled
+{
+	[self setShowcaseModeEnabled:enabled animated:YES];
+}
+
 
 #pragma mark -
 #pragma mark Initialization and deallocation
@@ -497,33 +523,23 @@
 	}
 }
 
-#pragma mark -
-#pragma mark Event
-/*
-- (void)touchesBegin:(NSSet *)touches withEvent:(UIEvent *)event
-{
-	NSLog(@"begin");
-}
- */
-
 
 #pragma mark -
 #pragma mark Slide Show 
 - (void)stopSlideShow
 {
-	if (self.timer && [self.timer isValid]) {
+	if (self.isRunningSlideShow && self.timer && [self.timer isValid]) {
 		[self.timer invalidate];
+		self.isRunningSlideShow = NO;	
+		[self.delegate galleryDidStopSlideShow:self];
+	} else {
+		// nothing
 	}
 
-	self.isRunningSlideShow = NO;
-	
-	[self.delegate galleryDidStopSlideShow:self];
 }
 
 - (void)nextSlideShow:(NSTimer*)timer
 {
-	NSLog(@"nextSlideShow:");
-	
 	NSInteger numberOfViews = [self.delegate numberImagesInGallery:self];
 
 	if (numberOfViews <= (self.currentImageIndex+1)) {
@@ -531,15 +547,28 @@
 		return;
 		// abort
 	}
-	XCGalleryInnerScrollView* currentInnerScrollView =
-		[self.innerScrollViews objectAtIndex:kIndexOfCurrentScrollView];
-	
-	self.currentImageIndex = self.currentImageIndex + 1;
+
+	// [1] setup transitionView
 	[self setImageAtIndex:self.currentImageIndex
 			 toScrollView:self.transitionInnerScrollView];
-	self.transitionInnerScrollView.frame = currentInnerScrollView.frame;
-	// ??? currentOffset ?
+	self.currentImageIndex = self.currentImageIndex + 1;
 	
+	self.contentOffsetIndex = self.contentOffsetIndex + 1;
+	XCGalleryInnerScrollView* nextInnerScrollView =
+		[self.innerScrollViews objectAtIndex:kIndexOfCurrentScrollView];
+	
+	self.transitionInnerScrollView.frame = nextInnerScrollView.frame;
+	
+	[self.innerScrollViews replaceObjectAtIndex:kIndexOfCurrentScrollView
+									 withObject:self.transitionInnerScrollView];
+
+	nextInnerScrollView.hidden = YES;
+	self.transitionInnerScrollView.hidden = NO;
+
+	self.scrollView.contentOffset = CGPointMake(self.contentOffsetIndex*self.scrollView.bounds.size.width, 0);
+
+	
+	// [2] do transition
 	CATransition* transition = [CATransition animation];
 	transition.duration = DEFAULT_TRANSITION_DURATION;
 	transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
@@ -548,13 +577,15 @@
 	
 	[self.scrollView.layer addAnimation:transition forKey:nil];
 
-	currentInnerScrollView.hidden = YES;
+	nextInnerScrollView.hidden = YES;
 	self.transitionInnerScrollView.hidden = NO;
 	
 	[self.innerScrollViews replaceObjectAtIndex:kIndexOfCurrentScrollView
 									 withObject:self.transitionInnerScrollView];
-	self.transitionInnerScrollView = currentInnerScrollView;
+	self.transitionInnerScrollView = nextInnerScrollView;
 
+	// [3] setup next
+	[self setupNextImage];
 }
 
 - (void)startSlideShow
@@ -578,6 +609,25 @@
 {
 	NSLog(@"animationDidStop:finished:");
 }
+
+
+#pragma mark -
+#pragma mark Event
+/*
+ - (void)touchesBegin:(NSSet *)touches withEvent:(UIEvent *)event
+ {
+ NSLog(@"begin");
+ }
+ */
+
+- (void)innerScrollView:(XCGalleryInnerScrollView*)innerScrollView
+		   touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+	[self stopSlideShow];
+}
+
+
+
 
 
 @end

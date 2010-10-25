@@ -19,6 +19,7 @@
 @property (nonatomic, retain) NSMutableArray* imageFiles;
 @property (nonatomic, retain) IBOutlet XCGalleryView* galleryView;
 - (IBAction)playSlideShow:(id)sender;
+- (IBAction)changeMode:(id)sender;
 
 @end
 

@@ -27,8 +27,10 @@ enum {
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	self.galleryView.showcaseModeEnabled = NO;
-	self.galleryView.pageControlEnabled = NO;
+//	self.galleryView.showcaseModeEnabled = NO;
+//	self.galleryView.pageControlEnabled = NO;
+//	self.galleryView.showcaseModeEnabled = YES;
+//	self.galleryView.pageControlEnabled = YES;
 	
 }
 
@@ -74,5 +76,12 @@ enum {
 {
 	[self.galleryView startSlideShow];
 }
+
+- (IBAction)changeMode:(id)sender
+{
+	[self.galleryView setShowcaseModeEnabled:!self.galleryView.showcaseModeEnabled
+									animated:YES];
+}
+
 
 @end

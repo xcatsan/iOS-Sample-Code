@@ -12,6 +12,7 @@
 @implementation XCGalleryInnerScrollView
 
 @synthesize imageView = imageView_;
+@synthesize eventDelegate = eventDelegate_;
 
 -(UIView*)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
@@ -60,6 +61,13 @@
     zoomRect.origin.y = center.y - (zoomRect.size.height / 2.0);
 	
     return zoomRect;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+	[self.eventDelegate innerScrollView:self
+						   touchesBegan:touches
+							  withEvent:event];
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
