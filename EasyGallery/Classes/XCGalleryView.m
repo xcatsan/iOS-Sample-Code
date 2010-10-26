@@ -105,18 +105,72 @@
 }
 
 
-- (void)setupSpacingAndMarginAndClips
+- (void)setupClips
+{
+	self.scrollView.clipsToBounds = NO;
+
+	/*
+	if (self.showcaseModeEnabled) {
+		self.scrollView.clipsToBounds = NO;
+	} else {
+		self.scrollView.clipsToBounds = YES;
+	}
+	 */
+}
+
+- (void)setupSpacingAndMargin
 {
 	if (self.showcaseModeEnabled) {
 		spacing_ = self.viewSpacing;
 		spacing_.width = spacing_.width / 2.0;
 		margin_ = self.showcaseMargin;
-		self.scrollView.clipsToBounds = NO;
 	} else {
 		spacing_ = self.viewSpacing;
 		margin_ = CGSizeZero;
-		self.scrollView.clipsToBounds = YES;
 	}
+}
+- (void)setupSpacingAndMarginAndClips
+{
+	[self setupSpacingAndMargin];
+	[self setupClips];
+}
+
+
+- (CGRect)baseFrame
+{
+	return CGRectInset(self.bounds, margin_.width, margin_.height);
+}
+
+- (void)relayoutBaseScrollView
+{
+	CGRect scrollViewFrame = [self baseFrame];
+	scrollViewFrame.origin.x -= spacing_.width/2.0;
+	scrollViewFrame.size.width += spacing_.width;
+	self.scrollView.frame =scrollViewFrame;	
+}
+
+- (void)relayoutInnerScrollViews
+{
+	CGRect innerScrollViewFrame = CGRectZero;
+	innerScrollViewFrame.size = [self baseFrame].size;
+	innerScrollViewFrame.origin.x = -kLengthFromCetner * innerScrollViewFrame.size.width;
+	if (self.showcaseModeEnabled) {
+		innerScrollViewFrame.origin.x -= spacing_.width;
+	}
+		
+	for (int i=0; i < kMaxOfScrollView; i++) {
+		
+		XCGalleryInnerScrollView* innerScrollView = [self.innerScrollViews objectAtIndex:i];
+	
+		innerScrollViewFrame.origin.x += spacing_.width/2.0;	// left space
+
+		innerScrollView.frame = innerScrollViewFrame;
+
+		innerScrollViewFrame.origin.x += innerScrollViewFrame.size.width; // next
+		
+		innerScrollViewFrame.origin.x += spacing_.width/2.0;	// right space
+	}
+	
 }
 
 - (void)setupSubViews
@@ -145,46 +199,29 @@
 	
 	
 	// setup base scroll view
-	//-------------------------
-	CGRect baseFrame = self.bounds;
-	baseFrame = CGRectInset(baseFrame, margin_.width, margin_.height);
-	
-	self.scrollView = [[[UIScrollView alloc] initWithFrame:baseFrame] autorelease];
+	//-------------------------	
+	self.scrollView = [[[UIScrollView alloc] initWithFrame:[self baseFrame]] autorelease];
 	
 	self.scrollView.delegate = self;
 	self.scrollView.pagingEnabled = YES;
 	self.scrollView.showsHorizontalScrollIndicator = NO;
 	self.scrollView.showsVerticalScrollIndicator = NO;
 	self.scrollView.scrollsToTop = NO;
-	CGRect scrollViewFrame = self.scrollView.frame;
-	scrollViewFrame.origin.x -= spacing_.width/2.0;
-	scrollViewFrame.size.width += spacing_.width;
-	self.scrollView.frame =scrollViewFrame;
 	self.scrollView.autoresizingMask =
 		UIViewAutoresizingFlexibleWidth |
 		UIViewAutoresizingFlexibleHeight;
-	
+	[self relayoutBaseScrollView];
+
 	[self addSubview:self.scrollView];
 	
 	// setup internal scroll views
 	//------------------------------
 	CGRect innerScrollViewFrame = CGRectZero;
-	innerScrollViewFrame.size = baseFrame.size;
-	innerScrollViewFrame.origin.x = -kLengthFromCetner * innerScrollViewFrame.size.width;
-	if (self.showcaseModeEnabled) {
-		innerScrollViewFrame.origin.x -= spacing_.width;
-	}
+//	innerScrollViewFrame.size = [self baseFrame].size;
 
 	self.innerScrollViews = [NSMutableArray array];
 		
 	for (int i=0; i < kMaxOfScrollView; i++) {
-		
-		// image view
-		//--------------
-
-		// scroll view
-		//--------------
-		innerScrollViewFrame.origin.x += spacing_.width/2.0;	// left space
 		
 		XCGalleryInnerScrollView* innerScrollView =
 			[[XCGalleryInnerScrollView alloc] initWithFrame:innerScrollViewFrame];
@@ -198,12 +235,8 @@
 		
 		// release all
 		[innerScrollView release];
-		
-		// adust origin.x
-		innerScrollViewFrame.origin.x += innerScrollViewFrame.size.width;
-		innerScrollViewFrame.origin.x += spacing_.width/2.0;	// right space
-		
 	}
+	[self relayoutInnerScrollViews];
 	
 	// setup temporary view for slideshow transition
 	self.transitionInnerScrollView =
@@ -232,7 +265,6 @@
 
 - (void)layoutSubviews
 {
-	NSLog(@"layoutSubviews");
 	if (!didSetup_) {
 		// initialization for only first time
 		[self setupSubViews];
@@ -253,8 +285,9 @@
 		return;
 	}
 
+	NSLog(@"layoutSubviews[2]");
 	[self setupSpacingAndMarginAndClips];
-
+		
 	previousScrollSize_ = newSize;
 	CGSize newSizeWithSpace = newSize;
 	newSizeWithSpace.width += spacing_.width;
@@ -325,9 +358,13 @@
 	
 	// adjust content size and offset of base scrollView
 	//--
+
+	passDidScroll_ = YES;
 	self.scrollView.contentSize = CGSizeMake(
 		[self.delegate numberImagesInGallery:self]*newSizeWithSpace.width,
 		newSize.height);
+
+	passDidScroll_ = YES;
 	self.scrollView.contentOffset = CGPointMake(
 		self.contentOffsetIndex*newSizeWithSpace.width, 0);
 
@@ -339,7 +376,6 @@
 	 NSLog(@"scrollView.contentOffset: %@", NSStringFromCGPoint(self.scrollView.contentOffset))	 */
 ;
 }
-
 
 #pragma mark -
 #pragma mark Accessors
@@ -358,14 +394,21 @@
 
 #pragma mark -
 #pragma mark change mode
+- (void)animationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context
+{
+	NSLog(@"animationDidStop:");
+}
 
 - (void)setShowcaseModeEnabled:(BOOL)enabled animated:(BOOL)animated
 {
 	showcaseModeEnabled_ = enabled;
-	
-//	NSLog(@"%d", self.showcaseModeEnabled);
+	passDidScroll_ = YES;
 
-//	[self layoutSubviews];
+	[UIView beginAnimations:nil context:nil];
+	[self setupSpacingAndMargin];
+	[self relayoutBaseScrollView];
+	[self relayoutInnerScrollViews];
+	[UIView commitAnimations];
 	
 }
 
@@ -591,22 +634,26 @@
 #pragma mark UIScrollViewDelegate
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
-	NSLog(@"dragging");
 	[self stopSlideShow];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+	if (passDidScroll_) {
+		passDidScroll_ = NO;
+		return;
+	}
+
 	CGFloat position = scrollView.contentOffset.x / scrollView.bounds.size.width;
 	CGFloat delta = position - (CGFloat)self.currentImageIndex;
 	
 	if (fabs(delta) >= 1.0f) {
 		XCGalleryInnerScrollView* currentScrollView =
-		[self.innerScrollViews objectAtIndex:kIndexOfCurrentScrollView];
+			[self.innerScrollViews objectAtIndex:kIndexOfCurrentScrollView];
 		[self resetZoomScrollView:currentScrollView];
 		
 		//		NSLog(@"%f (%d=>%d)", delta, self.currentImageIndex, index);
-		
+
 		if (delta > 0) {
 			// the current page moved to right
 			self.currentImageIndex = self.currentImageIndex+1;

@@ -51,6 +51,8 @@
 	NSTimeInterval slideShowDuration_;
 	NSTimer* timer_;
 	XCGalleryInnerScrollView* transitionInnerScrollView_;
+	
+	BOOL passDidScroll_;
 }
 
 // public properties
