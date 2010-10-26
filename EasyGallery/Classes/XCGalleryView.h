@@ -35,6 +35,8 @@
 	
 
 	BOOL showcaseModeEnabled_;
+	BOOL showcaseModeEnabledBeforeSlideshow_;
+	
 	CGSize showcaseMargin_;
 	CGSize viewSpacing_;
 
@@ -53,6 +55,7 @@
 	XCGalleryInnerScrollView* transitionInnerScrollView_;
 	
 	BOOL passDidScroll_;
+	
 }
 
 // public properties

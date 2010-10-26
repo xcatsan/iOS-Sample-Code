@@ -540,6 +540,9 @@
 	if (self.isRunningSlideShow && self.timer && [self.timer isValid]) {
 		[self.timer invalidate];
 		self.isRunningSlideShow = NO;	
+		
+		self.showcaseModeEnabled = showcaseModeEnabledBeforeSlideshow_;
+		
 		[self.delegate galleryDidStopSlideShow:self];
 	} else {
 		// nothing
@@ -601,6 +604,11 @@
 {
 	if (self.isRunningSlideShow) {
 		return;
+	}
+	
+	showcaseModeEnabledBeforeSlideshow_ = self.showcaseModeEnabled;
+	if (self.showcaseModeEnabled) {
+		self.showcaseModeEnabled = NO;
 	}
 	
 	self.timer = [NSTimer scheduledTimerWithTimeInterval:self.slideShowDuration
