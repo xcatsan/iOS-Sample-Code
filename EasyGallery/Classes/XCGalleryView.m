@@ -703,7 +703,7 @@
 
 
 #pragma mark -
-#pragma mark Accessors
+#pragma mark public methods
 - (void)setDelegate:(id <XCGalleryViewDelegate>)delegate
 {
 	delegate_ = delegate;
@@ -755,6 +755,59 @@
 	return currentImageIndex_;
 }
 
+- (void)movePage_:(BOOL)animated
+{
+	CGSize size;
+	if (self.showcaseModeEnabled) {
+		size = self.scrollView.bounds.size;
+		size.width -= spacing_.width;
+	} else {
+		size = self.bounds.size;
+	}
+	size.width += spacing_.width;
+	
+	passDidScroll_ = YES;
+	[self.scrollView setContentOffset:CGPointMake(
+		self.contentOffsetIndex*size.width, 0)
+							 animated:animated];
+}
 
+- (void)movePreviousPageAnimated:(BOOL)animated
+{
+	if (self.currentPage <= 0) {
+		// do nothing
+		return;
+	}
+	
+	self.currentImageIndex--;
+	self.contentOffsetIndex--;
+	self.pageControl.currentPage--;
+	[self setupPreviousImage];
+	[self movePage_:animated];
+}
+
+- (void)movePreviousPage
+{
+	[self movePreviousPageAnimated:YES];
+}
+
+- (void)moveNextPageAnimated:(BOOL)animated
+{
+	if (self.currentPage >= [self numberOfImages]-1) {
+		// do nothing
+		return;
+	}
+
+	self.currentImageIndex++;
+	self.contentOffsetIndex++;
+	self.pageControl.currentPage++;
+	[self setupNextImage];
+	[self movePage_:animated];
+}
+
+- (void)moveNextPage
+{
+	[self moveNextPageAnimated:YES];
+}
 
 @end

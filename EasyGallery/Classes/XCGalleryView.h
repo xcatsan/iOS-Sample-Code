@@ -69,5 +69,9 @@
 // public methods
 - (void)startSlideShow;
 - (void)setCurrentPage:(NSInteger)page animated:(BOOL)animated;
+- (void)movePreviousPage;
+- (void)moveNextPage;
+- (void)movePreviousPageAnimated:(BOOL)animated;
+- (void)moveNextPageAnimated:(BOOL)animated;
 
 @end

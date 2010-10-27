@@ -98,4 +98,14 @@ enum {
 	NSLog(@"TODO %@", __PRETTY_FUNCTION__);
 }
 
+- (IBAction)movePrevious:(id)sender
+{
+	[self.galleryView movePreviousPage];
+}
+
+- (IBAction)moveNext:(id)sender
+{
+	[self.galleryView moveNextPage];
+}
+
 @end

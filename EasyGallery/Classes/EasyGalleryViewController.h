@@ -23,5 +23,7 @@
 - (IBAction)movePage:(id)sender;
 - (IBAction)refresh:(id)sender;
 - (IBAction)deletePage:(id)sender;
+- (IBAction)movePrevious:(id)sender;
+- (IBAction)moveNext:(id)sender;
 @end
 
