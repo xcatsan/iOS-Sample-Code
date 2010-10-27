@@ -61,8 +61,18 @@
 @synthesize timer = timer_;
 @synthesize transitionInnerScrollView = transitionInnerScrollView_;
 
+
 #pragma mark -
-#pragma mark Controle scroll views
+#pragma mark private utilities
+- (NSInteger)numberOfImages
+{
+	NSInteger numberOfViews = [self.delegate numberImagesInGallery:self];
+	if (numberOfViews < 0) {
+		numberOfViews = 0;
+	}
+	return numberOfViews;
+}
+
 - (void)resetZoomScrollView:(XCGalleryInnerScrollView*)innerScrollView
 {
 	innerScrollView.zoomScale = 1.0;
@@ -71,7 +81,7 @@
 
 - (void)setImageAtIndex:(NSInteger)index toScrollView:(XCGalleryInnerScrollView*)innerScrollView
 {
-	if (index < 0 || [self.delegate numberImagesInGallery:self] <= index) {
+	if (index < 0 || [self numberOfImages] <= index) {
 		innerScrollView.imageView.image = nil;
 		return;
 	}
@@ -85,7 +95,7 @@
 
 - (void)reloadData
 {
-	NSInteger numberOfViews = [self.delegate numberImagesInGallery:self];
+	NSInteger numberOfViews = [self numberOfImages];
 	if (self.currentImageIndex >= numberOfViews) {
 		if (numberOfViews == 0) {
 			self.currentImageIndex = 0;
@@ -153,7 +163,7 @@
 {
 	CGRect innerScrollViewFrame = CGRectZero;
 	innerScrollViewFrame.size = [self baseFrame].size;
-	innerScrollViewFrame.origin.x = -kLengthFromCetner * innerScrollViewFrame.size.width;
+	innerScrollViewFrame.origin.x = (self.contentOffsetIndex-kLengthFromCetner) * innerScrollViewFrame.size.width;
 	if (self.showcaseModeEnabled) {
 		innerScrollViewFrame.origin.x -= spacing_.width;
 	}
@@ -173,6 +183,24 @@
 	
 }
 
+- (void)relayoutViewsAnimated:(BOOL)animated
+{
+	passDidScroll_ = YES;
+
+	if (animated) {
+		[UIView beginAnimations:nil context:nil];
+	}
+	[self setupSpacingAndMargin];
+	[self relayoutBaseScrollView];
+	[self relayoutInnerScrollViews];
+	if (animated) {
+		[UIView commitAnimations];
+	}
+}
+
+
+#pragma mark -
+#pragma mark setup and layout subviews
 - (void)setupSubViews
 {	
 	NSLog(@"setupSubviews");
@@ -263,7 +291,7 @@
 	[self addSubview:self.pageControl];
 }	
 
-- (void)layoutSubviews
+- (void)layoutSubviewsWithSizeChecking:(BOOL)checking animated:(BOOL)animated
 {
 	if (!didSetup_) {
 		// initialization for only first time
@@ -281,11 +309,12 @@
 	}
 	CGSize oldSize = previousScrollSize_;
 
-	if (CGSizeEqualToSize(newSize, oldSize)) {
+	if (checking && CGSizeEqualToSize(newSize, oldSize)) {
 		return;
 	}
+	
+	NSLog(@"layoutSubviews");
 
-	NSLog(@"layoutSubviews[2]");
 	[self setupSpacingAndMarginAndClips];
 		
 	previousScrollSize_ = newSize;
@@ -361,12 +390,17 @@
 
 	passDidScroll_ = YES;
 	self.scrollView.contentSize = CGSizeMake(
-		[self.delegate numberImagesInGallery:self]*newSizeWithSpace.width,
+		[self numberOfImages]*newSizeWithSpace.width,
 		newSize.height);
 
 	passDidScroll_ = YES;
+	/*
 	self.scrollView.contentOffset = CGPointMake(
 		self.contentOffsetIndex*newSizeWithSpace.width, 0);
+	 */
+	[self.scrollView setContentOffset:CGPointMake(
+							  self.contentOffsetIndex*newSizeWithSpace.width, 0)
+							 animated:animated];
 
 	/* DEBUG
 	 NSLog(@"oldSize         : %@", NSStringFromCGSize(oldSize));
@@ -377,45 +411,9 @@
 ;
 }
 
-#pragma mark -
-#pragma mark Accessors
-- (void)setDelegate:(id <XCGalleryViewDelegate>)delegate
+- (void)layoutSubviews
 {
-	delegate_ = delegate;
-	[self reloadData];
-}
-
-- (void)setPageControlEnabled:(BOOL)enabled
-{
-	pageControlEnabled_ = enabled;
-	self.pageControl.hidden = !enabled;
-}
-
-
-#pragma mark -
-#pragma mark change mode
-- (void)animationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context
-{
-	NSLog(@"animationDidStop:");
-}
-
-- (void)setShowcaseModeEnabled:(BOOL)enabled animated:(BOOL)animated
-{
-	showcaseModeEnabled_ = enabled;
-	passDidScroll_ = YES;
-
-	[UIView beginAnimations:nil context:nil];
-	[self setupSpacingAndMargin];
-	[self relayoutBaseScrollView];
-	[self relayoutInnerScrollViews];
-	[UIView commitAnimations];
-	
-}
-
-
-- (void)setShowcaseModeEnabled:(BOOL)enabled
-{
-	[self setShowcaseModeEnabled:enabled animated:YES];
+	[self layoutSubviewsWithSizeChecking:YES animated:NO];
 }
 
 
@@ -541,7 +539,11 @@
 		[self.timer invalidate];
 		self.isRunningSlideShow = NO;	
 		
-		self.showcaseModeEnabled = showcaseModeEnabledBeforeSlideshow_;
+		// don't use porperty
+		// self.showcaseModeEnabled = showcaseModeEnabledBeforeSlideshow_;
+		if (self.showcaseModeEnabled != showcaseModeEnabledBeforeSlideshow_) {
+			[self setShowcaseModeEnabled:showcaseModeEnabledBeforeSlideshow_];
+		}
 		
 		[self.delegate galleryDidStopSlideShow:self];
 	} else {
@@ -552,8 +554,7 @@
 
 - (void)nextSlideShow:(NSTimer*)timer
 {
-	NSInteger numberOfViews = [self.delegate numberImagesInGallery:self];
-
+	NSInteger numberOfViews = [self numberOfImages];
 	if (numberOfViews <= (self.currentImageIndex+1)) {
 		[self stopSlideShow];
 		return;
@@ -681,6 +682,78 @@
 	
 }
 
+#pragma mark -
+#pragma mark change mode
+
+- (void)setShowcaseModeEnabled:(BOOL)enabled animated:(BOOL)animated
+{
+	[self stopSlideShow];
+	
+	showcaseModeEnabled_ = enabled;
+	
+	[self relayoutViewsAnimated:animated];
+}
+
+
+- (void)setShowcaseModeEnabled:(BOOL)enabled
+{
+	[self setShowcaseModeEnabled:enabled animated:YES];
+}
+
+
+
+#pragma mark -
+#pragma mark Accessors
+- (void)setDelegate:(id <XCGalleryViewDelegate>)delegate
+{
+	delegate_ = delegate;
+	[self reloadData];
+}
+
+- (void)setPageControlEnabled:(BOOL)enabled
+{
+	pageControlEnabled_ = enabled;
+	self.pageControl.hidden = !enabled;
+}
+
+- (void)setCurrentPage:(NSInteger)page animated:(BOOL)animated
+{
+	if (page == self.currentImageIndex) {
+		return;
+	}
+
+	NSInteger numberOfViews = [self numberOfImages];
+
+	if (page < 0) {
+		page = 0;
+	} else if (page >= numberOfViews) {
+		page = numberOfViews - 1;
+	}
+	
+	self.currentImageIndex = page;
+	self.contentOffsetIndex = page;
+	self.pageControl.currentPage = page;
+	
+	for (int index=0; index < kMaxOfScrollView; index++) {
+		[self setImageAtIndex:self.currentImageIndex+index-kLengthFromCetner
+				 toScrollView:[self.innerScrollViews objectAtIndex:index]];
+	}
+	
+
+	[self relayoutViewsAnimated:NO];
+	[self layoutSubviewsWithSizeChecking:NO animated:animated];
+
+}
+
+- (void)setCurrentPage:(NSInteger)page
+{
+	[self setCurrentPage:page animated:YES];
+}
+
+- (NSInteger)currentPage
+{
+	return currentImageIndex_;
+}
 
 
 

@@ -79,9 +79,23 @@ enum {
 
 - (IBAction)changeMode:(id)sender
 {
-	[self.galleryView setShowcaseModeEnabled:!self.galleryView.showcaseModeEnabled
-									animated:YES];
+	self.galleryView.showcaseModeEnabled = !self.galleryView.showcaseModeEnabled;
 }
 
+- (IBAction)movePage:(id)sender
+{
+	self.galleryView.currentPage = 3;
+//	[self.galleryView setCurrentPage:5 animated:NO];
+}
+
+- (IBAction)refresh:(id)sender
+{
+	NSLog(@"TODO %@", __PRETTY_FUNCTION__);
+}
+
+- (IBAction)deletePage:(id)sender
+{
+	NSLog(@"TODO %@", __PRETTY_FUNCTION__);
+}
 
 @end

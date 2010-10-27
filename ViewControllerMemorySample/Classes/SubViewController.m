@@ -63,8 +63,9 @@
 
 - (void)viewDidUnload {
     [super viewDidUnload];
-	NSLog(@"[Sub ] viewDidUnload|retainCount=%d", [self.imageView retainCount]-1);
-	self.imageView = nil;
+	NSLog(@"[Sub ] viewDidUnload[1]|retainCount=%d", [self.imageView retainCount]-1);
+//	self.imageView = nil;
+	NSLog(@"[Sub ] viewDidUnload[2]|retainCount=%d", [self.imageView retainCount]-1);
 }
 
 

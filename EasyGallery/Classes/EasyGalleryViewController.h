@@ -20,6 +20,8 @@
 @property (nonatomic, retain) IBOutlet XCGalleryView* galleryView;
 - (IBAction)playSlideShow:(id)sender;
 - (IBAction)changeMode:(id)sender;
-
+- (IBAction)movePage:(id)sender;
+- (IBAction)refresh:(id)sender;
+- (IBAction)deletePage:(id)sender;
 @end
 

@@ -64,8 +64,10 @@
 @property (nonatomic, assign) BOOL pageControlEnabled;
 @property (nonatomic, assign) BOOL isRunningSlideShow;
 @property (nonatomic, assign) NSTimeInterval slideShowDuration;
+@property (nonatomic, assign) NSInteger currentPage;	// start with 0
 
 // public methods
 - (void)startSlideShow;
+- (void)setCurrentPage:(NSInteger)page animated:(BOOL)animated;
 
 @end

@@ -73,7 +73,7 @@
 }
 
 #pragma mark -
-#pragma mark 
+#pragma mark Management for annotationDictionary
 - (void)setAnnotation:(SimpleAnnotation*)annotation forCoordinate:(CLLocationCoordinate2D)coordinate
 {
 	NSValue* coordinateValue = [NSValue value:&coordinate
@@ -108,8 +108,33 @@
 	NSLog(@"timestamp         : %@", location.timestamp);
 }
 
+- (void)logPlacemark:(MKPlacemark*)placemark
+{
+//	NSLog(@"addressDictionary : %@", placemark.addressDictionary );
+	NSLog(@"");
+	for (NSString* key in [placemark.addressDictionary allKeys]) {
+		if ([key isEqualToString:@"FormattedAddressLines"]) {
+			int i=0;
+			for (NSString* str in [placemark.addressDictionary objectForKey:key]) {
+				NSLog(@"addressDictionary['FormattedAddressLines'][%d]: %@", i++, str);
+			}
+		} else {
+			NSLog(@"addressDictionary['%@']: %@", key, [placemark.addressDictionary objectForKey:key]);
+		}
+	}
+
+	NSLog(@"thoroughfare : %@", placemark.thoroughfare );
+	NSLog(@"subThoroughfare : %@", placemark.subThoroughfare );
+	NSLog(@"locality : %@", placemark.locality );
+	NSLog(@"subLocality : %@", placemark.subLocality);
+	NSLog(@"administrativeArea : %@", placemark.administrativeArea );NSLog(@"subAdministrativeArea : %@", placemark.subAdministrativeArea );
+	NSLog(@"postalCode : %@", placemark.postalCode );NSLog(@"country : %@", placemark.country );
+	NSLog(@"countryCode : %@", placemark.countryCode );
+}	
+
 - (void)setPinToCoordinate:(CLLocation*)location
 {
+	/*
 	// add annotation
 	SimpleAnnotation* annotation = [[[SimpleAnnotation alloc] init] autorelease];
 	annotation.location = location;
@@ -118,6 +143,8 @@
 	[self setAnnotation:annotation
 		   forCoordinate:location.coordinate];
 
+	 */
+	
 	// setup default span
 	MKCoordinateSpan span;
 	if (self.mapView.region.span.latitudeDelta > 100) {
@@ -168,11 +195,18 @@
 #pragma mark -
 #pragma mark MKReverseGeocoderDelegate
 - (void)reverseGeocoder:(MKReverseGeocoder*)geocoder didFindPlacemark:(MKPlacemark*)placemark {
+
+	[self.mapView addAnnotation:placemark];
+	[self logPlacemark:placemark];
+
+	/*
 	self.label.text = placemark.title;
+	[self logPlacemark:placemark];
 
 	SimpleAnnotation* annotation =
 		[self annotationForCoordinate:geocoder.coordinate];
 	annotation.title = placemark.title;
+	 */
 
 }  
 
