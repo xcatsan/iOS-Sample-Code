@@ -55,6 +55,7 @@
 	XCGalleryInnerScrollView* transitionInnerScrollView_;
 	
 	BOOL passDidScroll_;
+	BOOL scrollingAnimation_;
 	
 }
 
@@ -73,5 +74,6 @@
 - (void)moveNextPage;
 - (void)movePreviousPageAnimated:(BOOL)animated;
 - (void)moveNextPageAnimated:(BOOL)animated;
+- (void)removeCurrentPage;
 
 @end

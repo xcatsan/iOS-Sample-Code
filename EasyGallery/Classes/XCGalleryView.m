@@ -151,6 +151,18 @@
 	return CGRectInset(self.bounds, margin_.width, margin_.height);
 }
 
+- (CGSize)unitSize
+{
+	CGSize size;
+	if (self.showcaseModeEnabled) {
+		size = self.scrollView.bounds.size;
+	} else {
+		size = self.bounds.size;
+		size.width += spacing_.width;
+	}
+	return size;
+}	
+
 - (void)relayoutBaseScrollView
 {
 	CGRect scrollViewFrame = [self baseFrame];
@@ -509,18 +521,9 @@
 	[self.innerScrollViews objectAtIndex:kIndexOfCurrentScrollView];
 	[self resetZoomScrollView:currentScrollView];	
 	
-	CGSize size;
-	if (self.showcaseModeEnabled) {
-		size = self.scrollView.bounds.size;
-		size.width -= spacing_.width;
-	} else {
-		size = self.bounds.size;
-	}
-	size.width += spacing_.width;
-
 	[UIView beginAnimations:nil context:nil];
 	self.scrollView.contentOffset = CGPointMake(
-			self.contentOffsetIndex*size.width, 0);
+			self.contentOffsetIndex*[self unitSize].width, 0);
 	[UIView commitAnimations];
 	
 	if (previous) {
@@ -572,9 +575,6 @@
 	
 	self.transitionInnerScrollView.frame = nextInnerScrollView.frame;
 	
-	[self.innerScrollViews replaceObjectAtIndex:kIndexOfCurrentScrollView
-									 withObject:self.transitionInnerScrollView];
-
 	nextInnerScrollView.hidden = YES;
 	self.transitionInnerScrollView.hidden = NO;
 
@@ -590,8 +590,8 @@
 	
 	[self.scrollView.layer addAnimation:transition forKey:nil];
 
-	nextInnerScrollView.hidden = YES;
-	self.transitionInnerScrollView.hidden = NO;
+//	nextInnerScrollView.hidden = YES;
+//	self.transitionInnerScrollView.hidden = NO;
 	
 	[self.innerScrollViews replaceObjectAtIndex:kIndexOfCurrentScrollView
 									 withObject:self.transitionInnerScrollView];
@@ -682,6 +682,11 @@
 	
 }
 
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
+{
+	scrollingAnimation_ = NO;
+}
+
 #pragma mark -
 #pragma mark change mode
 
@@ -757,24 +762,16 @@
 
 - (void)movePage_:(BOOL)animated
 {
-	CGSize size;
-	if (self.showcaseModeEnabled) {
-		size = self.scrollView.bounds.size;
-		size.width -= spacing_.width;
-	} else {
-		size = self.bounds.size;
-	}
-	size.width += spacing_.width;
-	
 	passDidScroll_ = YES;
+	scrollingAnimation_ = YES;
 	[self.scrollView setContentOffset:CGPointMake(
-		self.contentOffsetIndex*size.width, 0)
+		self.contentOffsetIndex*[self unitSize].width, 0)
 							 animated:animated];
 }
 
 - (void)movePreviousPageAnimated:(BOOL)animated
 {
-	if (self.currentPage <= 0) {
+	if (scrollingAnimation_ || self.currentPage <= 0) {
 		// do nothing
 		return;
 	}
@@ -793,7 +790,7 @@
 
 - (void)moveNextPageAnimated:(BOOL)animated
 {
-	if (self.currentPage >= [self numberOfImages]-1) {
+	if (scrollingAnimation_ || self.currentPage >= [self numberOfImages]-1) {
 		// do nothing
 		return;
 	}
@@ -808,6 +805,85 @@
 - (void)moveNextPage
 {
 	[self moveNextPageAnimated:YES];
+}
+
+- (void)removeCurrentPage1
+{
+	[self reloadData];
+	[self layoutSubviewsWithSizeChecking:NO animated:NO];
+}
+
+- (void)removeCurrentPage
+{
+	NSInteger numberOfImages = [self numberOfImages];
+	CGFloat directionFactor = 1.0;
+
+	NSInteger transitionIndex = self.currentImageIndex;
+	if (numberOfImages == 0) {
+		transitionIndex = -1;
+	} else if (numberOfImages == self.currentImageIndex) {
+		transitionIndex--;
+		directionFactor = -1.0;
+	} else {
+	}
+	
+	// [1] setup transitionView
+	[self setImageAtIndex:transitionIndex
+			 toScrollView:self.transitionInnerScrollView];
+	
+	XCGalleryInnerScrollView* currentInnerScrollView =
+		[self.innerScrollViews objectAtIndex:kIndexOfCurrentScrollView];
+	
+	self.transitionInnerScrollView.frame = currentInnerScrollView.frame;
+	
+	[self reloadData];
+	
+	// [2] do transition
+	if (self.showcaseModeEnabled) {
+//		self.transitionInnerScrollView.hidden = NO;
+
+		// [2-1] setup init position
+		XCGalleryInnerScrollView* nextInnerScrollView =
+			[self.innerScrollViews objectAtIndex:kIndexOfCurrentScrollView+1];
+		CGFloat dw = 2 * [self unitSize].width * directionFactor;
+		CGRect frame;
+
+		frame = currentInnerScrollView.frame;
+		frame.origin.x += dw;
+		currentInnerScrollView.frame = frame;
+		frame = nextInnerScrollView.frame;
+		frame.origin.x += dw;
+		nextInnerScrollView.frame = frame;
+
+		// [2-2] do animation
+		[UIView beginAnimations:nil context:nil];
+		frame = currentInnerScrollView.frame;
+		frame.origin.x -= dw;
+		currentInnerScrollView.frame = frame;
+		frame = nextInnerScrollView.frame;
+		frame.origin.x -= dw;
+		nextInnerScrollView.frame = frame;
+//		self.transitionInnerScrollView.hidden = YES;
+		[UIView commitAnimations];
+
+	} else {
+		CATransition* transition = [CATransition animation];
+		transition.duration = DEFAULT_TRANSITION_DURATION;
+		transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+			transition.type = kCATransitionFade;
+//		transition.delegate = self;
+		
+		[self.scrollView.layer addAnimation:transition forKey:nil];
+		currentInnerScrollView.hidden = YES;
+		self.transitionInnerScrollView.hidden = NO;
+
+		[self.innerScrollViews replaceObjectAtIndex:kIndexOfCurrentScrollView
+										 withObject:self.transitionInnerScrollView];
+		self.transitionInnerScrollView = currentInnerScrollView;
+	}
+	
+	// [3] re-layout subviews
+	[self layoutSubviewsWithSizeChecking:NO animated:NO];
 }
 
 @end

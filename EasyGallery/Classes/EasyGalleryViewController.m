@@ -95,7 +95,10 @@ enum {
 
 - (IBAction)deletePage:(id)sender
 {
-	NSLog(@"TODO %@", __PRETTY_FUNCTION__);
+	if ([imageFiles_ count] > 0) {
+		[imageFiles_ removeObjectAtIndex:self.galleryView.currentPage];
+		[self.galleryView removeCurrentPage];
+	}
 }
 
 - (IBAction)movePrevious:(id)sender
