@@ -12,6 +12,8 @@
 @protocol XCGalleryInnerScrollViewDelegate
 
 - (void)didTouched:(XCGalleryInnerScrollView*)innerScrollView;
+- (void)didDoubleTouched:(XCGalleryInnerScrollView*)innerScrollView;
+- (BOOL)canZoom;
 
 @end
 

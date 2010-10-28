@@ -64,8 +64,13 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+	[self.eventDelegate didTouched:self];
+	
 	UITouch* touch = [touches anyObject];
 	if ([touch tapCount] == 2) {
+		[self.eventDelegate didDoubleTouched:self];
+
+		/*
 		CGRect zoomRect;
 		if (self.zoomScale > 1.0) {
 			zoomRect = self.bounds;
@@ -75,8 +80,8 @@
 												   withCenter:[touch locationInView:self]];
 		}
 		[self zoomToRect:zoomRect animated:YES];
+		*/
 	}
-	
 }
 
 - (void) dealloc
@@ -90,7 +95,12 @@
 #pragma mark UIScrollViewDelegate
 -(UIView*)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
-	return [self.subviews objectAtIndex:0];
+	UIView* zoomView = nil;
+	
+	if ([self.eventDelegate canZoom]) {
+		zoomView = [self.subviews objectAtIndex:0];
+	}
+	return zoomView;
 }
 
 

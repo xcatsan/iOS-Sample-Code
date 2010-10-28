@@ -13,11 +13,9 @@
 #define DEFAULT_SPACING_HEIGHT	0
 #define DEFAULT_MARGIN_HEIGHT	20
 #define DEFAULT_MARGIN_WIDTH_RATE	0.2
-// DEBUG
-#define DEFAULT_SLIDESHOW_DURATION 3.0/2
+
+#define DEFAULT_SLIDESHOW_DURATION 3
 #define DEFAULT_TRANSITION_DURATION	0.75
-//#define DEFAULT_SLIDESHOW_DURATION 3
-//#define DEFAULT_TRANSITION_DURATION	0.75
 
 #define kMaxOfScrollView			5
 #define kLengthFromCetner			((kMaxOfScrollView-1)/2)
@@ -433,8 +431,8 @@
 #pragma mark Initialization and deallocation
 - (void)setup
 {
-	pageControlEnabled_ = NO;
-	showcaseModeEnabled_ = NO;
+	pageControlEnabled_ = YES;
+	showcaseModeEnabled_ = YES;
 	
 	isRunningSlideShow_ = NO;
 	slideShowDuration_ = DEFAULT_SLIDESHOW_DURATION;
@@ -630,13 +628,22 @@
 
 
 #pragma mark -
-#pragma mark Event
+#pragma mark XCGalleryInnerScrollViewDelegate
 
 - (void)didTouched:(XCGalleryInnerScrollView*)innerScrollView
 {
 	[self stopSlideShow];
 }
 
+- (void)didDoubleTouched:(XCGalleryInnerScrollView*)innerScrollView
+{
+	self.showcaseModeEnabled = !self.showcaseModeEnabled;
+}
+
+- (BOOL)canZoom
+{
+	return !self.showcaseModeEnabled;
+}
 
 
 #pragma mark -
@@ -692,10 +699,21 @@
 
 - (void)setShowcaseModeEnabled:(BOOL)enabled animated:(BOOL)animated
 {
+	if (showcaseModeEnabled_ == enabled) {
+		return;
+	}
+
+	// must be first !
+	if (enabled) {
+		XCGalleryInnerScrollView* innerScrollView =
+			[self.innerScrollViews objectAtIndex:kIndexOfCurrentScrollView];
+		innerScrollView.zoomScale = 1.0;
+	}
+	
 	[self stopSlideShow];
 	
 	showcaseModeEnabled_ = enabled;
-	
+
 	[self relayoutViewsAnimated:animated];
 }
 
