@@ -90,7 +90,7 @@ CGFloat y[9] = {
 		[layer addAnimation:theAnimation forKey:@"opacity"];
 */
 	}
-	/*
+	
 	CABasicAnimation *theAnimation;
 	theAnimation=[CABasicAnimation animationWithKeyPath:@"zPosition"];
 	theAnimation.fromValue=[NSNumber numberWithFloat:-4000];
@@ -105,13 +105,6 @@ CGFloat y[9] = {
 	theAnimation.duration=10;
 	theAnimation.repeatCount = 1e100;
 	[baseLayer addAnimation:theAnimation forKey:@"opacity"];
-	 */
-	baseLayer.zPosition = -4000;
-	baseLayer.opacity = 1.0;
-
-
-	baseLayer.zPosition = 10;
-	baseLayer.opacity = 0.0;
 }
 
 
