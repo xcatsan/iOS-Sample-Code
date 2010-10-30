@@ -59,6 +59,10 @@ CGFloat y[9] = {
 	transform.m34 = 1.0 / -zDistance;
 	self.view.layer.sublayerTransform = transform;
 	
+	CALayer* baseLayer = [CALayer layer];
+	[self.view.layer addSublayer:baseLayer];
+
+
 	for (int i=0; i < 9; i++) {
 		UIImage* image = [UIImage imageNamed:[NSString stringWithFormat:@"image%02ds.jpg", i+1]];
 		CALayer* layer = [CALayer layer];
@@ -68,8 +72,8 @@ CGFloat y[9] = {
 		p.x += 320/2;
 		p.y += (480-2)/2;
 		layer.position = p;
-		[self.view.layer addSublayer:layer];
-
+		[baseLayer addSublayer:layer];
+/*
 		CABasicAnimation *theAnimation;
 		theAnimation=[CABasicAnimation animationWithKeyPath:@"zPosition"];
 		theAnimation.fromValue=[NSNumber numberWithFloat:-4000];
@@ -83,8 +87,31 @@ CGFloat y[9] = {
 		theAnimation.toValue=[NSNumber numberWithFloat:0.0];
 		theAnimation.duration=10;
 		theAnimation.repeatCount = 1e100;
-		[layer addAnimation:theAnimation forKey:@"opacity"];		
+		[layer addAnimation:theAnimation forKey:@"opacity"];
+*/
 	}
+	/*
+	CABasicAnimation *theAnimation;
+	theAnimation=[CABasicAnimation animationWithKeyPath:@"zPosition"];
+	theAnimation.fromValue=[NSNumber numberWithFloat:-4000];
+	theAnimation.toValue=[NSNumber numberWithFloat:1000];
+	theAnimation.duration=10;
+	theAnimation.repeatCount = 1e100;
+	[baseLayer addAnimation:theAnimation forKey:@"zPosition"];
+	
+	theAnimation=[CABasicAnimation animationWithKeyPath:@"opacity"];
+	theAnimation.fromValue=[NSNumber numberWithFloat:1.0];
+	theAnimation.toValue=[NSNumber numberWithFloat:0.0];
+	theAnimation.duration=10;
+	theAnimation.repeatCount = 1e100;
+	[baseLayer addAnimation:theAnimation forKey:@"opacity"];
+	 */
+	baseLayer.zPosition = -4000;
+	baseLayer.opacity = 1.0;
+
+
+	baseLayer.zPosition = 10;
+	baseLayer.opacity = 0.0;
 }
 
 
