@@ -11,9 +11,11 @@
 @interface CoreAnimation3DSample2ViewController : UIViewController {
 
 	BOOL fadeIn;
+	UIView* baseView;
 }
 
 - (IBAction)fadeOut:(id)sender;
+@property (nonatomic, retain) IBOutlet 	UIView* baseView;
 
 @end
 

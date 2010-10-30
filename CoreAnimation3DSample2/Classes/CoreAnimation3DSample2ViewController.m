@@ -12,7 +12,7 @@
 
 @implementation CoreAnimation3DSample2ViewController
 
-
+@synthesize baseView;
 
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
@@ -56,7 +56,7 @@ CGFloat y[9] = {
 	CGFloat opacityFrom = flag ? 0.25 : 1.0;
 	CGFloat opacityTo = flag ? 1.0 : 0.25;
 
-	CALayer* baseLayer = [self.view.layer.sublayers objectAtIndex:1];
+	CALayer* baseLayer = [self.baseView.layer.sublayers objectAtIndex:0];
 	
 	CABasicAnimation *animation;
 	animation=[CABasicAnimation animationWithKeyPath:@"zPosition"];
@@ -66,9 +66,9 @@ CGFloat y[9] = {
 	animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault];
 	animation.repeatCount = 1;
 	animation.delegate = self;
-	
+	animation.removedOnCompletion = NO;
 	[baseLayer addAnimation:animation forKey:@"zPosition"];
-	
+
 	animation=[CABasicAnimation animationWithKeyPath:@"opacity"];
 	animation.fromValue=[NSNumber numberWithFloat:opacityFrom];
 	animation.toValue=[NSNumber numberWithFloat:opacityTo];
@@ -76,29 +76,28 @@ CGFloat y[9] = {
 	animation.repeatCount = 1;
 	animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault];
 	[baseLayer addAnimation:animation forKey:@"opacity"];		
-	
 }
 
 - (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag
 {
 	NSLog(@"%s|%d", __PRETTY_FUNCTION__, flag);
 	if (!fadeIn) {
-		CALayer* baseLayer = [self.view.layer.sublayers objectAtIndex:1];
-		baseLayer.hidden = YES;
+		self.baseView.hidden = YES;
 	}
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	self.view.layer.backgroundColor = [[UIColor blackColor] CGColor];
+	self.baseView.layer.backgroundColor = [[UIColor blackColor] CGColor];
 	
 	CATransform3D transform = CATransform3DMakeRotation(0, 0, 0, 0); 
 	float zDistance = 1000; 
 	transform.m34 = 1.0 / zDistance;
-	self.view.layer.sublayerTransform = transform;
+	self.baseView.layer.sublayerTransform = transform;
 	
 	CALayer* baseLayer = [CALayer layer];
+	[self.baseView.layer addSublayer:baseLayer];
 	
 	for (int i=0; i < 9; i++) {
 		UIImage* image = [UIImage imageNamed:[NSString stringWithFormat:@"image%02ds.jpg", i+1]];
@@ -107,17 +106,15 @@ CGFloat y[9] = {
 		layer.frame = CGRectMake(x[i], y[i], IMAGE_WIDTH, IMAGE_HEIGHT);
 		[baseLayer addSublayer:layer];
 	}
-	[self.view.layer addSublayer:baseLayer];
 
-	fadeIn = YES;
+	fadeIn = NO;
 	[self animateFadeInOut:fadeIn];
 }
 
 - (IBAction)fadeOut:(id)sender
 {
 	fadeIn = !fadeIn;
-	CALayer* baseLayer = [self.view.layer.sublayers objectAtIndex:1];
-	baseLayer.hidden = NO;
+	baseView.hidden = NO;
 	[self animateFadeInOut:fadeIn];
 }
 
