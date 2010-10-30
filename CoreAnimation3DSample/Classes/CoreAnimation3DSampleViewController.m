@@ -55,7 +55,6 @@ CGFloat y[9] = {
 	self.view.layer.backgroundColor = [[UIColor blackColor] CGColor];
 	
 	CATransform3D transform = CATransform3DMakeRotation(0, 0, 0, 0); 
-//	transform = CATransform3DRotate(transform, 0.0, 0, 0, 0);
 	float zDistance = 2000; 
 	transform.m34 = 1.0 / -zDistance;
 	self.view.layer.sublayerTransform = transform;
@@ -75,34 +74,17 @@ CGFloat y[9] = {
 		theAnimation=[CABasicAnimation animationWithKeyPath:@"zPosition"];
 		theAnimation.fromValue=[NSNumber numberWithFloat:-4000];
 		theAnimation.toValue=[NSNumber numberWithFloat:1000];
-		theAnimation.duration=20;
+		theAnimation.duration=10;
 		theAnimation.repeatCount = 1e100;
 		[layer addAnimation:theAnimation forKey:@"zPosition"];
 		
 		theAnimation=[CABasicAnimation animationWithKeyPath:@"opacity"];
 		theAnimation.fromValue=[NSNumber numberWithFloat:1.0];
 		theAnimation.toValue=[NSNumber numberWithFloat:0.0];
-		theAnimation.duration=20;
+		theAnimation.duration=10;
 		theAnimation.repeatCount = 1e100;
 		[layer addAnimation:theAnimation forKey:@"opacity"];		
 	}
-	
-	/*
-	for (CALayer* layer in self.view.layer.sublayers) {
-//		layer.opacity = 0.0;
-	}
-	self.view.layer.zPosition = -100;
-	*/
-	
-	/*
-	[CATransaction begin];
-	[CATransaction setValue:[NSNumber numberWithFloat:10.0f]
-					 forKey:kCATransactionAnimationDuration];
-	self.view.layer.zPosition=-100;
-	self.view.layer.opacity=0.0;
-	[CATransaction commit];
-	*/
-	
 }
 
 
