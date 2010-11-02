@@ -7,11 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C2E9492127F9F9B00313C4C /* XCSampleClass.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C2E9490127F9F9B00313C4C /* XCSampleClass.h */; };
+		4C2E9492127F9F9B00313C4C /* XCSampleClass.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4C2E9490127F9F9B00313C4C /* XCSampleClass.h */; };
 		4C2E9493127F9F9B00313C4C /* XCSampleClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C2E9491127F9F9B00313C4C /* XCSampleClass.m */; };
+		4C2E9517127FB4CA00313C4C /* libStaticLibrarySample.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = D2AAC07E0554694100DB518D /* libStaticLibrarySample.a */; };
 		AA747D9F0F9514B9006C5449 /* StaticLibrarySample_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* StaticLibrarySample_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4C2E9515127FB44200313C4C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "~/Development/Libraries/lib";
+			dstSubfolderSpec = 0;
+			files = (
+				4C2E9517127FB4CA00313C4C /* libStaticLibrarySample.a in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C2E951C127FB52700313C4C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "~/Development/Libraries/include";
+			dstSubfolderSpec = 0;
+			files = (
+				4C2E9492127F9F9B00313C4C /* XCSampleClass.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4C2E9490127F9F9B00313C4C /* XCSampleClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCSampleClass.h; sourceTree = "<group>"; };
@@ -85,7 +109,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA747D9F0F9514B9006C5449 /* StaticLibrarySample_Prefix.pch in Headers */,
-				4C2E9492127F9F9B00313C4C /* XCSampleClass.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +122,8 @@
 				D2AAC07A0554694100DB518D /* Headers */,
 				D2AAC07B0554694100DB518D /* Sources */,
 				D2AAC07C0554694100DB518D /* Frameworks */,
+				4C2E9515127FB44200313C4C /* CopyFiles */,
+				4C2E951C127FB52700313C4C /* CopyFiles */,
 			);
 			buildRules = (
 			);

@@ -227,6 +227,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = CoreAnimation3DSample2_Prefix.pch;
 				INFOPLIST_FILE = "CoreAnimation3DSample2-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				PRODUCT_NAME = CoreAnimation3DSample2;
 			};
 			name = Debug;

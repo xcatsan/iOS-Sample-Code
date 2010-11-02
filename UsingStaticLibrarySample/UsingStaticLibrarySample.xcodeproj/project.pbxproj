@@ -15,7 +15,7 @@
 		2899E5220DE3E06400AC0155 /* UsingStaticLibrarySampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* UsingStaticLibrarySampleViewController.xib */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* UsingStaticLibrarySampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* UsingStaticLibrarySampleViewController.m */; };
-		4C2E94E6127FA9F500313C4C /* libStaticLibrarySample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C2E94E5127FA9F500313C4C /* libStaticLibrarySample.a */; };
+		4C2E9523127FB8A300313C4C /* libStaticLibrarySample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C2E9522127FB8A300313C4C /* libStaticLibrarySample.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,8 +31,7 @@
 		28D7ACF70DDB3853001CB0EB /* UsingStaticLibrarySampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsingStaticLibrarySampleViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* UsingStaticLibrarySample_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsingStaticLibrarySample_Prefix.pch; sourceTree = "<group>"; };
-		4C2E94D4127FA8B700313C4C /* XCSampleClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCSampleClass.h; sourceTree = "<group>"; };
-		4C2E94E5127FA9F500313C4C /* libStaticLibrarySample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libStaticLibrarySample.a; sourceTree = "<group>"; };
+		4C2E9522127FB8A300313C4C /* libStaticLibrarySample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libStaticLibrarySample.a; path = ../../Libraries/lib/libStaticLibrarySample.a; sourceTree = SOURCE_ROOT; };
 		8D1107310486CEB800E47090 /* UsingStaticLibrarySample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "UsingStaticLibrarySample-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -44,7 +43,7 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
-				4C2E94E6127FA9F500313C4C /* libStaticLibrarySample.a in Frameworks */,
+				4C2E9523127FB8A300313C4C /* libStaticLibrarySample.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,7 +57,6 @@
 				1D3623250D0F684500981E51 /* UsingStaticLibrarySampleAppDelegate.m */,
 				28D7ACF60DDB3853001CB0EB /* UsingStaticLibrarySampleViewController.h */,
 				28D7ACF70DDB3853001CB0EB /* UsingStaticLibrarySampleViewController.m */,
-				4C2E94D4127FA8B700313C4C /* XCSampleClass.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -105,7 +103,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4C2E94E5127FA9F500313C4C /* libStaticLibrarySample.a */,
+				4C2E9522127FB8A300313C4C /* libStaticLibrarySample.a */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
@@ -196,6 +194,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../Libraries/lib\"",
 				);
 				PRODUCT_NAME = UsingStaticLibrarySample;
 			};
@@ -212,6 +211,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../Libraries/lib\"",
 				);
 				PRODUCT_NAME = UsingStaticLibrarySample;
 				VALIDATE_PRODUCT = YES;
@@ -226,6 +226,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "~/Development/Libraries/include";
 				PREBINDING = NO;
 				SDKROOT = iphoneos4.1;
 			};
@@ -239,6 +240,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "~/Development/Libraries/include";
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
 				SDKROOT = iphoneos4.1;
