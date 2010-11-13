@@ -54,8 +54,10 @@
 				
 				if ([name isEqualToString:@"en0"] ||
 					[name isEqualToString:@"en1"]) { // found the WiFi adapter
-					return [NSString stringWithUTF8String:
-							inet_ntoa(((struct sockaddr_in *)cursor->ifa_addr)->sin_addr)];
+					NSString* addressString = [NSString stringWithUTF8String:
+											   inet_ntoa(((struct sockaddr_in *)cursor->ifa_addr)->sin_addr)];
+					freeifaddrs(addrs);
+					return addressString;
 				}
 			}
 			

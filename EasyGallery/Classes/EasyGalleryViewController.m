@@ -90,7 +90,7 @@ enum {
 
 - (IBAction)refresh:(id)sender
 {
-	NSLog(@"TODO %@", __PRETTY_FUNCTION__);
+	NSLog(@"TODO %s", __PRETTY_FUNCTION__);
 }
 
 - (IBAction)deletePage:(id)sender
