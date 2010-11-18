@@ -21,16 +21,16 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		4CA1507F12910590009A342D /* SampleClass.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CA1507D12910590009A342D /* SampleClass.h */; };
 		4CA1508012910590009A342D /* SampleClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA1507E12910590009A342D /* SampleClass.m */; };
+		4CB0BE84129502D100380263 /* SampleClass.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CB0BE83129502D100380263 /* SampleClass.h */; };
 		AA747D9F0F9514B9006C5449 /* SampleKit_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* SampleKit_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4CA1507B129104A3009A342D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4CA1507D12910590009A342D /* SampleClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleClass.h; sourceTree = "<group>"; };
 		4CA1507E12910590009A342D /* SampleClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleClass.m; sourceTree = "<group>"; };
+		4CB0BE83129502D100380263 /* SampleClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleClass.h; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* SampleKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleKit_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libSampleKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSampleKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +59,7 @@
 		0867D691FE84028FC02AAC07 /* SampleKit */ = {
 			isa = PBXGroup;
 			children = (
+				4CB0BE641294EFDC00380263 /* Headers */,
 				08FB77AEFE84172EC02AAC07 /* Classes */,
 				4CA1507A1291048E009A342D /* Resources */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
@@ -79,7 +80,6 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				4CA1507D12910590009A342D /* SampleClass.h */,
 				4CA1507E12910590009A342D /* SampleClass.m */,
 			);
 			name = Classes;
@@ -101,6 +101,14 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		4CB0BE641294EFDC00380263 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				4CB0BE83129502D100380263 /* SampleClass.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -109,7 +117,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA747D9F0F9514B9006C5449 /* SampleKit_Prefix.pch in Headers */,
-				4CA1507F12910590009A342D /* SampleClass.h in Headers */,
+				4CB0BE84129502D100380263 /* SampleClass.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,7 +179,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#--------------------------------------------------------------------\necho \"[0] Framework: Preparing ...\"\n#--------------------------------------------------------------------\nFRAMEWORK_NAME=${PRODUCT_NAME%.*}\nFRAMEWORK_VERSION=A\nFRAMEWORK_CURRENT_VERSION=1\nFRAMEWORK_COMPATIBILITY_VERSION=1\nFRAMEWORK_BUILD_PATH=\"build/${BUILD_STYLE}-framework\"\nFRAMEWORK_DIR=${FRAMEWORK_BUILD_PATH}/${FRAMEWORK_NAME}.framework\n\n#--------------------------------------------------------------------\necho \"[1] Framework: Building libraries ...\"\n#--------------------------------------------------------------------\nxcodebuild -configuration ${BUILD_STYLE} -target ${FRAMEWORK_NAME} clean\nxcodebuild -configuration ${BUILD_STYLE} -target ${FRAMEWORK_NAME} \\\n  -sdk iphonesimulator${IPHONEOS_DEPLOYMENT_TARGET}\n[ $? != 0 ] && exit 1\n\nxcodebuild -configuration ${BUILD_STYLE} -target ${FRAMEWORK_NAME} \\\n  -sdk iphoneos${IPHONEOS_DEPLOYMENT_TARGET}\n[ $? != 0 ] && exit 1\n\necho \"Framework: Cleaning framework...\"\n[ -d \"${FRAMEWORK_BUILD_PATH}\" ] && rm -rf \"${FRAMEWORK_BUILD_PATH}\"\n\n#--------------------------------------------------------------------\necho \"[2] Framework: Setting up directories...\"\n#--------------------------------------------------------------------\nmkdir -p ${FRAMEWORK_DIR}\nmkdir -p ${FRAMEWORK_DIR}/Versions\nmkdir -p ${FRAMEWORK_DIR}/Versions/${FRAMEWORK_VERSION}\nmkdir -p ${FRAMEWORK_DIR}/Versions/${FRAMEWORK_VERSION}/Resources\nmkdir -p ${FRAMEWORK_DIR}/Versions/${FRAMEWORK_VERSION}/Headers\n\n#--------------------------------------------------------------------\necho \"[3] Framework: Creating symlinks...\"\n#--------------------------------------------------------------------\nln -s ${FRAMEWORK_VERSION} ${FRAMEWORK_DIR}/Versions/Current\nln -s Versions/Current/Headers ${FRAMEWORK_DIR}/Headers\nln -s Versions/Current/Resources ${FRAMEWORK_DIR}/Resources\nln -s Versions/Current/${FRAMEWORK_NAME} ${FRAMEWORK_DIR}/${FRAMEWORK_NAME}\n\n#--------------------------------------------------------------------\necho \"[4] Framework: Creating library...\"\n#--------------------------------------------------------------------\nlipo -create \\\n build/${BUILD_STYLE}-iphoneos/lib${FRAMEWORK_NAME}.a \\\n build/${BUILD_STYLE}-iphonesimulator/lib${FRAMEWORK_NAME}.a \\\n -o \"${FRAMEWORK_DIR}/Versions/Current/${FRAMEWORK_NAME}\"\n\n#--------------------------------------------------------------------\necho \"[5] Framework: Copying assets into current version...\"\n#--------------------------------------------------------------------\ncp *.h ${FRAMEWORK_DIR}/Headers/\ncp Info.plist ${FRAMEWORK_DIR}/Resources/\n";
+			shellScript = "#--------------------------------------------------------------------\necho \"[0] Framework: Preparing ...\"\n#--------------------------------------------------------------------\nFRAMEWORK_NAME=${PRODUCT_NAME%.*}\nFRAMEWORK_VERSION=A\nFRAMEWORK_CURRENT_VERSION=1\nFRAMEWORK_COMPATIBILITY_VERSION=1\nFRAMEWORK_BUILD_PATH=\"build/${BUILD_STYLE}-framework\"\nFRAMEWORK_DIR=${FRAMEWORK_BUILD_PATH}/${FRAMEWORK_NAME}.framework\n\n#--------------------------------------------------------------------\necho \"[1] Framework: Building libraries ...\"\n#--------------------------------------------------------------------\nxcodebuild -configuration ${BUILD_STYLE} -target ${FRAMEWORK_NAME} clean\nxcodebuild -configuration ${BUILD_STYLE} -target ${FRAMEWORK_NAME} \\\n  -sdk iphonesimulator${IPHONEOS_DEPLOYMENT_TARGET}\n[ $? != 0 ] && exit 1\n\nxcodebuild -configuration ${BUILD_STYLE} -target ${FRAMEWORK_NAME} \\\n  -sdk iphoneos${IPHONEOS_DEPLOYMENT_TARGET}\n[ $? != 0 ] && exit 1\n\necho \"Framework: Cleaning framework...\"\n[ -d \"${FRAMEWORK_BUILD_PATH}\" ] && rm -rf \"${FRAMEWORK_BUILD_PATH}\"\n\n#--------------------------------------------------------------------\necho \"[2] Framework: Setting up directories...\"\n#--------------------------------------------------------------------\nmkdir -p ${FRAMEWORK_DIR}\nmkdir -p ${FRAMEWORK_DIR}/Versions\nmkdir -p ${FRAMEWORK_DIR}/Versions/${FRAMEWORK_VERSION}\nmkdir -p ${FRAMEWORK_DIR}/Versions/${FRAMEWORK_VERSION}/Resources\nmkdir -p ${FRAMEWORK_DIR}/Versions/${FRAMEWORK_VERSION}/Headers\n\n#--------------------------------------------------------------------\necho \"[3] Framework: Creating symlinks...\"\n#--------------------------------------------------------------------\nln -s ${FRAMEWORK_VERSION} ${FRAMEWORK_DIR}/Versions/Current\nln -s Versions/Current/Headers ${FRAMEWORK_DIR}/Headers\nln -s Versions/Current/Resources ${FRAMEWORK_DIR}/Resources\nln -s Versions/Current/${FRAMEWORK_NAME} ${FRAMEWORK_DIR}/${FRAMEWORK_NAME}\n\n#--------------------------------------------------------------------\necho \"[4] Framework: Creating library...\"\n#--------------------------------------------------------------------\nlipo -create \\\n build/${BUILD_STYLE}-iphoneos/lib${FRAMEWORK_NAME}.a \\\n build/${BUILD_STYLE}-iphonesimulator/lib${FRAMEWORK_NAME}.a \\\n -o \"${FRAMEWORK_DIR}/Versions/Current/${FRAMEWORK_NAME}\"\n\n#--------------------------------------------------------------------\necho \"[5] Framework: Copying assets into current version...\"\n#--------------------------------------------------------------------\ncp Headers/*.h ${FRAMEWORK_DIR}/Headers/\ncp Info.plist ${FRAMEWORK_DIR}/Resources/\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
