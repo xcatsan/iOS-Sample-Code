@@ -5,15 +5,15 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>${PRODUCT_NAME}</string>
+	<string>SampleKit</string>
 	<key>CFBundleIconFile</key>
 	<string></string>
 	<key>CFBundleIdentifier</key>
-	<string>com.xcatsan.${PRODUCT_NAME}</string>
+	<string>com.xcatsan.SampleKit</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>${PRODUCT_NAME}</string>
+	<string>SampleKit</string>
 	<key>CFBundlePackageType</key>
 	<string>FMWK</string>
 	<key>CFBundleShortVersionString</key>
@@ -24,5 +24,9 @@
 	<string>1</string>
 	<key>NSPrincipalClass</key>
 	<string></string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright (C) 2010 xcatsan.com All rights reserved.</string>
+	<key>CFBundleGetInfoString</key>
+	<string>SampleKit</string>
 </dict>
 </plist>
