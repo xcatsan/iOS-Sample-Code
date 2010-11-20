@@ -203,6 +203,7 @@
 				INFOPLIST_FILE = "CoreLocationSample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				PRODUCT_NAME = CoreLocationSample;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
