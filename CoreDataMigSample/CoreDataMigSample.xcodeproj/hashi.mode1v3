@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>4C089CAD12B2673B00987F79</string>
+						<string>4C089CEE12B27D5700987F79</string>
 						<key>history</key>
 						<array>
 							<string>4C089CAC12B2673B00987F79</string>
@@ -256,10 +256,10 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>4C089CAE12B2673B00987F79</string>
+						<string>4C089CEF12B27D5700987F79</string>
 						<key>history</key>
 						<array>
-							<string>4C089C6A12B2642900987F79</string>
+							<string>4C089CCA12B27CFE00987F79</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -271,11 +271,11 @@
 			<key>Geometry</key>
 			<dict>
 				<key>Frame</key>
-				<string>{{0, 20}, {756, 639}}</string>
+				<string>{{0, 20}, {650, 311}}</string>
 				<key>PBXModuleWindowStatusBarHidden2</key>
 				<false/>
 				<key>RubberWindowFrame</key>
-				<string>15 93 756 680 0 0 1280 778 </string>
+				<string>15 421 650 352 0 0 1280 778 </string>
 			</dict>
 		</dict>
 		<dict>
@@ -296,7 +296,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>4C089CAF12B2673B00987F79</string>
+						<string>4C089CF012B27D5700987F79</string>
 						<key>history</key>
 						<array>
 							<string>4C089C0112B2018400987F79</string>
@@ -350,8 +350,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -403,7 +401,7 @@
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {297, 518}}</string>
+							<string>{{0, 0}, {297, 447}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -415,14 +413,14 @@
 					<key>GeometryConfiguration</key>
 					<dict>
 						<key>Frame</key>
-						<string>{{0, 0}, {314, 536}}</string>
+						<string>{{0, 0}, {314, 465}}</string>
 						<key>GroupTreeTableConfiguration</key>
 						<array>
 							<string>MainColumn</string>
 							<real>297</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>77 152 1031 577 0 0 1280 778 </string>
+						<string>4 245 1025 506 0 0 1280 778 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -433,12 +431,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>CoreDataMigSample 2.xcdatamodel</string>
+								<string>EventEntityMigrationPolicy.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -446,11 +446,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>CoreDataMigSample 2.xcdatamodel</string>
+										<string>EventEntityMigrationPolicy.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>4C089CAB12B2673B00987F79</string>
+										<string>4C089CED12B27D5700987F79</string>
 										<key>history</key>
 										<array>
 											<string>4C089B8512B1FC8A00987F79</string>
@@ -475,11 +475,11 @@
 											<string>4C089C7312B2644E00987F79</string>
 											<string>4C089C7412B2644E00987F79</string>
 											<string>4C089C8F12B265BB00987F79</string>
-											<string>4C089C9012B265BB00987F79</string>
-											<string>4C089C9912B2664D00987F79</string>
-											<string>4C089CA812B2673B00987F79</string>
-											<string>4C089CA912B2673B00987F79</string>
-											<string>4C089CAA12B2673B00987F79</string>
+											<string>4C089CC412B27CFE00987F79</string>
+											<string>4C089CE012B27D3900987F79</string>
+											<string>4C089CEB12B27D5700987F79</string>
+											<string>4C089CEC12B27D5700987F79</string>
+											<string>4C089CC512B27CFE00987F79</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -491,14 +491,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {712, 531}}</string>
+								<string>{{0, 0}, {706, 460}}</string>
 								<key>RubberWindowFrame</key>
-								<string>77 152 1031 577 0 0 1280 778 </string>
+								<string>4 245 1025 506 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>531pt</string>
+							<string>460pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -511,9 +511,9 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 536}, {712, 0}}</string>
+								<string>{{0, 465}, {706, 0}}</string>
 								<key>RubberWindowFrame</key>
-								<string>77 152 1031 577 0 0 1280 778 </string>
+								<string>4 245 1025 506 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -522,7 +522,7 @@
 						</dict>
 					</array>
 					<key>Proportion</key>
-					<string>712pt</string>
+					<string>706pt</string>
 				</dict>
 			</array>
 			<key>Name</key>
@@ -681,12 +681,12 @@
 		<string>4C089A7912B1A44F00987F79</string>
 		<string>4C089C0A12B2019E00987F79</string>
 		<string>4C089C7912B2644E00987F79</string>
-		<string>/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataMigSample.xcodeproj</string>
 		<string>4C089C5C12B262A000987F79</string>
+		<string>/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataMigSample.xcodeproj</string>
 		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
-	<string>77 152 1031 577 0 0 1280 778 </string>
+	<string>4 245 1025 506 0 0 1280 778 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -1018,8 +1018,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>

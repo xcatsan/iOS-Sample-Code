@@ -11,7 +11,6 @@
 
 @implementation EventEntityMigrationPolicy
 
-/*
 - (NSNumber*)monthOfDate:(NSDate*)date
 {
 	NSCalendar* calendar = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] autorelease];
@@ -24,7 +23,8 @@
 	NSDateComponents* components = [calendar components:NSMonthCalendarUnit|NSDayCalendarUnit fromDate:date];
 	return [NSNumber numberWithInteger:[components day]];
 }
-*/
+
+/*
 
 - (BOOL)createDestinationInstancesForSourceInstance:(NSManagedObject *)sInstance entityMapping:(NSEntityMapping *)mapping manager:(NSMigrationManager *)manager error:(NSError **)error
 {
@@ -45,5 +45,6 @@
 	
 	return YES;
 }
+*/
 
 @end

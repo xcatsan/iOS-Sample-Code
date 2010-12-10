@@ -1,487 +1,0 @@
-TCoreDataMigSample
-v7
-r0
-t313681722.280919
-cCheck dependencies
-cProcessInfoPlistFile /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/Info.plist CoreDataMigSample-Info.plist
-cCompileXIB /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/MainWindow.xib
-cCompileXIB /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/RootViewController.xib
-cProcessPCH /var/folders/YB/YBCBEUEdFK82cPO9rc0TWU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CoreDataMigSample_Prefix-aukqkspvezmmsvanzbifxbfubnad/CoreDataMigSample_Prefix.pch.gch CoreDataMigSample_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
-cDataModelVersionCompile /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/CoreDataMigSample.momd /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataMigSample.xcdatamodeld
-cMappingModelCompile /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/CoreDataMigSample-1to2.cdm /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataMigSample.xcdatamodeld/CoreDataMigSample-1to2.xcmappingmodel
-cCompileC build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/main.o /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/CoreDataMigSampleAppDelegate.o /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/CoreDataMigSampleAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/RootViewController.o /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/RootViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/EventEntityMigrationPolicy.o /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/EventEntityMigrationPolicy.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/Event.o /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/../Event.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cCompileC build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/Event+Extension.o /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/Event+Extension.m normal i386 objective-c com.apple.compilers.gcc.4_2
-cLd /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/CoreDataMigSample normal i386
-cGenerateDSYMFile /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app.dSYM /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/CoreDataMigSample
-cTouch /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app
-
-N/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk
-c000000004CC128950000000000000110
-t1287727253
-s272
-
-N/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/CoreData.framework/CoreData
-c000000004CC122A000000000001D6CE0
-t1287725728
-s1928416
-
-N/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.h
-c000000004CC12294000000000000046B
-t1287725716
-s1131
-
-N/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
-c000000004CC12246000000000029B310
-t1287725638
-s2732816
-
-N/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/Foundation.framework/Foundation
-c000000004CC1226D000000000029D5D0
-t1287725677
-s2741712
-
-N/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
-c000000004CC1225F0000000000001466
-t1287725663
-s5222
-
-N/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
-c000000004CC1281F0000000000000AA1
-t1287727135
-s2721
-
-N/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/System/Library/Frameworks/UIKit.framework/UIKit
-c000000004CC12883000000000074D7B0
-t1287727235
-s7657392
-
-N/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk/usr/include/Availability.h
-c000000004CB3FA080000000000001ADD
-t1286863368
-s6877
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/../Event.m
-c000000004D022C3800000000000000F9
-t1291988024
-s249
-i"Event.h"
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/CoreDataMigSampleAppDelegate.h
-c000000004D016CB200000000000003FB
-t1291938994
-s1019
-i<UIKit/UIKit.h>
-i<CoreData/CoreData.h>
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/CoreDataMigSampleAppDelegate.m
-c000000004D01CA1C00000000000020ED
-t1291962908
-s8429
-i"CoreDataMigSampleAppDelegate.h"
-i"RootViewController.h"
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/Event+Extension.h
-c000000004D022C620000000000000149
-t1291988066
-s329
-i<Foundation/Foundation.h>
-i"Event.h"
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/Event+Extension.m
-c000000004D022C3F0000000000000348
-t1291988031
-s840
-i"Event+Extension.h"
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/EventEntityMigrationPolicy.h
-c000000004D01C0210000000000000109
-t1291960353
-s265
-i<Foundation/Foundation.h>
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/EventEntityMigrationPolicy.m
-c000000004D022F9F000000000000075B
-t1291988895
-s1883
-i"EventEntityMigrationPolicy.h"
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/NSManagedObjectModel_.h
-c000000004D018F7800000000000000FC
-t1291947896
-s252
-i<Foundation/Foundation.h>
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/NSManagedObjectModel_.m
-c000000004D018F7400000000000000E5
-t1291947892
-s229
-i"NSManagedObjectModel_.h"
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/RootViewController.h
-c000000004D016CB20000000000000247
-t1291938994
-s583
-i<UIKit/UIKit.h>
-i<CoreData/CoreData.h>
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/RootViewController.m
-c000000004D01CA43000000000000318E
-t1291962947
-s12686
-i"RootViewController.h"
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/Sampe.h
-c000000004D018F5F00000000000000D0
-t1291947871
-s208
-i<Foundation/Foundation.h>
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/Sampe.m
-c000000004D018F5F00000000000000B5
-t1291947871
-s181
-i"Sampe.h"
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataClasses.xcdatamodel
-c000000004D0195F00000000000000088
-t1291949552
-s136
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataMigSample.xcdatamodeld
-c000000004D022F6B00000000000000CC
-t1291988843
-s204
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataMigSample.xcdatamodeld/CoreDataMigSample-1to2.xcmappingmodel
-c000000004D022F5E0000000000000066
-t1291988830
-s102
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataMigSample.xcdatamodeld/Event.h
-c000000004D02294700000000000001F9
-t1291987271
-s505
-i<CoreData/CoreData.h>
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataMigSample.xcdatamodeld/Event.m
-c000000004D02293C000000000000036B
-t1291987260
-s875
-i"Event.h"
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataMigSample_Prefix.pch
-c000000004D016CB20000000000000177
-t1291938994
-s375
-i<Availability.h>
-i<Foundation/Foundation.h>
-i<UIKit/UIKit.h>
-i<CoreData/CoreData.h>
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Event.h
-c000000004D022C2D0000000000000199
-t1291988013
-s409
-i<CoreData/CoreData.h>
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/MainWindow.xib
-c000000004D016CB2000000000000601C
-t1291938994
-s24604
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/RootViewController.xib
-c000000004D016CB2000000000000445C
-t1291938994
-s17500
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/CoreDataMigSample.LinkFileList
-c000000004D022C490000000000000414
-t1291988041
-s1044
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/CoreDataMigSampleAppDelegate.o
-t1291962908
-s70460
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/Event+Extension.o
-t1291988148
-s11956
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/Event.o
-t1291988041
-s5436
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/EventEntityMigrationPolicy.o
-t1291988895
-s17680
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/NSManagedObjectModel_.o
-t2
-s0
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/RootViewController.o
-t1291962948
-s69432
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/Sampe.o
-t2
-s0
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/main.o
-t1291939007
-s6464
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app
-t1291988897
-s340
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app.dSYM
-t1291988897
-s102
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/CoreDataClasses.mom
-t1291960205
-s3083
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/CoreDataMigSample
-t1291988896
-s38824
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/CoreDataMigSample-1to2.cdm
-t1291988896
-s2688
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/CoreDataMigSample.momd
-t1291988897
-s170
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/Info.plist
-t1291961703
-s674
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/MainWindow.nib
-t1291939005
-s1519
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/PkgInfo
-t1291961703
-s8
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/RootViewController.nib
-t1291939005
-s979
-
-N/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/main.m
-c000000004D016CB20000000000000169
-t1291938994
-s361
-i<UIKit/UIKit.h>
-
-N/var/folders/YB/YBCBEUEdFK82cPO9rc0TWU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CoreDataMigSample_Prefix-aukqkspvezmmsvanzbifxbfubnad/CoreDataMigSample_Prefix.pch.gch
-t1291939007
-s16334832
-
-NCoreDataMigSample-Info.plist
-c000000004D01C53200000000000003BE
-t1291961650
-s958
-
-CCheck dependencies
-r0
-lSLF07#2@18"Check dependencies313681722#313681722#0(0"0(0#1#0"8689707392#0"0#
-
-CCompileC build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/CoreDataMigSampleAppDelegate.o /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/CoreDataMigSampleAppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s313655708.743523
-e313655708.933979
-r1
-xCompileC
-xbuild/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/CoreDataMigSampleAppDelegate.o
-x/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/CoreDataMigSampleAppDelegate.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@105"Compile /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/CoreDataMigSampleAppDelegate.m313655708#313655709#0(0"0(0#0#97"/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/CoreDataMigSampleAppDelegate.m8704395360#2514"    cd /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2" -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk" -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/CoreDataMigSample-generated-files.hmap -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/CoreDataMigSample-own-target-headers.hmap -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/CoreDataMigSample-all-target-headers.hmap -iquote /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/CoreDataMigSample-project-headers.hmap -F/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/include -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/DerivedSources/i386 -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/DerivedSources -include /var/folders/YB/YBCBEUEdFK82cPO9rc0TWU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CoreDataMigSample_Prefix-aukqkspvezmmsvanzbifxbfubnad/CoreDataMigSample_Prefix.pch -c /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/CoreDataMigSampleAppDelegate.m -o /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/CoreDataMigSampleAppDelegate.o0#
-
-CCompileC build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/Event+Extension.o /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/Event+Extension.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s313680948.377341
-e313680948.449083
-r1
-xCompileC
-xbuild/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/Event+Extension.o
-x/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/Event+Extension.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@92"Compile /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/Event+Extension.m313680948#313680948#0(0"0(0#0#84"/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/Event+Extension.m8698185088#2488"    cd /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2" -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk" -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/CoreDataMigSample-generated-files.hmap -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/CoreDataMigSample-own-target-headers.hmap -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/CoreDataMigSample-all-target-headers.hmap -iquote /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/CoreDataMigSample-project-headers.hmap -F/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/include -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/DerivedSources/i386 -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/DerivedSources -include /var/folders/YB/YBCBEUEdFK82cPO9rc0TWU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CoreDataMigSample_Prefix-aukqkspvezmmsvanzbifxbfubnad/CoreDataMigSample_Prefix.pch -c /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/Event+Extension.m -o /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/Event+Extension.o0#
-
-CCompileC build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/Event.o /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/../Event.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s313680841.427119
-e313680841.598166
-r1
-xCompileC
-xbuild/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/Event.o
-x/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/../Event.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@85"Compile /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/../Event.m313680841#313680841#0(0"0(0#0#77"/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/../Event.m8705764128#2471"    cd /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2" -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk" -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/CoreDataMigSample-generated-files.hmap -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/CoreDataMigSample-own-target-headers.hmap -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/CoreDataMigSample-all-target-headers.hmap -iquote /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/CoreDataMigSample-project-headers.hmap -F/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/include -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/DerivedSources/i386 -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/DerivedSources -include /var/folders/YB/YBCBEUEdFK82cPO9rc0TWU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CoreDataMigSample_Prefix-aukqkspvezmmsvanzbifxbfubnad/CoreDataMigSample_Prefix.pch -c /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/../Event.m -o /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/Event.o0#
-
-CCompileC build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/Event.o /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataMigSample.xcdatamodeld/Event.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s313680073.009124
-e313680073.099791
-r1
-xCompileC
-xbuild/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/Event.o
-x/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataMigSample.xcdatamodeld/Event.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@105"Compile /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataMigSample.xcdatamodeld/Event.m313680073#313680073#0(0"0(0#0#97"/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataMigSample.xcdatamodeld/Event.m8712565280#2491"    cd /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2" -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk" -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/CoreDataMigSample-generated-files.hmap -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/CoreDataMigSample-own-target-headers.hmap -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/CoreDataMigSample-all-target-headers.hmap -iquote /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/CoreDataMigSample-project-headers.hmap -F/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/include -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/DerivedSources/i386 -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/DerivedSources -include /var/folders/YB/YBCBEUEdFK82cPO9rc0TWU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CoreDataMigSample_Prefix-aukqkspvezmmsvanzbifxbfubnad/CoreDataMigSample_Prefix.pch -c /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataMigSample.xcdatamodeld/Event.m -o /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/Event.o0#
-
-CCompileC build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/EventEntityMigrationPolicy.o /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/EventEntityMigrationPolicy.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s313681695.469515
-e313681695.566381
-r1
-xCompileC
-xbuild/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/EventEntityMigrationPolicy.o
-x/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/EventEntityMigrationPolicy.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@103"Compile /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/EventEntityMigrationPolicy.m313681695#313681695#0(0"0(0#0#95"/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/EventEntityMigrationPolicy.m8658644864#2510"    cd /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2" -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk" -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/CoreDataMigSample-generated-files.hmap -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/CoreDataMigSample-own-target-headers.hmap -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/CoreDataMigSample-all-target-headers.hmap -iquote /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/CoreDataMigSample-project-headers.hmap -F/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/include -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/DerivedSources/i386 -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/DerivedSources -include /var/folders/YB/YBCBEUEdFK82cPO9rc0TWU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CoreDataMigSample_Prefix-aukqkspvezmmsvanzbifxbfubnad/CoreDataMigSample_Prefix.pch -c /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/EventEntityMigrationPolicy.m -o /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/EventEntityMigrationPolicy.o0#
-
-CCompileC build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/NSManagedObjectModel_.o /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/NSManagedObjectModel_.m normal i386 objective-c com.apple.compilers.gcc.4_2
-r0
-
-CCompileC build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/RootViewController.o /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/RootViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s313655748.139963
-e313655748.713859
-r1
-xCompileC
-xbuild/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/RootViewController.o
-x/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/RootViewController.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@95"Compile /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/RootViewController.m313655748#313655748#0(0"0(0#0#87"/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/RootViewController.m8705501504#2494"    cd /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2" -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk" -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/CoreDataMigSample-generated-files.hmap -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/CoreDataMigSample-own-target-headers.hmap -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/CoreDataMigSample-all-target-headers.hmap -iquote /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/CoreDataMigSample-project-headers.hmap -F/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/include -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/DerivedSources/i386 -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/DerivedSources -include /var/folders/YB/YBCBEUEdFK82cPO9rc0TWU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CoreDataMigSample_Prefix-aukqkspvezmmsvanzbifxbfubnad/CoreDataMigSample_Prefix.pch -c /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/RootViewController.m -o /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/RootViewController.o0#
-
-CCompileC build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/Sampe.o /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/Classes/Sampe.m normal i386 objective-c com.apple.compilers.gcc.4_2
-r0
-
-CCompileC build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/main.o /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s313631807.543292
-e313631807.871956
-r1
-xCompileC
-xbuild/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/main.o
-x/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/main.m
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@73"Compile /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/main.m313631807#313631807#0(0"0(0#0#65"/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/main.m8700778752#2458"    cd /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2" -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk" -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/CoreDataMigSample-generated-files.hmap -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/CoreDataMigSample-own-target-headers.hmap -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/CoreDataMigSample-all-target-headers.hmap -iquote /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/CoreDataMigSample-project-headers.hmap -F/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/include -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/DerivedSources/i386 -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/DerivedSources -include /var/folders/YB/YBCBEUEdFK82cPO9rc0TWU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CoreDataMigSample_Prefix-aukqkspvezmmsvanzbifxbfubnad/CoreDataMigSample_Prefix.pch -c /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/main.m -o /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/main.o0#
-
-CCompileXIB /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/MainWindow.xib
-s313631804.175658
-e313631805.761792
-r1
-xCompileXIB
-x/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/MainWindow.xib
-lSLF07#2@25"CompileXIB MainWindow.xib313631804#313631805#0(0"0(0#0#73"/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/MainWindow.xib8672408672#764"    cd /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin/ibtool" --errors --warnings --notices --output-format human-readable-text --compile /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/MainWindow.nib /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/MainWindow.xib --sdk "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk"0#
-
-CCompileXIB /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/RootViewController.xib
-s313631804.245625
-e313631805.701409
-r1
-xCompileXIB
-x/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/RootViewController.xib
-lSLF07#2@33"CompileXIB RootViewController.xib313631804#313631805#0(0"0(0#0#81"/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/RootViewController.xib8669957536#780"    cd /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin/ibtool" --errors --warnings --notices --output-format human-readable-text --compile /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/RootViewController.nib /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/RootViewController.xib --sdk "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk"0#
-
-CDataModelCompile /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/CoreDataClasses.mom /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataClasses.xcdatamodel
-s313653005.261876
-e313653005.311520
-r1
-xDataModelCompile
-x/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/CoreDataClasses.mom
-x/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataClasses.xcdatamodel
-o/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataClasses.xcdatamodel:NSPropertyDescription.entity: warning: NSPropertyDescription.entity -- property name conflicts with a method already on NSObject or NSManagedObject 
-o/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataClasses.xcdatamodel:NSPersistentStoreCoordinator.managedObjectModel: warning: NSPersistentStoreCoordinator.managedObjectModel -- relationship does not have an inverse 
-lSLF07#2@94"Compile /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataClasses.xcdatamodel313653005#313653005#0(471"/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataClasses.xcdatamodel:NSPropertyDescription.entity: warning: NSPropertyDescription.entity -- property name conflicts with a method already on NSObject or NSManagedObject /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataClasses.xcdatamodel:NSPersistentStoreCoordinator.managedObjectModel: warning: NSPersistentStoreCoordinator.managedObjectModel -- relationship does not have an inverse 2(22@109"NSPropertyDescription.entity -- property name conflicts with a method already on NSObject or NSManagedObject 313653005#18446744073709551615#0#0(6@86"/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataClasses.xcdatamodel313642352#0#0#0#0#0"0(22@89"NSPersistentStoreCoordinator.managedObjectModel -- relationship does not have an inverse 313653005#18446744073709551615#0#0(6@86"/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataClasses.xcdatamodel313642352#0#0#0#0#0"0(0#0#86"/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataClasses.xcdatamodel8697180352#562"    cd /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin/momc" -XD_MOMC_TARGET_VERSION=10.6 /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataClasses.xcdatamodel /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/CoreDataClasses.mom0#
-
-CDataModelVersionCompile /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/CoreDataMigSample.momd /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataMigSample.xcdatamodeld
-s313681696.845597
-e313681697.034126
-r1
-xDataModelVersionCompile
-x/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/CoreDataMigSample.momd
-x/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataMigSample.xcdatamodeld
-lSLF07#2@127"DataModelVersionCompile build/Debug-iphonesimulator/CoreDataMigSample.app/CoreDataMigSample.momd CoreDataMigSample.xcdatamodeld313681696#313681697#0(0"0(0#0#89"/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataMigSample.xcdatamodeld8674182464#568"    cd /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin/momc" -XD_MOMC_TARGET_VERSION=10.6 /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataMigSample.xcdatamodeld /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/CoreDataMigSample.momd0#
-
-CGenerateDSYMFile /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app.dSYM /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/CoreDataMigSample
-s313681696.968053
-e313681697.015506
-r1
-xGenerateDSYMFile
-x/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app.dSYM
-x/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/CoreDataMigSample
-lSLF07#2@139"GenerateDSYMFile build/Debug-iphonesimulator/CoreDataMigSample.app.dSYM build/Debug-iphonesimulator/CoreDataMigSample.app/CoreDataMigSample313681696#313681697#0(0"0(0#0#126"/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/CoreDataMigSample8711350112#565"    cd /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin/dsymutil" /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/CoreDataMigSample -o /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app.dSYM0#
-
-CLd /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/CoreDataMigSample normal i386
-s313681696.933088
-e313681696.967949
-r1
-xLd
-x/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/CoreDataMigSample
-xnormal
-xi386
-lSLF07#2@131"Link /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/CoreDataMigSample313681696#313681696#0(0"0(0#0#0"8711710240#1194"    cd /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2" -arch i386 -isysroot "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk" -L/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator -F/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator -filelist /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/Objects-normal/i386/CoreDataMigSample.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -framework CoreData -o /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/CoreDataMigSample0#
-
-CMappingModelCompile /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/CoreDataMigSample-1to2.cdm /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataMigSample.xcdatamodeld/CoreDataMigSample-1to2.xcmappingmodel
-s313681696.849677
-e313681696.932495
-r1
-xMappingModelCompile
-x/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/CoreDataMigSample-1to2.cdm
-x/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataMigSample.xcdatamodeld/CoreDataMigSample-1to2.xcmappingmodel
-lSLF07#2@165"MappingModelCompile build/Debug-iphonesimulator/CoreDataMigSample.app/CoreDataMigSample-1to2.cdm CoreDataMigSample.xcdatamodeld/CoreDataMigSample-1to2.xcmappingmodel313681696#313681696#0(0"0(0#0#127"/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataMigSample.xcdatamodeld/CoreDataMigSample-1to2.xcmappingmodel8670136544#609"    cd /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin/mapc" -XDMAPC_TARGET_VERSION=10.6 /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataMigSample.xcdatamodeld/CoreDataMigSample-1to2.xcmappingmodel /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/CoreDataMigSample-1to2.cdm0#
-
-CProcessInfoPlistFile /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/Info.plist CoreDataMigSample-Info.plist
-s313654503.599595
-e313654503.610108
-r1
-xProcessInfoPlistFile
-x/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/Info.plist
-xCoreDataMigSample-Info.plist
-lSLF07#2@36"Process CoreDataMigSample-Info.plist313654503#313654503#0(0"0(0#0#87"/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataMigSample-Info.plist8700732640#629"    cd /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility CoreDataMigSample-Info.plist -genpkginfo /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app/Info.plist0#
-
-CProcessPCH /var/folders/YB/YBCBEUEdFK82cPO9rc0TWU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CoreDataMigSample_Prefix-aukqkspvezmmsvanzbifxbfubnad/CoreDataMigSample_Prefix.pch.gch CoreDataMigSample_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
-s313631805.761911
-e313631807.503703
-r1
-xProcessPCH
-x/var/folders/YB/YBCBEUEdFK82cPO9rc0TWU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CoreDataMigSample_Prefix-aukqkspvezmmsvanzbifxbfubnad/CoreDataMigSample_Prefix.pch.gch
-xCoreDataMigSample_Prefix.pch
-xnormal
-xi386
-xobjective-c
-xcom.apple.compilers.gcc.4_2
-lSLF07#2@39"Precompile CoreDataMigSample_Prefix.pch313631805#313631807#0(0"0(0#0#87"/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataMigSample_Prefix.pch8675051424#2320"    cd /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample    setenv LANG en_US.US-ASCII    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2" -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.2.sdk" -fexceptions -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -D__IPHONE_OS_VERSION_MIN_REQUIRED=40200 -iquote /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/CoreDataMigSample-generated-files.hmap -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/CoreDataMigSample-own-target-headers.hmap -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/CoreDataMigSample-all-target-headers.hmap -iquote /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/CoreDataMigSample-project-headers.hmap -F/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/include -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/DerivedSources/i386 -I/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/CoreDataMigSample.build/Debug-iphonesimulator/CoreDataMigSample.build/DerivedSources -c /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/CoreDataMigSample_Prefix.pch -o /var/folders/YB/YBCBEUEdFK82cPO9rc0TWU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CoreDataMigSample_Prefix-aukqkspvezmmsvanzbifxbfubnad/CoreDataMigSample_Prefix.pch.gch0#
-
-CTouch /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app
-s313681697.034217
-e313681697.372617
-r1
-xTouch
-x/Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app
-lSLF07#2@114"Touch /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app313681697#313681697#0(0"0(0#0#0"8710398080#388"    cd /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/hashi/Development/IOS-Sample-Code/CoreDataMigSample/build/Debug-iphonesimulator/CoreDataMigSample.app0#
-
