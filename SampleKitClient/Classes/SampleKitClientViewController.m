@@ -9,6 +9,8 @@
 #import "SampleKitClientViewController.h"
 #import <SampleKit/SampleClass.h>
 
+//#import <SampleKit/NSString+Extension.h>
+
 @implementation SampleKitClientViewController
 
 
@@ -37,6 +39,8 @@
 	
 	SampleClass* obj = [[[SampleClass alloc] init] autorelease];
 	NSLog(@"%@", [obj stringHello]);
+	
+//	NSLog(@"%@", [@"AAA" extString]);
 }
 
 

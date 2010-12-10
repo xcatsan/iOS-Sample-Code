@@ -1,0 +1,429 @@
+TCoreLocationManager
+v7
+r0
+t311900157.420407
+cCheck dependencies
+cCpResource build/Debug-iphoneos/CoreLocationManager.app/ResourceRules.plist "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/ResourceRules.plist"
+cProcessInfoPlistFile /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app/Info.plist CoreLocationManager-Info.plist
+cCompileXIB /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/MainWindow.xib
+cCompileXIB /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/CoreLocationManagerViewController.xib
+cProcessPCH /var/folders/YB/YBCBEUEdFK82cPO9rc0TWU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CoreLocationManager_Prefix-cdsrjlolnmsnvnewxnqfsvasadqy/CoreLocationManager_Prefix.pch.gch CoreLocationManager_Prefix.pch normal armv6 objective-c com.apple.compilers.gcc.4_2
+cProcessPCH /var/folders/YB/YBCBEUEdFK82cPO9rc0TWU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CoreLocationManager_Prefix-gcethomrpmhjjefimlrgtpmimlrf/CoreLocationManager_Prefix.pch.gch CoreLocationManager_Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv6/main.o /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/main.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv6/CoreLocationManagerAppDelegate.o /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/Classes/CoreLocationManagerAppDelegate.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv6/CoreLocationManagerViewController.o /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/Classes/CoreLocationManagerViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv7/main.o /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/main.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv7/CoreLocationManagerAppDelegate.o /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/Classes/CoreLocationManagerAppDelegate.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv6/CoreLocationManager normal armv6
+cCompileC build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv7/CoreLocationManagerViewController.o /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/Classes/CoreLocationManagerViewController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv7/CoreLocationManager normal armv7
+cCreateUniversalBinary /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app/CoreLocationManager normal "armv6 armv7"
+cGenerateDSYMFile /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app.dSYM /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app/CoreLocationManager
+cProcessProductPackaging "/Users/hashi/Library/MobileDevice/Provisioning Profiles/A549E355-9CA0-48C6-86E7-577C1E05769E.mobileprovision" /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app/embedded.mobileprovision
+cTouch /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app
+cProcessProductPackaging "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/Entitlements.plist" /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager.xcent
+cCodeSign /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app
+
+N/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk
+c000000004CC7DC9E0000000000000110
+t1288166558
+s272
+
+N/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/Entitlements.plist
+c000000004CB3DFCF00000000000001A7
+t1286856655
+s423
+
+N/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/ResourceRules.plist
+c000000004CB3DFCF00000000000001E5
+t1286856655
+s485
+
+N/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004CC10EF500000000003532B0
+t1287720693
+s3486384
+
+N/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004CC10F4700000000003E1F20
+t1287720775
+s4071200
+
+N/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004CC10F1C0000000000001466
+t1287720732
+s5222
+
+N/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004CC11AE60000000000000AA1
+t1287723750
+s2721
+
+N/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004CC11B750000000000C769F0
+t1287723893
+s13068784
+
+N/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/Classes/CoreLocationManagerAppDelegate.h
+c000000004CE70074000000000000021D
+t1290207348
+s541
+i<UIKit/UIKit.h>
+
+N/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/Classes/CoreLocationManagerAppDelegate.m
+c000000004CE700740000000000000AC7
+t1290207348
+s2759
+i"CoreLocationManagerAppDelegate.h"
+i"CoreLocationManagerViewController.h"
+
+N/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/Classes/CoreLocationManagerViewController.h
+c000000004CE700740000000000000108
+t1290207348
+s264
+i<UIKit/UIKit.h>
+
+N/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/Classes/CoreLocationManagerViewController.m
+c000000004CE7007400000000000005E7
+t1290207348
+s1511
+i"CoreLocationManagerViewController.h"
+
+N/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/CoreLocationManagerViewController.xib
+c000000004CE700740000000000001A75
+t1290207348
+s6773
+
+N/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/CoreLocationManager_Prefix.pch
+c000000004CE7007400000000000000CF
+t1290207348
+s207
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/MainWindow.xib
+c000000004CE700740000000000004EB9
+t1290207348
+s20153
+
+N/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager.xcent
+t1290207356
+s444
+
+N/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv6/CoreLocationManager
+t1290207356
+s17808
+
+N/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv6/CoreLocationManager.LinkFileList
+c000000004CE70079000000000000021D
+t1290207353
+s541
+
+N/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv6/CoreLocationManagerAppDelegate.o
+t1290207356
+s51288
+
+N/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv6/CoreLocationManagerViewController.o
+t1290207356
+s37960
+
+N/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv6/main.o
+t1290207356
+s6612
+
+N/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv7/CoreLocationManager
+t1290207356
+s17808
+
+N/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv7/CoreLocationManager.LinkFileList
+c000000004CE70079000000000000021D
+t1290207353
+s541
+
+N/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv7/CoreLocationManagerAppDelegate.o
+t1290207356
+s51208
+
+N/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv7/CoreLocationManagerViewController.o
+t1290207356
+s37936
+
+N/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv7/main.o
+t1290207356
+s6596
+
+N/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app
+t1290207357
+s374
+
+N/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app.dSYM
+t1290207356
+s102
+
+N/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app/CoreLocationManager
+t1290207356
+s42384
+
+N/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app/CoreLocationManagerViewController.nib
+t1290207354
+s795
+
+N/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app/Info.plist
+t1290207353
+s835
+
+N/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app/MainWindow.nib
+t1290207354
+s1147
+
+N/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app/PkgInfo
+t1290207353
+s8
+
+N/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app/ResourceRules.plist
+t1290207353
+s485
+
+N/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app/embedded.mobileprovision
+t1290207356
+s7237
+
+N/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/main.m
+c000000004CE70074000000000000016B
+t1290207348
+s363
+i<UIKit/UIKit.h>
+
+N/Users/hashi/Library/MobileDevice/Provisioning Profiles/A549E355-9CA0-48C6-86E7-577C1E05769E.mobileprovision
+c000000004CA021450000000000001C45
+t1285562693
+s7237
+
+N/var/folders/YB/YBCBEUEdFK82cPO9rc0TWU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CoreLocationManager_Prefix-cdsrjlolnmsnvnewxnqfsvasadqy/CoreLocationManager_Prefix.pch.gch
+t1290207355
+s9991896
+
+N/var/folders/YB/YBCBEUEdFK82cPO9rc0TWU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CoreLocationManager_Prefix-gcethomrpmhjjefimlrgtpmimlrf/CoreLocationManager_Prefix.pch.gch
+t1290207355
+s10450648
+
+NCoreLocationManager-Info.plist
+c000000004CE70074000000000000038D
+t1290207348
+s909
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies311900153#311900153#0(0"0(0#1#0"8759336160#0"0#
+
+CCodeSign /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app
+s311900156.900285
+e311900157.420232
+r1
+xCodeSign
+x/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app
+lSLF07#2@53"CodeSign build/Debug-iphoneos/CoreLocationManager.app311900156#311900157#0(0"0(0#0#105"/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app8773208416#894"    cd /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    setenv _CODESIGN_ALLOCATE_ "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate"    /usr/bin/codesign -f -s "iPhone Developer: Hiroshi Hashiguchi (JS4GCHZ5X2)" --resource-rules=/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app/ResourceRules.plist --entitlements /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager.xcent /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app0#
+
+CCompileC build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv6/CoreLocationManagerAppDelegate.o /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/Classes/CoreLocationManagerAppDelegate.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s311900155.906321
+e311900156.113462
+r1
+xCompileC
+xbuild/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv6/CoreLocationManagerAppDelegate.o
+x/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/Classes/CoreLocationManagerAppDelegate.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@109"Compile /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/Classes/CoreLocationManagerAppDelegate.m311900155#311900156#0(0"0(0#0#101"/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/Classes/CoreLocationManagerAppDelegate.m8783561248#2390"    cd /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager    setenv LANG en_US.US-ASCII    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2" -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk" -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager-generated-files.hmap -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager-own-target-headers.hmap -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager-all-target-headers.hmap -iquote /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager-project-headers.hmap -F/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/include -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/DerivedSources/armv6 -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/DerivedSources -include /var/folders/YB/YBCBEUEdFK82cPO9rc0TWU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CoreLocationManager_Prefix-cdsrjlolnmsnvnewxnqfsvasadqy/CoreLocationManager_Prefix.pch -c /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/Classes/CoreLocationManagerAppDelegate.m -o /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv6/CoreLocationManagerAppDelegate.o0#
+
+CCompileC build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv6/CoreLocationManagerViewController.o /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/Classes/CoreLocationManagerViewController.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s311900156.111655
+e311900156.190515
+r1
+xCompileC
+xbuild/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv6/CoreLocationManagerViewController.o
+x/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/Classes/CoreLocationManagerViewController.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@112"Compile /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/Classes/CoreLocationManagerViewController.m311900156#311900156#0(0"0(0#0#104"/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/Classes/CoreLocationManagerViewController.m8781206304#2396"    cd /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager    setenv LANG en_US.US-ASCII    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2" -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk" -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager-generated-files.hmap -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager-own-target-headers.hmap -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager-all-target-headers.hmap -iquote /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager-project-headers.hmap -F/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/include -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/DerivedSources/armv6 -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/DerivedSources -include /var/folders/YB/YBCBEUEdFK82cPO9rc0TWU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CoreLocationManager_Prefix-cdsrjlolnmsnvnewxnqfsvasadqy/CoreLocationManager_Prefix.pch -c /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/Classes/CoreLocationManagerViewController.m -o /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv6/CoreLocationManagerViewController.o0#
+
+CCompileC build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv6/main.o /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/main.m normal armv6 objective-c com.apple.compilers.gcc.4_2
+s311900155.905169
+e311900156.111530
+r1
+xCompileC
+xbuild/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv6/main.o
+x/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/main.m
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@75"Compile /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/main.m311900155#311900156#0(0"0(0#0#67"/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/main.m8785825312#2330"    cd /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager    setenv LANG en_US.US-ASCII    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2" -x objective-c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk" -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager-generated-files.hmap -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager-own-target-headers.hmap -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager-all-target-headers.hmap -iquote /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager-project-headers.hmap -F/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/include -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/DerivedSources/armv6 -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/DerivedSources -include /var/folders/YB/YBCBEUEdFK82cPO9rc0TWU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CoreLocationManager_Prefix-cdsrjlolnmsnvnewxnqfsvasadqy/CoreLocationManager_Prefix.pch -c /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/main.m -o /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv6/main.o0#
+
+CCompileC build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv7/CoreLocationManagerAppDelegate.o /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/Classes/CoreLocationManagerAppDelegate.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s311900156.189277
+e311900156.265473
+r1
+xCompileC
+xbuild/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv7/CoreLocationManagerAppDelegate.o
+x/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/Classes/CoreLocationManagerAppDelegate.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@109"Compile /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/Classes/CoreLocationManagerAppDelegate.m311900156#311900156#0(0"0(0#0#101"/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/Classes/CoreLocationManagerAppDelegate.m8760832320#2390"    cd /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager    setenv LANG en_US.US-ASCII    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2" -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk" -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager-generated-files.hmap -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager-own-target-headers.hmap -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager-all-target-headers.hmap -iquote /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager-project-headers.hmap -F/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/include -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/DerivedSources/armv7 -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/DerivedSources -include /var/folders/YB/YBCBEUEdFK82cPO9rc0TWU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CoreLocationManager_Prefix-gcethomrpmhjjefimlrgtpmimlrf/CoreLocationManager_Prefix.pch -c /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/Classes/CoreLocationManagerAppDelegate.m -o /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv7/CoreLocationManagerAppDelegate.o0#
+
+CCompileC build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv7/CoreLocationManagerViewController.o /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/Classes/CoreLocationManagerViewController.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s311900156.265598
+e311900156.328158
+r1
+xCompileC
+xbuild/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv7/CoreLocationManagerViewController.o
+x/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/Classes/CoreLocationManagerViewController.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@112"Compile /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/Classes/CoreLocationManagerViewController.m311900156#311900156#0(0"0(0#0#104"/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/Classes/CoreLocationManagerViewController.m8725002880#2396"    cd /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager    setenv LANG en_US.US-ASCII    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2" -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk" -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager-generated-files.hmap -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager-own-target-headers.hmap -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager-all-target-headers.hmap -iquote /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager-project-headers.hmap -F/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/include -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/DerivedSources/armv7 -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/DerivedSources -include /var/folders/YB/YBCBEUEdFK82cPO9rc0TWU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CoreLocationManager_Prefix-gcethomrpmhjjefimlrgtpmimlrf/CoreLocationManager_Prefix.pch -c /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/Classes/CoreLocationManagerViewController.m -o /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv7/CoreLocationManagerViewController.o0#
+
+CCompileC build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv7/main.o /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/main.m normal armv7 objective-c com.apple.compilers.gcc.4_2
+s311900156.113575
+e311900156.189027
+r1
+xCompileC
+xbuild/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv7/main.o
+x/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/main.m
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@75"Compile /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/main.m311900156#311900156#0(0"0(0#0#67"/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/main.m8778747936#2330"    cd /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager    setenv LANG en_US.US-ASCII    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2" -x objective-c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk" -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager-generated-files.hmap -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager-own-target-headers.hmap -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager-all-target-headers.hmap -iquote /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager-project-headers.hmap -F/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/include -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/DerivedSources/armv7 -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/DerivedSources -include /var/folders/YB/YBCBEUEdFK82cPO9rc0TWU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CoreLocationManager_Prefix-gcethomrpmhjjefimlrgtpmimlrf/CoreLocationManager_Prefix.pch -c /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/main.m -o /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv7/main.o0#
+
+CCompileXIB /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/CoreLocationManagerViewController.xib
+s311900153.623575
+e311900154.090331
+r1
+xCompileXIB
+x/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/CoreLocationManagerViewController.xib
+lSLF07#2@48"CompileXIB CoreLocationManagerViewController.xib311900153#311900154#0(0"0(0#0#98"/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/CoreLocationManagerViewController.xib8695733536#790"    cd /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin/ibtool" --errors --warnings --notices --output-format human-readable-text --compile /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app/CoreLocationManagerViewController.nib /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/CoreLocationManagerViewController.xib --sdk "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk"0#
+
+CCompileXIB /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/MainWindow.xib
+s311900153.622264
+e311900154.095058
+r1
+xCompileXIB
+x/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/MainWindow.xib
+lSLF07#2@25"CompileXIB MainWindow.xib311900153#311900154#0(0"0(0#0#75"/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/MainWindow.xib8760810528#744"    cd /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.2    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin/ibtool" --errors --warnings --notices --output-format human-readable-text --compile /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app/MainWindow.nib /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/MainWindow.xib --sdk "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk"0#
+
+CCpResource build/Debug-iphoneos/CoreLocationManager.app/ResourceRules.plist "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/ResourceRules.plist"
+s311900153.553611
+e311900153.622169
+r1
+xCpResource
+xbuild/Debug-iphoneos/CoreLocationManager.app/ResourceRules.plist
+x/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/ResourceRules.plist
+lSLF07#2@124"Copy /Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/ResourceRules.plist311900153#311900153#0(0"0(0#0#119"/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/ResourceRules.plist8759466240#674"    cd /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer Tools/Xcode and iOS SDK 3.2.5/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp" -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -resolve-src-symlinks "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/ResourceRules.plist" /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app0#
+
+CCreateUniversalBinary /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app/CoreLocationManager normal "armv6 armv7"
+s311900156.743923
+e311900156.795712
+r1
+xCreateUniversalBinary
+x/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app/CoreLocationManager
+xnormal
+xarmv6 armv7
+lSLF07#2@107"CreateUniversalBinary build/Debug-iphoneos/CoreLocationManager.app/CoreLocationManager normal "armv6 armv7"311900156#311900156#0(0"0(0#0#72"/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/armv6 armv78776067040#762"    cd /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/lipo -create /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv6/CoreLocationManager /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv7/CoreLocationManager -output /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app/CoreLocationManager0#
+
+CGenerateDSYMFile /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app.dSYM /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app/CoreLocationManager
+s311900156.795800
+e311900156.860391
+r1
+xGenerateDSYMFile
+x/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app.dSYM
+x/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app/CoreLocationManager
+lSLF07#2@131"GenerateDSYMFile build/Debug-iphoneos/CoreLocationManager.app.dSYM build/Debug-iphoneos/CoreLocationManager.app/CoreLocationManager311900156#311900156#0(0"0(0#0#125"/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app/CoreLocationManager8715449888#556"    cd /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin/dsymutil" /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app/CoreLocationManager -o /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app.dSYM0#
+
+CLd /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv6/CoreLocationManager normal armv6
+s311900156.190589
+e311900156.743821
+r1
+xLd
+x/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv6/CoreLocationManager
+xnormal
+xarmv6
+lSLF07#2@179"Link /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv6/CoreLocationManager311900156#311900156#0(0"0(0#0#0"8751397344#1165"    cd /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager    setenv IPHONEOS_DEPLOYMENT_TARGET 4.2    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2" -arch armv6 -isysroot "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk" -L/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos -F/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos -filelist /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv6/CoreLocationManager.LinkFileList -dead_strip -miphoneos-version-min=4.2 -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv6/CoreLocationManager0#
+
+CLd /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv7/CoreLocationManager normal armv7
+s311900156.328256
+e311900156.723073
+r1
+xLd
+x/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv7/CoreLocationManager
+xnormal
+xarmv7
+lSLF07#2@179"Link /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv7/CoreLocationManager311900156#311900156#0(0"0(0#0#0"8677216512#1165"    cd /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager    setenv IPHONEOS_DEPLOYMENT_TARGET 4.2    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2" -arch armv7 -isysroot "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk" -L/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos -F/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos -filelist /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv7/CoreLocationManager.LinkFileList -dead_strip -miphoneos-version-min=4.2 -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/Objects-normal/armv7/CoreLocationManager0#
+
+CProcessInfoPlistFile /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app/Info.plist CoreLocationManager-Info.plist
+s311900153.555760
+e311900153.567030
+r1
+xProcessInfoPlistFile
+x/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app/Info.plist
+xCoreLocationManager-Info.plist
+lSLF07#2@38"Process CoreLocationManager-Info.plist311900153#311900153#0(0"0(0#0#91"/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/CoreLocationManager-Info.plist8759325184#758"    cd /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility CoreLocationManager-Info.plist -genpkginfo /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -resourcerulesfile /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app/ResourceRules.plist -o /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app/Info.plist0#
+
+CProcessPCH /var/folders/YB/YBCBEUEdFK82cPO9rc0TWU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CoreLocationManager_Prefix-cdsrjlolnmsnvnewxnqfsvasadqy/CoreLocationManager_Prefix.pch.gch CoreLocationManager_Prefix.pch normal armv6 objective-c com.apple.compilers.gcc.4_2
+s311900154.095180
+e311900155.905074
+r1
+xProcessPCH
+x/var/folders/YB/YBCBEUEdFK82cPO9rc0TWU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CoreLocationManager_Prefix-cdsrjlolnmsnvnewxnqfsvasadqy/CoreLocationManager_Prefix.pch.gch
+xCoreLocationManager_Prefix.pch
+xnormal
+xarmv6
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@41"Precompile CoreLocationManager_Prefix.pch311900154#311900155#0(0"0(0#0#91"/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/CoreLocationManager_Prefix.pch8784311616#2194"    cd /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager    setenv LANG en_US.US-ASCII    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2" -x objective-c-header -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk" -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager-generated-files.hmap -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager-own-target-headers.hmap -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager-all-target-headers.hmap -iquote /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager-project-headers.hmap -F/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/include -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/DerivedSources/armv6 -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/DerivedSources -c /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/CoreLocationManager_Prefix.pch -o /var/folders/YB/YBCBEUEdFK82cPO9rc0TWU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CoreLocationManager_Prefix-cdsrjlolnmsnvnewxnqfsvasadqy/CoreLocationManager_Prefix.pch.gch0#
+
+CProcessPCH /var/folders/YB/YBCBEUEdFK82cPO9rc0TWU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CoreLocationManager_Prefix-gcethomrpmhjjefimlrgtpmimlrf/CoreLocationManager_Prefix.pch.gch CoreLocationManager_Prefix.pch normal armv7 objective-c com.apple.compilers.gcc.4_2
+s311900154.096189
+e311900155.867373
+r1
+xProcessPCH
+x/var/folders/YB/YBCBEUEdFK82cPO9rc0TWU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CoreLocationManager_Prefix-gcethomrpmhjjefimlrgtpmimlrf/CoreLocationManager_Prefix.pch.gch
+xCoreLocationManager_Prefix.pch
+xnormal
+xarmv7
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@41"Precompile CoreLocationManager_Prefix.pch311900154#311900155#0(0"0(0#0#91"/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/CoreLocationManager_Prefix.pch8783189408#2194"    cd /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager    setenv LANG en_US.US-ASCII    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2" -x objective-c-header -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -O0 -Wreturn-type -Wunused-variable -isysroot "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk" -fvisibility=hidden -gdwarf-2 -mthumb -miphoneos-version-min=4.2 -iquote /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager-generated-files.hmap -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager-own-target-headers.hmap -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager-all-target-headers.hmap -iquote /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager-project-headers.hmap -F/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/include -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/DerivedSources/armv7 -I/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/DerivedSources -c /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/CoreLocationManager_Prefix.pch -o /var/folders/YB/YBCBEUEdFK82cPO9rc0TWU+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/CoreLocationManager_Prefix-gcethomrpmhjjefimlrgtpmimlrf/CoreLocationManager_Prefix.pch.gch0#
+
+CProcessProductPackaging "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/Entitlements.plist" /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager.xcent
+s311900156.872749
+e311900156.900212
+r1
+xProcessProductPackaging
+x/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/Entitlements.plist
+x/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager.xcent
+lSLF07#2@243"ProcessProductPackaging "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/Entitlements.plist" build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager.xcent311900156#311900156#0(0"0(0#0#159"/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager.xcent8780244768#604"    cd /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    <com.apple.tools.product-pkg-utility> "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/Entitlements.plist" -entitlements -format xml -o /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/CoreLocationManager.build/Debug-iphoneos/CoreLocationManager.build/CoreLocationManager.xcent0#
+
+CProcessProductPackaging "/Users/hashi/Library/MobileDevice/Provisioning Profiles/A549E355-9CA0-48C6-86E7-577C1E05769E.mobileprovision" /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app/embedded.mobileprovision
+s311900156.860501
+e311900156.867522
+r1
+xProcessProductPackaging
+x/Users/hashi/Library/MobileDevice/Provisioning Profiles/A549E355-9CA0-48C6-86E7-577C1E05769E.mobileprovision
+x/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app/embedded.mobileprovision
+lSLF07#2@204"ProcessProductPackaging "/Users/hashi/Library/MobileDevice/Provisioning Profiles/A549E355-9CA0-48C6-86E7-577C1E05769E.mobileprovision" build/Debug-iphoneos/CoreLocationManager.app/embedded.mobileprovision311900156#311900156#0(0"0(0#0#130"/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app/embedded.mobileprovision8772897024#539"    cd /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    <com.apple.tools.product-pkg-utility> "/Users/hashi/Library/MobileDevice/Provisioning Profiles/A549E355-9CA0-48C6-86E7-577C1E05769E.mobileprovision" -o /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app/embedded.mobileprovision0#
+
+CTouch /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app
+s311900156.867586
+e311900156.872276
+r1
+xTouch
+x/Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app
+lSLF07#2@111"Touch /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app311900156#311900156#0(0"0(0#0#0"8785173856#380"    cd /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager    setenv PATH "/Developer Tools/Xcode and iOS SDK 3.2.5/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer Tools/Xcode and iOS SDK 3.2.5/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/hashi/Development/IOS-Sample-Code/CoreLocationManager/build/Debug-iphoneos/CoreLocationManager.app0#
+

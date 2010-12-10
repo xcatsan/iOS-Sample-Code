@@ -196,6 +196,10 @@
 				GCC_PREFIX_HEADER = SampleKitClient_Prefix.pch;
 				INFOPLIST_FILE = "SampleKitClient-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = SampleKitClient;
 			};
 			name = Debug;
@@ -213,6 +217,10 @@
 				GCC_PREFIX_HEADER = SampleKitClient_Prefix.pch;
 				INFOPLIST_FILE = "SampleKitClient-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = SampleKitClient;
 				VALIDATE_PRODUCT = YES;
 			};

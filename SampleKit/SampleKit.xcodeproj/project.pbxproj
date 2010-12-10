@@ -23,6 +23,8 @@
 /* Begin PBXBuildFile section */
 		4CA1508012910590009A342D /* SampleClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CA1507E12910590009A342D /* SampleClass.m */; };
 		4CB0BE84129502D100380263 /* SampleClass.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CB0BE83129502D100380263 /* SampleClass.h */; };
+		4CF77DEC129D452C00B0B1DE /* NSString+Extension.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CF77DEA129D452C00B0B1DE /* NSString+Extension.h */; };
+		4CF77DED129D452C00B0B1DE /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF77DEB129D452C00B0B1DE /* NSString+Extension.m */; };
 		AA747D9F0F9514B9006C5449 /* SampleKit_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* SampleKit_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 /* End PBXBuildFile section */
@@ -31,6 +33,8 @@
 		4CA1507B129104A3009A342D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CA1507E12910590009A342D /* SampleClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleClass.m; sourceTree = "<group>"; };
 		4CB0BE83129502D100380263 /* SampleClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleClass.h; sourceTree = "<group>"; };
+		4CF77DEA129D452C00B0B1DE /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
+		4CF77DEB129D452C00B0B1DE /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* SampleKit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleKit_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libSampleKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSampleKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				4CA1507E12910590009A342D /* SampleClass.m */,
+				4CF77DEB129D452C00B0B1DE /* NSString+Extension.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -105,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				4CB0BE83129502D100380263 /* SampleClass.h */,
+				4CF77DEA129D452C00B0B1DE /* NSString+Extension.h */,
 			);
 			path = Headers;
 			sourceTree = "<group>";
@@ -118,6 +124,7 @@
 			files = (
 				AA747D9F0F9514B9006C5449 /* SampleKit_Prefix.pch in Headers */,
 				4CB0BE84129502D100380263 /* SampleClass.h in Headers */,
+				4CF77DEC129D452C00B0B1DE /* NSString+Extension.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CA1508012910590009A342D /* SampleClass.m in Sources */,
+				4CF77DED129D452C00B0B1DE /* NSString+Extension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
