@@ -14,7 +14,7 @@
 @synthesize message = message_;
 @synthesize textView = textView_;
 @synthesize sendText = sendText_;
-
+@synthesize imageView = imageView_;
 
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
@@ -80,6 +80,14 @@
 - (IBAction)sendPhoto:(id)sender
 {
 	NSLog(@"%s|%@", __PRETTY_FUNCTION__, sender);
+	
+	UIActionSheet* sheet = [[[UIActionSheet alloc] 
+							 initWithTitle:nil
+							 delegate:self 
+							 cancelButtonTitle:@"キャンセル" 
+							 destructiveButtonTitle:nil 
+							 otherButtonTitles:@"ライブラリからのイメージ", nil] autorelease];
+	[sheet showInView:self.view];
 }
 
 - (IBAction)sendText:(id)sender
@@ -91,7 +99,7 @@
 	NSString* msg = self.sendText.text;
 	
 	NSData* data = [msg dataUsingEncoding:NSUTF8StringEncoding];
-	
+
 	NSError* error = nil;
 	[self.session sendData:data
 				   toPeers:[NSArray arrayWithObject:self.peerID]
@@ -196,11 +204,68 @@
 #pragma mark -
 - (void) receiveData:(NSData *)data fromPeer:(NSString *)peer inSession: (GKSession *)session context:(void *)context
 {
-	NSString* msg = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
-	NSString* text = [self.textView.text stringByAppendingFormat:@"%@\n", msg];
-	self.textView.text = text;
-	NSRange range = NSMakeRange([text length]-1, 1);
-	[self.textView scrollRangeToVisible:range];
+	if ([data length] < 1024) {
+		// text
+		NSLog(@"received text");
+		NSString* msg = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
+		NSString* text = [self.textView.text stringByAppendingFormat:@"%@\n", msg];
+		self.textView.text = text;
+		NSRange range = NSMakeRange([text length]-1, 1);
+		[self.textView scrollRangeToVisible:range];
+		
+	} else {
+		// image
+		NSLog(@"received image");
+		self.imageView.image = [UIImage imageWithData:data];
+	}
+}
+
+
+#pragma mark -
+#pragma mark UIActionSheetDelegate
+- (void)actionSheet:(UIActionSheet*)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+	if (buttonIndex == 1) {
+			// canceld
+		return;
+	}
+	
+	UIImagePickerController* picker = [[UIImagePickerController alloc] init];
+	picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+	
+	picker.delegate = self;
+	picker.allowsEditing = YES;
+	picker.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+	[self presentModalViewController:picker animated:YES];
+	[picker release];
+}
+
+
+#pragma mark -
+#pragma mark UIImagePickerControllerDelegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    [picker dismissModalViewControllerAnimated:YES];
+	
+	UIImage* image = [info objectForKey:UIImagePickerControllerEditedImage];
+	
+	NSError* error = nil;
+	NSData* data = UIImageJPEGRepresentation(image, 0.5);
+	NSLog(@"%s|size=%d, pixel=%@", __PRETTY_FUNCTION__, [data length], NSStringFromCGSize(image.size));
+	NSLog(@"data length=%d", [data length]);
+	[self.session sendData:data
+				   toPeers:[NSArray arrayWithObject:self.peerID]
+			  withDataMode:GKSendDataReliable
+					 error:&error];
+	if (error) {
+		NSLog(@"%@", error);
+	}
+	
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [picker dismissModalViewControllerAnimated:YES];
 }
 
 @end
