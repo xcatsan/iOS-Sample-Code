@@ -130,6 +130,7 @@
 {
 	NSLog(@"%s|peerID=%@", __PRETTY_FUNCTION__, peerID);
 	
+	self.peerID = peerID;
 	self.session = session;
 	session.delegate = self;
 	[session setDataReceiveHandler:self withContext:nil];
@@ -161,7 +162,7 @@
 	switch (state) {
 		case GKPeerStateConnected:
 			self.message.text = @"connected";
-			self.peerID = peerID;
+				//			self.peerID = peerID;
 			break;
 		case GKPeerStateDisconnected:
 			self.message.text = @"disconnected";
