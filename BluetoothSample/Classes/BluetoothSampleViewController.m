@@ -74,7 +74,8 @@
 	
 	GKPeerPickerController* picker = [[GKPeerPickerController alloc] init];
 	picker.delegate = self;
-	picker.connectionTypesMask = GKPeerPickerConnectionTypeNearby;
+	//	picker.connectionTypesMask = GKPeerPickerConnectionTypeNearby;
+	picker.connectionTypesMask = GKPeerPickerConnectionTypeOnline|GKPeerPickerConnectionTypeNearby;
 	[picker show];
 }
 - (IBAction)sendPhoto:(id)sender
@@ -117,6 +118,21 @@
 - (void)peerPickerController:(GKPeerPickerController *)picker didSelectConnectionType:(GKPeerPickerConnectionType)type
 {
 	NSLog(@"%s|type=%d", __PRETTY_FUNCTION__, type);
+	
+	if (type == GKPeerPickerConnectionTypeOnline) {
+		picker.delegate = nil;
+		[picker dismiss];
+		[picker autorelease];
+		
+		self.session = [[[GKSession alloc] initWithSessionID:nil
+												 displayName:nil
+												 sessionMode:GKSessionModePeer] autorelease];
+		self.session.delegate = self;
+		self.session.available = YES;
+		[self.session setDataReceiveHandler:self withContext:nil];
+		NSLog(@"self.session: %x", self.session);
+
+	}
 }
 
 /*
@@ -130,7 +146,6 @@
 {
 	NSLog(@"%s|peerID=%@", __PRETTY_FUNCTION__, peerID);
 	
-	self.peerID = peerID;
 	self.session = session;
 	session.delegate = self;
 	[session setDataReceiveHandler:self withContext:nil];
@@ -151,6 +166,11 @@
 #pragma mark GKSessionDelegate
 - (void)session:(GKSession *)session peer:(NSString *)peerID didChangeState:(GKPeerConnectionState)state
 {
+	NSLog(@"---------------");
+	NSLog(@"session: %x", session);
+	NSLog(@"displayName: %@", [session displayNameForPeer:peerID]);
+	
+	
 	NSString* stateDesc;
 	if (state == GKPeerStateAvailable) stateDesc = @"GKPeerStateAvailable";
 	else if (state == GKPeerStateUnavailable) stateDesc = @"GKPeerStateUnavailable";
@@ -160,9 +180,14 @@
 	NSLog(@"%s|%@|%@", __PRETTY_FUNCTION__, peerID, stateDesc);
 	
 	switch (state) {
+		case GKPeerStateAvailable:
+			NSLog(@"connecting to %@ ...", [session displayNameForPeer:peerID]);
+			[session connectToPeer:peerID withTimeout:10];
+			break;
+			
 		case GKPeerStateConnected:
 			self.message.text = @"connected";
-				//			self.peerID = peerID;
+			self.peerID = peerID;
 			break;
 		case GKPeerStateDisconnected:
 			self.message.text = @"disconnected";
@@ -170,6 +195,7 @@
 		default:
 			break;
 	}
+	NSLog(@"---------------");
 }
 
 /* Indicates a connection request was received from another peer. 
