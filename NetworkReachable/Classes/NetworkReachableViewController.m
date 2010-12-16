@@ -14,22 +14,7 @@
 
 -(void)updateStatus
 {
-	int mode = [networkReachability_ getConnectionMode];
-	NSString* message = nil;
-	
-	switch (mode) {
-		case kNetworkReachableNon:
-			message = @"no connection";
-			break;
-		case kNetworkReachableWWAN:
-			message = @"Celluar connection";
-			break;
-		case kNetworkReachableWiFi:
-			message = @"WiFi connection";
-			break;
-	}
-	self.label.text = message;
-	NSLog(@"%@", message);
+	self.label.text = [networkReachability_ connectionModeString];
 }
 
 /*
@@ -58,15 +43,12 @@
     [super viewDidLoad];
 
 	networkReachability_ =
-		[[NetworkReachability alloc] initWithHostname:@"www.google.com"];
+		[[NetworkReachability networkReachabilityWithHostname:@"www.google.com"] retain];
 	
     [[NSNotificationCenter defaultCenter] addObserver:self
 											 selector:@selector(reachabilityChanged:)
 												 name:NetworkReachabilityChangedNotification
 											   object: nil];
-	BOOL ret = [networkReachability_ startNotifier];
-	NSLog(@"startNodifier: %d", ret);
-	
 	[self updateStatus];
 }
 

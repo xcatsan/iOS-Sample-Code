@@ -9,25 +9,23 @@
 #import <Foundation/Foundation.h>
 #import <SystemConfiguration/SystemConfiguration.h>
 
-enum {
-	kNetworkReachableNon = 0,
+typedef enum {
+	kNetworkReachableUninitialization = 0,
+	kNetworkReachableNon,
 	kNetworkReachableWiFi,
 	kNetworkReachableWWAN
-};
+} NetworkReachabilityConnectionMode;
 
 #define NetworkReachabilityChangedNotification @"NetworkReachabilityChangedNotification"
 
 @interface NetworkReachability : NSObject {
 
 	SCNetworkReachabilityRef reachability_;
+	NetworkReachabilityConnectionMode connectionMode_;
 }
 
-- (id)initWithHostname:(NSString*)hostname;
 + (NetworkReachability*)networkReachabilityWithHostname:(NSString *)hostname;
-
-- (NSInteger)getConnectionMode;
-
-- (BOOL) startNotifier;
-- (void) stopNotifier;
+- (NetworkReachabilityConnectionMode)connectionMode;
+- (NSString*)connectionModeString;
 
 @end

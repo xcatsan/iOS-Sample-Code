@@ -198,6 +198,7 @@
 				GCC_PREFIX_HEADER = NetworkReachable_Prefix.pch;
 				INFOPLIST_FILE = "NetworkReachable-Info.plist";
 				PRODUCT_NAME = NetworkReachable;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};

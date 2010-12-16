@@ -12,20 +12,28 @@
 #import <ifaddrs.h>
 #import <net/if.h>
 
+@interface NetworkReachability()
+- (BOOL)startNotifier_;
+@end
+
 
 @implementation NetworkReachability
 
+#pragma mark -
+#pragma mark Initailization
 - (id)initWithHostname:(NSString*)hostname
 {
 	if (self = [super init]) {
 		reachability_=
-			SCNetworkReachabilityCreateWithName(kCFAllocatorDefault,
+		SCNetworkReachabilityCreateWithName(kCFAllocatorDefault,
 											[hostname UTF8String]);
+		connectionMode_ = kNetworkReachableUninitialization;		
+		[self startNotifier_];
 	}
 	return self;
 }
 
-+ (NetworkReachability*)networkReachabilityWithHostname:(NSString*)hostname
++ (NetworkReachability*)networkReachabilityWithHostname:(NSString *)hostname
 {
 	return [[[self alloc] initWithHostname:hostname] autorelease];
 }
@@ -37,7 +45,9 @@
 }
 
 
-- (NSString*)getWiFiIPAddress
+#pragma mark -
+#pragma mark Utilities (private)
+- (NSString*)getWiFiIPAddress_
 {
 	BOOL success;
 	struct ifaddrs * addrs;
@@ -68,49 +78,48 @@
 	return NULL;
 }
 
-
-// return
-//	 0: no connection
-//	 1: celluar connection
-//	 2: wifi connection
-- (int)getConnectionMode
+- (NetworkReachabilityConnectionMode)getConnectionModeWithFlags_:(SCNetworkReachabilityFlags)flags
 {
-	if (reachability_) {
-		SCNetworkReachabilityFlags flags = 0;
-		SCNetworkReachabilityGetFlags(reachability_, &flags);
-		
-		BOOL isReachable = ((flags & kSCNetworkFlagsReachable) != 0);
-		BOOL needsConnection = ((flags & kSCNetworkFlagsConnectionRequired) != 0);
-		if (isReachable && !needsConnection) {
-			if ((flags & kSCNetworkReachabilityFlagsIsWWAN) != 0) {
-				return kNetworkReachableWWAN;
-			}
-			
-			if ([self getWiFiIPAddress]) {
-				return kNetworkReachableWiFi;
-			}
-			
+	BOOL isReachable = ((flags & kSCNetworkFlagsReachable) != 0);
+	BOOL needsConnection = ((flags & kSCNetworkFlagsConnectionRequired) != 0);
+	if (isReachable && !needsConnection) {
+		if ((flags & kSCNetworkReachabilityFlagsIsWWAN) != 0) {
+			return kNetworkReachableWWAN;
 		}
+		
+		if ([self getWiFiIPAddress_]) {
+			return kNetworkReachableWiFi;
+		}
+		
 	}
-	return kNetworkReachableNon;
+	return kNetworkReachableNon;	
+}
+
+- (void)updateConnectionModeWithFlags_:(SCNetworkReachabilityFlags)flags
+{
+	connectionMode_ = [self getConnectionModeWithFlags_:flags];
 }
 
 
-static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReachabilityFlags flags, void* info)
+
+static void ReachabilityCallback_(SCNetworkReachabilityRef target, SCNetworkReachabilityFlags flags, void* info)
 {
 	NSAutoreleasePool* myPool = [[NSAutoreleasePool alloc] init];
+	
 	NetworkReachability* noteObject = (NetworkReachability*)info;
+	[noteObject updateConnectionModeWithFlags_:flags];
+	
 	[[NSNotificationCenter defaultCenter]
-		postNotificationName:NetworkReachabilityChangedNotification object:noteObject];
+	 postNotificationName:NetworkReachabilityChangedNotification object:noteObject];
 	
 	[myPool release];
 }
 
-- (BOOL)startNotifier
+- (BOOL)startNotifier_
 {
 	BOOL ret = NO;
 	SCNetworkReachabilityContext context = {0, self, NULL, NULL, NULL};
-	if(SCNetworkReachabilitySetCallback(reachability_, ReachabilityCallback, &context))
+	if(SCNetworkReachabilitySetCallback(reachability_, ReachabilityCallback_, &context))
 	{
 		if(SCNetworkReachabilityScheduleWithRunLoop(
 													reachability_, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode))
@@ -121,12 +130,50 @@ static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReach
 	return ret;
 }	
 
-- (void) stopNotifier
+- (void) stopNotifier_
 {
 	if(reachability_!= NULL)
 	{
 		SCNetworkReachabilityUnscheduleFromRunLoop(reachability_, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
 	}
+}
+
+
+#pragma mark -
+#pragma mark Public methods
+- (NSString*)connectionModeString
+{
+	NSString* desc;
+	
+	switch (connectionMode_) {
+		case kNetworkReachableUninitialization:
+			desc = @"Not initialized";
+			break;
+			
+		case kNetworkReachableNon:
+			desc = @"Not available";
+			break;
+			
+		case kNetworkReachableWWAN:
+			desc = @"WWAN";
+			break;
+			
+		case kNetworkReachableWiFi:
+			desc = @"WiFi";
+			break;
+			
+	}
+	return desc;
+}
+
+- (NSString*)description
+{
+	return [NSString stringWithFormat:@"Connection Mode: %@", [self connectionModeString]];
+}
+
+- (NetworkReachabilityConnectionMode)connectionMode
+{
+	return connectionMode_;
 }
 
 @end
