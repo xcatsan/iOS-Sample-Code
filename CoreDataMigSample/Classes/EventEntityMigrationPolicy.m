@@ -24,6 +24,17 @@
 	return [NSNumber numberWithInteger:[components day]];
 }
 
+- (BOOL)beginEntityMapping:(NSEntityMapping *)mapping manager:(NSMigrationManager *)manager error:(NSError **)error
+{
+	NSLog(@"Begin migration");
+	return YES;
+}
+- (BOOL)endEntityMapping:(NSEntityMapping *)mapping manager:(NSMigrationManager *)manager error:(NSError **)error
+{
+	NSLog(@"End migration");
+	return YES;
+}
+
 /*
 
 - (BOOL)createDestinationInstancesForSourceInstance:(NSManagedObject *)sInstance entityMapping:(NSEntityMapping *)mapping manager:(NSMigrationManager *)manager error:(NSError **)error

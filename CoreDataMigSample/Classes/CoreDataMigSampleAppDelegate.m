@@ -15,6 +15,7 @@
 @synthesize window;
 @synthesize navigationController;
 
+#define SAMPLE_DATA_NUM		10000
 
 #pragma mark -
 #pragma mark Application lifecycle
@@ -26,6 +27,24 @@
 }
 
 
+- (NSUInteger)countForEntityName:(NSString*)entitylName
+{
+	NSFetchRequest* request = [[NSFetchRequest alloc] init];
+	[request setEntity:[NSEntityDescription entityForName:entitylName
+								   inManagedObjectContext:managedObjectContext_]];
+	[request setIncludesSubentities:NO];
+	
+	NSError* error = nil;
+	NSUInteger count =
+		[managedObjectContext_ countForFetchRequest:request error:&error];
+	if (count == NSNotFound) {
+		count = 0;
+	}
+	[request release];
+	
+	return count;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
     // Override point for customization after application launch.
@@ -33,6 +52,33 @@
     // Add the navigation controller's view to the window and display.
     [self.window addSubview:navigationController.view];
     [self.window makeKeyAndVisible];
+	
+	
+	
+	// insert sample data
+	NSInteger count = [self countForEntityName:@"Event"];
+	if (count == 0) {
+		
+		int i;
+		NSError* error = nil;
+		NSDate* date = [NSDate date];
+		
+		for (i=0; i < SAMPLE_DATA_NUM; i++) {
+			
+			NSManagedObject* object = [NSEntityDescription insertNewObjectForEntityForName:@"Event"
+																	inManagedObjectContext:managedObjectContext_];
+			[object setValue:date forKey:@"timeStamp"];
+			
+			if ((i+1) % 20 == 0) {
+				[managedObjectContext_ save:&error];
+				NSLog(@"commit: %d", i+1);
+			}
+		}
+		[managedObjectContext_ save:&error];
+	} else {
+		
+		NSLog(@"not added");
+	}
 
     return YES;
 }
