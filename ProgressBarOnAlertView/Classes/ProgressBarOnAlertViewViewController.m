@@ -73,14 +73,15 @@ static float progressValue = 0.0f;
 	UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Information"
 															message: @"Please wait..."
 														   delegate: self
-												  cancelButtonTitle: nil
+												  cancelButtonTitle: @"cancel"
 												  otherButtonTitles: nil];
 	
-	UIProgressView* progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(30.0f, 80.0f, 225.0f, 90.0f)];
+	UIProgressView* progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(30.0f, 80.0f, 225.0f, 25)];
 	[alertView addSubview:progressView];
 	[progressView setProgressViewStyle: UIProgressViewStyleBar];
 	[progressView release];
 
+	alertView.delegate = self;
 	[alertView show];
 	[alertView release];
 	
@@ -92,11 +93,11 @@ static float progressValue = 0.0f;
 	 alertView		, kAlertViewKey,
 	 nil];
 
-	[NSTimer scheduledTimerWithTimeInterval:0.1f
-									 target:self
-								   selector:@selector(updateInformation:)
-								   userInfo:userInfo
-									repeats:YES];
+	timer_ = [NSTimer scheduledTimerWithTimeInterval:0.1f
+								 target:self
+							   selector:@selector(updateInformation:)
+							   userInfo:userInfo
+								repeats:YES];
 }
 
 - (void)updateInformation:(NSTimer*)timer
@@ -110,10 +111,34 @@ static float progressValue = 0.0f;
 		UIAlertView* alertView = [userInfo objectForKey:kAlertViewKey];
 		[alertView dismissWithClickedButtonIndex:0
 										animated:YES];
-		return;
 	}
 	progressValue += 0.01f;
 	progressView.progress = progressValue;
-	NSLog(@"value=%f", progressValue);
+}
+
+
+#pragma mark -
+#pragma mark UIAlertViewDelegate
+
+- (void)willPresentAlertView:(UIAlertView *)alertView
+{
+	CGRect frame = alertView.frame;
+	frame.origin.y -= 15;
+	frame.size.height += 30;
+	alertView.frame = frame;
+	
+	for (UIView* view in alertView.subviews) {
+			//		if ([view isKindOfClass:NSClassFromString(@"UIThreePartButton")]) {
+		frame = view.frame;
+		if (frame.origin.y > 80) {
+			frame.origin.y += 25;
+			view.frame = frame;
+		}
+	}
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+	[timer_ invalidate];
 }
 @end

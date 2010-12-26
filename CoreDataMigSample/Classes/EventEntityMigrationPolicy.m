@@ -24,6 +24,7 @@
 	return [NSNumber numberWithInteger:[components day]];
 }
 
+
 - (BOOL)beginEntityMapping:(NSEntityMapping *)mapping manager:(NSMigrationManager *)manager error:(NSError **)error
 {
 	NSLog(@"Begin migration");
@@ -31,6 +32,10 @@
 }
 - (BOOL)endEntityMapping:(NSEntityMapping *)mapping manager:(NSMigrationManager *)manager error:(NSError **)error
 {
+	[timer_ invalidate];
+	[alertView_ dismissWithClickedButtonIndex:0
+									 animated:YES];
+
 	NSLog(@"End migration");
 	return YES;
 }

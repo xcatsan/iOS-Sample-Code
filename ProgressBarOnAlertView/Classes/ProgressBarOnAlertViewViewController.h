@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProgressBarOnAlertViewViewController : UIViewController {
+@interface ProgressBarOnAlertViewViewController : UIViewController <UIAlertViewDelegate>{
 
+	NSTimer* timer_;
 }
 
 - (IBAction)start:(id)sender;

@@ -18,6 +18,51 @@
 #define SAMPLE_DATA_NUM		10000
 
 #pragma mark -
+#pragma mark Show migration status
+#define kProgressViewKey		@"ProgressViewKey"
+#define kMigrationManagerKey	@"MigrationManagerKey"
+
+- (void)updateInformation:(NSTimer*)timer
+{
+	NSDictionary* userInfo = [timer userInfo];
+	UIProgressView* progressView = [userInfo objectForKey:kProgressViewKey];
+	NSMigrationManager* manager = [userInfo objectForKey:kMigrationManagerKey];
+	
+	progressView.progress = [manager migrationProgress];
+}
+
+- (void)startMigrationWithMigrationManager:(NSMigrationManager*)manager
+{
+	alertView_ = [[UIAlertView alloc] initWithTitle:@"Migration"
+											message: @"now migrating..."
+										   delegate: self
+								  cancelButtonTitle: nil
+								  otherButtonTitles: nil];
+	
+	UIProgressView* progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(30.0f, 80.0f, 225.0f, 90.0f)];
+	[alertView_ addSubview:progressView];
+	[progressView setProgressViewStyle: UIProgressViewStyleBar];
+	[progressView release];
+	
+	[alertView_ show];
+	[alertView_ release];
+	
+	NSDictionary* userInfo =
+	[NSDictionary dictionaryWithObjectsAndKeys:
+	 progressView	, kProgressViewKey,
+	 manager		, kMigrationManagerKey,
+	 nil];
+	
+	timer_ = [NSTimer scheduledTimerWithTimeInterval:0.1f
+											  target:self
+											selector:@selector(updateInformation:)
+											userInfo:userInfo
+											 repeats:YES];
+	
+	
+}
+
+#pragma mark -
 #pragma mark Application lifecycle
 
 - (void)awakeFromNib {    

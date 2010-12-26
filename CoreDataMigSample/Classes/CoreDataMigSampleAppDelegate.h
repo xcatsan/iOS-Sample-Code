@@ -14,6 +14,9 @@
     UIWindow *window;
     UINavigationController *navigationController;
 
+	NSTimer* timer_;
+	UIAlertView* alertView_;
+
 @private
     NSManagedObjectContext *managedObjectContext_;
     NSManagedObjectModel *managedObjectModel_;
