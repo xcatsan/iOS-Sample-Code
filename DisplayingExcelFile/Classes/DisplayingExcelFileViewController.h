@@ -15,6 +15,7 @@
 @property (nonatomic, retain) IBOutlet 	UIWebView* webView;
 
 - (void)load:(id)sender;
+- (void)load2:(id)sender;
 
 @end
 

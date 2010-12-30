@@ -72,4 +72,13 @@
 	[self.webView loadRequest:req];
 }
 
+- (void)load2:(id)sender
+{
+	NSURL* url = [[NSBundle mainBundle] URLForResource:@"sample2"
+										 withExtension:@"ppt"];
+	NSURLRequest* req = [NSURLRequest requestWithURL:url];
+	
+	[self.webView loadRequest:req];	
+}
+
 @end
