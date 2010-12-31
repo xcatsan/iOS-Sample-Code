@@ -16,6 +16,7 @@
 
 - (void)load:(id)sender;
 - (void)load2:(id)sender;
+- (void)load3:(id)sender;
 
 @end
 

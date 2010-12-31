@@ -81,4 +81,14 @@
 	[self.webView loadRequest:req];	
 }
 
+- (void)load3:(id)sender
+{
+	NSURL* url = [[NSBundle mainBundle] URLForResource:@"sample3"
+										 withExtension:@"doc"];
+	NSURLRequest* req = [NSURLRequest requestWithURL:url];
+	
+	[self.webView loadRequest:req];	
+	
+}
+
 @end
