@@ -19,6 +19,7 @@
 		4C399F6012CD4BFD005D94A1 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C399F5F12CD4BFD005D94A1 /* MainWindow-iPad.xib */; };
 		4C399F7D12CD4F48005D94A1 /* sample2.ppt in Resources */ = {isa = PBXBuildFile; fileRef = 4C399F7C12CD4F48005D94A1 /* sample2.ppt */; };
 		4C399F9812CD54D4005D94A1 /* sample3.doc in Resources */ = {isa = PBXBuildFile; fileRef = 4C399F9712CD54D4005D94A1 /* sample3.doc */; };
+		4C399FAF12CD58DB005D94A1 /* sample4.rtfd.zip in Resources */ = {isa = PBXBuildFile; fileRef = 4C399FAE12CD58D9005D94A1 /* sample4.rtfd.zip */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		4C399F5F12CD4BFD005D94A1 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "Resources-iPad/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		4C399F7C12CD4F48005D94A1 /* sample2.ppt */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample2.ppt; sourceTree = "<group>"; };
 		4C399F9712CD54D4005D94A1 /* sample3.doc */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample3.doc; sourceTree = "<group>"; };
+		4C399FAE12CD58D9005D94A1 /* sample4.rtfd.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = sample4.rtfd.zip; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* DisplayingExcelFile-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "DisplayingExcelFile-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +104,7 @@
 				4C399F4212CD453E005D94A1 /* sample.xls */,
 				4C399F7C12CD4F48005D94A1 /* sample2.ppt */,
 				4C399F9712CD54D4005D94A1 /* sample3.doc */,
+				4C399FAE12CD58D9005D94A1 /* sample4.rtfd.zip */,
 				2899E5210DE3E06400AC0155 /* DisplayingExcelFileViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* DisplayingExcelFile-Info.plist */,
@@ -182,6 +185,7 @@
 				4C399F6012CD4BFD005D94A1 /* MainWindow-iPad.xib in Resources */,
 				4C399F7D12CD4F48005D94A1 /* sample2.ppt in Resources */,
 				4C399F9812CD54D4005D94A1 /* sample3.doc in Resources */,
+				4C399FAF12CD58DB005D94A1 /* sample4.rtfd.zip in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

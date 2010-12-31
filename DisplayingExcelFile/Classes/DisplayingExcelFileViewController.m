@@ -91,4 +91,14 @@
 	
 }
 
+- (void)load4:(id)sender
+{
+	NSURL* url = [[NSBundle mainBundle] URLForResource:@"sample4"
+										 withExtension:@"rtfd.zip"];
+	NSURLRequest* req = [NSURLRequest requestWithURL:url];
+	
+	[self.webView loadRequest:req];	
+	
+}
+
 @end
