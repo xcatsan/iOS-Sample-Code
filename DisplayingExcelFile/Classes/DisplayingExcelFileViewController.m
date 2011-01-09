@@ -63,7 +63,7 @@
     [super dealloc];
 }
 
-- (void)load:(id)sender
+- (IBAction)load:(id)sender
 {
 	NSURL* url = [[NSBundle mainBundle] URLForResource:@"sample"
 										 withExtension:@"xls"];
@@ -72,7 +72,7 @@
 	[self.webView loadRequest:req];
 }
 
-- (void)load2:(id)sender
+- (IBAction)load2:(id)sender
 {
 	NSURL* url = [[NSBundle mainBundle] URLForResource:@"sample2"
 										 withExtension:@"ppt"];
@@ -81,7 +81,7 @@
 	[self.webView loadRequest:req];	
 }
 
-- (void)load3:(id)sender
+- (IBAction)load3:(id)sender
 {
 	NSURL* url = [[NSBundle mainBundle] URLForResource:@"sample3"
 										 withExtension:@"doc"];
@@ -91,7 +91,7 @@
 	
 }
 
-- (void)load4:(id)sender
+- (IBAction)load4:(id)sender
 {
 	NSURL* url = [[NSBundle mainBundle] URLForResource:@"sample4"
 										 withExtension:@"rtfd.zip"];
@@ -99,6 +99,14 @@
 	
 	[self.webView loadRequest:req];	
 	
+}
+- (IBAction)load5:(id)sender
+{
+	NSURL* url = [[NSBundle mainBundle] URLForResource:@"sample"
+										 withExtension:@"pdf"];
+	NSURLRequest* req = [NSURLRequest requestWithURL:url];
+	
+	[self.webView loadRequest:req];	
 }
 
 @end

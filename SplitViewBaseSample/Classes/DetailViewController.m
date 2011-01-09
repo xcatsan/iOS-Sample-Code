@@ -53,25 +53,33 @@
 
 - (void)splitViewController: (UISplitViewController*)svc willHideViewController:(UIViewController *)aViewController withBarButtonItem:(UIBarButtonItem*)barButtonItem forPopoverController: (UIPopoverController*)pc {
     
+	NSLog(@"%s|%@", __PRETTY_FUNCTION__, aViewController);
+
     barButtonItem.title = @"Root List";
     NSMutableArray *items = [[toolbar items] mutableCopy];
     [items insertObject:barButtonItem atIndex:0];
     [toolbar setItems:items animated:YES];
     [items release];
     self.popoverController = pc;
+	
 }
 
 
 // Called when the view is shown again in the split view, invalidating the button and popover controller.
 - (void)splitViewController: (UISplitViewController*)svc willShowViewController:(UIViewController *)aViewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem {
-    
+
+	NSLog(@"%s|%@", __PRETTY_FUNCTION__, aViewController);
+
     NSMutableArray *items = [[toolbar items] mutableCopy];
     [items removeObjectAtIndex:0];
     [toolbar setItems:items animated:YES];
     [items release];
     self.popoverController = nil;
 }
-
+- (void)splitViewController:(UISplitViewController*)svc popoverController:(UIPopoverController*)pc willPresentViewController:(UIViewController *)aViewController
+{
+	NSLog(@"%s|%@", __PRETTY_FUNCTION__, aViewController);
+}
 
 #pragma mark -
 #pragma mark Rotation support

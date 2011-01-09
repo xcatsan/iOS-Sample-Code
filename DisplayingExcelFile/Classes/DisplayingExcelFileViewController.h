@@ -14,10 +14,10 @@
 }
 @property (nonatomic, retain) IBOutlet 	UIWebView* webView;
 
-- (void)load:(id)sender;
-- (void)load2:(id)sender;
-- (void)load3:(id)sender;
-- (void)load4:(id)sender;
-
+- (IBAction)load:(id)sender;
+- (IBAction)load2:(id)sender;
+- (IBAction)load3:(id)sender;
+- (IBAction)load4:(id)sender;
+- (IBAction)load5:(id)sender;
 @end
 
