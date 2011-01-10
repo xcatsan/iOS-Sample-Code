@@ -19,5 +19,6 @@
 - (IBAction)load3:(id)sender;
 - (IBAction)load4:(id)sender;
 - (IBAction)load5:(id)sender;
+- (IBAction)load6:(id)sender;
 @end
 

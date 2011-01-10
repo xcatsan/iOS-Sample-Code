@@ -21,6 +21,7 @@
 		4C399F9812CD54D4005D94A1 /* sample3.doc in Resources */ = {isa = PBXBuildFile; fileRef = 4C399F9712CD54D4005D94A1 /* sample3.doc */; };
 		4C399FAF12CD58DB005D94A1 /* sample4.rtfd.zip in Resources */ = {isa = PBXBuildFile; fileRef = 4C399FAE12CD58D9005D94A1 /* sample4.rtfd.zip */; };
 		4CE661EE12DA7794006F95C9 /* sample.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CE661ED12DA7794006F95C9 /* sample.pdf */; };
+		4CE661F612DB2B53006F95C9 /* sample.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4CE661F512DB2B53006F95C9 /* sample.mov */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		4C399F9712CD54D4005D94A1 /* sample3.doc */ = {isa = PBXFileReference; lastKnownFileType = file; path = sample3.doc; sourceTree = "<group>"; };
 		4C399FAE12CD58D9005D94A1 /* sample4.rtfd.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = sample4.rtfd.zip; sourceTree = "<group>"; };
 		4CE661ED12DA7794006F95C9 /* sample.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sample.pdf; sourceTree = "<group>"; };
+		4CE661F512DB2B53006F95C9 /* sample.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = sample.mov; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* DisplayingExcelFile-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "DisplayingExcelFile-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,6 +110,7 @@
 				4C399F9712CD54D4005D94A1 /* sample3.doc */,
 				4C399FAE12CD58D9005D94A1 /* sample4.rtfd.zip */,
 				4CE661ED12DA7794006F95C9 /* sample.pdf */,
+				4CE661F512DB2B53006F95C9 /* sample.mov */,
 				2899E5210DE3E06400AC0155 /* DisplayingExcelFileViewController.xib */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* DisplayingExcelFile-Info.plist */,
@@ -190,6 +193,7 @@
 				4C399F9812CD54D4005D94A1 /* sample3.doc in Resources */,
 				4C399FAF12CD58DB005D94A1 /* sample4.rtfd.zip in Resources */,
 				4CE661EE12DA7794006F95C9 /* sample.pdf in Resources */,
+				4CE661F612DB2B53006F95C9 /* sample.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

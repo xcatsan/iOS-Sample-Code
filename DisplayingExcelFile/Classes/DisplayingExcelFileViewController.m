@@ -109,4 +109,14 @@
 	[self.webView loadRequest:req];	
 }
 
+- (IBAction)load6:(id)sender
+{
+	NSURL* url = [[NSBundle mainBundle] URLForResource:@"sample"
+										 withExtension:@"mov"];
+	NSURLRequest* req = [NSURLRequest requestWithURL:url];
+	
+	[self.webView loadRequest:req];	
+	
+}
+
 @end
