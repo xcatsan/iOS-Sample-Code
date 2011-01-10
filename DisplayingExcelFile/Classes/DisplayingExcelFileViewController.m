@@ -119,4 +119,14 @@
 	
 }
 
+- (IBAction)load7:(id)sender
+{
+	NSURL* url = [[NSBundle mainBundle] URLForResource:@"sample"
+										 withExtension:@"jpg"];
+	NSURLRequest* req = [NSURLRequest requestWithURL:url];
+	
+	[self.webView loadRequest:req];	
+	
+}
+
 @end
