@@ -65,27 +65,43 @@
 
 - (IBAction)load:(id)sender
 {
+	/*
 	NSURL* url = [[NSBundle mainBundle] URLForResource:@"sample"
 										 withExtension:@"xls"];
-	NSURLRequest* req = [NSURLRequest requestWithURL:url];
+	*/
+	NSURL* url = [NSURL URLWithString:@"https://github.com/xcatsan/iOS-Sample-Code/raw/master/DisplayingExcelFile/sample.xls"];
+
+	NSURLRequest* req = [NSURLRequest requestWithURL:url
+										 cachePolicy:NSURLRequestReturnCacheDataElseLoad
+									 timeoutInterval:10.0];
 	
 	[self.webView loadRequest:req];
 }
 
 - (IBAction)load2:(id)sender
 {
+	/*
 	NSURL* url = [[NSBundle mainBundle] URLForResource:@"sample2"
 										 withExtension:@"ppt"];
-	NSURLRequest* req = [NSURLRequest requestWithURL:url];
+	*/
+	NSURL* url = [NSURL URLWithString:@"https://github.com/xcatsan/iOS-Sample-Code/raw/master/DisplayingExcelFile/sample2.ppt"];
+	NSURLRequest* req = [NSURLRequest requestWithURL:url
+										 cachePolicy:NSURLRequestReturnCacheDataElseLoad
+									 timeoutInterval:10.0];
 	
 	[self.webView loadRequest:req];	
 }
 
 - (IBAction)load3:(id)sender
 {
+	/*
 	NSURL* url = [[NSBundle mainBundle] URLForResource:@"sample3"
 										 withExtension:@"doc"];
-	NSURLRequest* req = [NSURLRequest requestWithURL:url];
+	 */
+	NSURL* url = [NSURL URLWithString:@"https://github.com/xcatsan/iOS-Sample-Code/raw/master/DisplayingExcelFile/sample3.doc"];
+	NSURLRequest* req = [NSURLRequest requestWithURL:url
+										 cachePolicy:NSURLRequestReturnCacheDataElseLoad
+									 timeoutInterval:10.0];
 	
 	[self.webView loadRequest:req];	
 	
@@ -93,27 +109,42 @@
 
 - (IBAction)load4:(id)sender
 {
+	/*
 	NSURL* url = [[NSBundle mainBundle] URLForResource:@"sample4"
 										 withExtension:@"rtfd.zip"];
-	NSURLRequest* req = [NSURLRequest requestWithURL:url];
+	*/
+	NSURL* url = [NSURL URLWithString:@"https://github.com/xcatsan/iOS-Sample-Code/raw/master/DisplayingExcelFile/sample4.rtfd.zip"];
+	NSURLRequest* req = [NSURLRequest requestWithURL:url
+										 cachePolicy:NSURLRequestReturnCacheDataElseLoad
+									 timeoutInterval:10.0];
 	
 	[self.webView loadRequest:req];	
 	
 }
 - (IBAction)load5:(id)sender
 {
+	/*
 	NSURL* url = [[NSBundle mainBundle] URLForResource:@"sample"
 										 withExtension:@"pdf"];
-	NSURLRequest* req = [NSURLRequest requestWithURL:url];
+	*/
+	NSURL* url = [NSURL URLWithString:@"https://github.com/xcatsan/iOS-Sample-Code/raw/master/DisplayingExcelFile/sample.pdf"];
+	NSURLRequest* req = [NSURLRequest requestWithURL:url
+										 cachePolicy:NSURLRequestReturnCacheDataElseLoad
+									 timeoutInterval:10.0];
 	
 	[self.webView loadRequest:req];	
 }
 
 - (IBAction)load6:(id)sender
 {
+	/*
 	NSURL* url = [[NSBundle mainBundle] URLForResource:@"sample"
 										 withExtension:@"mov"];
-	NSURLRequest* req = [NSURLRequest requestWithURL:url];
+	*/
+	NSURL* url = [NSURL URLWithString:@"https://github.com/xcatsan/iOS-Sample-Code/raw/master/DisplayingExcelFile/sample.mov"];
+	NSURLRequest* req = [NSURLRequest requestWithURL:url
+										 cachePolicy:NSURLRequestReturnCacheDataElseLoad
+									 timeoutInterval:10.0];
 	
 	[self.webView loadRequest:req];	
 	
@@ -121,12 +152,24 @@
 
 - (IBAction)load7:(id)sender
 {
+	/*
 	NSURL* url = [[NSBundle mainBundle] URLForResource:@"sample"
 										 withExtension:@"jpg"];
-	NSURLRequest* req = [NSURLRequest requestWithURL:url];
+	*/
+	NSURL* url = [NSURL URLWithString:@"https://github.com/xcatsan/iOS-Sample-Code/raw/master/DisplayingExcelFile/sample.jpg"];
+	NSURLRequest* req = [NSURLRequest requestWithURL:url
+										 cachePolicy:NSURLRequestReturnCacheDataElseLoad
+									 timeoutInterval:10000.0];
 	
 	[self.webView loadRequest:req];	
 	
 }
-
+- (IBAction)dumpCache:(id)sender
+{
+	NSURLCache* cache = [NSURLCache sharedURLCache];
+	NSLog(@"currentDiskUsage: %d", [cache currentDiskUsage]);
+	NSLog(@"diskCapacity: %d", [cache diskCapacity]);
+	NSLog(@"currentMemoryUsage: %d", [cache currentMemoryUsage]);
+	NSLog(@"memoryCapacity: %d", [cache memoryCapacity]);
+}
 @end

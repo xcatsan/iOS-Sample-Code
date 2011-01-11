@@ -21,5 +21,6 @@
 - (IBAction)load5:(id)sender;
 - (IBAction)load6:(id)sender;
 - (IBAction)load7:(id)sender;
+- (IBAction)dumpCache:(id)sender;
 @end
 

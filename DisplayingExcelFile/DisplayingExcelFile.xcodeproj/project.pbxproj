@@ -23,6 +23,7 @@
 		4CE661EE12DA7794006F95C9 /* sample.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 4CE661ED12DA7794006F95C9 /* sample.pdf */; };
 		4CE661F612DB2B53006F95C9 /* sample.mov in Resources */ = {isa = PBXBuildFile; fileRef = 4CE661F512DB2B53006F95C9 /* sample.mov */; };
 		4CE661FF12DB304F006F95C9 /* sample.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4CE661FE12DB304F006F95C9 /* sample.jpg */; };
+		4CE6626812DB3FE5006F95C9 /* CustomURLCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE6626712DB3FE5006F95C9 /* CustomURLCache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,8 @@
 		4CE661ED12DA7794006F95C9 /* sample.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sample.pdf; sourceTree = "<group>"; };
 		4CE661F512DB2B53006F95C9 /* sample.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = sample.mov; sourceTree = "<group>"; };
 		4CE661FE12DB304F006F95C9 /* sample.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample.jpg; sourceTree = "<group>"; };
+		4CE6626612DB3FE5006F95C9 /* CustomURLCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomURLCache.h; sourceTree = "<group>"; };
+		4CE6626712DB3FE5006F95C9 /* CustomURLCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomURLCache.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* DisplayingExcelFile-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "DisplayingExcelFile-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,6 +73,8 @@
 				1D3623250D0F684500981E51 /* DisplayingExcelFileAppDelegate.m */,
 				28D7ACF60DDB3853001CB0EB /* DisplayingExcelFileViewController.h */,
 				28D7ACF70DDB3853001CB0EB /* DisplayingExcelFileViewController.m */,
+				4CE6626612DB3FE5006F95C9 /* CustomURLCache.h */,
+				4CE6626712DB3FE5006F95C9 /* CustomURLCache.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* DisplayingExcelFileAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* DisplayingExcelFileViewController.m in Sources */,
+				4CE6626812DB3FE5006F95C9 /* CustomURLCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

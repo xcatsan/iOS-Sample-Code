@@ -1,16 +1,15 @@
 //
-//  DisplayingExcelFileAppDelegate.m
-//  DisplayingExcelFile
+//  JSONFrameworkSampleAppDelegate.m
+//  JSONFrameworkSample
 //
-//  Created by Hiroshi Hashiguchi on 10/12/31.
-//  Copyright 2010 . All rights reserved.
+//  Created by Hiroshi Hashiguchi on 11/01/11.
+//  Copyright 2011 . All rights reserved.
 //
 
-#import "DisplayingExcelFileAppDelegate.h"
-#import "DisplayingExcelFileViewController.h"
-#import "CustomURLCache.h"
+#import "JSONFrameworkSampleAppDelegate.h"
+#import "JSONFrameworkSampleViewController.h"
 
-@implementation DisplayingExcelFileAppDelegate
+@implementation JSONFrameworkSampleAppDelegate
 
 @synthesize window;
 @synthesize viewController;
@@ -26,17 +25,6 @@
     // Add the view controller's view to the window and display.
     [self.window addSubview:viewController.view];
     [self.window makeKeyAndVisible];
-	
-	NSString *path = @"CustomCache";
-	NSUInteger discCapacity = 10*1024*1024;
-	NSUInteger memoryCapacity = 512*1024;
-	
-	CustomURLCache *cache =
-	[[CustomURLCache alloc] initWithMemoryCapacity: memoryCapacity
-										diskCapacity: discCapacity diskPath:path];
-	[NSURLCache setSharedURLCache:cache];
-	[cache release];
-	
 
     return YES;
 }
