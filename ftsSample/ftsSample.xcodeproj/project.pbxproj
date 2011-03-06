@@ -1,0 +1,267 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4CE0E64F13212298002068A5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE0E64E13212298002068A5 /* UIKit.framework */; };
+		4CE0E65113212298002068A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE0E65013212298002068A5 /* Foundation.framework */; };
+		4CE0E65313212298002068A5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE0E65213212298002068A5 /* CoreGraphics.framework */; };
+		4CE0E65913212298002068A5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CE0E65713212298002068A5 /* InfoPlist.strings */; };
+		4CE0E65C13212298002068A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE0E65B13212298002068A5 /* main.m */; };
+		4CE0E65F13212298002068A5 /* ftsSampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE0E65E13212298002068A5 /* ftsSampleAppDelegate.m */; };
+		4CE0E66213212298002068A5 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CE0E66013212298002068A5 /* MainWindow.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4CE0E64A13212298002068A5 /* ftsSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ftsSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CE0E64E13212298002068A5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4CE0E65013212298002068A5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4CE0E65213212298002068A5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4CE0E65613212298002068A5 /* ftsSample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ftsSample-Info.plist"; sourceTree = "<group>"; };
+		4CE0E65813212298002068A5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4CE0E65A13212298002068A5 /* ftsSample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ftsSample-Prefix.pch"; sourceTree = "<group>"; };
+		4CE0E65B13212298002068A5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4CE0E65D13212298002068A5 /* ftsSampleAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ftsSampleAppDelegate.h; sourceTree = "<group>"; };
+		4CE0E65E13212298002068A5 /* ftsSampleAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ftsSampleAppDelegate.m; sourceTree = "<group>"; };
+		4CE0E66113212298002068A5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4CE0E64713212298002068A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CE0E64F13212298002068A5 /* UIKit.framework in Frameworks */,
+				4CE0E65113212298002068A5 /* Foundation.framework in Frameworks */,
+				4CE0E65313212298002068A5 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4CE0E63F13212298002068A5 = {
+			isa = PBXGroup;
+			children = (
+				4CE0E65413212298002068A5 /* ftsSample */,
+				4CE0E64D13212298002068A5 /* Frameworks */,
+				4CE0E64B13212298002068A5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4CE0E64B13212298002068A5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4CE0E64A13212298002068A5 /* ftsSample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4CE0E64D13212298002068A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4CE0E64E13212298002068A5 /* UIKit.framework */,
+				4CE0E65013212298002068A5 /* Foundation.framework */,
+				4CE0E65213212298002068A5 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4CE0E65413212298002068A5 /* ftsSample */ = {
+			isa = PBXGroup;
+			children = (
+				4CE0E65D13212298002068A5 /* ftsSampleAppDelegate.h */,
+				4CE0E65E13212298002068A5 /* ftsSampleAppDelegate.m */,
+				4CE0E66013212298002068A5 /* MainWindow.xib */,
+				4CE0E65513212298002068A5 /* Supporting Files */,
+			);
+			path = ftsSample;
+			sourceTree = "<group>";
+		};
+		4CE0E65513212298002068A5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4CE0E65613212298002068A5 /* ftsSample-Info.plist */,
+				4CE0E65713212298002068A5 /* InfoPlist.strings */,
+				4CE0E65A13212298002068A5 /* ftsSample-Prefix.pch */,
+				4CE0E65B13212298002068A5 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4CE0E64913212298002068A5 /* ftsSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CE0E66513212298002068A5 /* Build configuration list for PBXNativeTarget "ftsSample" */;
+			buildPhases = (
+				4CE0E64613212298002068A5 /* Sources */,
+				4CE0E64713212298002068A5 /* Frameworks */,
+				4CE0E64813212298002068A5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ftsSample;
+			productName = ftsSample;
+			productReference = 4CE0E64A13212298002068A5 /* ftsSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4CE0E64113212298002068A5 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 4CE0E64413212298002068A5 /* Build configuration list for PBXProject "ftsSample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4CE0E63F13212298002068A5;
+			productRefGroup = 4CE0E64B13212298002068A5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4CE0E64913212298002068A5 /* ftsSample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4CE0E64813212298002068A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CE0E65913212298002068A5 /* InfoPlist.strings in Resources */,
+				4CE0E66213212298002068A5 /* MainWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4CE0E64613212298002068A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CE0E65C13212298002068A5 /* main.m in Sources */,
+				4CE0E65F13212298002068A5 /* ftsSampleAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4CE0E65713212298002068A5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CE0E65813212298002068A5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4CE0E66013212298002068A5 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CE0E66113212298002068A5 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4CE0E66313212298002068A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4CE0E66413212298002068A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		4CE0E66613212298002068A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ftsSample/ftsSample-Prefix.pch";
+				INFOPLIST_FILE = "ftsSample/ftsSample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4CE0E66713212298002068A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ftsSample/ftsSample-Prefix.pch";
+				INFOPLIST_FILE = "ftsSample/ftsSample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4CE0E64413212298002068A5 /* Build configuration list for PBXProject "ftsSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CE0E66313212298002068A5 /* Debug */,
+				4CE0E66413212298002068A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CE0E66513212298002068A5 /* Build configuration list for PBXNativeTarget "ftsSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CE0E66613212298002068A5 /* Debug */,
+				4CE0E66713212298002068A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4CE0E64113212298002068A5 /* Project object */;
+}
