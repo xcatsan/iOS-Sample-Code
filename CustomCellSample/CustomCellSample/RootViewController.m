@@ -69,6 +69,7 @@
 {
     CustomCell* cell = (CustomCell*)[tableView dequeueReusableCellWithIdentifier:CUSTOM_CELL_NIB];
     if (cell == nil) {
+        NSLog(@"x");
         UINib* nib = [UINib nibWithNibName:CUSTOM_CELL_NIB bundle:nil];
         NSArray* array = [nib instantiateWithOwner:nil options:nil];
         cell = [array objectAtIndex:0];
