@@ -1,0 +1,353 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4C4B1C9613B0DEC200B6A998 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C4B1C9513B0DEC200B6A998 /* UIKit.framework */; };
+		4C4B1C9813B0DEC200B6A998 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C4B1C9713B0DEC200B6A998 /* Foundation.framework */; };
+		4C4B1C9A13B0DEC200B6A998 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C4B1C9913B0DEC200B6A998 /* CoreGraphics.framework */; };
+		4C4B1CA013B0DEC200B6A998 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C4B1C9E13B0DEC200B6A998 /* InfoPlist.strings */; };
+		4C4B1CA313B0DEC200B6A998 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4B1CA213B0DEC200B6A998 /* main.m */; };
+		4C4B1CA613B0DEC200B6A998 /* ImageViewTapAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4B1CA513B0DEC200B6A998 /* ImageViewTapAppDelegate.m */; };
+		4C4B1CA913B0DEC200B6A998 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C4B1CA713B0DEC200B6A998 /* MainWindow.xib */; };
+		4C4B1CAC13B0DEC200B6A998 /* ImageViewTapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4B1CAB13B0DEC200B6A998 /* ImageViewTapViewController.m */; };
+		4C4B1CAF13B0DEC200B6A998 /* ImageViewTapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C4B1CAD13B0DEC200B6A998 /* ImageViewTapViewController.xib */; };
+		4C4B1CBD13B0DF0900B6A998 /* image01s.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C4B1CB513B0DF0900B6A998 /* image01s.jpg */; };
+		4C4B1CBE13B0DF0900B6A998 /* image02s.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C4B1CB613B0DF0900B6A998 /* image02s.jpg */; };
+		4C4B1CBF13B0DF0900B6A998 /* image03s.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C4B1CB713B0DF0900B6A998 /* image03s.jpg */; };
+		4C4B1CC013B0DF0900B6A998 /* image04s.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C4B1CB813B0DF0900B6A998 /* image04s.jpg */; };
+		4C4B1CC113B0DF0900B6A998 /* image05s.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C4B1CB913B0DF0900B6A998 /* image05s.jpg */; };
+		4C4B1CC213B0DF0900B6A998 /* image06s.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C4B1CBA13B0DF0900B6A998 /* image06s.jpg */; };
+		4C4B1CC313B0DF0900B6A998 /* image07s.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C4B1CBB13B0DF0900B6A998 /* image07s.jpg */; };
+		4C4B1CC413B0DF0900B6A998 /* image08s.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C4B1CBC13B0DF0900B6A998 /* image08s.jpg */; };
+		4C4B1CC713B0DFB400B6A998 /* ThumbnailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4B1CC613B0DFB400B6A998 /* ThumbnailView.m */; };
+		4C4B1CD013B0E59D00B6A998 /* image01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C4B1CC813B0E59D00B6A998 /* image01.jpg */; };
+		4C4B1CD113B0E59D00B6A998 /* image02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C4B1CC913B0E59D00B6A998 /* image02.jpg */; };
+		4C4B1CD213B0E59D00B6A998 /* image03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C4B1CCA13B0E59D00B6A998 /* image03.jpg */; };
+		4C4B1CD313B0E59D00B6A998 /* image04.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C4B1CCB13B0E59D00B6A998 /* image04.jpg */; };
+		4C4B1CD413B0E59D00B6A998 /* image05.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C4B1CCC13B0E59D00B6A998 /* image05.jpg */; };
+		4C4B1CD513B0E59D00B6A998 /* image06.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C4B1CCD13B0E59D00B6A998 /* image06.jpg */; };
+		4C4B1CD613B0E59D00B6A998 /* image07.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C4B1CCE13B0E59D00B6A998 /* image07.jpg */; };
+		4C4B1CD713B0E59D00B6A998 /* image08.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C4B1CCF13B0E59D00B6A998 /* image08.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4C4B1C9113B0DEC200B6A998 /* ImageViewTap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageViewTap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C4B1C9513B0DEC200B6A998 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4C4B1C9713B0DEC200B6A998 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4C4B1C9913B0DEC200B6A998 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4C4B1C9D13B0DEC200B6A998 /* ImageViewTap-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ImageViewTap-Info.plist"; sourceTree = "<group>"; };
+		4C4B1C9F13B0DEC200B6A998 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4C4B1CA113B0DEC200B6A998 /* ImageViewTap-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ImageViewTap-Prefix.pch"; sourceTree = "<group>"; };
+		4C4B1CA213B0DEC200B6A998 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4C4B1CA413B0DEC200B6A998 /* ImageViewTapAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageViewTapAppDelegate.h; sourceTree = "<group>"; };
+		4C4B1CA513B0DEC200B6A998 /* ImageViewTapAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageViewTapAppDelegate.m; sourceTree = "<group>"; };
+		4C4B1CA813B0DEC200B6A998 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		4C4B1CAA13B0DEC200B6A998 /* ImageViewTapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageViewTapViewController.h; sourceTree = "<group>"; };
+		4C4B1CAB13B0DEC200B6A998 /* ImageViewTapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageViewTapViewController.m; sourceTree = "<group>"; };
+		4C4B1CAE13B0DEC200B6A998 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ImageViewTapViewController.xib; sourceTree = "<group>"; };
+		4C4B1CB513B0DF0900B6A998 /* image01s.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image01s.jpg; sourceTree = "<group>"; };
+		4C4B1CB613B0DF0900B6A998 /* image02s.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image02s.jpg; sourceTree = "<group>"; };
+		4C4B1CB713B0DF0900B6A998 /* image03s.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image03s.jpg; sourceTree = "<group>"; };
+		4C4B1CB813B0DF0900B6A998 /* image04s.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image04s.jpg; sourceTree = "<group>"; };
+		4C4B1CB913B0DF0900B6A998 /* image05s.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image05s.jpg; sourceTree = "<group>"; };
+		4C4B1CBA13B0DF0900B6A998 /* image06s.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image06s.jpg; sourceTree = "<group>"; };
+		4C4B1CBB13B0DF0900B6A998 /* image07s.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image07s.jpg; sourceTree = "<group>"; };
+		4C4B1CBC13B0DF0900B6A998 /* image08s.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image08s.jpg; sourceTree = "<group>"; };
+		4C4B1CC513B0DFB400B6A998 /* ThumbnailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThumbnailView.h; sourceTree = "<group>"; };
+		4C4B1CC613B0DFB400B6A998 /* ThumbnailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThumbnailView.m; sourceTree = "<group>"; };
+		4C4B1CC813B0E59D00B6A998 /* image01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image01.jpg; sourceTree = "<group>"; };
+		4C4B1CC913B0E59D00B6A998 /* image02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image02.jpg; sourceTree = "<group>"; };
+		4C4B1CCA13B0E59D00B6A998 /* image03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image03.jpg; sourceTree = "<group>"; };
+		4C4B1CCB13B0E59D00B6A998 /* image04.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image04.jpg; sourceTree = "<group>"; };
+		4C4B1CCC13B0E59D00B6A998 /* image05.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image05.jpg; sourceTree = "<group>"; };
+		4C4B1CCD13B0E59D00B6A998 /* image06.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image06.jpg; sourceTree = "<group>"; };
+		4C4B1CCE13B0E59D00B6A998 /* image07.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image07.jpg; sourceTree = "<group>"; };
+		4C4B1CCF13B0E59D00B6A998 /* image08.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image08.jpg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C4B1C8E13B0DEC200B6A998 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C4B1C9613B0DEC200B6A998 /* UIKit.framework in Frameworks */,
+				4C4B1C9813B0DEC200B6A998 /* Foundation.framework in Frameworks */,
+				4C4B1C9A13B0DEC200B6A998 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C4B1C8613B0DEC100B6A998 = {
+			isa = PBXGroup;
+			children = (
+				4C4B1C9B13B0DEC200B6A998 /* ImageViewTap */,
+				4C4B1C9413B0DEC200B6A998 /* Frameworks */,
+				4C4B1C9213B0DEC200B6A998 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4C4B1C9213B0DEC200B6A998 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C4B1C9113B0DEC200B6A998 /* ImageViewTap.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4C4B1C9413B0DEC200B6A998 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C4B1C9513B0DEC200B6A998 /* UIKit.framework */,
+				4C4B1C9713B0DEC200B6A998 /* Foundation.framework */,
+				4C4B1C9913B0DEC200B6A998 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4C4B1C9B13B0DEC200B6A998 /* ImageViewTap */ = {
+			isa = PBXGroup;
+			children = (
+				4C4B1CA413B0DEC200B6A998 /* ImageViewTapAppDelegate.h */,
+				4C4B1CA513B0DEC200B6A998 /* ImageViewTapAppDelegate.m */,
+				4C4B1CA713B0DEC200B6A998 /* MainWindow.xib */,
+				4C4B1CAA13B0DEC200B6A998 /* ImageViewTapViewController.h */,
+				4C4B1CAB13B0DEC200B6A998 /* ImageViewTapViewController.m */,
+				4C4B1CAD13B0DEC200B6A998 /* ImageViewTapViewController.xib */,
+				4C4B1CC513B0DFB400B6A998 /* ThumbnailView.h */,
+				4C4B1CC613B0DFB400B6A998 /* ThumbnailView.m */,
+				4C4B1C9C13B0DEC200B6A998 /* Supporting Files */,
+			);
+			path = ImageViewTap;
+			sourceTree = "<group>";
+		};
+		4C4B1C9C13B0DEC200B6A998 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4C4B1CB513B0DF0900B6A998 /* image01s.jpg */,
+				4C4B1CB613B0DF0900B6A998 /* image02s.jpg */,
+				4C4B1CB713B0DF0900B6A998 /* image03s.jpg */,
+				4C4B1CB813B0DF0900B6A998 /* image04s.jpg */,
+				4C4B1CB913B0DF0900B6A998 /* image05s.jpg */,
+				4C4B1CBA13B0DF0900B6A998 /* image06s.jpg */,
+				4C4B1CBB13B0DF0900B6A998 /* image07s.jpg */,
+				4C4B1CBC13B0DF0900B6A998 /* image08s.jpg */,
+				4C4B1CC813B0E59D00B6A998 /* image01.jpg */,
+				4C4B1CC913B0E59D00B6A998 /* image02.jpg */,
+				4C4B1CCA13B0E59D00B6A998 /* image03.jpg */,
+				4C4B1CCB13B0E59D00B6A998 /* image04.jpg */,
+				4C4B1CCC13B0E59D00B6A998 /* image05.jpg */,
+				4C4B1CCD13B0E59D00B6A998 /* image06.jpg */,
+				4C4B1CCE13B0E59D00B6A998 /* image07.jpg */,
+				4C4B1CCF13B0E59D00B6A998 /* image08.jpg */,
+				4C4B1C9D13B0DEC200B6A998 /* ImageViewTap-Info.plist */,
+				4C4B1C9E13B0DEC200B6A998 /* InfoPlist.strings */,
+				4C4B1CA113B0DEC200B6A998 /* ImageViewTap-Prefix.pch */,
+				4C4B1CA213B0DEC200B6A998 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4C4B1C9013B0DEC200B6A998 /* ImageViewTap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C4B1CB213B0DEC200B6A998 /* Build configuration list for PBXNativeTarget "ImageViewTap" */;
+			buildPhases = (
+				4C4B1C8D13B0DEC200B6A998 /* Sources */,
+				4C4B1C8E13B0DEC200B6A998 /* Frameworks */,
+				4C4B1C8F13B0DEC200B6A998 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ImageViewTap;
+			productName = ImageViewTap;
+			productReference = 4C4B1C9113B0DEC200B6A998 /* ImageViewTap.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4C4B1C8813B0DEC100B6A998 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 4C4B1C8B13B0DEC100B6A998 /* Build configuration list for PBXProject "ImageViewTap" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4C4B1C8613B0DEC100B6A998;
+			productRefGroup = 4C4B1C9213B0DEC200B6A998 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4C4B1C9013B0DEC200B6A998 /* ImageViewTap */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4C4B1C8F13B0DEC200B6A998 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C4B1CA013B0DEC200B6A998 /* InfoPlist.strings in Resources */,
+				4C4B1CA913B0DEC200B6A998 /* MainWindow.xib in Resources */,
+				4C4B1CAF13B0DEC200B6A998 /* ImageViewTapViewController.xib in Resources */,
+				4C4B1CBD13B0DF0900B6A998 /* image01s.jpg in Resources */,
+				4C4B1CBE13B0DF0900B6A998 /* image02s.jpg in Resources */,
+				4C4B1CBF13B0DF0900B6A998 /* image03s.jpg in Resources */,
+				4C4B1CC013B0DF0900B6A998 /* image04s.jpg in Resources */,
+				4C4B1CC113B0DF0900B6A998 /* image05s.jpg in Resources */,
+				4C4B1CC213B0DF0900B6A998 /* image06s.jpg in Resources */,
+				4C4B1CC313B0DF0900B6A998 /* image07s.jpg in Resources */,
+				4C4B1CC413B0DF0900B6A998 /* image08s.jpg in Resources */,
+				4C4B1CD013B0E59D00B6A998 /* image01.jpg in Resources */,
+				4C4B1CD113B0E59D00B6A998 /* image02.jpg in Resources */,
+				4C4B1CD213B0E59D00B6A998 /* image03.jpg in Resources */,
+				4C4B1CD313B0E59D00B6A998 /* image04.jpg in Resources */,
+				4C4B1CD413B0E59D00B6A998 /* image05.jpg in Resources */,
+				4C4B1CD513B0E59D00B6A998 /* image06.jpg in Resources */,
+				4C4B1CD613B0E59D00B6A998 /* image07.jpg in Resources */,
+				4C4B1CD713B0E59D00B6A998 /* image08.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4C4B1C8D13B0DEC200B6A998 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C4B1CA313B0DEC200B6A998 /* main.m in Sources */,
+				4C4B1CA613B0DEC200B6A998 /* ImageViewTapAppDelegate.m in Sources */,
+				4C4B1CAC13B0DEC200B6A998 /* ImageViewTapViewController.m in Sources */,
+				4C4B1CC713B0DFB400B6A998 /* ThumbnailView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4C4B1C9E13B0DEC200B6A998 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C4B1C9F13B0DEC200B6A998 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4C4B1CA713B0DEC200B6A998 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C4B1CA813B0DEC200B6A998 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		4C4B1CAD13B0DEC200B6A998 /* ImageViewTapViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C4B1CAE13B0DEC200B6A998 /* en */,
+			);
+			name = ImageViewTapViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4C4B1CB013B0DEC200B6A998 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4C4B1CB113B0DEC200B6A998 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		4C4B1CB313B0DEC200B6A998 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ImageViewTap/ImageViewTap-Prefix.pch";
+				INFOPLIST_FILE = "ImageViewTap/ImageViewTap-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4C4B1CB413B0DEC200B6A998 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ImageViewTap/ImageViewTap-Prefix.pch";
+				INFOPLIST_FILE = "ImageViewTap/ImageViewTap-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C4B1C8B13B0DEC100B6A998 /* Build configuration list for PBXProject "ImageViewTap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C4B1CB013B0DEC200B6A998 /* Debug */,
+				4C4B1CB113B0DEC200B6A998 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C4B1CB213B0DEC200B6A998 /* Build configuration list for PBXNativeTarget "ImageViewTap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C4B1CB313B0DEC200B6A998 /* Debug */,
+				4C4B1CB413B0DEC200B6A998 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4C4B1C8813B0DEC100B6A998 /* Project object */;
+}
