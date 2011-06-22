@@ -71,7 +71,7 @@
     if (cell == nil) {
         NSLog(@"x");
         UINib* nib = [UINib nibWithNibName:CUSTOM_CELL_NIB bundle:nil];
-        NSArray* array = [nib instantiateWithOwner:nil options:nil];
+        NSArray* array = [nib instantiateWithOwner:self options:nil];
         cell = [array objectAtIndex:0];
     }
 
@@ -81,7 +81,7 @@
     cell.dateLabel.text = [[NSDate dateWithTimeIntervalSince1970:r] description];
     cell.descLabel.text = @"Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files ....";
     cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"image%02ds.jpg", (r%8)+1]];
-    NSLog(@"%@", [NSString stringWithFormat:@"image%02ds.jpg", (r%8)+1]);
+//    NSLog(@"%@", [NSString stringWithFormat:@"image%02ds.jpg", (r%8)+1]);
     return cell;
 }
 
@@ -162,6 +162,18 @@
 - (void)dealloc
 {
     [super dealloc];
+}
+
+#pragma mark -
+#pragma mark Event handler
+- (IBAction)didTouchDoitButton:(id)sender
+{
+    id cell = sender;
+    while (![cell isKindOfClass:[CustomCell class]]) {
+        cell = [cell superview];
+    }
+    NSIndexPath* indexPath = [self.tableView indexPathForCell:cell];
+    NSLog(@"%@", indexPath);
 }
 
 @end

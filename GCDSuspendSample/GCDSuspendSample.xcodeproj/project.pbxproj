@@ -1,0 +1,265 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4CB1916C137B8660008F5062 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB1916B137B8660008F5062 /* UIKit.framework */; };
+		4CB1916E137B8660008F5062 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB1916D137B8660008F5062 /* Foundation.framework */; };
+		4CB19170137B8660008F5062 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CB1916F137B8660008F5062 /* CoreGraphics.framework */; };
+		4CB19176137B8660008F5062 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CB19174137B8660008F5062 /* InfoPlist.strings */; };
+		4CB19179137B8660008F5062 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB19178137B8660008F5062 /* main.m */; };
+		4CB1917C137B8660008F5062 /* GCDSuspendSampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CB1917B137B8660008F5062 /* GCDSuspendSampleAppDelegate.m */; };
+		4CB1917F137B8660008F5062 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CB1917D137B8660008F5062 /* MainWindow.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4CB19167137B8660008F5062 /* GCDSuspendSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GCDSuspendSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CB1916B137B8660008F5062 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4CB1916D137B8660008F5062 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4CB1916F137B8660008F5062 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4CB19173137B8660008F5062 /* GCDSuspendSample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GCDSuspendSample-Info.plist"; sourceTree = "<group>"; };
+		4CB19175137B8660008F5062 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4CB19177137B8660008F5062 /* GCDSuspendSample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GCDSuspendSample-Prefix.pch"; sourceTree = "<group>"; };
+		4CB19178137B8660008F5062 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4CB1917A137B8660008F5062 /* GCDSuspendSampleAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDSuspendSampleAppDelegate.h; sourceTree = "<group>"; };
+		4CB1917B137B8660008F5062 /* GCDSuspendSampleAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDSuspendSampleAppDelegate.m; sourceTree = "<group>"; };
+		4CB1917E137B8660008F5062 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4CB19164137B8660008F5062 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CB1916C137B8660008F5062 /* UIKit.framework in Frameworks */,
+				4CB1916E137B8660008F5062 /* Foundation.framework in Frameworks */,
+				4CB19170137B8660008F5062 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4CB1915C137B865F008F5062 = {
+			isa = PBXGroup;
+			children = (
+				4CB19171137B8660008F5062 /* GCDSuspendSample */,
+				4CB1916A137B8660008F5062 /* Frameworks */,
+				4CB19168137B8660008F5062 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4CB19168137B8660008F5062 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4CB19167137B8660008F5062 /* GCDSuspendSample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4CB1916A137B8660008F5062 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4CB1916B137B8660008F5062 /* UIKit.framework */,
+				4CB1916D137B8660008F5062 /* Foundation.framework */,
+				4CB1916F137B8660008F5062 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4CB19171137B8660008F5062 /* GCDSuspendSample */ = {
+			isa = PBXGroup;
+			children = (
+				4CB1917A137B8660008F5062 /* GCDSuspendSampleAppDelegate.h */,
+				4CB1917B137B8660008F5062 /* GCDSuspendSampleAppDelegate.m */,
+				4CB1917D137B8660008F5062 /* MainWindow.xib */,
+				4CB19172137B8660008F5062 /* Supporting Files */,
+			);
+			path = GCDSuspendSample;
+			sourceTree = "<group>";
+		};
+		4CB19172137B8660008F5062 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4CB19173137B8660008F5062 /* GCDSuspendSample-Info.plist */,
+				4CB19174137B8660008F5062 /* InfoPlist.strings */,
+				4CB19177137B8660008F5062 /* GCDSuspendSample-Prefix.pch */,
+				4CB19178137B8660008F5062 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4CB19166137B8660008F5062 /* GCDSuspendSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CB19182137B8660008F5062 /* Build configuration list for PBXNativeTarget "GCDSuspendSample" */;
+			buildPhases = (
+				4CB19163137B8660008F5062 /* Sources */,
+				4CB19164137B8660008F5062 /* Frameworks */,
+				4CB19165137B8660008F5062 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GCDSuspendSample;
+			productName = GCDSuspendSample;
+			productReference = 4CB19167137B8660008F5062 /* GCDSuspendSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4CB1915E137B865F008F5062 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 4CB19161137B865F008F5062 /* Build configuration list for PBXProject "GCDSuspendSample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4CB1915C137B865F008F5062;
+			productRefGroup = 4CB19168137B8660008F5062 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4CB19166137B8660008F5062 /* GCDSuspendSample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4CB19165137B8660008F5062 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CB19176137B8660008F5062 /* InfoPlist.strings in Resources */,
+				4CB1917F137B8660008F5062 /* MainWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4CB19163137B8660008F5062 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CB19179137B8660008F5062 /* main.m in Sources */,
+				4CB1917C137B8660008F5062 /* GCDSuspendSampleAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4CB19174137B8660008F5062 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CB19175137B8660008F5062 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4CB1917D137B8660008F5062 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CB1917E137B8660008F5062 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4CB19180137B8660008F5062 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4CB19181137B8660008F5062 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		4CB19183137B8660008F5062 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GCDSuspendSample/GCDSuspendSample-Prefix.pch";
+				INFOPLIST_FILE = "GCDSuspendSample/GCDSuspendSample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4CB19184137B8660008F5062 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GCDSuspendSample/GCDSuspendSample-Prefix.pch";
+				INFOPLIST_FILE = "GCDSuspendSample/GCDSuspendSample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4CB19161137B865F008F5062 /* Build configuration list for PBXProject "GCDSuspendSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CB19180137B8660008F5062 /* Debug */,
+				4CB19181137B8660008F5062 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CB19182137B8660008F5062 /* Build configuration list for PBXNativeTarget "GCDSuspendSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CB19183137B8660008F5062 /* Debug */,
+				4CB19184137B8660008F5062 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4CB1915E137B865F008F5062 /* Project object */;
+}

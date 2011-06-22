@@ -77,6 +77,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+        cell.frame = CGRectMake(0, 0, 400, 44);
+        NSLog(@"%@", NSStringFromCGRect(cell.frame));
+        NSLog(@"%@", NSStringFromCGRect(cell.bounds));
     }
 
     // Configure the cell.

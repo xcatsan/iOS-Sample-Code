@@ -1,0 +1,265 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4CEB76181359C87200329EF5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CEB76171359C87200329EF5 /* UIKit.framework */; };
+		4CEB761A1359C87200329EF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CEB76191359C87200329EF5 /* Foundation.framework */; };
+		4CEB761C1359C87200329EF5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CEB761B1359C87200329EF5 /* CoreGraphics.framework */; };
+		4CEB76221359C87200329EF5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CEB76201359C87200329EF5 /* InfoPlist.strings */; };
+		4CEB76251359C87200329EF5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEB76241359C87200329EF5 /* main.m */; };
+		4CEB76281359C87200329EF5 /* LockSampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CEB76271359C87200329EF5 /* LockSampleAppDelegate.m */; };
+		4CEB762B1359C87200329EF5 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CEB76291359C87200329EF5 /* MainWindow.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4CEB76131359C87200329EF5 /* LockSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LockSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CEB76171359C87200329EF5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4CEB76191359C87200329EF5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4CEB761B1359C87200329EF5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4CEB761F1359C87200329EF5 /* LockSample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LockSample-Info.plist"; sourceTree = "<group>"; };
+		4CEB76211359C87200329EF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4CEB76231359C87200329EF5 /* LockSample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LockSample-Prefix.pch"; sourceTree = "<group>"; };
+		4CEB76241359C87200329EF5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4CEB76261359C87200329EF5 /* LockSampleAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LockSampleAppDelegate.h; sourceTree = "<group>"; };
+		4CEB76271359C87200329EF5 /* LockSampleAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LockSampleAppDelegate.m; sourceTree = "<group>"; };
+		4CEB762A1359C87200329EF5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4CEB76101359C87200329EF5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CEB76181359C87200329EF5 /* UIKit.framework in Frameworks */,
+				4CEB761A1359C87200329EF5 /* Foundation.framework in Frameworks */,
+				4CEB761C1359C87200329EF5 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4CEB76081359C87200329EF5 = {
+			isa = PBXGroup;
+			children = (
+				4CEB761D1359C87200329EF5 /* LockSample */,
+				4CEB76161359C87200329EF5 /* Frameworks */,
+				4CEB76141359C87200329EF5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4CEB76141359C87200329EF5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4CEB76131359C87200329EF5 /* LockSample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4CEB76161359C87200329EF5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4CEB76171359C87200329EF5 /* UIKit.framework */,
+				4CEB76191359C87200329EF5 /* Foundation.framework */,
+				4CEB761B1359C87200329EF5 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4CEB761D1359C87200329EF5 /* LockSample */ = {
+			isa = PBXGroup;
+			children = (
+				4CEB76261359C87200329EF5 /* LockSampleAppDelegate.h */,
+				4CEB76271359C87200329EF5 /* LockSampleAppDelegate.m */,
+				4CEB76291359C87200329EF5 /* MainWindow.xib */,
+				4CEB761E1359C87200329EF5 /* Supporting Files */,
+			);
+			path = LockSample;
+			sourceTree = "<group>";
+		};
+		4CEB761E1359C87200329EF5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4CEB761F1359C87200329EF5 /* LockSample-Info.plist */,
+				4CEB76201359C87200329EF5 /* InfoPlist.strings */,
+				4CEB76231359C87200329EF5 /* LockSample-Prefix.pch */,
+				4CEB76241359C87200329EF5 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4CEB76121359C87200329EF5 /* LockSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CEB762E1359C87200329EF5 /* Build configuration list for PBXNativeTarget "LockSample" */;
+			buildPhases = (
+				4CEB760F1359C87200329EF5 /* Sources */,
+				4CEB76101359C87200329EF5 /* Frameworks */,
+				4CEB76111359C87200329EF5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LockSample;
+			productName = LockSample;
+			productReference = 4CEB76131359C87200329EF5 /* LockSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4CEB760A1359C87200329EF5 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 4CEB760D1359C87200329EF5 /* Build configuration list for PBXProject "LockSample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4CEB76081359C87200329EF5;
+			productRefGroup = 4CEB76141359C87200329EF5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4CEB76121359C87200329EF5 /* LockSample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4CEB76111359C87200329EF5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CEB76221359C87200329EF5 /* InfoPlist.strings in Resources */,
+				4CEB762B1359C87200329EF5 /* MainWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4CEB760F1359C87200329EF5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CEB76251359C87200329EF5 /* main.m in Sources */,
+				4CEB76281359C87200329EF5 /* LockSampleAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4CEB76201359C87200329EF5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CEB76211359C87200329EF5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4CEB76291359C87200329EF5 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CEB762A1359C87200329EF5 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4CEB762C1359C87200329EF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4CEB762D1359C87200329EF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		4CEB762F1359C87200329EF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LockSample/LockSample-Prefix.pch";
+				INFOPLIST_FILE = "LockSample/LockSample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4CEB76301359C87200329EF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LockSample/LockSample-Prefix.pch";
+				INFOPLIST_FILE = "LockSample/LockSample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4CEB760D1359C87200329EF5 /* Build configuration list for PBXProject "LockSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CEB762C1359C87200329EF5 /* Debug */,
+				4CEB762D1359C87200329EF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CEB762E1359C87200329EF5 /* Build configuration list for PBXNativeTarget "LockSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CEB762F1359C87200329EF5 /* Debug */,
+				4CEB76301359C87200329EF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4CEB760A1359C87200329EF5 /* Project object */;
+}

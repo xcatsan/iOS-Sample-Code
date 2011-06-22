@@ -1,0 +1,283 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4C4A3FA1134F588000FCF038 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C4A3FA0134F588000FCF038 /* UIKit.framework */; };
+		4C4A3FA3134F588000FCF038 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C4A3FA2134F588000FCF038 /* Foundation.framework */; };
+		4C4A3FA5134F588000FCF038 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C4A3FA4134F588000FCF038 /* CoreGraphics.framework */; };
+		4C4A3FAB134F588100FCF038 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C4A3FA9134F588100FCF038 /* InfoPlist.strings */; };
+		4C4A3FAE134F588100FCF038 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A3FAD134F588100FCF038 /* main.m */; };
+		4C4A3FB1134F588100FCF038 /* AVCaptreSampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C4A3FB0134F588100FCF038 /* AVCaptreSampleAppDelegate.m */; };
+		4C4A3FB4134F588100FCF038 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C4A3FB2134F588100FCF038 /* MainWindow.xib */; };
+		4C4A3FC4134F5AC700FCF038 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C4A3FC3134F5AC700FCF038 /* CoreVideo.framework */; };
+		4C4A3FC6134F5AD900FCF038 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C4A3FC5134F5AD900FCF038 /* CoreMedia.framework */; };
+		4C4A3FCA134F5B6900FCF038 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C4A3FC9134F5B6900FCF038 /* AVFoundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4C4A3F9C134F588000FCF038 /* AVCaptreSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AVCaptreSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C4A3FA0134F588000FCF038 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4C4A3FA2134F588000FCF038 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4C4A3FA4134F588000FCF038 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4C4A3FA8134F588000FCF038 /* AVCaptreSample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AVCaptreSample-Info.plist"; sourceTree = "<group>"; };
+		4C4A3FAA134F588100FCF038 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4C4A3FAC134F588100FCF038 /* AVCaptreSample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AVCaptreSample-Prefix.pch"; sourceTree = "<group>"; };
+		4C4A3FAD134F588100FCF038 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4C4A3FAF134F588100FCF038 /* AVCaptreSampleAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AVCaptreSampleAppDelegate.h; sourceTree = "<group>"; };
+		4C4A3FB0134F588100FCF038 /* AVCaptreSampleAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AVCaptreSampleAppDelegate.m; sourceTree = "<group>"; };
+		4C4A3FB3134F588100FCF038 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		4C4A3FBA134F58A300FCF038 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		4C4A3FBC134F58AD00FCF038 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		4C4A3FC3134F5AC700FCF038 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		4C4A3FC5134F5AD900FCF038 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		4C4A3FC7134F5B6300FCF038 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		4C4A3FC9134F5B6900FCF038 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C4A3F99134F588000FCF038 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C4A3FA1134F588000FCF038 /* UIKit.framework in Frameworks */,
+				4C4A3FA3134F588000FCF038 /* Foundation.framework in Frameworks */,
+				4C4A3FA5134F588000FCF038 /* CoreGraphics.framework in Frameworks */,
+				4C4A3FC4134F5AC700FCF038 /* CoreVideo.framework in Frameworks */,
+				4C4A3FC6134F5AD900FCF038 /* CoreMedia.framework in Frameworks */,
+				4C4A3FCA134F5B6900FCF038 /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C4A3F91134F588000FCF038 = {
+			isa = PBXGroup;
+			children = (
+				4C4A3FC7134F5B6300FCF038 /* AVFoundation.framework */,
+				4C4A3FBC134F58AD00FCF038 /* CoreVideo.framework */,
+				4C4A3FBA134F58A300FCF038 /* CoreMedia.framework */,
+				4C4A3FA6134F588000FCF038 /* AVCaptreSample */,
+				4C4A3F9F134F588000FCF038 /* Frameworks */,
+				4C4A3F9D134F588000FCF038 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4C4A3F9D134F588000FCF038 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C4A3F9C134F588000FCF038 /* AVCaptreSample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4C4A3F9F134F588000FCF038 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C4A3FC9134F5B6900FCF038 /* AVFoundation.framework */,
+				4C4A3FC5134F5AD900FCF038 /* CoreMedia.framework */,
+				4C4A3FC3134F5AC700FCF038 /* CoreVideo.framework */,
+				4C4A3FA0134F588000FCF038 /* UIKit.framework */,
+				4C4A3FA2134F588000FCF038 /* Foundation.framework */,
+				4C4A3FA4134F588000FCF038 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4C4A3FA6134F588000FCF038 /* AVCaptreSample */ = {
+			isa = PBXGroup;
+			children = (
+				4C4A3FAF134F588100FCF038 /* AVCaptreSampleAppDelegate.h */,
+				4C4A3FB0134F588100FCF038 /* AVCaptreSampleAppDelegate.m */,
+				4C4A3FB2134F588100FCF038 /* MainWindow.xib */,
+				4C4A3FA7134F588000FCF038 /* Supporting Files */,
+			);
+			path = AVCaptreSample;
+			sourceTree = "<group>";
+		};
+		4C4A3FA7134F588000FCF038 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4C4A3FA8134F588000FCF038 /* AVCaptreSample-Info.plist */,
+				4C4A3FA9134F588100FCF038 /* InfoPlist.strings */,
+				4C4A3FAC134F588100FCF038 /* AVCaptreSample-Prefix.pch */,
+				4C4A3FAD134F588100FCF038 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4C4A3F9B134F588000FCF038 /* AVCaptreSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C4A3FB7134F588100FCF038 /* Build configuration list for PBXNativeTarget "AVCaptreSample" */;
+			buildPhases = (
+				4C4A3F98134F588000FCF038 /* Sources */,
+				4C4A3F99134F588000FCF038 /* Frameworks */,
+				4C4A3F9A134F588000FCF038 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AVCaptreSample;
+			productName = AVCaptreSample;
+			productReference = 4C4A3F9C134F588000FCF038 /* AVCaptreSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4C4A3F93134F588000FCF038 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 4C4A3F96134F588000FCF038 /* Build configuration list for PBXProject "AVCaptreSample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4C4A3F91134F588000FCF038;
+			productRefGroup = 4C4A3F9D134F588000FCF038 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4C4A3F9B134F588000FCF038 /* AVCaptreSample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4C4A3F9A134F588000FCF038 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C4A3FAB134F588100FCF038 /* InfoPlist.strings in Resources */,
+				4C4A3FB4134F588100FCF038 /* MainWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4C4A3F98134F588000FCF038 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C4A3FAE134F588100FCF038 /* main.m in Sources */,
+				4C4A3FB1134F588100FCF038 /* AVCaptreSampleAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4C4A3FA9134F588100FCF038 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C4A3FAA134F588100FCF038 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4C4A3FB2134F588100FCF038 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C4A3FB3134F588100FCF038 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4C4A3FB5134F588100FCF038 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4C4A3FB6134F588100FCF038 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		4C4A3FB8134F588100FCF038 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AVCaptreSample/AVCaptreSample-Prefix.pch";
+				INFOPLIST_FILE = "AVCaptreSample/AVCaptreSample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4C4A3FB9134F588100FCF038 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AVCaptreSample/AVCaptreSample-Prefix.pch";
+				INFOPLIST_FILE = "AVCaptreSample/AVCaptreSample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C4A3F96134F588000FCF038 /* Build configuration list for PBXProject "AVCaptreSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C4A3FB5134F588100FCF038 /* Debug */,
+				4C4A3FB6134F588100FCF038 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C4A3FB7134F588100FCF038 /* Build configuration list for PBXNativeTarget "AVCaptreSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C4A3FB8134F588100FCF038 /* Debug */,
+				4C4A3FB9134F588100FCF038 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4C4A3F93134F588000FCF038 /* Project object */;
+}

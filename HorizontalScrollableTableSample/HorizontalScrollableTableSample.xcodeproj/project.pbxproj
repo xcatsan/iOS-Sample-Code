@@ -26,15 +26,15 @@
 		4CFCC87F13208344009D8E11 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4CFCC88113208344009D8E11 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		4CFCC88313208344009D8E11 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		4CFCC88713208344009D8E11 /* HorizontalScrollableTableSample-Info.plist */ = {isa = PBXFileReference; path = "HorizontalScrollableTableSample-Info.plist"; sourceTree = "<group>"; };
+		4CFCC88713208344009D8E11 /* HorizontalScrollableTableSample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HorizontalScrollableTableSample-Info.plist"; sourceTree = "<group>"; };
 		4CFCC88913208344009D8E11 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		4CFCC88B13208344009D8E11 /* HorizontalScrollableTableSample-Prefix.pch */ = {isa = PBXFileReference; path = "HorizontalScrollableTableSample-Prefix.pch"; sourceTree = "<group>"; };
+		4CFCC88B13208344009D8E11 /* HorizontalScrollableTableSample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HorizontalScrollableTableSample-Prefix.pch"; sourceTree = "<group>"; };
 		4CFCC88C13208344009D8E11 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4CFCC88E13208344009D8E11 /* HorizontalScrollableTableSampleAppDelegate.h */ = {isa = PBXFileReference; path = HorizontalScrollableTableSampleAppDelegate.h; sourceTree = "<group>"; };
+		4CFCC88E13208344009D8E11 /* HorizontalScrollableTableSampleAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HorizontalScrollableTableSampleAppDelegate.h; sourceTree = "<group>"; };
 		4CFCC88F13208344009D8E11 /* HorizontalScrollableTableSampleAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HorizontalScrollableTableSampleAppDelegate.m; sourceTree = "<group>"; };
 		4CFCC89213208344009D8E11 /* HorizontalScrollableTableSample.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HorizontalScrollableTableSample.xcdatamodel; sourceTree = "<group>"; };
 		4CFCC89513208344009D8E11 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		4CFCC89713208344009D8E11 /* RootViewController.h */ = {isa = PBXFileReference; path = RootViewController.h; sourceTree = "<group>"; };
+		4CFCC89713208344009D8E11 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		4CFCC89813208344009D8E11 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		4CFCC89B13208344009D8E11 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */

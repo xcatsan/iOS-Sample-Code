@@ -22,6 +22,7 @@
 {
     // Override point for customization after application launch.
     [self.window makeKeyAndVisible];
+    NSLog(@"%@", [self path]);
     return YES;
 }
 
@@ -142,6 +143,20 @@ int cmpare(const FTSENT **a, const FTSENT **b)
     return (-strcasecmp((*a)->fts_name, (*b)->fts_name));
 }
 
+int _compareWithLastAccessTime(const FTSENT **a, const FTSENT **b)
+{
+    __darwin_time_t atime1 = (*a)->fts_statp->st_atimespec.tv_sec;
+    __darwin_time_t atime2 = (*b)->fts_statp->st_atimespec.tv_sec;
+    
+    if (atime1 < atime2) {
+        return -1;
+    } else if (atime1 > atime2) {
+        return 1;
+    } else {
+        return 0;   // equals
+    }
+}
+
 - (IBAction)fts
 {
     u_int start_m = [self getMemory];
@@ -153,7 +168,9 @@ int cmpare(const FTSENT **a, const FTSENT **b)
     char* paths[] = {
         [[self path] cStringUsingEncoding:NSUTF8StringEncoding], NULL
     };
-    fts = fts_open(paths, 0, cmpare);
+//    fts = fts_open(paths, 0, cmpare);
+//    fts = fts_open(paths, 0, NULL);
+    fts = fts_open(paths, 0, _compareWithLastAccessTime);
     while ((entry = fts_read(fts))) {
 //        NSLog(@"%s", entry->fts_path);
         if (entry->fts_info & FTS_DP || entry->fts_level == 0) {
@@ -161,6 +178,7 @@ int cmpare(const FTSENT **a, const FTSENT **b)
             continue;
         }
         if (entry->fts_info & FTS_F) {
+            NSLog(@"%s", entry->fts_path);
             count++;
             size += entry->fts_statp->st_size;
         }

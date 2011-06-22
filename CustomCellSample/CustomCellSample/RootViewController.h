@@ -13,5 +13,6 @@
     CGFloat cellHeight_;
 }
 
+- (IBAction)didTouchDoitButton:(id)sender;
 
 @end

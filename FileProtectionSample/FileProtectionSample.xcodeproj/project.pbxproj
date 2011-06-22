@@ -266,6 +266,7 @@
 				4CF51676135EBCE4006F5BF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

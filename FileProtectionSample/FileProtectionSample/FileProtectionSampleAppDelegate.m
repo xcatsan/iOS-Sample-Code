@@ -28,10 +28,12 @@
     NSString* dst1 = [basePath stringByAppendingPathComponent:@"sample.jpg"];
     NSString* dst2 = [basePath stringByAppendingPathComponent:@"sample_encrypted.jpg"];
     NSString* dst3 = [basePath stringByAppendingPathComponent:@"sample_encrypted2.jpg"];
-    
+    NSString* dst4 = [basePath stringByAppendingPathComponent:@"sample_encrypted3.jpg"];
+
     NSLog(@"dst1: %@", dst1);
     NSLog(@"dst2: %@", dst2);
     NSLog(@"dst3: %@", dst3);
+    NSLog(@"dst4: %@", dst4);
     
     NSError* error = nil;
     
@@ -43,6 +45,16 @@
     }
     if ([fileManager fileExistsAtPath:dst2]) {
         if (![fileManager removeItemAtPath:dst2 error:&error]) {
+            NSLog(@"%@", error);
+        }
+    }
+    if ([fileManager fileExistsAtPath:dst3]) {
+        if (![fileManager removeItemAtPath:dst3 error:&error]) {
+            NSLog(@"%@", error);
+        }
+    }
+    if ([fileManager fileExistsAtPath:dst3]) {
+        if (![fileManager removeItemAtPath:dst3 error:&error]) {
             NSLog(@"%@", error);
         }
     }
@@ -71,10 +83,16 @@
                      error:&error]) {
         NSLog(@"%@", error);
     }
-    
+
+    // copy files
+    if (![fileManager copyItemAtPath:dst3 toPath:dst4 error:&error]) {
+        NSLog(@"%@", error);        
+    }
+
     NSLog(@"dst1: %@", [fileManager attributesOfItemAtPath:dst1 error:&error]);
     NSLog(@"dst2: %@", [fileManager attributesOfItemAtPath:dst2 error:&error]);
     NSLog(@"dst3: %@", [fileManager attributesOfItemAtPath:dst3 error:&error]);
+    NSLog(@"dst4: %@", [fileManager attributesOfItemAtPath:dst4 error:&error]);
 
     return YES;
 }

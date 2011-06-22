@@ -2,9 +2,6 @@
 //  FileManagerSampleAppDelegate.m
 //  FileManagerSample
 //
-//  Created by 橋口 湖 on 11/03/03.
-//  Copyright 2011 ファイブテクノロジー株式会社. All rights reserved.
-//
 
 #import "FileManagerSampleAppDelegate.h"
 
@@ -17,6 +14,22 @@
 {
     // Override point for customization after application launch.
     [self.window makeKeyAndVisible];
+    
+    NSFileManager* fileManager = [NSFileManager defaultManager];
+    [fileManager setDelegate:self];
+//    NSString* src = [[NSBundle mainBundle] pathForResource:@"sample" ofType:@"jpg"];
+    NSString* src = [[NSBundle mainBundle] pathForResource:@"sample2" ofType:@"png"];
+    NSString* dst = @"/tmp/test.jpg";
+
+    NSError* error = nil;
+    
+    [fileManager removeItemAtPath:dst error:&error];
+    NSLog(@"[1]error=%@", error);
+
+    [fileManager copyItemAtPath:src toPath:dst error:&error];
+    NSLog(@"[2]error=%@", error);
+    
+    
     return YES;
 }
 
@@ -63,6 +76,12 @@
 {
     [_window release];
     [super dealloc];
+}
+
+- (BOOL)fileManager:(NSFileManager *)fileManager shouldProceedAfterError:(NSError *)error copyingItemAtPath:(NSString *)srcPath toPath:(NSString *)dstPath
+{
+    NSLog(@"[delegate]error=%@", error);
+    return YES;
 }
 
 @end
