@@ -1,0 +1,283 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4C20E8C313B74B6A00BF59C2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C20E8C213B74B6A00BF59C2 /* UIKit.framework */; };
+		4C20E8C513B74B6A00BF59C2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C20E8C413B74B6A00BF59C2 /* Foundation.framework */; };
+		4C20E8C713B74B6A00BF59C2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C20E8C613B74B6A00BF59C2 /* CoreGraphics.framework */; };
+		4C20E8CD13B74B6A00BF59C2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C20E8CB13B74B6A00BF59C2 /* InfoPlist.strings */; };
+		4C20E8D013B74B6A00BF59C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C20E8CF13B74B6A00BF59C2 /* main.m */; };
+		4C20E8D313B74B6A00BF59C2 /* ResponderChainStudyAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C20E8D213B74B6A00BF59C2 /* ResponderChainStudyAppDelegate.m */; };
+		4C20E8D613B74B6A00BF59C2 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C20E8D413B74B6A00BF59C2 /* MainWindow.xib */; };
+		4C20E8D913B74B6A00BF59C2 /* ResponderChainStudyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C20E8D813B74B6A00BF59C2 /* ResponderChainStudyViewController.m */; };
+		4C20E8DC13B74B6A00BF59C2 /* ResponderChainStudyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C20E8DA13B74B6A00BF59C2 /* ResponderChainStudyViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4C20E8BE13B74B6A00BF59C2 /* ResponderChainStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ResponderChainStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C20E8C213B74B6A00BF59C2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4C20E8C413B74B6A00BF59C2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4C20E8C613B74B6A00BF59C2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4C20E8CA13B74B6A00BF59C2 /* ResponderChainStudy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ResponderChainStudy-Info.plist"; sourceTree = "<group>"; };
+		4C20E8CC13B74B6A00BF59C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4C20E8CE13B74B6A00BF59C2 /* ResponderChainStudy-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ResponderChainStudy-Prefix.pch"; sourceTree = "<group>"; };
+		4C20E8CF13B74B6A00BF59C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4C20E8D113B74B6A00BF59C2 /* ResponderChainStudyAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResponderChainStudyAppDelegate.h; sourceTree = "<group>"; };
+		4C20E8D213B74B6A00BF59C2 /* ResponderChainStudyAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResponderChainStudyAppDelegate.m; sourceTree = "<group>"; };
+		4C20E8D513B74B6A00BF59C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		4C20E8D713B74B6A00BF59C2 /* ResponderChainStudyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResponderChainStudyViewController.h; sourceTree = "<group>"; };
+		4C20E8D813B74B6A00BF59C2 /* ResponderChainStudyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResponderChainStudyViewController.m; sourceTree = "<group>"; };
+		4C20E8DB13B74B6A00BF59C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ResponderChainStudyViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C20E8BB13B74B6A00BF59C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C20E8C313B74B6A00BF59C2 /* UIKit.framework in Frameworks */,
+				4C20E8C513B74B6A00BF59C2 /* Foundation.framework in Frameworks */,
+				4C20E8C713B74B6A00BF59C2 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C20E8B313B74B6900BF59C2 = {
+			isa = PBXGroup;
+			children = (
+				4C20E8C813B74B6A00BF59C2 /* ResponderChainStudy */,
+				4C20E8C113B74B6A00BF59C2 /* Frameworks */,
+				4C20E8BF13B74B6A00BF59C2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4C20E8BF13B74B6A00BF59C2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C20E8BE13B74B6A00BF59C2 /* ResponderChainStudy.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4C20E8C113B74B6A00BF59C2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C20E8C213B74B6A00BF59C2 /* UIKit.framework */,
+				4C20E8C413B74B6A00BF59C2 /* Foundation.framework */,
+				4C20E8C613B74B6A00BF59C2 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4C20E8C813B74B6A00BF59C2 /* ResponderChainStudy */ = {
+			isa = PBXGroup;
+			children = (
+				4C20E8D113B74B6A00BF59C2 /* ResponderChainStudyAppDelegate.h */,
+				4C20E8D213B74B6A00BF59C2 /* ResponderChainStudyAppDelegate.m */,
+				4C20E8D413B74B6A00BF59C2 /* MainWindow.xib */,
+				4C20E8D713B74B6A00BF59C2 /* ResponderChainStudyViewController.h */,
+				4C20E8D813B74B6A00BF59C2 /* ResponderChainStudyViewController.m */,
+				4C20E8DA13B74B6A00BF59C2 /* ResponderChainStudyViewController.xib */,
+				4C20E8C913B74B6A00BF59C2 /* Supporting Files */,
+			);
+			path = ResponderChainStudy;
+			sourceTree = "<group>";
+		};
+		4C20E8C913B74B6A00BF59C2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4C20E8CA13B74B6A00BF59C2 /* ResponderChainStudy-Info.plist */,
+				4C20E8CB13B74B6A00BF59C2 /* InfoPlist.strings */,
+				4C20E8CE13B74B6A00BF59C2 /* ResponderChainStudy-Prefix.pch */,
+				4C20E8CF13B74B6A00BF59C2 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4C20E8BD13B74B6A00BF59C2 /* ResponderChainStudy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C20E8DF13B74B6A00BF59C2 /* Build configuration list for PBXNativeTarget "ResponderChainStudy" */;
+			buildPhases = (
+				4C20E8BA13B74B6A00BF59C2 /* Sources */,
+				4C20E8BB13B74B6A00BF59C2 /* Frameworks */,
+				4C20E8BC13B74B6A00BF59C2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ResponderChainStudy;
+			productName = ResponderChainStudy;
+			productReference = 4C20E8BE13B74B6A00BF59C2 /* ResponderChainStudy.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4C20E8B513B74B6900BF59C2 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 4C20E8B813B74B6900BF59C2 /* Build configuration list for PBXProject "ResponderChainStudy" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4C20E8B313B74B6900BF59C2;
+			productRefGroup = 4C20E8BF13B74B6A00BF59C2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4C20E8BD13B74B6A00BF59C2 /* ResponderChainStudy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4C20E8BC13B74B6A00BF59C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C20E8CD13B74B6A00BF59C2 /* InfoPlist.strings in Resources */,
+				4C20E8D613B74B6A00BF59C2 /* MainWindow.xib in Resources */,
+				4C20E8DC13B74B6A00BF59C2 /* ResponderChainStudyViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4C20E8BA13B74B6A00BF59C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C20E8D013B74B6A00BF59C2 /* main.m in Sources */,
+				4C20E8D313B74B6A00BF59C2 /* ResponderChainStudyAppDelegate.m in Sources */,
+				4C20E8D913B74B6A00BF59C2 /* ResponderChainStudyViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4C20E8CB13B74B6A00BF59C2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C20E8CC13B74B6A00BF59C2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4C20E8D413B74B6A00BF59C2 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C20E8D513B74B6A00BF59C2 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		4C20E8DA13B74B6A00BF59C2 /* ResponderChainStudyViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C20E8DB13B74B6A00BF59C2 /* en */,
+			);
+			name = ResponderChainStudyViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4C20E8DD13B74B6A00BF59C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4C20E8DE13B74B6A00BF59C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		4C20E8E013B74B6A00BF59C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ResponderChainStudy/ResponderChainStudy-Prefix.pch";
+				INFOPLIST_FILE = "ResponderChainStudy/ResponderChainStudy-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4C20E8E113B74B6A00BF59C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ResponderChainStudy/ResponderChainStudy-Prefix.pch";
+				INFOPLIST_FILE = "ResponderChainStudy/ResponderChainStudy-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C20E8B813B74B6900BF59C2 /* Build configuration list for PBXProject "ResponderChainStudy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C20E8DD13B74B6A00BF59C2 /* Debug */,
+				4C20E8DE13B74B6A00BF59C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C20E8DF13B74B6A00BF59C2 /* Build configuration list for PBXNativeTarget "ResponderChainStudy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C20E8E013B74B6A00BF59C2 /* Debug */,
+				4C20E8E113B74B6A00BF59C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4C20E8B513B74B6900BF59C2 /* Project object */;
+}
