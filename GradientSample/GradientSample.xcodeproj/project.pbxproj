@@ -1,0 +1,295 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4CC42CB413B8BE3200D20C78 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CC42CB313B8BE3200D20C78 /* UIKit.framework */; };
+		4CC42CB613B8BE3200D20C78 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CC42CB513B8BE3200D20C78 /* Foundation.framework */; };
+		4CC42CB813B8BE3200D20C78 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CC42CB713B8BE3200D20C78 /* CoreGraphics.framework */; };
+		4CC42CBE13B8BE3200D20C78 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CC42CBC13B8BE3200D20C78 /* InfoPlist.strings */; };
+		4CC42CC113B8BE3200D20C78 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC42CC013B8BE3200D20C78 /* main.m */; };
+		4CC42CC413B8BE3200D20C78 /* GradientSampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC42CC313B8BE3200D20C78 /* GradientSampleAppDelegate.m */; };
+		4CC42CC713B8BE3300D20C78 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CC42CC513B8BE3300D20C78 /* MainWindow.xib */; };
+		4CC42CCA13B8BE3300D20C78 /* GradientSampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC42CC913B8BE3300D20C78 /* GradientSampleViewController.m */; };
+		4CC42CCD13B8BE3300D20C78 /* GradientSampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CC42CCB13B8BE3300D20C78 /* GradientSampleViewController.xib */; };
+		4CC42CD513B8BF7D00D20C78 /* LinearGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC42CD413B8BF7D00D20C78 /* LinearGradientView.m */; };
+		4CC42CD813B8BFAE00D20C78 /* RadialGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC42CD713B8BFAE00D20C78 /* RadialGradientView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4CC42CAF13B8BE3200D20C78 /* GradientSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GradientSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CC42CB313B8BE3200D20C78 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4CC42CB513B8BE3200D20C78 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4CC42CB713B8BE3200D20C78 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4CC42CBB13B8BE3200D20C78 /* GradientSample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GradientSample-Info.plist"; sourceTree = "<group>"; };
+		4CC42CBD13B8BE3200D20C78 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4CC42CBF13B8BE3200D20C78 /* GradientSample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GradientSample-Prefix.pch"; sourceTree = "<group>"; };
+		4CC42CC013B8BE3200D20C78 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4CC42CC213B8BE3200D20C78 /* GradientSampleAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GradientSampleAppDelegate.h; sourceTree = "<group>"; };
+		4CC42CC313B8BE3200D20C78 /* GradientSampleAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GradientSampleAppDelegate.m; sourceTree = "<group>"; };
+		4CC42CC613B8BE3300D20C78 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		4CC42CC813B8BE3300D20C78 /* GradientSampleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GradientSampleViewController.h; sourceTree = "<group>"; };
+		4CC42CC913B8BE3300D20C78 /* GradientSampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GradientSampleViewController.m; sourceTree = "<group>"; };
+		4CC42CCC13B8BE3300D20C78 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/GradientSampleViewController.xib; sourceTree = "<group>"; };
+		4CC42CD313B8BF7D00D20C78 /* LinearGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinearGradientView.h; sourceTree = "<group>"; };
+		4CC42CD413B8BF7D00D20C78 /* LinearGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinearGradientView.m; sourceTree = "<group>"; };
+		4CC42CD613B8BFAE00D20C78 /* RadialGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadialGradientView.h; sourceTree = "<group>"; };
+		4CC42CD713B8BFAE00D20C78 /* RadialGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadialGradientView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4CC42CAC13B8BE3200D20C78 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CC42CB413B8BE3200D20C78 /* UIKit.framework in Frameworks */,
+				4CC42CB613B8BE3200D20C78 /* Foundation.framework in Frameworks */,
+				4CC42CB813B8BE3200D20C78 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4CC42CA413B8BE3200D20C78 = {
+			isa = PBXGroup;
+			children = (
+				4CC42CB913B8BE3200D20C78 /* GradientSample */,
+				4CC42CB213B8BE3200D20C78 /* Frameworks */,
+				4CC42CB013B8BE3200D20C78 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4CC42CB013B8BE3200D20C78 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4CC42CAF13B8BE3200D20C78 /* GradientSample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4CC42CB213B8BE3200D20C78 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4CC42CB313B8BE3200D20C78 /* UIKit.framework */,
+				4CC42CB513B8BE3200D20C78 /* Foundation.framework */,
+				4CC42CB713B8BE3200D20C78 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4CC42CB913B8BE3200D20C78 /* GradientSample */ = {
+			isa = PBXGroup;
+			children = (
+				4CC42CC213B8BE3200D20C78 /* GradientSampleAppDelegate.h */,
+				4CC42CC313B8BE3200D20C78 /* GradientSampleAppDelegate.m */,
+				4CC42CC513B8BE3300D20C78 /* MainWindow.xib */,
+				4CC42CC813B8BE3300D20C78 /* GradientSampleViewController.h */,
+				4CC42CC913B8BE3300D20C78 /* GradientSampleViewController.m */,
+				4CC42CCB13B8BE3300D20C78 /* GradientSampleViewController.xib */,
+				4CC42CBA13B8BE3200D20C78 /* Supporting Files */,
+				4CC42CD313B8BF7D00D20C78 /* LinearGradientView.h */,
+				4CC42CD413B8BF7D00D20C78 /* LinearGradientView.m */,
+				4CC42CD613B8BFAE00D20C78 /* RadialGradientView.h */,
+				4CC42CD713B8BFAE00D20C78 /* RadialGradientView.m */,
+			);
+			path = GradientSample;
+			sourceTree = "<group>";
+		};
+		4CC42CBA13B8BE3200D20C78 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4CC42CBB13B8BE3200D20C78 /* GradientSample-Info.plist */,
+				4CC42CBC13B8BE3200D20C78 /* InfoPlist.strings */,
+				4CC42CBF13B8BE3200D20C78 /* GradientSample-Prefix.pch */,
+				4CC42CC013B8BE3200D20C78 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4CC42CAE13B8BE3200D20C78 /* GradientSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CC42CD013B8BE3300D20C78 /* Build configuration list for PBXNativeTarget "GradientSample" */;
+			buildPhases = (
+				4CC42CAB13B8BE3200D20C78 /* Sources */,
+				4CC42CAC13B8BE3200D20C78 /* Frameworks */,
+				4CC42CAD13B8BE3200D20C78 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GradientSample;
+			productName = GradientSample;
+			productReference = 4CC42CAF13B8BE3200D20C78 /* GradientSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4CC42CA613B8BE3200D20C78 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 4CC42CA913B8BE3200D20C78 /* Build configuration list for PBXProject "GradientSample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4CC42CA413B8BE3200D20C78;
+			productRefGroup = 4CC42CB013B8BE3200D20C78 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4CC42CAE13B8BE3200D20C78 /* GradientSample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4CC42CAD13B8BE3200D20C78 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CC42CBE13B8BE3200D20C78 /* InfoPlist.strings in Resources */,
+				4CC42CC713B8BE3300D20C78 /* MainWindow.xib in Resources */,
+				4CC42CCD13B8BE3300D20C78 /* GradientSampleViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4CC42CAB13B8BE3200D20C78 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CC42CC113B8BE3200D20C78 /* main.m in Sources */,
+				4CC42CC413B8BE3200D20C78 /* GradientSampleAppDelegate.m in Sources */,
+				4CC42CCA13B8BE3300D20C78 /* GradientSampleViewController.m in Sources */,
+				4CC42CD513B8BF7D00D20C78 /* LinearGradientView.m in Sources */,
+				4CC42CD813B8BFAE00D20C78 /* RadialGradientView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4CC42CBC13B8BE3200D20C78 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CC42CBD13B8BE3200D20C78 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4CC42CC513B8BE3300D20C78 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CC42CC613B8BE3300D20C78 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		4CC42CCB13B8BE3300D20C78 /* GradientSampleViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CC42CCC13B8BE3300D20C78 /* en */,
+			);
+			name = GradientSampleViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4CC42CCE13B8BE3300D20C78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4CC42CCF13B8BE3300D20C78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		4CC42CD113B8BE3300D20C78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GradientSample/GradientSample-Prefix.pch";
+				INFOPLIST_FILE = "GradientSample/GradientSample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4CC42CD213B8BE3300D20C78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GradientSample/GradientSample-Prefix.pch";
+				INFOPLIST_FILE = "GradientSample/GradientSample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4CC42CA913B8BE3200D20C78 /* Build configuration list for PBXProject "GradientSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CC42CCE13B8BE3300D20C78 /* Debug */,
+				4CC42CCF13B8BE3300D20C78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CC42CD013B8BE3300D20C78 /* Build configuration list for PBXNativeTarget "GradientSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CC42CD113B8BE3300D20C78 /* Debug */,
+				4CC42CD213B8BE3300D20C78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4CC42CA613B8BE3200D20C78 /* Project object */;
+}
