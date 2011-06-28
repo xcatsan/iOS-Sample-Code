@@ -8,10 +8,12 @@
 
 #import "RootViewController.h"
 #import "CustomCell.h"
+#import "FooterView.h"
 
 #define CUSTOM_CELL_NIB @"CustomCell"
 
 @implementation RootViewController
+@synthesize footerView;
 
 - (void)viewDidLoad
 {
@@ -23,11 +25,30 @@
     CustomCell* cell = [array objectAtIndex:0];
     cellHeight_ = cell.frame.size.height;
     [super viewDidLoad];
+    
+    UISwipeGestureRecognizer* swipeGesture =
+        [[UISwipeGestureRecognizer alloc]
+         initWithTarget:self action:@selector(didSwipeCell:)];
+    swipeGesture.direction = UISwipeGestureRecognizerDirectionRight;  
+    [self.tableView addGestureRecognizer:swipeGesture];  
+    [swipeGesture release];
+
+    swipeGesture =
+        [[UISwipeGestureRecognizer alloc]
+            initWithTarget:self action:@selector(didSwipeCell:)];
+    swipeGesture.direction = UISwipeGestureRecognizerDirectionLeft;  
+    [self.tableView addGestureRecognizer:swipeGesture];  
+    [swipeGesture release];
+
+    self.tableView.separatorColor = [UIColor lightGrayColor];
+    self.tableView.tableFooterView = self.footerView;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    openedIndexPath_ = nil; // close all cells
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -61,7 +82,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 100;
+    return 10;
 }
 
 // Customize the appearance of table view cells.
@@ -69,7 +90,6 @@
 {
     CustomCell* cell = (CustomCell*)[tableView dequeueReusableCellWithIdentifier:CUSTOM_CELL_NIB];
     if (cell == nil) {
-        NSLog(@"x");
         UINib* nib = [UINib nibWithNibName:CUSTOM_CELL_NIB bundle:nil];
         NSArray* array = [nib instantiateWithOwner:self options:nil];
         cell = [array objectAtIndex:0];
@@ -82,6 +102,15 @@
     cell.descLabel.text = @"Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files ....";
     cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"image%02ds.jpg", (r%8)+1]];
 //    NSLog(@"%@", [NSString stringWithFormat:@"image%02ds.jpg", (r%8)+1]);
+    
+    if ([openedIndexPath_ isEqual:indexPath]) {
+        [cell setSlideOpened:YES animated:NO];
+        [cell setSelected:YES animated:NO];
+    } else {
+        [cell setSlideOpened:NO animated:NO];
+        [cell setSelected:NO animated:NO];
+    }
+
     return cell;
 }
 
@@ -134,13 +163,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-    // ...
-    // Pass the selected object to the new view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
-    [detailViewController release];
-	*/
+    NSLog(@"%s|%@", __PRETTY_FUNCTION__, indexPath);
 }
 
 - (void)didReceiveMemoryWarning
@@ -153,6 +176,7 @@
 
 - (void)viewDidUnload
 {
+    self.footerView = nil;
     [super viewDidUnload];
 
     // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
@@ -161,19 +185,64 @@
 
 - (void)dealloc
 {
+    self.footerView = nil;
     [super dealloc];
 }
 
 #pragma mark -
 #pragma mark Event handler
-- (IBAction)didTouchDoitButton:(id)sender
+- (void)didSwipeCell:(UISwipeGestureRecognizer*)swipeRecognizer
 {
-    id cell = sender;
-    while (![cell isKindOfClass:[CustomCell class]]) {
-        cell = [cell superview];
+    CGPoint loc = [swipeRecognizer locationInView:self.tableView];
+    NSIndexPath* indexPath = [self.tableView indexPathForRowAtPoint:loc];
+    CustomCell* cell = (CustomCell*)[self.tableView cellForRowAtIndexPath:indexPath];
+
+    if ([openedIndexPath_ isEqual:indexPath]) {
+        if (swipeRecognizer.direction == UISwipeGestureRecognizerDirectionLeft) {
+            // close cell
+            [cell setSlideOpened:NO animated:YES];
+            openedIndexPath_ = nil;
+        }
+    } else if (swipeRecognizer.direction == UISwipeGestureRecognizerDirectionRight) {
+        if (openedIndexPath_) {
+            // close previous opened cell
+            NSArray* visibleIndexPaths = [self.tableView indexPathsForVisibleRows];
+            if ([visibleIndexPaths containsObject:openedIndexPath_]) {
+                CustomCell* openedCell = (CustomCell*)[self.tableView cellForRowAtIndexPath:openedIndexPath_];
+                [openedCell setSlideOpened:NO animated:YES];
+            }
+        }
+        // open new cell
+        [cell setSlideOpened:YES animated:YES];
+        openedIndexPath_ = indexPath;
     }
-    NSIndexPath* indexPath = [self.tableView indexPathForCell:cell];
-    NSLog(@"%@", indexPath);
+         
 }
+
+- (NSIndexPath*)_indexPathForEvent:(UIEvent*)event
+{
+    UITouch* touch = [[event allTouches] anyObject];
+    CGPoint p = [touch locationInView:self.tableView];
+    return [self.tableView indexPathForRowAtPoint:p];
+}
+
+- (IBAction)didTouchDoitButton:(id)sender event:(UIEvent*)event
+{
+    NSIndexPath* indexPath = [self _indexPathForEvent:event];
+    NSLog(@"%s|%@", __PRETTY_FUNCTION__, indexPath);
+}
+
+- (IBAction)didTouchDeleteButton:(id)sender event:(UIEvent*)event
+{
+    NSIndexPath* indexPath = [self _indexPathForEvent:event];
+    NSLog(@"%s|%@", __PRETTY_FUNCTION__, indexPath);
+}
+
+- (IBAction)didTouchPostButton:(id)sender event:(UIEvent*)event
+{
+    NSIndexPath* indexPath = [self _indexPathForEvent:event];
+    NSLog(@"%s|%@", __PRETTY_FUNCTION__, indexPath);
+}
+
 
 @end

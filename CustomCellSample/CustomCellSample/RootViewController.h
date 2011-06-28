@@ -8,11 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+@class CustomCell;
+@class FooterView;
 @interface RootViewController : UITableViewController {
 
     CGFloat cellHeight_;
-}
 
-- (IBAction)didTouchDoitButton:(id)sender;
+    NSIndexPath* openedIndexPath_;
+}
+@property (nonatomic, retain) IBOutlet FooterView* footerView;
+
+// cell events
+- (IBAction)didTouchDoitButton:(id)sender event:(UIEvent*)event;
+
+- (IBAction)didTouchDeleteButton:(id)sender event:(UIEvent*)event;
+- (IBAction)didTouchPostButton:(id)sender event:(UIEvent*)event;
+
 
 @end

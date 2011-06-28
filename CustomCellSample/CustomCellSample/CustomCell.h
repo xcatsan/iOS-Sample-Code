@@ -9,12 +9,23 @@
 #import <UIKit/UIKit.h>
 
 
+@class BaseView, SlideView;
 @interface CustomCell : UITableViewCell {
     
+    BOOL slideOpened_;
 }
+@property (nonatomic, retain) IBOutlet BaseView* baseView;
+@property (nonatomic, retain) IBOutlet SlideView* slideView;
+
 @property (nonatomic, retain) IBOutlet UILabel* nameLabel;
 @property (nonatomic, retain) IBOutlet UILabel* dateLabel;
 @property (nonatomic, retain) IBOutlet UILabel* descLabel;
 @property (nonatomic, retain) IBOutlet UIImageView* imageView;
+
+
+@property (nonatomic, retain) IBOutlet UIButton* button;
+
+
+- (void)setSlideOpened:(BOOL)slideOpened animated:(BOOL)animated;
 
 @end
