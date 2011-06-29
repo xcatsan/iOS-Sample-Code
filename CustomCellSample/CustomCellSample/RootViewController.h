@@ -17,6 +17,7 @@
     NSIndexPath* openedIndexPath_;
 }
 @property (nonatomic, retain) IBOutlet FooterView* footerView;
+@property (nonatomic, retain) NSIndexPath* openedIndexPath;
 
 // cell events
 - (IBAction)didTouchDoitButton:(id)sender event:(UIEvent*)event;

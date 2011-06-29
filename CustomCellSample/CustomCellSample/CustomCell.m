@@ -132,6 +132,7 @@
     BOOL realSelected = !self.selected && selected;
     [super setSelected:realSelected animated:animated];
     self.baseView.selected = realSelected;
+    [self.baseView setNeedsDisplay];
 }
 
 - (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated

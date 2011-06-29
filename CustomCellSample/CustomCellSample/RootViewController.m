@@ -14,6 +14,7 @@
 
 @implementation RootViewController
 @synthesize footerView;
+@synthesize openedIndexPath;
 
 - (void)viewDidLoad
 {
@@ -48,7 +49,7 @@
 {
     [super viewWillAppear:animated];
     
-    openedIndexPath_ = nil; // close all cells
+    self.openedIndexPath = nil; // close all cells
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -103,12 +104,10 @@
     cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"image%02ds.jpg", (r%8)+1]];
 //    NSLog(@"%@", [NSString stringWithFormat:@"image%02ds.jpg", (r%8)+1]);
     
-    if ([openedIndexPath_ isEqual:indexPath]) {
+    if ([self.openedIndexPath isEqual:indexPath]) {
         [cell setSlideOpened:YES animated:NO];
-        [cell setSelected:YES animated:NO];
     } else {
         [cell setSlideOpened:NO animated:NO];
-        [cell setSelected:NO animated:NO];
     }
 
     return cell;
@@ -186,6 +185,7 @@
 - (void)dealloc
 {
     self.footerView = nil;
+    self.openedIndexPath = nil;
     [super dealloc];
 }
 
@@ -197,24 +197,24 @@
     NSIndexPath* indexPath = [self.tableView indexPathForRowAtPoint:loc];
     CustomCell* cell = (CustomCell*)[self.tableView cellForRowAtIndexPath:indexPath];
 
-    if ([openedIndexPath_ isEqual:indexPath]) {
+    if ([self.openedIndexPath isEqual:indexPath]) {
         if (swipeRecognizer.direction == UISwipeGestureRecognizerDirectionLeft) {
             // close cell
             [cell setSlideOpened:NO animated:YES];
-            openedIndexPath_ = nil;
+            self.openedIndexPath = nil;
         }
     } else if (swipeRecognizer.direction == UISwipeGestureRecognizerDirectionRight) {
-        if (openedIndexPath_) {
+        if (self.openedIndexPath) {
             // close previous opened cell
             NSArray* visibleIndexPaths = [self.tableView indexPathsForVisibleRows];
-            if ([visibleIndexPaths containsObject:openedIndexPath_]) {
-                CustomCell* openedCell = (CustomCell*)[self.tableView cellForRowAtIndexPath:openedIndexPath_];
+            if ([visibleIndexPaths containsObject:self.openedIndexPath]) {
+                CustomCell* openedCell = (CustomCell*)[self.tableView cellForRowAtIndexPath:self.openedIndexPath];
                 [openedCell setSlideOpened:NO animated:YES];
             }
         }
         // open new cell
         [cell setSlideOpened:YES animated:YES];
-        openedIndexPath_ = indexPath;
+        self.openedIndexPath = indexPath;
     }
          
 }
