@@ -8,13 +8,51 @@
 
 #import "RootViewController.h"
 #import "CustomCell.h"
+#import "HeaderView.h"
 #import "FooterView.h"
 
 #define CUSTOM_CELL_NIB @"CustomCell"
 
 @implementation RootViewController
+@synthesize headerView;
 @synthesize footerView;
 @synthesize openedIndexPath;
+
+
+- (void)_setHeaderViewHidden:(BOOL)hidden animated:(BOOL)animated
+{
+    CGFloat topOffset = 0.0;
+    if (hidden) {
+        topOffset = -self.headerView.frame.size.height;
+    }
+    if (animated) {
+        [UIView animateWithDuration:0.2
+                         animations:^{
+                                self.tableView.contentInset = UIEdgeInsetsMake(topOffset, 0, 0, 0);
+                         }];
+    } else {
+        self.tableView.contentInset = UIEdgeInsetsMake(topOffset, 0, 0, 0);        
+    }
+}
+
+
+
+- (void)_releaseOutlets
+{
+    self.headerView = nil;
+    self.footerView = nil;
+}
+
+- (void)dealloc {
+    [self _releaseOutlets];
+    self.openedIndexPath = nil;
+    [super dealloc];
+}
+- (void)viewDidUnload
+{
+    [self _releaseOutlets];
+    [super viewDidUnload];
+}
 
 - (void)viewDidLoad
 {
@@ -42,7 +80,11 @@
     [swipeGesture release];
 
     self.tableView.separatorColor = [UIColor lightGrayColor];
+
+    self.tableView.tableHeaderView = self.headerView;
+    [self _setHeaderViewHidden:YES animated:NO];
     self.tableView.tableFooterView = self.footerView;
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -173,22 +215,6 @@
     // Relinquish ownership any cached data, images, etc that aren't in use.
 }
 
-- (void)viewDidUnload
-{
-    self.footerView = nil;
-    [super viewDidUnload];
-
-    // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
-    // For example: self.myOutlet = nil;
-}
-
-- (void)dealloc
-{
-    self.footerView = nil;
-    self.openedIndexPath = nil;
-    [super dealloc];
-}
-
 #pragma mark -
 #pragma mark Event handler
 - (void)didSwipeCell:(UISwipeGestureRecognizer*)swipeRecognizer
@@ -242,6 +268,51 @@
 {
     NSIndexPath* indexPath = [self _indexPathForEvent:event];
     NSLog(@"%s|%@", __PRETTY_FUNCTION__, indexPath);
+}
+
+
+#pragma mark -
+#pragma mark UIScrollViewDelegate
+
+#define PULLDOWN_MARGIN -15.0f
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if (self.headerView.state == HeaderViewStateStopping) {
+        return;
+    }
+
+    CGFloat threshold = self.headerView.frame.size.height;
+
+    if (PULLDOWN_MARGIN <= scrollView.contentOffset.y &&
+        scrollView.contentOffset.y < threshold) {
+        self.headerView.state = HeaderViewStatePullingDown;
+
+    } else if (scrollView.contentOffset.y < PULLDOWN_MARGIN) {
+        self.headerView.state = HeaderViewStateOveredThreshold;
+        
+    } else {
+        self.headerView.state = HeaderViewStateHidden;
+    }
+}
+
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+//    if (self.tableView.contentOffset.y < PULLDOWN_MARGIN) {
+    if (self.headerView.state == HeaderViewStateOveredThreshold) {
+        self.headerView.state = HeaderViewStateStopping;
+        [self _setHeaderViewHidden:NO animated:YES];
+        
+        [self performSelector:@selector(_taskFinished) withObject:nil afterDelay:2.0];
+    }
+}
+
+- (void)_taskFinished
+{
+    self.headerView.state = HeaderViewStateHidden;
+    [self.headerView setUpdatedDate:[NSDate date]];
+    [self _setHeaderViewHidden:YES animated:YES];
 }
 
 

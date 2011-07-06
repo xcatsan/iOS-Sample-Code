@@ -9,13 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @class CustomCell;
+@class HeaderView;
 @class FooterView;
 @interface RootViewController : UITableViewController {
 
     CGFloat cellHeight_;
-
     NSIndexPath* openedIndexPath_;
 }
+@property (nonatomic, retain) IBOutlet HeaderView* headerView;
 @property (nonatomic, retain) IBOutlet FooterView* footerView;
 @property (nonatomic, retain) NSIndexPath* openedIndexPath;
 
