@@ -1,0 +1,287 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4CC9386B13C4450F006D2CD9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CC9386A13C4450F006D2CD9 /* UIKit.framework */; };
+		4CC9386D13C4450F006D2CD9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CC9386C13C4450F006D2CD9 /* Foundation.framework */; };
+		4CC9386F13C4450F006D2CD9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CC9386E13C4450F006D2CD9 /* CoreGraphics.framework */; };
+		4CC9387513C4450F006D2CD9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CC9387313C4450F006D2CD9 /* InfoPlist.strings */; };
+		4CC9387813C4450F006D2CD9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC9387713C4450F006D2CD9 /* main.m */; };
+		4CC9387B13C4450F006D2CD9 /* RotateImageSampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC9387A13C4450F006D2CD9 /* RotateImageSampleAppDelegate.m */; };
+		4CC9387E13C4450F006D2CD9 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CC9387C13C4450F006D2CD9 /* MainWindow.xib */; };
+		4CC9388113C4450F006D2CD9 /* RotateImageSampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC9388013C4450F006D2CD9 /* RotateImageSampleViewController.m */; };
+		4CC9388413C4450F006D2CD9 /* RotateImageSampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CC9388213C4450F006D2CD9 /* RotateImageSampleViewController.xib */; };
+		4CC9388B13C44542006D2CD9 /* arrow_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CC9388A13C44542006D2CD9 /* arrow_up.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4CC9386613C4450F006D2CD9 /* RotateImageSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RotateImageSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CC9386A13C4450F006D2CD9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4CC9386C13C4450F006D2CD9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4CC9386E13C4450F006D2CD9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4CC9387213C4450F006D2CD9 /* RotateImageSample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RotateImageSample-Info.plist"; sourceTree = "<group>"; };
+		4CC9387413C4450F006D2CD9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4CC9387613C4450F006D2CD9 /* RotateImageSample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RotateImageSample-Prefix.pch"; sourceTree = "<group>"; };
+		4CC9387713C4450F006D2CD9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4CC9387913C4450F006D2CD9 /* RotateImageSampleAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RotateImageSampleAppDelegate.h; sourceTree = "<group>"; };
+		4CC9387A13C4450F006D2CD9 /* RotateImageSampleAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RotateImageSampleAppDelegate.m; sourceTree = "<group>"; };
+		4CC9387D13C4450F006D2CD9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		4CC9387F13C4450F006D2CD9 /* RotateImageSampleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RotateImageSampleViewController.h; sourceTree = "<group>"; };
+		4CC9388013C4450F006D2CD9 /* RotateImageSampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RotateImageSampleViewController.m; sourceTree = "<group>"; };
+		4CC9388313C4450F006D2CD9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RotateImageSampleViewController.xib; sourceTree = "<group>"; };
+		4CC9388A13C44542006D2CD9 /* arrow_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow_up.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4CC9386313C4450F006D2CD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CC9386B13C4450F006D2CD9 /* UIKit.framework in Frameworks */,
+				4CC9386D13C4450F006D2CD9 /* Foundation.framework in Frameworks */,
+				4CC9386F13C4450F006D2CD9 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4CC9385B13C4450F006D2CD9 = {
+			isa = PBXGroup;
+			children = (
+				4CC9387013C4450F006D2CD9 /* RotateImageSample */,
+				4CC9386913C4450F006D2CD9 /* Frameworks */,
+				4CC9386713C4450F006D2CD9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4CC9386713C4450F006D2CD9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4CC9386613C4450F006D2CD9 /* RotateImageSample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4CC9386913C4450F006D2CD9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4CC9386A13C4450F006D2CD9 /* UIKit.framework */,
+				4CC9386C13C4450F006D2CD9 /* Foundation.framework */,
+				4CC9386E13C4450F006D2CD9 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4CC9387013C4450F006D2CD9 /* RotateImageSample */ = {
+			isa = PBXGroup;
+			children = (
+				4CC9387913C4450F006D2CD9 /* RotateImageSampleAppDelegate.h */,
+				4CC9387A13C4450F006D2CD9 /* RotateImageSampleAppDelegate.m */,
+				4CC9387C13C4450F006D2CD9 /* MainWindow.xib */,
+				4CC9387F13C4450F006D2CD9 /* RotateImageSampleViewController.h */,
+				4CC9388013C4450F006D2CD9 /* RotateImageSampleViewController.m */,
+				4CC9388213C4450F006D2CD9 /* RotateImageSampleViewController.xib */,
+				4CC9387113C4450F006D2CD9 /* Supporting Files */,
+			);
+			path = RotateImageSample;
+			sourceTree = "<group>";
+		};
+		4CC9387113C4450F006D2CD9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4CC9388A13C44542006D2CD9 /* arrow_up.png */,
+				4CC9387213C4450F006D2CD9 /* RotateImageSample-Info.plist */,
+				4CC9387313C4450F006D2CD9 /* InfoPlist.strings */,
+				4CC9387613C4450F006D2CD9 /* RotateImageSample-Prefix.pch */,
+				4CC9387713C4450F006D2CD9 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4CC9386513C4450F006D2CD9 /* RotateImageSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CC9388713C4450F006D2CD9 /* Build configuration list for PBXNativeTarget "RotateImageSample" */;
+			buildPhases = (
+				4CC9386213C4450F006D2CD9 /* Sources */,
+				4CC9386313C4450F006D2CD9 /* Frameworks */,
+				4CC9386413C4450F006D2CD9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RotateImageSample;
+			productName = RotateImageSample;
+			productReference = 4CC9386613C4450F006D2CD9 /* RotateImageSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4CC9385D13C4450F006D2CD9 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 4CC9386013C4450F006D2CD9 /* Build configuration list for PBXProject "RotateImageSample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4CC9385B13C4450F006D2CD9;
+			productRefGroup = 4CC9386713C4450F006D2CD9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4CC9386513C4450F006D2CD9 /* RotateImageSample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4CC9386413C4450F006D2CD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CC9387513C4450F006D2CD9 /* InfoPlist.strings in Resources */,
+				4CC9387E13C4450F006D2CD9 /* MainWindow.xib in Resources */,
+				4CC9388413C4450F006D2CD9 /* RotateImageSampleViewController.xib in Resources */,
+				4CC9388B13C44542006D2CD9 /* arrow_up.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4CC9386213C4450F006D2CD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CC9387813C4450F006D2CD9 /* main.m in Sources */,
+				4CC9387B13C4450F006D2CD9 /* RotateImageSampleAppDelegate.m in Sources */,
+				4CC9388113C4450F006D2CD9 /* RotateImageSampleViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4CC9387313C4450F006D2CD9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CC9387413C4450F006D2CD9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4CC9387C13C4450F006D2CD9 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CC9387D13C4450F006D2CD9 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		4CC9388213C4450F006D2CD9 /* RotateImageSampleViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CC9388313C4450F006D2CD9 /* en */,
+			);
+			name = RotateImageSampleViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4CC9388513C4450F006D2CD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4CC9388613C4450F006D2CD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		4CC9388813C4450F006D2CD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RotateImageSample/RotateImageSample-Prefix.pch";
+				INFOPLIST_FILE = "RotateImageSample/RotateImageSample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4CC9388913C4450F006D2CD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RotateImageSample/RotateImageSample-Prefix.pch";
+				INFOPLIST_FILE = "RotateImageSample/RotateImageSample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4CC9386013C4450F006D2CD9 /* Build configuration list for PBXProject "RotateImageSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CC9388513C4450F006D2CD9 /* Debug */,
+				4CC9388613C4450F006D2CD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CC9388713C4450F006D2CD9 /* Build configuration list for PBXNativeTarget "RotateImageSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CC9388813C4450F006D2CD9 /* Debug */,
+				4CC9388913C4450F006D2CD9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4CC9385D13C4450F006D2CD9 /* Project object */;
+}
