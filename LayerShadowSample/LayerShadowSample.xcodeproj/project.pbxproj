@@ -1,0 +1,296 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4C3B985713EF4D4000438A83 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C3B985613EF4D4000438A83 /* UIKit.framework */; };
+		4C3B985913EF4D4000438A83 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C3B985813EF4D4000438A83 /* Foundation.framework */; };
+		4C3B985B13EF4D4000438A83 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C3B985A13EF4D4000438A83 /* CoreGraphics.framework */; };
+		4C3B986113EF4D4000438A83 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C3B985F13EF4D4000438A83 /* InfoPlist.strings */; };
+		4C3B986313EF4D4000438A83 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3B986213EF4D4000438A83 /* main.m */; };
+		4C3B986713EF4D4000438A83 /* LayerShadowSampleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3B986613EF4D4000438A83 /* LayerShadowSampleAppDelegate.m */; };
+		4C3B986A13EF4D4000438A83 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C3B986813EF4D4000438A83 /* MainWindow.xib */; };
+		4C3B986D13EF4D4000438A83 /* LayerShadowSampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3B986C13EF4D4000438A83 /* LayerShadowSampleViewController.m */; };
+		4C3B987013EF4D4000438A83 /* LayerShadowSampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C3B986E13EF4D4000438A83 /* LayerShadowSampleViewController.xib */; };
+		4C3B987713EF4F8600438A83 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C3B987613EF4F8600438A83 /* QuartzCore.framework */; };
+		4C3B987913EF557C00438A83 /* sample.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C3B987813EF557C00438A83 /* sample.jpg */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4C3B985213EF4D4000438A83 /* LayerShadowSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LayerShadowSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C3B985613EF4D4000438A83 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4C3B985813EF4D4000438A83 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4C3B985A13EF4D4000438A83 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4C3B985E13EF4D4000438A83 /* LayerShadowSample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LayerShadowSample-Info.plist"; sourceTree = "<group>"; };
+		4C3B986013EF4D4000438A83 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4C3B986213EF4D4000438A83 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4C3B986413EF4D4000438A83 /* LayerShadowSample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LayerShadowSample-Prefix.pch"; sourceTree = "<group>"; };
+		4C3B986513EF4D4000438A83 /* LayerShadowSampleAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LayerShadowSampleAppDelegate.h; sourceTree = "<group>"; };
+		4C3B986613EF4D4000438A83 /* LayerShadowSampleAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LayerShadowSampleAppDelegate.m; sourceTree = "<group>"; };
+		4C3B986913EF4D4000438A83 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		4C3B986B13EF4D4000438A83 /* LayerShadowSampleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LayerShadowSampleViewController.h; sourceTree = "<group>"; };
+		4C3B986C13EF4D4000438A83 /* LayerShadowSampleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LayerShadowSampleViewController.m; sourceTree = "<group>"; };
+		4C3B986F13EF4D4000438A83 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LayerShadowSampleViewController.xib; sourceTree = "<group>"; };
+		4C3B987613EF4F8600438A83 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4C3B987813EF557C00438A83 /* sample.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample.jpg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C3B984F13EF4D4000438A83 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C3B987713EF4F8600438A83 /* QuartzCore.framework in Frameworks */,
+				4C3B985713EF4D4000438A83 /* UIKit.framework in Frameworks */,
+				4C3B985913EF4D4000438A83 /* Foundation.framework in Frameworks */,
+				4C3B985B13EF4D4000438A83 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C3B984713EF4D4000438A83 = {
+			isa = PBXGroup;
+			children = (
+				4C3B987613EF4F8600438A83 /* QuartzCore.framework */,
+				4C3B985C13EF4D4000438A83 /* LayerShadowSample */,
+				4C3B985513EF4D4000438A83 /* Frameworks */,
+				4C3B985313EF4D4000438A83 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4C3B985313EF4D4000438A83 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C3B985213EF4D4000438A83 /* LayerShadowSample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4C3B985513EF4D4000438A83 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C3B985613EF4D4000438A83 /* UIKit.framework */,
+				4C3B985813EF4D4000438A83 /* Foundation.framework */,
+				4C3B985A13EF4D4000438A83 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4C3B985C13EF4D4000438A83 /* LayerShadowSample */ = {
+			isa = PBXGroup;
+			children = (
+				4C3B986513EF4D4000438A83 /* LayerShadowSampleAppDelegate.h */,
+				4C3B986613EF4D4000438A83 /* LayerShadowSampleAppDelegate.m */,
+				4C3B986813EF4D4000438A83 /* MainWindow.xib */,
+				4C3B986B13EF4D4000438A83 /* LayerShadowSampleViewController.h */,
+				4C3B986C13EF4D4000438A83 /* LayerShadowSampleViewController.m */,
+				4C3B986E13EF4D4000438A83 /* LayerShadowSampleViewController.xib */,
+				4C3B985D13EF4D4000438A83 /* Supporting Files */,
+			);
+			path = LayerShadowSample;
+			sourceTree = "<group>";
+		};
+		4C3B985D13EF4D4000438A83 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4C3B987813EF557C00438A83 /* sample.jpg */,
+				4C3B985E13EF4D4000438A83 /* LayerShadowSample-Info.plist */,
+				4C3B985F13EF4D4000438A83 /* InfoPlist.strings */,
+				4C3B986213EF4D4000438A83 /* main.m */,
+				4C3B986413EF4D4000438A83 /* LayerShadowSample-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4C3B985113EF4D4000438A83 /* LayerShadowSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C3B987313EF4D4000438A83 /* Build configuration list for PBXNativeTarget "LayerShadowSample" */;
+			buildPhases = (
+				4C3B984E13EF4D4000438A83 /* Sources */,
+				4C3B984F13EF4D4000438A83 /* Frameworks */,
+				4C3B985013EF4D4000438A83 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LayerShadowSample;
+			productName = LayerShadowSample;
+			productReference = 4C3B985213EF4D4000438A83 /* LayerShadowSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4C3B984913EF4D4000438A83 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 4C3B984C13EF4D4000438A83 /* Build configuration list for PBXProject "LayerShadowSample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4C3B984713EF4D4000438A83;
+			productRefGroup = 4C3B985313EF4D4000438A83 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4C3B985113EF4D4000438A83 /* LayerShadowSample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4C3B985013EF4D4000438A83 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C3B986113EF4D4000438A83 /* InfoPlist.strings in Resources */,
+				4C3B986A13EF4D4000438A83 /* MainWindow.xib in Resources */,
+				4C3B987013EF4D4000438A83 /* LayerShadowSampleViewController.xib in Resources */,
+				4C3B987913EF557C00438A83 /* sample.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4C3B984E13EF4D4000438A83 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C3B986313EF4D4000438A83 /* main.m in Sources */,
+				4C3B986713EF4D4000438A83 /* LayerShadowSampleAppDelegate.m in Sources */,
+				4C3B986D13EF4D4000438A83 /* LayerShadowSampleViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4C3B985F13EF4D4000438A83 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C3B986013EF4D4000438A83 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4C3B986813EF4D4000438A83 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C3B986913EF4D4000438A83 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		4C3B986E13EF4D4000438A83 /* LayerShadowSampleViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C3B986F13EF4D4000438A83 /* en */,
+			);
+			name = LayerShadowSampleViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4C3B987113EF4D4000438A83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4C3B987213EF4D4000438A83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4C3B987413EF4D4000438A83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LayerShadowSample/LayerShadowSample-Prefix.pch";
+				INFOPLIST_FILE = "LayerShadowSample/LayerShadowSample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4C3B987513EF4D4000438A83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LayerShadowSample/LayerShadowSample-Prefix.pch";
+				INFOPLIST_FILE = "LayerShadowSample/LayerShadowSample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C3B984C13EF4D4000438A83 /* Build configuration list for PBXProject "LayerShadowSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C3B987113EF4D4000438A83 /* Debug */,
+				4C3B987213EF4D4000438A83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C3B987313EF4D4000438A83 /* Build configuration list for PBXNativeTarget "LayerShadowSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C3B987413EF4D4000438A83 /* Debug */,
+				4C3B987513EF4D4000438A83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4C3B984913EF4D4000438A83 /* Project object */;
+}
