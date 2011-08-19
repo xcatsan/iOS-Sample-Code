@@ -29,6 +29,7 @@
 		4CC42CDB13B94BD500D20C78 /* FooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC42CDA13B94BD400D20C78 /* FooterView.m */; };
 		4CC9382B13C3C37A006D2CD9 /* HeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CC9382A13C3C37A006D2CD9 /* HeaderView.m */; };
 		4CC9388D13C451D9006D2CD9 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CC9388C13C451D9006D2CD9 /* arrow.png */; };
+		4CFB6B9513CCF95E00B7D039 /* CustomCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4CFB6B9413CCF95E00B7D039 /* CustomCell2.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		4CC9382913C3C37A006D2CD9 /* HeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeaderView.h; sourceTree = "<group>"; };
 		4CC9382A13C3C37A006D2CD9 /* HeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeaderView.m; sourceTree = "<group>"; };
 		4CC9388C13C451D9006D2CD9 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
+		4CFB6B9413CCF95E00B7D039 /* CustomCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell2.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				4C5B912A13880441003415FA /* CustomCell.h */,
 				4C5B912B13880441003415FA /* CustomCell.m */,
 				4C5B912D13880453003415FA /* CustomCell.xib */,
+				4CFB6B9413CCF95E00B7D039 /* CustomCell2.xib */,
 				4CC42CD913B94BD400D20C78 /* FooterView.h */,
 				4CC42CDA13B94BD400D20C78 /* FooterView.m */,
 				4CC9382913C3C37A006D2CD9 /* HeaderView.h */,
@@ -206,6 +209,7 @@
 				4C5B913D13880813003415FA /* image07s.jpg in Resources */,
 				4C5B913E13880813003415FA /* image08s.jpg in Resources */,
 				4CC9388D13C451D9006D2CD9 /* arrow.png in Resources */,
+				4CFB6B9513CCF95E00B7D039 /* CustomCell2.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

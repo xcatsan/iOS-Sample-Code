@@ -15,13 +15,14 @@
     BOOL slideOpened_;
 }
 @property (nonatomic, retain) IBOutlet BaseView* baseView;
-@property (nonatomic, retain) IBOutlet SlideView* slideView;
+@property (nonatomic, retain) SlideView* slideView;
 
 @property (nonatomic, retain) IBOutlet UILabel* nameLabel;
 @property (nonatomic, retain) IBOutlet UILabel* dateLabel;
 @property (nonatomic, retain) IBOutlet UILabel* descLabel;
 @property (nonatomic, retain) IBOutlet UIImageView* imageView;
 
+@property (nonatomic, retain) IBOutlet UIViewController* viewController; 
 
 @property (nonatomic, retain) IBOutlet UIButton* button;
 

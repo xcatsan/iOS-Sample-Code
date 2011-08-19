@@ -101,6 +101,7 @@
 @implementation CustomCell
 @synthesize baseView;
 @synthesize slideView;
+@synthesize viewController;
 
 @synthesize nameLabel;
 @synthesize dateLabel;
@@ -152,9 +153,12 @@
     }    
     slideOpened_ = slideOpened;
     
-//    if (![self.subviews containsObject:self.slideView]) {
-//        [self insertSubview:self.slideView atIndex:0];
-//    }
+    if (slideOpened_ && !self.slideView) {
+        UINib* nib = [UINib nibWithNibName:@"CustomCell2" bundle:nil];
+        NSArray* objects = [nib instantiateWithOwner:self.viewController options:nil];
+        self.slideView = [objects lastObject];
+        [self.contentView insertSubview:self.slideView atIndex:0];
+     }
 
     if (animated) {
         if (slideOpened_) {
@@ -173,6 +177,10 @@
                                  CGRect frame = self.baseView.frame;
                                  frame.origin.x = 0;
                                  self.baseView.frame = frame;
+                             }
+                             completion:^(BOOL finised){
+                                 [self.slideView removeFromSuperview];
+                                 self.slideView = nil;                 
                              }];
         }
     } else {
@@ -184,6 +192,8 @@
         } else {
             // close slide
              frame.origin.x = 0;
+            [self.slideView removeFromSuperview];
+            self.slideView = nil;                 
         }
         self.baseView.frame = frame;
         

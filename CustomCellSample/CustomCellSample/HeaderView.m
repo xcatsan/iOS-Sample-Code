@@ -55,12 +55,35 @@
     CGFloat endAngle = headingUp ? M_PI + 0.00001 : 0;
 
     self.imageView.transform = CGAffineTransformMakeRotation(startAngle);           
-    [UIView animateWithDuration:0.1
+    
+     // (A) no blocks
+    /*
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.2];
+    self.imageView.transform =
+    CGAffineTransformMakeRotation(endAngle);
+    NSLog(@"%s|%@", __PRETTY_FUNCTION__, [NSThread callStackSymbols]);
+    [UIView commitAnimations];
+    
+    // (B) blocks
+    [UIView animateWithDuration:0.2
          animations:^{
+             NSLog(@"%s|%@", __PRETTY_FUNCTION__, [NSThread callStackSymbols]);
              self.imageView.transform =
                 CGAffineTransformMakeRotation(endAngle);
          }];
-
+     */
+    // (B') blocks with UIViewAnimationOptionAllowUserInteraction
+    [UIView animateWithDuration:0.2
+                          delay:0.0
+                        options:UIViewAnimationOptionCurveLinear | UIViewAnimationOptionAllowUserInteraction
+                     animations:^{
+                         self.imageView.transform =
+                         CGAffineTransformMakeRotation(endAngle);
+                         
+                     }
+                     completion:NULL
+     ];
 }
 
 - (void)setState:(HeaderViewState)state
