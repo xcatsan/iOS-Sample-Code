@@ -71,40 +71,45 @@ typedef enum {
 
 - (void)_setState:(GradientButtonState)state
 {
-    switch (state) {
-        case GradientButtonStateNormal:
-            self.gradientLayer.colors =
-            [NSArray arrayWithObjects:
-             (id)[UIColor colorWithWhite:1.0 alpha:0.7].CGColor,
-             (id)[UIColor colorWithWhite:1.0 alpha:0.4].CGColor,
-             (id)[UIColor colorWithWhite:1.0 alpha:0.3].CGColor,
-             (id)[UIColor colorWithWhite:1.0 alpha:0.0].CGColor,
-             nil];
-            self.textLayer.foregroundColor = self.textColor.CGColor;
-            break;
-            
-        case GradientButtonStateHighlighted:
-            self.gradientLayer.colors =
-            [NSArray arrayWithObjects:
-             (id)[UIColor colorWithWhite:1.0 alpha:0.5].CGColor,
-             (id)[UIColor colorWithWhite:1.0 alpha:0.2].CGColor,
-             (id)[UIColor colorWithWhite:0.0 alpha:0.05].CGColor,
-             (id)[UIColor colorWithWhite:0.0 alpha:0.1].CGColor,
-             nil];
-            self.textLayer.foregroundColor = self.textColor.CGColor;
-            break;
-            
-        case GradientButtonStateDisabled:
-            self.gradientLayer.colors =
-            [NSArray arrayWithObjects:
-             (id)[UIColor colorWithWhite:1.0 alpha:0.7].CGColor,
-             (id)[UIColor colorWithWhite:1.0 alpha:0.4].CGColor,
-             (id)[UIColor colorWithWhite:1.0 alpha:0.3].CGColor,
-             (id)[UIColor colorWithWhite:1.0 alpha:0.0].CGColor,
-             nil];
-            self.textLayer.foregroundColor = [UIColor lightGrayColor].CGColor;
-            break;
+    [CATransaction begin];
+    [CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];
+    {
+        switch (state) {
+            case GradientButtonStateNormal:
+                self.gradientLayer.colors =
+                [NSArray arrayWithObjects:
+                 (id)[UIColor colorWithWhite:1.0 alpha:0.7].CGColor,
+                 (id)[UIColor colorWithWhite:1.0 alpha:0.4].CGColor,
+                 (id)[UIColor colorWithWhite:1.0 alpha:0.3].CGColor,
+                 (id)[UIColor colorWithWhite:1.0 alpha:0.0].CGColor,
+                 nil];
+                self.textLayer.foregroundColor = self.textColor.CGColor;
+                break;
+                
+            case GradientButtonStateHighlighted:
+                self.gradientLayer.colors =
+                [NSArray arrayWithObjects:
+                 (id)[UIColor colorWithWhite:1.0 alpha:0.5].CGColor,
+                 (id)[UIColor colorWithWhite:1.0 alpha:0.2].CGColor,
+                 (id)[UIColor colorWithWhite:0.0 alpha:0.05].CGColor,
+                 (id)[UIColor colorWithWhite:0.0 alpha:0.1].CGColor,
+                 nil];
+                self.textLayer.foregroundColor = self.textColor.CGColor;
+                break;
+                
+            case GradientButtonStateDisabled:
+                self.gradientLayer.colors =
+                [NSArray arrayWithObjects:
+                 (id)[UIColor colorWithWhite:1.0 alpha:0.7].CGColor,
+                 (id)[UIColor colorWithWhite:1.0 alpha:0.4].CGColor,
+                 (id)[UIColor colorWithWhite:1.0 alpha:0.3].CGColor,
+                 (id)[UIColor colorWithWhite:1.0 alpha:0.0].CGColor,
+                 nil];
+                self.textLayer.foregroundColor = [UIColor lightGrayColor].CGColor;
+                break;
+        }
     }
+    [CATransaction commit];
 }
 - (void)_setup
 {
