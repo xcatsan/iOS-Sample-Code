@@ -108,6 +108,9 @@ typedef enum {
 }
 - (void)_setup
 {
+    // get scale
+    CGFloat scale = [[UIScreen mainScreen] scale];
+    
     // setup basics
     self.textColor = [UIColor whiteColor];
     self.backgroundColor = [UIColor blackColor];
@@ -120,6 +123,7 @@ typedef enum {
 
     // setup gradient layer
     self.gradientLayer = [CAGradientLayer layer];
+    self.gradientLayer.contentsScale = scale;
     self.gradientLayer.frame = self.bounds;
     self.gradientLayer.locations = [NSArray arrayWithObjects:
                                     [NSNumber numberWithFloat:0.0],
@@ -132,6 +136,7 @@ typedef enum {
 
     // setup text layer
     self.textLayer = [CATextLayer layer];
+    self.textLayer.contentsScale = scale;
     self.textLayer.string = self.text;
     self.textLayer.font = CGFontCreateWithFontName((CFStringRef)[self _font].fontName);
     self.textLayer.fontSize = [self _font].pointSize;
