@@ -54,7 +54,6 @@
 	NSTimer* timer_;
 	XCGalleryInnerScrollView* transitionInnerScrollView_;
 	
-	BOOL passDidScroll_;
 	BOOL scrollingAnimation_;
 	
 }
