@@ -195,8 +195,6 @@
 
 - (void)relayoutViewsAnimated:(BOOL)animated
 {
-	passDidScroll_ = YES;
-
 	if (animated) {
 		[UIView beginAnimations:nil context:nil];
 	}
@@ -398,12 +396,10 @@
 	// adjust content size and offset of base scrollView
 	//--
 
-	passDidScroll_ = YES;
 	self.scrollView.contentSize = CGSizeMake(
 		[self numberOfImages]*newSizeWithSpace.width,
 		newSize.height);
 
-	passDidScroll_ = YES;
 	/*
 	self.scrollView.contentOffset = CGPointMake(
 		self.contentOffsetIndex*newSizeWithSpace.width, 0);
@@ -655,10 +651,9 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-	if (passDidScroll_) {
-		passDidScroll_ = NO;
-		return;
-	}
+    if (!scrollView.dragging) {
+        return;
+    }
 
 	CGFloat position = scrollView.contentOffset.x / scrollView.bounds.size.width;
 	CGFloat delta = position - (CGFloat)self.currentImageIndex;
@@ -780,7 +775,6 @@
 
 - (void)movePage_:(BOOL)animated
 {
-	passDidScroll_ = YES;
 	scrollingAnimation_ = YES;
 	[self.scrollView setContentOffset:CGPointMake(
 		self.contentOffsetIndex*[self unitSize].width, 0)
